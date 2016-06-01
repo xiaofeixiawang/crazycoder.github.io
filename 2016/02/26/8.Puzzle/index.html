@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>8 Puzzle | Byte Ants</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Introduction
+The 8-puzzle (also called Gem Puzzle, Boss Puzzle, Game of Eight, Mystic Square and many others) is a sliding puzzle that consists of a frame of numbered square tiles in random order wit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8 Puzzle">
+<meta property="og:url" content="http://www.byteants.com/2016/02/26/8.Puzzle/index.html">
+<meta property="og:site_name" content="Byte Ants">
+<meta property="og:description" content="Introduction
+The 8-puzzle (also called Gem Puzzle, Boss Puzzle, Game of Eight, Mystic Square and many others) is a sliding puzzle that consists of a frame of numbered square tiles in random order wit">
+<meta property="og:image" content="https://farm2.staticflickr.com/1656/25818603901_e03ec3fafc_o.png">
+<meta property="og:updated_time" content="2016-03-20T05:38:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="8 Puzzle">
+<meta name="twitter:description" content="Introduction
+The 8-puzzle (also called Gem Puzzle, Boss Puzzle, Game of Eight, Mystic Square and many others) is a sliding puzzle that consists of a frame of numbered square tiles in random order wit">
+<meta name="twitter:image" content="https://farm2.staticflickr.com/1656/25818603901_e03ec3fafc_o.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Byte Ants" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+          <li><a class=""
+                 href="/about us/">About Us</a></li>
+        
+          <li><a class=""
+                 href="/atom.xml">Rss</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Byte Ants</h1>
+  
+    <p class="lead blog-description">Keep on going, never give up!</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-8.Puzzle" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      8 Puzzle
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/02/26/8.Puzzle/" class="article-date"><time datetime="2016-02-26T08:00:00.000Z" itemprop="datePublished">2016-02-26</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Project/">Project</a> / <a class="article-category-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://farm2.staticflickr.com/1656/25818603901_e03ec3fafc_o.png" width="520" height="239"></p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><blockquote>
+<font size="2">The 8-puzzle (also called Gem Puzzle, Boss Puzzle, Game of Eight, Mystic Square and many others) is a sliding puzzle that consists of a frame of numbered square tiles in random order with one tile missing. The object of the puzzle is to place the tiles in order (see diagram) by making sliding moves that use the empty space. - <a href="https://en.wikipedia.org/wiki/15_puzzle" target="_blank" rel="external">wikipedia</a></font>
+
+</blockquote>
+<p>This is a classical problem for modelling algorithms involving heuristics. Commonly used heuristics include counting the number of misplaced tiles and finding the sum of the taxicab distances between each block and its position in the goal configuration. Note that both are admissible, i.e. they never overestimate the number of moves left, which ensures optimality for certain search algorithms such as A*.</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="Best-first-search"><a href="#Best-first-search" class="headerlink" title="Best-first search"></a>Best-first search</h3><p>Best-first search is a search algorithm which explores a graph by expanding the most promising node chosen according to a specified rule.<br>The most famous BFS is A* search algorithm.</p>
+<blockquote>
+<font size="2">A* meaning that it solves problems by searching among all possible paths to the solution (goal) for the one that incurs the smallest cost (least distance travelled, shortest time, etc.), and among these paths it first considers the ones that appear to lead most quickly to the solution. It is formulated in terms of weighted graphs: starting from a specific node of a graph, it constructs a tree of paths starting from that node, expanding paths one step at a time, until one of its paths ends at the predetermined goal node. - <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" target="_blank" rel="external">wikipedia</a></font>
+</blockquote>
+<h3 id="Game-tree"><a href="#Game-tree" class="headerlink" title="Game tree"></a>Game tree</h3><blockquote>
+<font size="2">In game theory, a game tree is a directed graph whose nodes are positions in a game and whose edges are moves. The complete game tree for a game is the game tree starting at the initial position and containing all possible moves from each position; the complete tree is the same tree as that obtained from the extensive-form game representation. - <a href="https://en.wikipedia.org/wiki/Game_tree" target="_blank" rel="external">wikipedia</a></font>
+
+
+</blockquote>
+<h3 id="Priority-Queue"><a href="#Priority-Queue" class="headerlink" title="Priority Queue"></a>Priority Queue</h3><p>Priority Queue is a special queue which have a “Priority” attribute in each of the elements. The element with high priority is served before an element with low priority. If two elements have the same priority, they are served according to their order in the queue. Usually a priority queue is implemented with a heap.</p>
+<table>
+<thead>
+<tr>
+<th><font size="1">  Operation </font></th>
+<th><font size="1">  Time Complexity  </font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font size="1"> insert </font></td>
+<td><font size="1">  logn </font></td>
+</tr>
+<tr>
+<td><font size="1"> delete </font></td>
+<td><font size="1">  logn </font></td>
+</tr>
+<tr>
+<td><font size="1"> search </font></td>
+<td><font size="1">  logn </font></td>
+</tr>
+<tr>
+<td><font size="1"> traverse </font></td>
+<td><font size="1">  n </font></td>
+</tr>
+</tbody>
+</table>
+<font size="1"><strong>different operations on priority queue</strong></font>
+
+
+<hr>
+<h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p>For this project, we use N by N blocks to represent a 8 puzzle board, every time moving “0 value” block to get a neighbor, then create a node inserting the board, a priority value and the number of moves to get this board from origin. At last use A* search algorithm to find the path to get goal.</p>
+<p>The goal of this project is to implement 2 class:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Board</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Board</span><span class="params">(<span class="keyword">int</span>[][] blocks)</span>           <span class="comment">// construct a board from an N-by-N array of blocks</span></span><br><span class="line">                                           <span class="comment">// (where blocks[i][j] = block in row i, column j)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">dimension</span><span class="params">()</span>                 <span class="comment">// board dimension N</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hamming</span><span class="params">()</span>                   <span class="comment">// number of blocks out of place</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">manhattan</span><span class="params">()</span>                 <span class="comment">// sum of Manhattan distances between blocks and goal</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isGoal</span><span class="params">()</span>                <span class="comment">// is this board the goal board?</span></span><br><span class="line">    <span class="keyword">public</span> Board <span class="title">twin</span><span class="params">()</span>                    <span class="comment">// a board that is obtained by exchanging any pair of blocks</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object y)</span>        <span class="comment">// does this board equal y?</span></span><br><span class="line">    <span class="keyword">public</span> Iterable&lt;Board&gt; <span class="title">neighbors</span><span class="params">()</span>     <span class="comment">// all neighboring boards</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span>               <span class="comment">// string representation of this board (in the output format specified below)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="comment">// unit tests (not graded)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class Solver </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Solver</span><span class="params">(Board initial)</span>           <span class="comment">// find a solution to the initial board (using the A* algorithm)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSolvable</span><span class="params">()</span>            <span class="comment">// is the initial board solvable?</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">moves</span><span class="params">()</span>                     <span class="comment">// min number of moves to solve initial board; -1 if unsolvable</span></span><br><span class="line">    <span class="keyword">public</span> Iterable&lt;Board&gt; <span class="title">solution</span><span class="params">()</span>      <span class="comment">// sequence of boards in a shortest solution; null if unsolvable</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="comment">// solve a slider puzzle (given below)</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>The first class is to create the board with two heuristics: hamming and manhattan. This class should implement equals method in order to compare two boards.<br>The second class is to create node as a private class, and use node to simulate A* search algorithm to find a goal.</p>
+<blockquote>
+<p><strong>Note:</strong></p>
+<ol>
+<li>The board class should create a twin board by changing position of “0 value” block with one other so that one of the two board must could get to goal.</li>
+<li>node should have a pointer points to the previous node, when we find a goal, we could get the path by keeping calling previous.</li>
+</ol>
+</blockquote>
+<ul>
+<li><p><a href="http://coursera.cs.princeton.edu/algs4/assignments/8puzzle.html" target="_blank" rel="external">project detail discription</a></p>
+</li>
+<li><p><a href="https://github.com/xiaofeixiawang/algorithms/tree/master/princeton_hw4/src" target="_blank" rel="external">github code link</a></p>
+</li>
+</ul>
+<hr>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.byteants.com/2016/02/26/8.Puzzle/" data-id="cios7mn32000752s5c0yznx2u" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://www.byteants.com/2016/02/26/8.Puzzle/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Game-Tree/">Game Tree</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Priority-Queue/">Priority Queue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Queue/">Queue</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/02/24/Collinear.Points/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Collinear Points</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2016/02/28/KdTree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">KdTree</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Yifei Wang: USC graduate student majored in computer science(wangyife@usc.edu)<a href="https://www.linkedin.com/in/wangyife">LinkedIn</a></p> <p>Shizhou Liu: USC graduate student majored in computer science(shizhoul@usc.edu)<a href="https://www.linkedin.com/in/liushizhou">LinkedIn</a></p> <p>Tong Zhao: USC graduate student majored in computer science(zhaot@usc.edu)<a href="https://www.linkedin.com/in/tongzhao7">LinkedIn</a></p> <a href="/about%20us">Read more</a>
+
+</div>
+
+
+  <form class="search" action="" method="get" accept-charset="utf-8">
+		<input type="text" class="st-default-search-input" maxlength="20" style="height:40px" placeholder="Search" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','frvDju66MkEemPb8C_ph','2.0.0');
+</script>
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/LeetCode/">LeetCode</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/">Project</a><span class="sidebar-module-list-count">19</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Android-Develop/">Android Develop</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Berkeley-Cs61b/">Berkeley Cs61b</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Intro-to-Computer-Science/">Intro to Computer Science</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Web-Develop/">Web Develop</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/">Studying Notes</a><span class="sidebar-module-list-count">9</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-Systems/">Operating Systems</a><span class="sidebar-module-list-count">2</span></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AJAX/">AJAX</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Adapter/">Adapter</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Android/">Android</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Angular-js/">Angular.js</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AsyncTask/">AsyncTask</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/BackTracking/">BackTracking</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Balanced-Search-Tree/">Balanced Search Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Binary-Search-Tree/">Binary Search Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bootstrap/">Bootstrap</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Breadth-First-Search/">Breadth-First Search</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Compression/">Compression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Decompression/">Decompression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Depth-First-Search/">Depth-First Search</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Dictionary/">Dictionary</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Directed-Graph/">Directed Graph</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Ford-Fulkerson/">Ford-Fulkerson</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Game-Tree/">Game Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Graph/">Graph</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/HTML/">HTML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JSON/">JSON</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JavaScript/">JavaScript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/LinkedList/">LinkedList</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/List/">List</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/ListView/">ListView</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Maxflow/">Maxflow</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/OS/">OS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/PHP/">PHP</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Priority-Queue/">Priority Queue</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Queue/">Queue</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Recursion/">Recursion</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Sorting/">Sorting</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Tree/">Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/TrieTree/">TrieTree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Union-Find/">Union-Find</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Web-Crawler/">Web Crawler</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/XML/">XML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/file-systems/">file systems</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/jQuery/">jQuery</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/virtual-memory/">virtual memory</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="/tags/AsyncTask/" style="font-size: 10px;">AsyncTask</a> <a href="/tags/BackTracking/" style="font-size: 10px;">BackTracking</a> <a href="/tags/Balanced-Search-Tree/" style="font-size: 10px;">Balanced Search Tree</a> <a href="/tags/Binary-Search-Tree/" style="font-size: 12.5px;">Binary Search Tree</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Breadth-First-Search/" style="font-size: 10px;">Breadth-First Search</a> <a href="/tags/Compression/" style="font-size: 10px;">Compression</a> <a href="/tags/Decompression/" style="font-size: 10px;">Decompression</a> <a href="/tags/Depth-First-Search/" style="font-size: 12.5px;">Depth-First Search</a> <a href="/tags/Dictionary/" style="font-size: 10px;">Dictionary</a> <a href="/tags/Directed-Graph/" style="font-size: 10px;">Directed Graph</a> <a href="/tags/Ford-Fulkerson/" style="font-size: 10px;">Ford-Fulkerson</a> <a href="/tags/Game-Tree/" style="font-size: 10px;">Game Tree</a> <a href="/tags/Graph/" style="font-size: 12.5px;">Graph</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 12.5px;">LinkedList</a> <a href="/tags/List/" style="font-size: 17.5px;">List</a> <a href="/tags/ListView/" style="font-size: 10px;">ListView</a> <a href="/tags/Maxflow/" style="font-size: 10px;">Maxflow</a> <a href="/tags/OS/" style="font-size: 12.5px;">OS</a> <a href="/tags/PHP/" style="font-size: 12.5px;">PHP</a> <a href="/tags/Priority-Queue/" style="font-size: 10px;">Priority Queue</a> <a href="/tags/Queue/" style="font-size: 12.5px;">Queue</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Tree/" style="font-size: 12.5px;">Tree</a> <a href="/tags/TrieTree/" style="font-size: 10px;">TrieTree</a> <a href="/tags/Union-Find/" style="font-size: 10px;">Union-Find</a> <a href="/tags/Web-Crawler/" style="font-size: 10px;">Web Crawler</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/file-systems/" style="font-size: 10px;">file systems</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/virtual-memory/" style="font-size: 10px;">virtual memory</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">15</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/04/">April 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/02/">February 2016</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2016/05/31/studying notes.database.1/">(no title)</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/Stock Search Android APP – Adapter of ListView/">Stock Search Android APP – Adapter of ListView</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/studying notes.operating system.chapter 7/">Memory Management</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/studying notes.operating system.chapter 6/">File System</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/Stock Search Android APP -- AsyncTask/">Stock Search Android APP – AsyncTask</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+  <div class="widget tag">
+<h4 class="title">Useful Links</h4>
+<a href="http://www.tongzhao.me" title="Tong Zhao's blog">Tong Zhao</a>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Yifei Wang, Shizhou Liu, Tong Zhao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/about us/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/2016/02/26/8.Puzzle/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+<a href="https://github.com/xiaofeixiawang"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>

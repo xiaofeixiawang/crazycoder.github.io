@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Introduction to Operating System | Byte Ants</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction to Operating System">
+<meta property="og:url" content="http://www.byteants.com/2016/05/20/studying notes.operating system.chapter 1/index.html">
+<meta property="og:site_name" content="Byte Ants">
+<meta property="og:description">
+<meta property="og:image" content="https://c1.staticflickr.com/8/7487/27172188552_99658bfdbd.jpg">
+<meta property="og:image" content="https://c2.staticflickr.com/8/7074/26663422633_1f7d9bbd0f.jpg">
+<meta property="og:image" content="https://c8.staticflickr.com/8/7318/26663422743_fae4c97a3e.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7564/26663422883_5860cbc56b.jpg">
+<meta property="og:image" content="https://c6.staticflickr.com/8/7360/26663422933_22c37f762d.jpg">
+<meta property="og:image" content="https://c1.staticflickr.com/8/7385/26993591040_fe8c908328.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7036/27269255515_f5c89c8b8e.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7178/27269255955_58f737c1e2.jpg">
+<meta property="og:image" content="https://c2.staticflickr.com/8/7491/27269256145_0afb6517a2.jpg">
+<meta property="og:image" content="https://c2.staticflickr.com/8/7157/27269256225_7167a4d314.jpg">
+<meta property="og:image" content="https://c7.staticflickr.com/8/7616/26993592190_4fba5a9ee0.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7441/26993592290_ff43cba0b1.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7418/27269256355_41c23bf0a7.jpg">
+<meta property="og:image" content="https://c8.staticflickr.com/8/7059/26663423983_7d9011584f.jpg">
+<meta property="og:image" content="https://c6.staticflickr.com/8/7296/26663424013_773d79a21d.jpg">
+<meta property="og:image" content="https://c2.staticflickr.com/8/7436/26663424073_fd811defae.jpg">
+<meta property="og:image" content="https://c6.staticflickr.com/8/7668/26663424133_ec2725618f.jpg">
+<meta property="og:image" content="https://c6.staticflickr.com/8/7460/26663422533_947f2b2869.jpg">
+<meta property="og:image" content="https://c7.staticflickr.com/8/7127/26993590190_19e18babb6.jpg">
+<meta property="og:image" content="https://c5.staticflickr.com/8/7540/26993590140_f180185547.jpg">
+<meta property="og:image" content="https://c1.staticflickr.com/8/7403/26993589920_5b492a8b69.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7255/27172188722_af21bc0eb5.jpg">
+<meta property="og:updated_time" content="2016-05-29T02:06:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Introduction to Operating System">
+<meta name="twitter:description">
+<meta name="twitter:image" content="https://c1.staticflickr.com/8/7487/27172188552_99658bfdbd.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Byte Ants" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+          <li><a class=""
+                 href="/about us/">About Us</a></li>
+        
+          <li><a class=""
+                 href="/atom.xml">Rss</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Byte Ants</h1>
+  
+    <p class="lead blog-description">Keep on going, never give up!</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-studying notes.operating system.chapter 1" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Introduction to Operating System
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/05/20/studying notes.operating system.chapter 1/" class="article-date"><time datetime="2016-05-20T07:00:00.000Z" itemprop="datePublished">2016-05-20</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Studying-Notes/">Studying Notes</a> / <a class="article-category-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://c1.staticflickr.com/8/7487/27172188552_99658bfdbd.jpg" width="500" height="313"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="Operating-System"><a href="#Operating-System" class="headerlink" title="Operating System"></a>Operating System</h2><p>Operating Systems Concerns:</p>
+<ul>
+<li>performance(time,space,energy)</li>
+<li>sharing and resource management</li>
+<li>failure tolerance</li>
+<li>security</li>
+<li>marketability</li>
+</ul>
+<p>Hardware:</p>
+<ul>
+<li>disks(hard drives,optical drives)</li>
+<li>memory</li>
+<li>processors</li>
+<li>network(ethernet,modem)</li>
+<li>monitor</li>
+<li>keyboard</li>
+<li><p>mouse</p>
+<p>  <img src="https://c2.staticflickr.com/8/7074/26663422633_1f7d9bbd0f.jpg" width="500" height="407"></p>
+</li>
+</ul>
+<p>OS Abstractions:</p>
+<ul>
+<li>disks-&gt;files(file system)</li>
+<li>memory-&gt;programs(processes)</li>
+<li>processors-&gt;threads of control</li>
+<li>network-&gt;communication</li>
+<li>monitor-&gt;windows,graphics</li>
+<li>keyboard-&gt;input</li>
+<li>mouse-&gt;locator</li>
+</ul>
+<p>Issues with files abstraction:</p>
+<ul>
+<li>naming: device-independence</li>
+<li>allocating space on disk(permanent storage): organized for fast access, minimize waste</li>
+<li>shuffling data between disk and memory(high speed temporary storage)</li>
+<li>coping with crashes</li>
+</ul>
+<p>address space(low address at the top):</p>
+<ul>
+<li>text(code) segment: executable code</li>
+<li>data segment: initialized global data</li>
+<li>bss segment: uninitialized global data</li>
+<li>dynamic(heap) segment</li>
+<li><p>stack segment: local variables, function arguments</p>
+<p>  <img src="https://c8.staticflickr.com/8/7318/26663422743_fae4c97a3e.jpg" width="448" height="464"></p>
+</li>
+</ul>
+<p>memory map:</p>
+<ul>
+<li>part hardware, part OS</li>
+<li><p>each program thinks it has full address space</p>
+<p>  <img src="https://c4.staticflickr.com/8/7564/26663422883_5860cbc56b.jpg" width="500" height="242"></p>
+</li>
+</ul>
+<h2 id="A-simple-OS"><a href="#A-simple-OS" class="headerlink" title="A simple OS"></a>A simple OS</h2><h3 id="OS-Structure"><a href="#OS-Structure" class="headerlink" title="OS Structure"></a>OS Structure</h3><p>Sixth-Edition Unix OS:</p>
+<ul>
+<li>64KB of memory</li>
+<li>single file</li>
+<li>loaded into memory as OS boots</li>
+<li>monolithic OS</li>
+</ul>
+<p>Processor modes:</p>
+<ul>
+<li>user mode: fewest privileges</li>
+<li>privileged mode(part of OS): most privileges</li>
+</ul>
+<p>kernel: the portion of OS running in privileged mode</p>
+<p>traps:invoking the kernel from user code, always elicit some response</p>
+<ul>
+<li>some for errors: divide by zero,segmentation fault,bus error</li>
+<li>some not: system calls,page fault</li>
+</ul>
+<p>interrupts: invoking the kernel from external devices for a response</p>
+<ul>
+<li>handled independently of any user program(trap is handled as part of the program)</li>
+<li><p>response to interrupt has no direct effect on currently running program</p>
+<p>  <img src="https://c6.staticflickr.com/8/7360/26663422933_22c37f762d.jpg" width="255" height="471"></p>
+</li>
+</ul>
+<p>software interrupt vs hardware interrupt:</p>
+<ul>
+<li>s:generated programmatically, h:generated by a device</li>
+<li>handling mechanisms are very similar</li>
+</ul>
+<p>upcall: use signals invoke user program from kernel, executing signal handler</p>
+<ul>
+<li>terminate the program</li>
+<li>perform corrective action and continue with normal execution</li>
+</ul>
+<p>x86 Processor registers:</p>
+<ul>
+<li>idx regs: EIP,ESP,EBP</li>
+<li>seg regs: CS(processor mode),SS</li>
+<li>gen regs: EAX</li>
+<li>other: flags(interrupt enabled)</li>
+<li><p>A0-A31,D0-D31,RD,WR,LOCK,INT</p>
+<p>  <img src="https://c1.staticflickr.com/8/7385/26993591040_fe8c908328.jpg" width="500" height="320"></p>
+</li>
+</ul>
+<h3 id="Processes-Address-Spaces-amp-Threads"><a href="#Processes-Address-Spaces-amp-Threads" class="headerlink" title="Processes, Address Spaces, &amp; Threads"></a>Processes, Address Spaces, &amp; Threads</h3><p>abstraction of program execution:</p>
+<ul>
+<li>memory(address space)</li>
+<li>processors</li>
+<li>execution context: the state of a process</li>
+</ul>
+<p>4 system calls for processes: fork(), exec(), wait(), exit()</p>
+<p>turing machine:</p>
+<ul>
+<li>infinite tape divided into cells</li>
+<li>head</li>
+<li>state register</li>
+<li>finite table of instructions</li>
+</ul>
+<p>objects is used for any data types:</p>
+<ul>
+<li>variables</li>
+<li>arrays</li>
+<li>dynamically create objects</li>
+</ul>
+<h3 id="Managing-Processes"><a href="#Managing-Processes" class="headerlink" title="Managing Processes"></a>Managing Processes</h3><p>create process: make a copy of a process(fork())</p>
+<ul>
+<li>parent process: return pid(16 bits) of child from fork</li>
+<li><p>child process: return 0 from fork</p>
+<p>  <img src="https://c4.staticflickr.com/8/7036/27269255515_f5c89c8b8e.jpg" width="480" height="500"></p>
+</li>
+</ul>
+<p>process control block(PCB): kernel data structure</p>
+<ul>
+<li>pid</li>
+<li>address space description</li>
+<li>terminated children: points to linkedlist of dead child’s PCB</li>
+<li>link: the process itself as a list node in a linkedlist</li>
+<li>return code: 8-bit long, communicate with parent process</li>
+<li>current state</li>
+<li><p>handles(open file descriptors): refer to an object managed by kernel</p>
+<p>  <img src="https://c4.staticflickr.com/8/7178/27269255955_58f737c1e2.jpg" width="500" height="229"></p>
+</li>
+</ul>
+<p>thread control block(TCB): </p>
+<ul>
+<li>stack pointer</li>
+<li>other registers</li>
+<li>state</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> pid;</span><br><span class="line"><span class="keyword">if</span>((pid=fork())==<span class="number">0</span>)&#123;</span><br><span class="line">	<span class="built_in">exit</span>(n);</span><br><span class="line">	<span class="comment">/*copy least significant 8-bit of n into PCB*/</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ReturnCode;</span><br><span class="line">	<span class="keyword">while</span>(pid!=wait(&amp;ReturnCode));</span><br><span class="line">	<span class="comment">/*wait() is a blocking call, reaps dead child process*/</span></span><br><span class="line">	<span class="keyword">return</span>(ReturnCode);</span><br><span class="line">	<span class="comment">/*return to start up function, calling exit(ReturnCode)*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>when exit(), OS free up everything except PCB, go into a zombie state; after wait(), pid be reused and PCB be freed up</p>
+<p>if parent call exit() while child in zombie state: init process inherits all zombie children, keep calling wait()</p>
+<h3 id="Loading-Program-Into-Processes"><a href="#Loading-Program-Into-Processes" class="headerlink" title="Loading Program Into Processes"></a>Loading Program Into Processes</h3><p>run a program:</p>
+<ul>
+<li>make a copy of a process: fork()</li>
+<li><p>replace child process with a new one(some stuff survives): exec()</p>
+<p>  <img src="https://c2.staticflickr.com/8/7491/27269256145_0afb6517a2.jpg" width="500" height="353"><br>  <img src="https://c2.staticflickr.com/8/7157/27269256225_7167a4d314.jpg" width="457" height="480"><br>  <img src="https://c7.staticflickr.com/8/7616/26993592190_4fba5a9ee0.jpg" width="451" height="466"></p>
+</li>
+</ul>
+<p>address space composed of user portion and kernel portion, the same kernel for system calls spans across all user process<br><img src="https://c3.staticflickr.com/8/7441/26993592290_ff43cba0b1.jpg" width="372" height="338"></p>
+<h3 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h3><p>files:</p>
+<ul>
+<li>fetching and storing data outside a process</li>
+<li>hierarchical naming structure</li>
+<li>part of a process’s extended address space</li>
+</ul>
+<p>directory system:</p>
+<ul>
+<li>shared by all processes running on a computer: each process have different view and root</li>
+<li>name space(handle) is outside the process:<ul>
+<li>user process provide file name to OS</li>
+<li>OS return handle to access file along the entire path</li>
+<li>user process use handle to read/write file</li>
+</ul>
+</li>
+</ul>
+<p>file abstraction:</p>
+<ul>
+<li>array of bytes</li>
+<li>be made larger by writing beyond current end</li>
+<li>named by path</li>
+<li>system calls on files are synchronous</li>
+<li>API: open(), read(), write(), close()</li>
+</ul>
+<p>standard file descriptors:</p>
+<ul>
+<li>0 is stdin, default map to keyboard</li>
+<li>1 is stdout, default map to display</li>
+<li>2 is stderr, default map to display</li>
+</ul>
+<p>whenever a process request a new file descriptor, the lowest numbered file descriptor not already associated with an open file is selected</p>
+<p>I/O redirection:</p>
+<ul>
+<li>> in shell command redirect the output to given file</li>
+<li>&lt; in shell command redirect the input from given file</li>
+</ul>
+<p>file descriptor table(maintained by OS, in PCB, per process):</p>
+<ul>
+<li>file descriptor(handle, an index into an array) refer to its entry, 32 entries</li>
+<li>its entry points to system file table(system wide)</li>
+</ul>
+<p>system file table(maintained by OS):</p>
+<ul>
+<li>reference count</li>
+<li>access mode</li>
+<li>file location: cursor</li>
+<li>inode pointer</li>
+</ul>
+<p>inode table: inode form boundary between VFS and actual file system<br><img src="https://c4.staticflickr.com/8/7418/27269256355_41c23bf0a7.jpg" width="500" height="277"></p>
+<p>inter-process communication:</p>
+<ul>
+<li><p>if open file twice, two fd point to two extended address space, both point to the file, change second fd will influence first fd</p>
+<p>  <img src="https://c8.staticflickr.com/8/7059/26663423983_7d9011584f.jpg" width="500" height="142"></p>
+</li>
+<li><p>use dup() system call to share context information, ref of extended address space change to 2</p>
+<p>  <img src="https://c6.staticflickr.com/8/7296/26663424013_773d79a21d.jpg" width="500" height="133"></p>
+</li>
+<li><p>when fork(), child and parent process get separate file descriptor table but share extended address space</p>
+<p>  <img src="https://c2.staticflickr.com/8/7436/26663424073_fd811defae.jpg" width="500" height="249"></p>
+</li>
+<li><p>pipe():system call, create a pipe object in kernel, return two file descriptors refer to pipe. one for read, one for write</p>
+<p>  <img src="https://c6.staticflickr.com/8/7668/26663424133_ec2725618f.jpg" width="500" height="304"></p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> p[<span class="number">2</span>];</span><br><span class="line">pipe(p);</span><br><span class="line"><span class="keyword">if</span>(fork()==<span class="number">0</span>)&#123;</span><br><span class="line">	<span class="keyword">char</span> buf[<span class="number">80</span>];</span><br><span class="line">	close(p[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">while</span>(read(p[<span class="number">0</span>],buf,<span class="number">80</span>)&gt;<span class="number">0</span>)&#123;&#125;</span><br><span class="line">	<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="keyword">char</span> buf[<span class="number">80</span>];</span><br><span class="line">	close(p[<span class="number">0</span>]);</span><br><span class="line">	<span class="keyword">for</span>(;;)&#123;</span><br><span class="line">		write(p[<span class="number">1</span>],buf,<span class="number">80</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>off_t lseek(int fd, off_t offset, int whence): move cursor position, whence could be SEEK_SET/SEEK_CUR/SEEK_END</p>
+<p>file is represented as an inode in file system, directory is a kind of file, containing reference to other file/directories. </p>
+<ul>
+<li>Directory map file name to inode number</li>
+<li><p>inode map inode number to sector on disk, done in actual file system</p>
+<p>  <img src="https://c6.staticflickr.com/8/7460/26663422533_947f2b2869.jpg" width="482" height="416"><br>  <img src="https://c7.staticflickr.com/8/7127/26993590190_19e18babb6.jpg" width="287" height="251"></p>
+</li>
+</ul>
+<p>directory hierarchy deviation:</p>
+<ul>
+<li><p>hard link: reference to a file(not directory) in one directory also appear in another</p>
+<p>  <img src="https://c5.staticflickr.com/8/7540/26993590140_f180185547.jpg" width="500" height="306"></p>
+</li>
+<li><p>soft link(symbolic link): a special kind of file containing the name of another file or directory</p>
+<p>  <img src="https://c1.staticflickr.com/8/7403/26993589920_5b492a8b69.jpg" width="500" height="315"></p>
+</li>
+</ul>
+<p>working directory: in kernel for each process, paths not starting from “/“ start with the working directory</p>
+<p>access protection:</p>
+<ul>
+<li>security principals:<ul>
+<li>user: owner of file</li>
+<li>group: group owner of file</li>
+<li>others: everyone else</li>
+</ul>
+</li>
+<li>operations:<ul>
+<li>read: read a file or directory</li>
+<li>write: write a file or directory</li>
+<li>execute: have execute permission for a directory in order to follow a path through it</li>
+</ul>
+</li>
+<li><p>rules for checking permission:</p>
+<ul>
+<li>determine smallest class of principlas the requester belongs to</li>
+<li><p>check for appropriate permissions with that class</p>
+<p><img src="https://c3.staticflickr.com/8/7255/27172188722_af21bc0eb5.jpg" width="500" height="226"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>setting file permission:</p>
+<ul>
+<li>int chmod(const char *path, mode_t mode):<ul>
+<li>only owner of file and superuser may change permission</li>
+<li>have 9 possibilities for mode: S_IRUSR, S_IWUSR, S_IXUSR, S_IRGRP, S_IWGRP, S_IXGRP, S_IROTH, S_IWOTH, S_IXOTH</li>
+</ul>
+</li>
+<li>permission=mode&amp;~umask, umask used to turn off undesired permission</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.byteants.com/2016/05/20/studying notes.operating system.chapter 1/" data-id="cios7mn5n001o52s5eg7payfk" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://www.byteants.com/2016/05/20/studying notes.operating system.chapter 1/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/05/14/BurrowsWheeler/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Burrows Wheeler</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2016/05/21/filesystemsreview/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">File Systems</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Yifei Wang: USC graduate student majored in computer science(wangyife@usc.edu)<a href="https://www.linkedin.com/in/wangyife">LinkedIn</a></p> <p>Shizhou Liu: USC graduate student majored in computer science(shizhoul@usc.edu)<a href="https://www.linkedin.com/in/liushizhou">LinkedIn</a></p> <p>Tong Zhao: USC graduate student majored in computer science(zhaot@usc.edu)<a href="https://www.linkedin.com/in/tongzhao7">LinkedIn</a></p> <a href="/about%20us">Read more</a>
+
+</div>
+
+
+  <form class="search" action="" method="get" accept-charset="utf-8">
+		<input type="text" class="st-default-search-input" maxlength="20" style="height:40px" placeholder="Search" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','frvDju66MkEemPb8C_ph','2.0.0');
+</script>
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/LeetCode/">LeetCode</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/">Project</a><span class="sidebar-module-list-count">19</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Android-Develop/">Android Develop</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Berkeley-Cs61b/">Berkeley Cs61b</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Intro-to-Computer-Science/">Intro to Computer Science</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Web-Develop/">Web Develop</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/">Studying Notes</a><span class="sidebar-module-list-count">9</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-Systems/">Operating Systems</a><span class="sidebar-module-list-count">2</span></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AJAX/">AJAX</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Adapter/">Adapter</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Android/">Android</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Angular-js/">Angular.js</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AsyncTask/">AsyncTask</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/BackTracking/">BackTracking</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Balanced-Search-Tree/">Balanced Search Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Binary-Search-Tree/">Binary Search Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bootstrap/">Bootstrap</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Breadth-First-Search/">Breadth-First Search</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Compression/">Compression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Decompression/">Decompression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Depth-First-Search/">Depth-First Search</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Dictionary/">Dictionary</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Directed-Graph/">Directed Graph</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Ford-Fulkerson/">Ford-Fulkerson</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Game-Tree/">Game Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Graph/">Graph</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/HTML/">HTML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JSON/">JSON</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JavaScript/">JavaScript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/LinkedList/">LinkedList</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/List/">List</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/ListView/">ListView</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Maxflow/">Maxflow</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/OS/">OS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/PHP/">PHP</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Priority-Queue/">Priority Queue</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Queue/">Queue</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Recursion/">Recursion</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Sorting/">Sorting</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Tree/">Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/TrieTree/">TrieTree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Union-Find/">Union-Find</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Web-Crawler/">Web Crawler</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/XML/">XML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/file-systems/">file systems</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/jQuery/">jQuery</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/virtual-memory/">virtual memory</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="/tags/AsyncTask/" style="font-size: 10px;">AsyncTask</a> <a href="/tags/BackTracking/" style="font-size: 10px;">BackTracking</a> <a href="/tags/Balanced-Search-Tree/" style="font-size: 10px;">Balanced Search Tree</a> <a href="/tags/Binary-Search-Tree/" style="font-size: 12.5px;">Binary Search Tree</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Breadth-First-Search/" style="font-size: 10px;">Breadth-First Search</a> <a href="/tags/Compression/" style="font-size: 10px;">Compression</a> <a href="/tags/Decompression/" style="font-size: 10px;">Decompression</a> <a href="/tags/Depth-First-Search/" style="font-size: 12.5px;">Depth-First Search</a> <a href="/tags/Dictionary/" style="font-size: 10px;">Dictionary</a> <a href="/tags/Directed-Graph/" style="font-size: 10px;">Directed Graph</a> <a href="/tags/Ford-Fulkerson/" style="font-size: 10px;">Ford-Fulkerson</a> <a href="/tags/Game-Tree/" style="font-size: 10px;">Game Tree</a> <a href="/tags/Graph/" style="font-size: 12.5px;">Graph</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 12.5px;">LinkedList</a> <a href="/tags/List/" style="font-size: 17.5px;">List</a> <a href="/tags/ListView/" style="font-size: 10px;">ListView</a> <a href="/tags/Maxflow/" style="font-size: 10px;">Maxflow</a> <a href="/tags/OS/" style="font-size: 12.5px;">OS</a> <a href="/tags/PHP/" style="font-size: 12.5px;">PHP</a> <a href="/tags/Priority-Queue/" style="font-size: 10px;">Priority Queue</a> <a href="/tags/Queue/" style="font-size: 12.5px;">Queue</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Tree/" style="font-size: 12.5px;">Tree</a> <a href="/tags/TrieTree/" style="font-size: 10px;">TrieTree</a> <a href="/tags/Union-Find/" style="font-size: 10px;">Union-Find</a> <a href="/tags/Web-Crawler/" style="font-size: 10px;">Web Crawler</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/file-systems/" style="font-size: 10px;">file systems</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/virtual-memory/" style="font-size: 10px;">virtual memory</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">15</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/04/">April 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/02/">February 2016</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2016/05/31/studying notes.database.1/">(no title)</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/Stock Search Android APP – Adapter of ListView/">Stock Search Android APP – Adapter of ListView</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/studying notes.operating system.chapter 7/">Memory Management</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/studying notes.operating system.chapter 6/">File System</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/Stock Search Android APP -- AsyncTask/">Stock Search Android APP – AsyncTask</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+  <div class="widget tag">
+<h4 class="title">Useful Links</h4>
+<a href="http://www.tongzhao.me" title="Tong Zhao's blog">Tong Zhao</a>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Yifei Wang, Shizhou Liu, Tong Zhao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/about us/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/2016/05/20/studying notes.operating system.chapter 1/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+<a href="https://github.com/xiaofeixiawang"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>

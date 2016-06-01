@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Multithreaded Programming | Byte Ants</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Multithreaded Programming">
+<meta property="og:url" content="http://www.byteants.com/2016/05/21/studying notes.operating system.chapter 2/index.html">
+<meta property="og:site_name" content="Byte Ants">
+<meta property="og:description">
+<meta property="og:image" content="https://farm8.staticflickr.com/7236/27058898412_5ae7d856a7.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7318/27091257681_8a9f29607a.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7476/27091257441_1358880c18_z.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7617/27091257571_b9e4314798.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7160/27091257081_07ea5fa033_z.jpg">
+<meta property="og:updated_time" content="2016-05-29T02:01:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Multithreaded Programming">
+<meta name="twitter:description">
+<meta name="twitter:image" content="https://farm8.staticflickr.com/7236/27058898412_5ae7d856a7.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Byte Ants" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+          <li><a class=""
+                 href="/about us/">About Us</a></li>
+        
+          <li><a class=""
+                 href="/atom.xml">Rss</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Byte Ants</h1>
+  
+    <p class="lead blog-description">Keep on going, never give up!</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-studying notes.operating system.chapter 2" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Multithreaded Programming
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/05/21/studying notes.operating system.chapter 2/" class="article-date"><time datetime="2016-05-21T07:00:00.000Z" itemprop="datePublished">2016-05-21</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Studying-Notes/">Studying Notes</a> / <a class="article-category-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://farm8.staticflickr.com/7236/27058898412_5ae7d856a7.jpg" width="500" height="306"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>why using threads rather than just process:</p>
+<ul>
+<li>multithreading is a powerful paradigm</li>
+<li>make design cleaner and less buggy</li>
+<li>run faster without explicitly giving up CPU</li>
+</ul>
+<p>threads could be implemented in user or kernel space, both have some advantages and disadvantages</p>
+<h3 id="Threads-Creatioin-amp-Termination"><a href="#Threads-Creatioin-amp-Termination" class="headerlink" title="Threads Creatioin &amp; Termination"></a>Threads Creatioin &amp; Termination</h3><p>The way to create a POSIX thread: int pthread_create (pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg)</p>
+<ul>
+<li>start_routine is also known as first procedure or thread function, child thread start and end from it</li>
+<li>thread id will be stored in the first argument, may in thread control block</li>
+</ul>
+<p>each thread need its own stack in process address space</p>
+<pre><code>&lt;img src=&quot;https://farm8.staticflickr.com/7115/27091257741_e5afd15966.jpg&quot; width=&quot;263&quot; height=&quot;473&quot;&gt;
+</code></pre><p>The way to wait for another thread to terminate: int pthread_join (thread_t thread, (void **) ret_value)</p>
+<ul>
+<li>any thread can join with any other thread</li>
+<li>if not pthread_join, the terminated thread goes into a zombie state(free everything except thread control block)</li>
+</ul>
+<p>How thread get self-terminate:</p>
+<ul>
+<li>return from first procedure</li>
+<li>call pthread_exit(ret_value)</li>
+</ul>
+<p>exit() terminate a process, while pthread_exit() terminate a thread</p>
+<h3 id="Synchronization"><a href="#Synchronization" class="headerlink" title="Synchronization"></a>Synchronization</h3><p>use mutex for synchronization:</p>
+<ul>
+<li>code between pthread_mutex_lock() and pthread_mutex_unlock() for a mutex is called critical section with respect to that mutex</li>
+<li>all critical sections with respect to a particular mutex are mutually exclusive</li>
+<li>The way to set up a mutex: pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;</li>
+</ul>
+<p>necessary conditioins for deadlock(mutex 1 wait for mutex 2 and mutex 2 wait for mutex 1):</p>
+<ul>
+<li>bounded resources</li>
+<li>wait for resources</li>
+<li>no preemption</li>
+<li><p>circular wait</p>
+<p>  <img src="https://farm8.staticflickr.com/7318/27091257681_8a9f29607a.jpg" width="500" height="239"></p>
+</li>
+</ul>
+<p>solutions for deadlock:</p>
+<ul>
+<li>lock hierarchies: organize mutex into levels, can only lock higher level mutex than its holding mutex</li>
+<li>conditional locking: use pthread_mutex_trylock()</li>
+</ul>
+<p>when having one mutex but multiple critical sections: threads can be placed into a queue and wait indefinitely for mutex to become available</p>
+<p>guarded command: </p>
+<ul>
+<li>when(guard)[]</li>
+<li><p>guard+command sequence together is one critical section which can be executed atomically without interruption</p>
+<p>  <img src="https://farm8.staticflickr.com/7476/27091257441_1358880c18_z.jpg" width="640" height="177"></p>
+</li>
+</ul>
+<p>semaphores: nonnegative integer</p>
+<ul>
+<li>P(S) operation: when(S&gt;0)[S=S-1;]</li>
+<li>V(S) operation: [S=S+1]</li>
+<li>categoried as binary semaphore/counting semaphore(initial value differs)</li>
+</ul>
+<p>difference between semaphore and mutex:</p>
+<ul>
+<li>one thread lock a mutex, this thread should unlock it</li>
+<li>one thread perform P on semaphore, another thread perform V on it</li>
+<li>mutex is coarse grain, semaphore is fine grain</li>
+</ul>
+<p>condition variables: a queue of threads waiting for guard to become true</p>
+<ul>
+<li>wait for specific condition to be signaled</li>
+<li>wait for right time to evaluate guard</li>
+<li><p>the way to set up a condition variable: pthread_cond_t cv = PTHREAD_COND_INITIALIZER;</p>
+<p>  <img src="https://farm8.staticflickr.com/7617/27091257571_b9e4314798.jpg" width="306" height="407"></p>
+</li>
+</ul>
+<p>wake up condition variables:</p>
+<ul>
+<li>threads do something potentially change guard</li>
+<li>signal or broadcast the condition</li>
+<li>no guarantee the guard will be true</li>
+</ul>
+<p>execute pthread_cond_wait (pthread_cond_t *cv, pthread_mutex_t *mutex)</p>
+<ul>
+<li>when guard is not true</li>
+<li>after mutex is locked can you call this routine</li>
+<li>atomically unlock mutex and wait for signal/broadcast</li>
+<li>when signal/broadcast, return with mutex locked to mutex queue</li>
+</ul>
+<p>thread should call signal/broadcast (change condition variables) only after mutex is locked</p>
+<p>with respect to mutex, a thread could be:</p>
+<ul>
+<li>waiting in the mutex queue</li>
+<li>inside the synchronization box</li>
+<li>waiting in the condition variable queue</li>
+<li>outside</li>
+</ul>
+<p>POSIX condition variables implementation:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pthread_mutex_lock(&amp;mutex);</span><br><span class="line"><span class="keyword">while</span>(!guard)</span><br><span class="line">	pthread_cond_wait(&amp;cv, &amp;mutex);</span><br><span class="line">statement;</span><br><span class="line">pthread_mutex_unlock(&amp;mutex);</span><br><span class="line"></span><br><span class="line">pthread_mutex_lock(&amp;mutex);</span><br><span class="line">pthread_cond_broadcast(&amp;cv);</span><br><span class="line">pthread_mutex_unlock(&amp;mutex);</span><br></pre></td></tr></table></figure></p>
+<p>conception about barriers: when a thread reaches barrier, it stop and wait for other threads to arrive, then all threads are given signal to proceed and barrier is reset</p>
+<pre><code>&lt;img src=&quot;https://farm8.staticflickr.com/7314/27091257291_3b11013a6e_z.jpg&quot; width=&quot;640&quot; height=&quot;309&quot;&gt;
+</code></pre><h3 id="Thread-Safety"><a href="#Thread-Safety" class="headerlink" title="Thread Safety"></a>Thread Safety</h3><p>thread safety:</p>
+<ul>
+<li>make unithreading libraries safe to run under multithreading</li>
+<li>not equal to reentrant, reentrant code applies to single thread case as well</li>
+</ul>
+<p>problem and solution with old unix API:</p>
+<ul>
+<li>global variables:<ul>
+<li>store thread-specific data in TCB</li>
+<li>add reentrant version of system call, like provide a buffer to hold return data</li>
+</ul>
+</li>
+<li>shared data:<ul>
+<li>wrap library calls with synchronizatioin constructs</li>
+<li>fix the libraries</li>
+<li>application can use a mutex</li>
+</ul>
+</li>
+</ul>
+<h3 id="Deviations"><a href="#Deviations" class="headerlink" title="Deviations"></a>Deviations</h3><p>deviation type:</p>
+<ul>
+<li>signal mechanism: ask another thread to deviate from its normal execution path</li>
+<li>cancellation mechanism: force another thread to terminate</li>
+</ul>
+<p>signal:</p>
+<ul>
+<li>not software interrupt, performing upcall by OS</li>
+<li>in response to exceptions, external events and user defined events</li>
+<li><p>can have effect of termination, invocation of a procedure, suspension or resumption</p>
+<p>  <img src="https://farm8.staticflickr.com/7160/27091257081_07ea5fa033_z.jpg" width="640" height="558"></p>
+</li>
+</ul>
+<p>a signal is pending if generated but blocked, when unblocked, it’s delievered</p>
+<p>send signal to process:</p>
+<ul>
+<li>int kill (pid_t pid, int sig)</li>
+<li>type Cntrl+C</li>
+<li>kill shell command</li>
+<li>do something illegal</li>
+<li>int pthread_kill (pthread_t thr, int sig): send signal to thread</li>
+</ul>
+<p>signal handler:</p>
+<ul>
+<li>each signal in a process have one handler</li>
+<li>specify a signal handler: sigset(), signal(), sigaction()</li>
+<li>could re-establish signal handler inside signal handler so you can receive the signal more than once</li>
+</ul>
+<p>async-signal safety:</p>
+<ul>
+<li>make code safe working with asynchronous signals</li>
+<li>let any data structure async-signal safe: async signal cannot corrupt data structures</li>
+<li>make async-signal synchronous: use another thread to receive particular signal</li>
+</ul>
+<p>signal mask:</p>
+<ul>
+<li>stored in TCB</li>
+<li>a set of signals represented as a set of bits, 1 means blocked</li>
+<li>change signal mask: int sigprocmask (int SIG_BLOCK/SIG_UNBLOCK/SIG_SETMASK, const sigset_t *set, sigset_t *old);</li>
+<li>sigset_t: sigemptyset(), sigaddset(), sigdelset()</li>
+</ul>
+<p>sigsuspend()/sigwait(): atomically unblocks signal and waits for it</p>
+<p>In multi-threaded process, signal is delivered to a thread chosen at random, could block other unrelative threads to solve it</p>
+<p>signal generated while a process is blocked in a system call: interrupt system call, deal with signal, return from system call with indication that something happened</p>
+<p>in general, should only do what’s absolutely necessary inside a signal handler</p>
+<p>cancellation:</p>
+<ul>
+<li>user pressed Cntrl+C or a request is generated</li>
+<li>not execute the remaining thread, but not the process</li>
+<li>concern cancell it to a consistent state, cleaning up</li>
+<li>pthread_cancel(thread)</li>
+<li>int pthread_setcancelstate ({PTHREAD_CANCEL_DISABLE, PTHREAD_CANCEL_ENABLE}, &amp;oldstate)</li>
+<li>int pthread_setcanceltype ({PTHREAD_CANCEL_ASYNCHRONOUS, PTHREAD_CANCEL_DEFERRED}, &amp;oldtype)</li>
+</ul>
+<p>cancellation rules:</p>
+<ul>
+<li>after calling pthread_cancel(), caller don’t wait for the cancellation, callee marked as a pending cancel</li>
+<li>if callee is cancellation disabled, it stay in pending cancel state</li>
+<li>if callee is enabled and asynchronous, it immediately acts on the cancel</li>
+<li>if callee is enabled but deferred, it delayed until reaches a cancellation point where safe to act on cancel</li>
+<li>pthread_testcancel() can create a cancellation point</li>
+<li>when act on cancel, walk through a stack of cleanup handlers: pthread_cleanup_push(), pthread_cleanup_pop(), the two procedure must match up</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.byteants.com/2016/05/21/studying notes.operating system.chapter 2/" data-id="cios7mn55001c52s5yy3jyrrw" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://www.byteants.com/2016/05/21/studying notes.operating system.chapter 2/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/05/21/memoryreview/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Memory Management</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2016/05/22/studying notes.operating system.chapter 3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Basic Concepts of Operating System</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Yifei Wang: USC graduate student majored in computer science(wangyife@usc.edu)<a href="https://www.linkedin.com/in/wangyife">LinkedIn</a></p> <p>Shizhou Liu: USC graduate student majored in computer science(shizhoul@usc.edu)<a href="https://www.linkedin.com/in/liushizhou">LinkedIn</a></p> <p>Tong Zhao: USC graduate student majored in computer science(zhaot@usc.edu)<a href="https://www.linkedin.com/in/tongzhao7">LinkedIn</a></p> <a href="/about%20us">Read more</a>
+
+</div>
+
+
+  <form class="search" action="" method="get" accept-charset="utf-8">
+		<input type="text" class="st-default-search-input" maxlength="20" style="height:40px" placeholder="Search" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','frvDju66MkEemPb8C_ph','2.0.0');
+</script>
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/LeetCode/">LeetCode</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/">Project</a><span class="sidebar-module-list-count">19</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Android-Develop/">Android Develop</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Berkeley-Cs61b/">Berkeley Cs61b</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Intro-to-Computer-Science/">Intro to Computer Science</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Web-Develop/">Web Develop</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/">Studying Notes</a><span class="sidebar-module-list-count">9</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-Systems/">Operating Systems</a><span class="sidebar-module-list-count">2</span></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AJAX/">AJAX</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Adapter/">Adapter</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Android/">Android</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Angular-js/">Angular.js</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AsyncTask/">AsyncTask</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/BackTracking/">BackTracking</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Balanced-Search-Tree/">Balanced Search Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Binary-Search-Tree/">Binary Search Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bootstrap/">Bootstrap</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Breadth-First-Search/">Breadth-First Search</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Compression/">Compression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Decompression/">Decompression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Depth-First-Search/">Depth-First Search</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Dictionary/">Dictionary</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Directed-Graph/">Directed Graph</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Ford-Fulkerson/">Ford-Fulkerson</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Game-Tree/">Game Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Graph/">Graph</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/HTML/">HTML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JSON/">JSON</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JavaScript/">JavaScript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/LinkedList/">LinkedList</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/List/">List</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/ListView/">ListView</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Maxflow/">Maxflow</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/OS/">OS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/PHP/">PHP</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Priority-Queue/">Priority Queue</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Queue/">Queue</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Recursion/">Recursion</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Sorting/">Sorting</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Tree/">Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/TrieTree/">TrieTree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Union-Find/">Union-Find</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Web-Crawler/">Web Crawler</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/XML/">XML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/file-systems/">file systems</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/jQuery/">jQuery</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/virtual-memory/">virtual memory</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="/tags/AsyncTask/" style="font-size: 10px;">AsyncTask</a> <a href="/tags/BackTracking/" style="font-size: 10px;">BackTracking</a> <a href="/tags/Balanced-Search-Tree/" style="font-size: 10px;">Balanced Search Tree</a> <a href="/tags/Binary-Search-Tree/" style="font-size: 12.5px;">Binary Search Tree</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Breadth-First-Search/" style="font-size: 10px;">Breadth-First Search</a> <a href="/tags/Compression/" style="font-size: 10px;">Compression</a> <a href="/tags/Decompression/" style="font-size: 10px;">Decompression</a> <a href="/tags/Depth-First-Search/" style="font-size: 12.5px;">Depth-First Search</a> <a href="/tags/Dictionary/" style="font-size: 10px;">Dictionary</a> <a href="/tags/Directed-Graph/" style="font-size: 10px;">Directed Graph</a> <a href="/tags/Ford-Fulkerson/" style="font-size: 10px;">Ford-Fulkerson</a> <a href="/tags/Game-Tree/" style="font-size: 10px;">Game Tree</a> <a href="/tags/Graph/" style="font-size: 12.5px;">Graph</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 12.5px;">LinkedList</a> <a href="/tags/List/" style="font-size: 17.5px;">List</a> <a href="/tags/ListView/" style="font-size: 10px;">ListView</a> <a href="/tags/Maxflow/" style="font-size: 10px;">Maxflow</a> <a href="/tags/OS/" style="font-size: 12.5px;">OS</a> <a href="/tags/PHP/" style="font-size: 12.5px;">PHP</a> <a href="/tags/Priority-Queue/" style="font-size: 10px;">Priority Queue</a> <a href="/tags/Queue/" style="font-size: 12.5px;">Queue</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Tree/" style="font-size: 12.5px;">Tree</a> <a href="/tags/TrieTree/" style="font-size: 10px;">TrieTree</a> <a href="/tags/Union-Find/" style="font-size: 10px;">Union-Find</a> <a href="/tags/Web-Crawler/" style="font-size: 10px;">Web Crawler</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/file-systems/" style="font-size: 10px;">file systems</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/virtual-memory/" style="font-size: 10px;">virtual memory</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">15</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/04/">April 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/02/">February 2016</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2016/05/31/studying notes.database.1/">(no title)</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/Stock Search Android APP – Adapter of ListView/">Stock Search Android APP – Adapter of ListView</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/studying notes.operating system.chapter 7/">Memory Management</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/studying notes.operating system.chapter 6/">File System</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/Stock Search Android APP -- AsyncTask/">Stock Search Android APP – AsyncTask</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+  <div class="widget tag">
+<h4 class="title">Useful Links</h4>
+<a href="http://www.tongzhao.me" title="Tong Zhao's blog">Tong Zhao</a>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Yifei Wang, Shizhou Liu, Tong Zhao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/about us/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/2016/05/21/studying notes.operating system.chapter 2/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+<a href="https://github.com/xiaofeixiawang"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Memory Management | Byte Ants</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Memory Management">
+<meta property="og:url" content="http://www.byteants.com/2016/05/28/studying notes.operating system.chapter 7/index.html">
+<meta property="og:site_name" content="Byte Ants">
+<meta property="og:description">
+<meta property="og:image" content="https://c7.staticflickr.com/8/7241/27283326326_9cf3700f91.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7711/26710117883_0985bdf784.jpg">
+<meta property="og:image" content="https://c6.staticflickr.com/8/7328/26710117973_5febebb30d.jpg">
+<meta property="og:image" content="https://c2.staticflickr.com/8/7389/26710118073_8af9a7ca3b.jpg">
+<meta property="og:image" content="https://c2.staticflickr.com/8/7094/26710118153_233718be6c.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7300/26710118323_469d7d2c5f.jpg">
+<meta property="og:image" content="https://c2.staticflickr.com/8/7311/26710118433_9da3cf37e0.jpg">
+<meta property="og:image" content="https://c6.staticflickr.com/8/7328/26710118493_df4e229a3c.jpg">
+<meta property="og:image" content="https://c8.staticflickr.com/8/7409/26710118623_c1be21551b.jpg">
+<meta property="og:image" content="https://c2.staticflickr.com/8/7239/26710118753_b1d8df44ba.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7408/26710118843_c5b17d4d37.jpg">
+<meta property="og:image" content="https://c7.staticflickr.com/8/7113/27283326406_18334b2c48.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7323/26710118883_8e3b449b3c.jpg">
+<meta property="og:image" content="https://c8.staticflickr.com/8/7066/26710119023_1750406930.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7448/26710119123_ee6c08cb51.jpg">
+<meta property="og:image" content="https://c2.staticflickr.com/8/7065/26710119193_0f974bdb6b.jpg">
+<meta property="og:image" content="https://c8.staticflickr.com/8/7239/26710119303_c56084b94d.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7314/26710119363_e1e2414f7b.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7336/26710119483_8b4fa6f21d.jpg">
+<meta property="og:image" content="https://c6.staticflickr.com/8/7400/26710119573_00a08a8949.jpg">
+<meta property="og:image" content="https://c6.staticflickr.com/8/7568/26710119653_1a5a0afa8f.jpg">
+<meta property="og:image" content="https://c6.staticflickr.com/8/7303/26710119733_3671c6408f.jpg">
+<meta property="og:image" content="https://c8.staticflickr.com/8/7746/26710119783_bc18d18761.jpg">
+<meta property="og:image" content="https://c2.staticflickr.com/8/7134/26710117793_bdc466d35a.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7017/26710119843_a834e1a1ea.jpg">
+<meta property="og:image" content="https://c4.staticflickr.com/8/7595/26710117723_9242b155fd.jpg">
+<meta property="og:image" content="https://c6.staticflickr.com/8/7297/26710117653_d302d9c767.jpg">
+<meta property="og:image" content="https://c8.staticflickr.com/8/7279/26710117503_354e0d894c.jpg">
+<meta property="og:image" content="https://c7.staticflickr.com/8/7317/27283326886_b4c314ac0f.jpg">
+<meta property="og:image" content="https://c7.staticflickr.com/8/7454/27283326846_14915ca19f.jpg">
+<meta property="og:image" content="https://c5.staticflickr.com/8/7193/27283326836_11eb311956.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7511/27283326746_03a39dfb3a.jpg">
+<meta property="og:image" content="https://c5.staticflickr.com/8/7329/27283326716_ba4809fba7.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7346/27283326666_90e795e740.jpg">
+<meta property="og:image" content="https://c1.staticflickr.com/8/7323/27283326576_d537e5cc1f.jpg">
+<meta property="og:image" content="https://c5.staticflickr.com/8/7370/27283716276_bfae86e4d1.jpg">
+<meta property="og:image" content="https://c7.staticflickr.com/8/7008/27283326526_2794cdf909.jpg">
+<meta property="og:image" content="https://c1.staticflickr.com/8/7358/27283326496_41a89bd5ff.jpg">
+<meta property="og:updated_time" content="2016-05-29T01:59:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Memory Management">
+<meta name="twitter:description">
+<meta name="twitter:image" content="https://c7.staticflickr.com/8/7241/27283326326_9cf3700f91.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Byte Ants" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+          <li><a class=""
+                 href="/about us/">About Us</a></li>
+        
+          <li><a class=""
+                 href="/atom.xml">Rss</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Byte Ants</h1>
+  
+    <p class="lead blog-description">Keep on going, never give up!</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-studying notes.operating system.chapter 7" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Memory Management
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/05/28/studying notes.operating system.chapter 7/" class="article-date"><time datetime="2016-05-28T07:00:00.000Z" itemprop="datePublished">2016-05-28</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Studying-Notes/">Studying Notes</a> / <a class="article-category-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://c7.staticflickr.com/8/7241/27283326326_9cf3700f91.jpg" width="500" height="341"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>store data:</p>
+<ul>
+<li>primary storage</li>
+<li>secondary storage</li>
+</ul>
+<p>memory management concerns:</p>
+<ul>
+<li>mapping virtual address to real ones</li>
+<li>determining which address is valid</li>
+<li>keep track of which real object are mapped into virtual address</li>
+<li>deciding what to keep in primary storage and what to fetch from else where</li>
+</ul>
+<p>aim of address space:</p>
+<ul>
+<li>protect processes from one another</li>
+<li>protect OS from user process</li>
+<li>provide large memory illusion,sharing,new abstraction(pipes, memory-mapped files)</li>
+</ul>
+<p>In address space use virtual address, hardware use physical address, OS manage physical address</p>
+<p>memory management unit(MMU):</p>
+<ul>
+<li>one level of indirection</li>
+<li>address out of CPU inner core is virtual</li>
+</ul>
+<p><img src="https://c4.staticflickr.com/8/7711/26710117883_0985bdf784.jpg" width="456" height="292"></p>
+<ul>
+<li>MMU translate virtual address into physical address</li>
+</ul>
+<p><img src="https://c6.staticflickr.com/8/7328/26710117973_5febebb30d.jpg" width="500" height="236"></p>
+<p>memory fence(single user process):</p>
+<ul>
+<li>if user program access OS area, hardware generate a trap</li>
+</ul>
+<p><img src="https://c2.staticflickr.com/8/7389/26710118073_8af9a7ca3b.jpg" width="500" height="226"></p>
+<ul>
+<li>programmer divide user area to overlay and resident, keep track of which overlay in physical memory</li>
+</ul>
+<p><img src="https://c2.staticflickr.com/8/7094/26710118153_233718be6c.jpg" width="500" height="198"></p>
+<p>OS maintain 2 registers for each process:</p>
+<ul>
+<li>base register: start of physical memory</li>
+<li>bounds register: address space size</li>
+<li>address relative to base register</li>
+<li>memory reference independent of base, position independence</li>
+</ul>
+<p><img src="https://c4.staticflickr.com/8/7300/26710118323_469d7d2c5f.jpg" width="500" height="208"></p>
+<p>segmentation:</p>
+<ul>
+<li>have base and bounds registers per segment in MMU</li>
+</ul>
+<p><img src="https://c2.staticflickr.com/8/7311/26710118433_9da3cf37e0.jpg" width="500" height="285"></p>
+<ul>
+<li>have access control bits per segment in MMU</li>
+<li>segments could be shared in physical memory</li>
+<li>segmentation fault: virtual address not in range of any base-bounds register</li>
+</ul>
+<p><img src="https://c6.staticflickr.com/8/7328/26710118493_df4e229a3c.jpg" width="500" height="291"></p>
+<ul>
+<li>memory mapped file: map a file(or part of it) into a segment</li>
+</ul>
+<p><img src="https://c8.staticflickr.com/8/7409/26710118623_c1be21551b.jpg" width="500" height="300"></p>
+<ul>
+<li>shared mapping: all processes share same pages in memory, should share text region</li>
+<li>private mapping: initially share data region， when modified by a process, it gets a new and private copy</li>
+</ul>
+<p><img src="https://c2.staticflickr.com/8/7239/26710118753_b1d8df44ba.jpg" width="500" height="291"></p>
+<ul>
+<li>copy on write(COW): process gets private copy of page after performing a write for the first time</li>
+<li>use a validity bit per segment indicating its existance in physical memory(segment can be swapped out, can start with all segments as swapped out)</li>
+</ul>
+<p><img src="https://c4.staticflickr.com/8/7408/26710118843_c5b17d4d37.jpg" width="500" height="285"></p>
+<p>address space representation:</p>
+<ul>
+<li>contains many as_region(text, data, bss+heap, mapped file, stack)</li>
+<li>as_region contains: start address, length, access permissioins, shared/private, file object</li>
+<li>every segment need a disk image to swapped out, some kernel memory can be locked down to prevent swapped out</li>
+</ul>
+<p><img src="https://c7.staticflickr.com/8/7113/27283326406_18334b2c48.jpg" width="500" height="166"></p>
+<h2 id="Hardware-Support-for-Virtual-Memory"><a href="#Hardware-Support-for-Virtual-Memory" class="headerlink" title="Hardware Support for Virtual Memory"></a>Hardware Support for Virtual Memory</h2><h3 id="Forware-Mapped-Page-Tables"><a href="#Forware-Mapped-Page-Tables" class="headerlink" title="Forware-Mapped Page Tables"></a>Forware-Mapped Page Tables</h3><p>structuring virtual memory:</p>
+<ul>
+<li>segmentation: divide address space into variable-size segments, have external fragmentation, first-fit is slow</li>
+<li>paging: divide address space into fixed-size pages, have internal fragmentation</li>
+</ul>
+<p>paging: page table(memory map) to map virtual to physical pages</p>
+<p>page frame: maintain information about physical pages, one-to-one mapping</p>
+<ul>
+<li>forward lookup: given virtual address, find page frame</li>
+<li>reverse lookup: given page frame, find process and virtual address</li>
+</ul>
+<p><img src="https://c4.staticflickr.com/8/7323/26710118883_8e3b449b3c.jpg" width="380" height="418"></p>
+<p>two-level page table:</p>
+<ul>
+<li>entry contains validity, modified, reference, access protection bits and physical page</li>
+<li>first 20 bits of virtual address used as page number, last 12 bits used as offset in physical page</li>
+<li>analogous to base and bounds registers</li>
+<li>part of process context, sit in physical memory</li>
+<li>physical address of page table is in CR3 register</li>
+</ul>
+<p><img src="https://c8.staticflickr.com/8/7066/26710119023_1750406930.jpg" width="500" height="184"><br><img src="https://c4.staticflickr.com/8/7448/26710119123_ee6c08cb51.jpg" width="500" height="231"></p>
+<p>page-table size too big:</p>
+<ul>
+<li>hash page tables or forward-mapped page tables</li>
+<li>virtual linear page tables</li>
+</ul>
+<p>paged segmentation: </p>
+<ul>
+<li>4-bit seg#, decide which segment table</li>
+<li>16-bit page#, decide which page table</li>
+<li>12-bit offset</li>
+</ul>
+<p><img src="https://c2.staticflickr.com/8/7065/26710119193_0f974bdb6b.jpg" width="500" height="278"></p>
+<p>forward-mapped(multilevel) page table:</p>
+<ul>
+<li>10-bit page dir#, decide which page dir table</li>
+<li>10-bit page#, decide which page table</li>
+<li>12-bit offset</li>
+<li>two physical memory access to map virtual address to physical address</li>
+</ul>
+<p><img src="https://c8.staticflickr.com/8/7239/26710119303_c56084b94d.jpg" width="500" height="279"></p>
+<h3 id="Linear-Page-Tables"><a href="#Linear-Page-Tables" class="headerlink" title="Linear Page Tables"></a>Linear Page Tables</h3><p>linear page table:</p>
+<ul>
+<li>2-bit space, 00 and 01 means the entry points to virtual address space, should map again with prefix 10. 10 means the entry points to physical address space </li>
+<li>21-bit virtual page number</li>
+<li>9-bit offset</li>
+</ul>
+<p><img src="https://c4.staticflickr.com/8/7314/26710119363_e1e2414f7b.jpg" width="500" height="207"></p>
+<ul>
+<li>reduce size requirements with partial page table, use length register</li>
+</ul>
+<p><img src="https://c4.staticflickr.com/8/7336/26710119483_8b4fa6f21d.jpg" width="430" height="395"></p>
+<ul>
+<li>not suitable for multithread programming</li>
+</ul>
+<h3 id="Hashes-Page-Table"><a href="#Hashes-Page-Table" class="headerlink" title="Hashes Page Table"></a>Hashes Page Table</h3><p>hashed page table:</p>
+<ul>
+<li>process page# through hash function, points to a linked list, find right PT entry by comparing tag with page# through list</li>
+<li>only allocated pages are present, works well for sparcely allocated address space</li>
+</ul>
+<p><img src="https://c6.staticflickr.com/8/7400/26710119573_00a08a8949.jpg" width="500" height="277"></p>
+<p>clustered page table: similar to hashed page table, each listnode contain 8 PT entry(reducing overhead)</p>
+<p><img src="https://c6.staticflickr.com/8/7568/26710119653_1a5a0afa8f.jpg" width="500" height="290"></p>
+<p>inverted page table: </p>
+<ul>
+<li>all process share a big page table, indexed by physical page number</li>
+<li>each entry contains: PID, page number, physical page number</li>
+<li>map page number to physical page number through hash function</li>
+</ul>
+<p><img src="https://c6.staticflickr.com/8/7303/26710119733_3671c6408f.jpg" width="500" height="260"></p>
+<h3 id="Translation-Lookaside-Buffer"><a href="#Translation-Lookaside-Buffer" class="headerlink" title="Translation Lookaside Buffer"></a>Translation Lookaside Buffer</h3><p>translation lookaside buffer(TLB): </p>
+<ul>
+<li>cache page table entries</li>
+</ul>
+<p><img src="https://c8.staticflickr.com/8/7746/26710119783_bc18d18761.jpg" width="500" height="320"></p>
+<ul>
+<li>when switching to different process, must flush entrie TLB</li>
+</ul>
+<p><img src="https://c2.staticflickr.com/8/7134/26710117793_bdc466d35a.jpg" width="500" height="318"></p>
+<ul>
+<li>when an entry is modified, OS must flush corresponding TLB entry</li>
+</ul>
+<p><img src="https://c4.staticflickr.com/8/7017/26710119843_a834e1a1ea.jpg" width="500" height="314"></p>
+<ul>
+<li>14-bit tag, 6-bit key(how many lines the TLB has), 12-bit offset</li>
+<li>amount of set-associativity is array size in each line, two-way set-associative store two entry in each line</li>
+</ul>
+<p><img src="https://c4.staticflickr.com/8/7595/26710117723_9242b155fd.jpg" width="500" height="129"></p>
+<ul>
+<li>tag in virtual address is compared against all tags in line simultaneously</li>
+</ul>
+<p>TLB vs page fault:</p>
+<ul>
+<li>penalty for TLB miss is O(1) memory access</li>
+<li>penalty for page fault is trap into kernel</li>
+</ul>
+<p>TLBs and multiprocessors:</p>
+<ul>
+<li>one processor can modify a mapping cached in TLB of another processor</li>
+<li>before modifying mapping, processor 1 must shoot-down TLB of processor 2</li>
+</ul>
+<p><img src="https://c6.staticflickr.com/8/7297/26710117653_d302d9c767.jpg" width="500" height="298"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> all processors i sharing address space:interrupt(i);</span><br><span class="line"><span class="keyword">for</span> all processors i sharing address space:<span class="keyword">while</span>(noted[i]==<span class="number">0</span>);</span><br><span class="line">modify_page_table();</span><br><span class="line">update_or_flush_tlb();</span><br><span class="line">down[me]=<span class="number">1</span>;</span><br><span class="line"><span class="comment">//shootee interrupt handler</span></span><br><span class="line">receive_interrupt_from_processor j</span><br><span class="line">noted[i]=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span>(done[j]==<span class="number">0</span>);</span><br><span class="line">flush_tlb();</span><br></pre></td></tr></table></figure>
+<h3 id="64-Bit-Issues"><a href="#64-Bit-Issues" class="headerlink" title="64-Bit Issues"></a>64-Bit Issues</h3><p>x86-64(AMD) virtual address contains 4 page tables: page map table, page directory pointer table, page directory table, page table</p>
+<p><img src="https://c8.staticflickr.com/8/7279/26710117503_354e0d894c.jpg" width="500" height="307"></p>
+<h2 id="Operating-System-Issues"><a href="#Operating-System-Issues" class="headerlink" title="Operating System Issues"></a>Operating System Issues</h2><h3 id="General-Concerns"><a href="#General-Concerns" class="headerlink" title="General Concerns"></a>General Concerns</h3><p>fetch policy: bring in pages on demand(lazy evaluation), defer processing until absolutely have to do it</p>
+<p><img src="https://c7.staticflickr.com/8/7317/27283326886_b4c314ac0f.jpg" width="500" height="265"></p>
+<p>placement policy: put incoming page in first available physical page</p>
+<p>page fault: page table doesn’t have requested address</p>
+<p>solution for page fault:</p>
+<ul>
+<li>trap occurs</li>
+<li>find free physical page(OS ask buddy system to allocate pages of physical memory(4KB))</li>
+<li>write page out if no free physical page</li>
+<li>fetch page</li>
+<li>return from trap</li>
+</ul>
+<p>solution to reduce page fault:</p>
+<ul>
+<li>prefetching: access to pages is often sequential</li>
+</ul>
+<p><img src="https://c7.staticflickr.com/8/7454/27283326846_14915ca19f.jpg" width="500" height="218"></p>
+<ul>
+<li>pageout daemon: a thread to continuously look for free pages, can use multiple</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7193/27283326836_11eb311956.jpg" width="500" height="313"></p>
+<p>pageout daemon wants to free up a modified/dirty page:</p>
+<ul>
+<li>find which process the page belongs to</li>
+<li>look at memory map and find corresponding backing store, write back page content to disk</li>
+<li>unmap page from corresponding page table</li>
+<li>free page frame</li>
+</ul>
+<p>replacement policy: </p>
+<ul>
+<li>FIFO: first in first out</li>
+<li>LRU: least recently used</li>
+<li>LFU: least frequently used</li>
+</ul>
+<p>LRU: reference bit in page table entry is used</p>
+<ul>
+<li>two-handed clock algorithm: two hands scan entry, front hand make reference bit = 0, after enough time, back hand check reference bit, remove page whose bit = 0</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7511/27283326746_03a39dfb3a.jpg" width="500" height="291"></p>
+<p>manage primary storage:</p>
+<ul>
+<li>global allocation: all processes compete for page frames from a single pool</li>
+<li>local allocation: give each participant a minimum amount of storage, leave additional storage available for all to compete</li>
+</ul>
+<p>working-set principle: </p>
+<ul>
+<li>WS(P,T) is the set of pages used by process P over time T</li>
+<li>if the amount of space isn’t available, P shouldn’t run and should be swapped out</li>
+</ul>
+<h3 id="Representative-Systems"><a href="#Representative-Systems" class="headerlink" title="Representative Systems"></a>Representative Systems</h3><p>memory allocation:</p>
+<ul>
+<li>user: virtual allocation</li>
+<li>OS kernel: virtual and real allocation</li>
+<li>when allocating page frame for user process, these pages are mapped both into user address space and kernel address space</li>
+<li>OS code and data stay still in address space when switching process</li>
+<li>1GB real memory: OS mapped identically and kernel don’t need its own page table</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7329/27283326716_ba4809fba7.jpg" width="500" height="179"></p>
+<ul>
+<li>lots of real memory: 896MB OS mapped identically, 1/8 kernel address space use kmap to map other part in real memory</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7346/27283326666_90e795e740.jpg" width="500" height="291"></p>
+<p>linux divide physical memory into 3 zones:</p>
+<ul>
+<li>DMA zone: locations &lt; 2^24, DMA devide handle 24-bit address</li>
+<li>Normal zone: locations &lt; 2^30 - 2^27, OS data reside here</li>
+<li>HighMem zone: locations &gt; 2^30 - 2^27, strictly for user pages</li>
+</ul>
+<p>each zone’s page divided into 3 list:</p>
+<ul>
+<li>free list: buddy system to maintain</li>
+<li>inactive: picked out by clock algorithm as not recently used, dirty/modified</li>
+<li>active: picked out by clock algorithm as recently used</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7323/27283326576_d537e5cc1f.jpg" width="500" height="360"></p>
+<h3 id="Copy-on-Write-and-Fork"><a href="#Copy-on-Write-and-Fork" class="headerlink" title="Copy on Write and Fork"></a>Copy on Write and Fork</h3><p>fork()/exec() problem:</p>
+<ul>
+<li>naive implementation: actually make copy of parent’s address space, waste much time</li>
+<li>vfork(): give address space to child, efficient, but only works if child does an exec</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7370/27283716276_bfae86e4d1.jpg" width="500" height="310"></p>
+<ul>
+<li>copy on write(lazy evaluation): after fork, r/w change to ro of access control for private page. equivalent to original fork(), faster than it</li>
+</ul>
+<p>shadow object: </p>
+<ul>
+<li>one level of indirection between segment and file object</li>
+</ul>
+<p><img src="https://c7.staticflickr.com/8/7008/27283326526_2794cdf909.jpg" width="257" height="465"></p>
+<ul>
+<li>keep track of pages that were originally copy-on-write but have been modified</li>
+<li>if page referenced in shadow object, it has been modified</li>
+<li>tell where to copy from when need to perform copy-on-write</li>
+<li>for original object, not all page have to be resident, for shadow object, all page have to be resident</li>
+<li>a variable can exist in many different physical pages simultaneously, each contain a different version</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7358/27283326496_41a89bd5ff.jpg" width="500" height="297"></p>
+<h3 id="Backing-Store-Issue"><a href="#Backing-Store-Issue" class="headerlink" title="Backing Store Issue"></a>Backing Store Issue</h3><p>type of mmobj(used to manage page frame):</p>
+<ul>
+<li>file object(vnode)</li>
+<li>shadow object</li>
+<li>anonymous object</li>
+</ul>
+<p>dynamic/heap and stack region initialized with zeros, known as anonymous pages</p>
+<p>backing up pages:</p>
+<ul>
+<li>read-only mapping and read-write shared mapping of files are written back to file</li>
+<li>file referenced in shadow objects and anonymous objects are backed up in swap space</li>
+</ul>
+<p>swap space:(windows: reserved+commited)</p>
+<ul>
+<li>radical-conservative approach: eager evaluation, backing-store space is allocated when virtual memory is allocated</li>
+<li>radical-liberal approach: lazy evaluation, backing-store space is allocated only when needed</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.byteants.com/2016/05/28/studying notes.operating system.chapter 7/" data-id="cios7mn5y001z52s55urrj3xn" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://www.byteants.com/2016/05/28/studying notes.operating system.chapter 7/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/05/27/studying notes.operating system.chapter 6/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">File System</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2016/05/28/Stock Search Android APP – Adapter of ListView/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Stock Search Android APP – Adapter of ListView</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Yifei Wang: USC graduate student majored in computer science(wangyife@usc.edu)<a href="https://www.linkedin.com/in/wangyife">LinkedIn</a></p> <p>Shizhou Liu: USC graduate student majored in computer science(shizhoul@usc.edu)<a href="https://www.linkedin.com/in/liushizhou">LinkedIn</a></p> <p>Tong Zhao: USC graduate student majored in computer science(zhaot@usc.edu)<a href="https://www.linkedin.com/in/tongzhao7">LinkedIn</a></p> <a href="/about%20us">Read more</a>
+
+</div>
+
+
+  <form class="search" action="" method="get" accept-charset="utf-8">
+		<input type="text" class="st-default-search-input" maxlength="20" style="height:40px" placeholder="Search" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','frvDju66MkEemPb8C_ph','2.0.0');
+</script>
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/LeetCode/">LeetCode</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/">Project</a><span class="sidebar-module-list-count">19</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Android-Develop/">Android Develop</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Berkeley-Cs61b/">Berkeley Cs61b</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Intro-to-Computer-Science/">Intro to Computer Science</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Web-Develop/">Web Develop</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/">Studying Notes</a><span class="sidebar-module-list-count">9</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-Systems/">Operating Systems</a><span class="sidebar-module-list-count">2</span></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AJAX/">AJAX</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Adapter/">Adapter</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Android/">Android</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Angular-js/">Angular.js</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AsyncTask/">AsyncTask</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/BackTracking/">BackTracking</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Balanced-Search-Tree/">Balanced Search Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Binary-Search-Tree/">Binary Search Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bootstrap/">Bootstrap</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Breadth-First-Search/">Breadth-First Search</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Compression/">Compression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Decompression/">Decompression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Depth-First-Search/">Depth-First Search</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Dictionary/">Dictionary</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Directed-Graph/">Directed Graph</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Ford-Fulkerson/">Ford-Fulkerson</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Game-Tree/">Game Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Graph/">Graph</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/HTML/">HTML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JSON/">JSON</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JavaScript/">JavaScript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/LinkedList/">LinkedList</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/List/">List</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/ListView/">ListView</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Maxflow/">Maxflow</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/OS/">OS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/PHP/">PHP</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Priority-Queue/">Priority Queue</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Queue/">Queue</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Recursion/">Recursion</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Sorting/">Sorting</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Tree/">Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/TrieTree/">TrieTree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Union-Find/">Union-Find</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Web-Crawler/">Web Crawler</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/XML/">XML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/file-systems/">file systems</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/jQuery/">jQuery</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/virtual-memory/">virtual memory</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="/tags/AsyncTask/" style="font-size: 10px;">AsyncTask</a> <a href="/tags/BackTracking/" style="font-size: 10px;">BackTracking</a> <a href="/tags/Balanced-Search-Tree/" style="font-size: 10px;">Balanced Search Tree</a> <a href="/tags/Binary-Search-Tree/" style="font-size: 12.5px;">Binary Search Tree</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Breadth-First-Search/" style="font-size: 10px;">Breadth-First Search</a> <a href="/tags/Compression/" style="font-size: 10px;">Compression</a> <a href="/tags/Decompression/" style="font-size: 10px;">Decompression</a> <a href="/tags/Depth-First-Search/" style="font-size: 12.5px;">Depth-First Search</a> <a href="/tags/Dictionary/" style="font-size: 10px;">Dictionary</a> <a href="/tags/Directed-Graph/" style="font-size: 10px;">Directed Graph</a> <a href="/tags/Ford-Fulkerson/" style="font-size: 10px;">Ford-Fulkerson</a> <a href="/tags/Game-Tree/" style="font-size: 10px;">Game Tree</a> <a href="/tags/Graph/" style="font-size: 12.5px;">Graph</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 12.5px;">LinkedList</a> <a href="/tags/List/" style="font-size: 17.5px;">List</a> <a href="/tags/ListView/" style="font-size: 10px;">ListView</a> <a href="/tags/Maxflow/" style="font-size: 10px;">Maxflow</a> <a href="/tags/OS/" style="font-size: 12.5px;">OS</a> <a href="/tags/PHP/" style="font-size: 12.5px;">PHP</a> <a href="/tags/Priority-Queue/" style="font-size: 10px;">Priority Queue</a> <a href="/tags/Queue/" style="font-size: 12.5px;">Queue</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Tree/" style="font-size: 12.5px;">Tree</a> <a href="/tags/TrieTree/" style="font-size: 10px;">TrieTree</a> <a href="/tags/Union-Find/" style="font-size: 10px;">Union-Find</a> <a href="/tags/Web-Crawler/" style="font-size: 10px;">Web Crawler</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/file-systems/" style="font-size: 10px;">file systems</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/virtual-memory/" style="font-size: 10px;">virtual memory</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">15</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/04/">April 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/02/">February 2016</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2016/05/31/studying notes.database.1/">(no title)</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/Stock Search Android APP – Adapter of ListView/">Stock Search Android APP – Adapter of ListView</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/studying notes.operating system.chapter 7/">Memory Management</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/studying notes.operating system.chapter 6/">File System</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/Stock Search Android APP -- AsyncTask/">Stock Search Android APP – AsyncTask</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+  <div class="widget tag">
+<h4 class="title">Useful Links</h4>
+<a href="http://www.tongzhao.me" title="Tong Zhao's blog">Tong Zhao</a>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Yifei Wang, Shizhou Liu, Tong Zhao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/about us/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/2016/05/28/studying notes.operating system.chapter 7/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+<a href="https://github.com/xiaofeixiawang"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>

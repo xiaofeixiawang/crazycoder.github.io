@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Basic Concepts of Operating System | Byte Ants</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basic Concepts of Operating System">
+<meta property="og:url" content="http://www.byteants.com/2016/05/22/studying notes.operating system.chapter 3/index.html">
+<meta property="og:site_name" content="Byte Ants">
+<meta property="og:description">
+<meta property="og:image" content="https://farm8.staticflickr.com/7446/27153713506_f5fa809db2_z.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7686/27153713456_878c2b8cc1_z.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7272/27153713396_00a5b5750d_z.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7246/27153713266_bd0ef7981c.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7302/27091544582_e364ffd921.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7613/27153713136_8abf3ded99.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7492/27153713036_eb343eebd6.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7349/27153712966_05842fd774.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7326/27153712866_dd95368e49.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7632/27153712796_8e486553c7.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7022/27153712726_4acdbab3fe.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7773/27091543002_b8646b07f3.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7066/27091542612_e2332f15fd.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7295/27091542482_4889d5e125.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7346/27091542112_eec607f144.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7126/26580986714_dd94faff5a.jpg">
+<meta property="og:image" content="https://farm8.staticflickr.com/7746/26580986494_273a7baf45.jpg">
+<meta property="og:updated_time" content="2016-05-29T02:01:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic Concepts of Operating System">
+<meta name="twitter:description">
+<meta name="twitter:image" content="https://farm8.staticflickr.com/7446/27153713506_f5fa809db2_z.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Byte Ants" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+          <li><a class=""
+                 href="/about us/">About Us</a></li>
+        
+          <li><a class=""
+                 href="/atom.xml">Rss</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Byte Ants</h1>
+  
+    <p class="lead blog-description">Keep on going, never give up!</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-studying notes.operating system.chapter 3" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Basic Concepts of Operating System
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/05/22/studying notes.operating system.chapter 3/" class="article-date"><time datetime="2016-05-22T07:00:00.000Z" itemprop="datePublished">2016-05-22</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Studying-Notes/">Studying Notes</a> / <a class="article-category-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://farm8.staticflickr.com/7446/27153713506_f5fa809db2_z.jpg" width="640" height="207"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="Context-Switching"><a href="#Context-Switching" class="headerlink" title="Context Switching"></a>Context Switching</h3><p>OS switch applications transparently, each application don’t know other applications’ existance</p>
+<p>execution context contains(stored in TCB):</p>
+<ul>
+<li>current state of the thread</li>
+<li>CPU registers: instruction pointer, stack pointer, base/frame pointer</li>
+<li>stack</li>
+<li>open files</li>
+</ul>
+<p>in stack frame, a routine should store from high to low address:</p>
+<ul>
+<li>args, eip, ebp, saved registers, local variables</li>
+<li>esp points to the end of current stack frame, prepare for next stack frame</li>
+<li>eip contains caller’s instruction pointer register, is return address</li>
+<li>ebp contains caller’s base(frame) pointer register, link to the caller’s ebp</li>
+<li>eax contains return value of a function</li>
+<li><p>args and eip are set by caller, others are set by callee</p>
+<p>  <img src="https://farm8.staticflickr.com/7686/27153713456_878c2b8cc1_z.jpg" width="593" height="414"></p>
+</li>
+</ul>
+<p>there can be stuff between stack frames</p>
+<p>routine code:</p>
+<ul>
+<li>set up stack frame</li>
+<li>push args</li>
+<li>pop args, get result</li>
+<li>set return value and restore frame</li>
+</ul>
+<p>coroutine linkage: threads transfer control from one thread to another</p>
+<p><img src="https://farm8.staticflickr.com/7272/27153713396_00a5b5750d_z.jpg" width="640" height="378"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">switch</span><span class="params">(<span class="keyword">thread_t</span> *next_thread)</span></span>&#123;</span><br><span class="line">	CurrentThread-&gt;SP=SP;</span><br><span class="line">	CurrentThread=next_thread;</span><br><span class="line">	SP=CurrentThread-&gt;SP;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>if TCB were user-space data structure, threads are switched without getting the kernel involved</p>
+<p>one thread enters the switch() call, and a different thread leaves the switch() call</p>
+<p>system calls: user code access kernel in a controlled manner:</p>
+<ul>
+<li>from user mode to priviledged mode, from user stack to kernel stack</li>
+<li>set things up</li>
+<li>traps(software interrupt) into kernel by executing a special machine instruction</li>
+<li><p>kernel handles the trap</p>
+<p>  <img src="https://farm8.staticflickr.com/7246/27153713266_bd0ef7981c.jpg" width="294" height="220"><br>  <img src="https://farm8.staticflickr.com/7302/27091544582_e364ffd921.jpg" width="463" height="272"></p>
+</li>
+</ul>
+<p>process on trap:</p>
+<ul>
+<li>trap into kernel with interrupt disabled, set to kernel mode</li>
+<li>Hardware Abstractioin Layer save IP and SP in interrupt stack, HAL is hardware-dependent</li>
+<li>HAL set SP to point to kernel stack</li>
+<li>HAL set IP to interrupt handler</li>
+<li>pop IP and SP from interrupt stack, push onto kernel stack, re-enable interrupt</li>
+<li>on return from trap handler, disable interrupt, return to user process</li>
+<li>similar to hardware interrupt</li>
+</ul>
+<p>signal generated by kernel, delivered to user process<br>interrupt generated by hardware, delivered to HAL then kernel</p>
+<p>when interrupt occur:</p>
+<ul>
+<li>processor switch to an interrupt context</li>
+<li>previous context can be a thread context/another interrupt context</li>
+<li>when interrupt handler finish, processor resume original context</li>
+</ul>
+<p>interrupt context stored in interrupt stack: borrowed kernel stack from the thread it is interrupting</p>
+<p><img src="https://farm8.staticflickr.com/7613/27153713136_8abf3ded99.jpg" width="500" height="346"></p>
+<p>the handler of the most recent interrupt must run to completion, so interrupt service routine should do as little as possible:</p>
+<ul>
+<li>interrupt handler place most work on a queue, doing them in some other context later</li>
+<li>still need to do 2 things in interrupt handler: unblock a kernel thread, start the next I/O operation</li>
+</ul>
+<p>a interrupt is pending if generated but masked, when unmasked, it’s delievered</p>
+<p>approaches to mask interrupt:</p>
+<ul>
+<li>bit vector/mask:<ul>
+<li>set a bit to enable/disable such interrupt</li>
+<li>when an interrupt occur, the corresponding bit is set to block other interrupt of the same class</li>
+<li>cleared when the handler return</li>
+</ul>
+</li>
+<li>hierarchical interrupt levels:<ul>
+<li>processor set Interrupt Priority Level in hardware register</li>
+<li>all interrupt with current or lower level are masked</li>
+<li>kernel mask interrupt by setting IPL to a value</li>
+<li>when an interrupt occur, IPL is set to that value</li>
+<li>restore previous value on handler return</li>
+</ul>
+</li>
+</ul>
+<h3 id="Input-Output-Architectures"><a href="#Input-Output-Architectures" class="headerlink" title="Input/Output Architectures"></a>Input/Output Architectures</h3><p>memory-mapped I/O:</p>
+<ul>
+<li>device connect to controller, controller listen on the bus to determine request</li>
+<li>memory controller pass bus request to memory</li>
+<li><p>other controller process request, response to address</p>
+<p>  <img src="https://farm8.staticflickr.com/7492/27153713036_eb343eebd6.jpg" width="500" height="148"></p>
+</li>
+</ul>
+<p>categories of devices:</p>
+<ul>
+<li>PIO(programmed I/O): read/write data in controller registers one byte at a time</li>
+<li>DMA(direct memory access):<ul>
+<li>controller perform I/O itself</li>
+<li>process tell controller where to transfer data</li>
+<li>controller take over and transfer data</li>
+</ul>
+</li>
+</ul>
+<p>device driver:</p>
+<ul>
+<li>a standard interface to OS</li>
+<li>code in it know how to talk to device</li>
+<li><p>OS treat I/O in a device-independent manner, using an array of function pointers</p>
+<p>  <img src="https://farm8.staticflickr.com/7349/27153712966_05842fd774.jpg" width="500" height="218"></p>
+</li>
+</ul>
+<p>C++ polymorphism achieved using virtual base class, each device driver is a subclass, those class is often asynchronous</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> disk&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">virtual</span> handle_t <span class="title">start_read</span><span class="params">(<span class="keyword">request_t</span>)</span></span>=<span class="number">0</span>;</span><br><span class="line">		<span class="function"><span class="keyword">virtual</span> handle_t <span class="title">start_write</span><span class="params">(<span class="keyword">request_t</span>)</span></span>=<span class="number">0</span>;</span><br><span class="line">		<span class="function"><span class="keyword">virtual</span> status_t <span class="title">wait</span><span class="params">(<span class="keyword">handle_t</span>)</span></span>=<span class="number">0</span>;</span><br><span class="line">		<span class="function"><span class="keyword">virtual</span> status_t <span class="title">interrupt</span><span class="params">()</span></span>=<span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Dynamic-Storage-Allocation"><a href="#Dynamic-Storage-Allocation" class="headerlink" title="Dynamic Storage Allocation"></a>Dynamic Storage Allocation</h3><p>dynamic storage allocation:</p>
+<ul>
+<li>best-fit</li>
+<li>first-fit</li>
+<li>buddy system</li>
+<li>slab allocation</li>
+</ul>
+<p>first-fit works better compared to best-fit, best-fit leave many small memory regions, both have external gragmentation</p>
+<p>fragmentation:</p>
+<ul>
+<li>internal fragmentation</li>
+<li>external fragmentation</li>
+</ul>
+<p>first-fit data structure:</p>
+<ul>
+<li>a doubly-linked list of free blocks</li>
+<li>free block contains: <ul>
+<li>prefix: in-use flag(4KB), size(total)(4KB), prev(4KB), next(4KB)</li>
+<li>suffix: in-use flag(4KB), size(total)(4KB)</li>
+</ul>
+</li>
+<li>in-use block contains:<ul>
+<li>prefix: in-use flag(4KB), size(total)(4KB)</li>
+<li>suffix: in-use flag(4KB), size(total)(4KB)</li>
+</ul>
+</li>
+<li><p>free block: check the block before it and after it, if neither of them are free, need to insert this block into the free list, else need to merge/coalesce the block with neighboring free block</p>
+<p>  <img src="https://farm8.staticflickr.com/7326/27153712866_dd95368e49.jpg" width="500" height="299"><br>  <img src="https://farm8.staticflickr.com/7632/27153712796_8e486553c7.jpg" width="500" height="224"></p>
+</li>
+</ul>
+<p>first-fit algorithm: malloc() is O(n), free(ptr) is O(n)</p>
+<p>buddy system: </p>
+<ul>
+<li>blocks evenly divided into two as buddies with each other</li>
+<li>can only merge with buddy</li>
+<li><p>have internal fragmentation</p>
+<p>  <img src="https://farm8.staticflickr.com/7022/27153712726_4acdbab3fe.jpg" width="500" height="311"></p>
+</li>
+</ul>
+<p>buddy system data structure:</p>
+<ul>
+<li>doubly-linked list free list indexed by k</li>
+<li><p>each block contains: in-use bit, size, next and prev links for free list</p>
+<p>  <img src="https://farm8.staticflickr.com/7773/27091543002_b8646b07f3.jpg" width="500" height="107"></p>
+</li>
+</ul>
+<p>slab allocation:</p>
+<ul>
+<li>set up separate cache for each type of object in kernel</li>
+<li>contiguous sets of pages called slabs, allocated to hold objects</li>
+<li>slabs are initialized in advance, objects taking from the existing slabs in cache</li>
+<li><p>free object: simply marked as free</p>
+<p>  <img src="https://farm8.staticflickr.com/7066/27091542612_e2332f15fd.jpg" width="500" height="439"></p>
+</li>
+</ul>
+<h3 id="Linking-amp-Loading"><a href="#Linking-amp-Loading" class="headerlink" title="Linking &amp; Loading"></a>Linking &amp; Loading</h3><p>location independent: everything in code can be accessed relative to frame pointer, use relative address</p>
+<p>relocation:</p>
+<ul>
+<li>modify internal reference in memory depends on where module load(exec load program into memory)</li>
+<li>module requiring relocation is relocatable</li>
+<li>modifying module to resolve references is relocation</li>
+<li>program performing relocation is linker</li>
+</ul>
+<p>function of linker:</p>
+<ul>
+<li>relocation</li>
+<li>symbol resolution</li>
+</ul>
+<p>loader load program into memory, relocating loader can also do relocation</p>
+<p>.c file compiled into .o file(relocatable modules), where have instruction for ld, then ld(linker&amp;loader) modify .o file, copy into executable file</p>
+<p>.o file contains data, bss and text sections, each section contains:</p>
+<ul>
+<li>global symbols</li>
+<li>undefined symbols</li>
+<li><p>instructions for relocation</p>
+<p>  <img src="https://farm8.staticflickr.com/7295/27091542482_4889d5e125.jpg" width="500" height="322"></p>
+</li>
+</ul>
+<p>ld’s work:</p>
+<ul>
+<li>lay out address space</li>
+<li>allocate memory in pages(4KB)</li>
+<li>main don’t start from location 0, making first page inaccessible</li>
+<li><p>data segment start at a page boundary so that both segments have different access type(read-only/read-write)</p>
+<p>  <img src="https://farm8.staticflickr.com/7346/27091542112_eec607f144.jpg" width="338" height="358"></p>
+</li>
+</ul>
+<p>library:</p>
+<ul>
+<li>a collection of .o files</li>
+<li>linker create libraries</li>
+<li>two types: static library, dynamic(shared) library</li>
+</ul>
+<p>when compiling, order of libraries matter</p>
+<p>problem for static library:</p>
+<ul>
+<li>execute file must contain everything for execution</li>
+<li>have duplicate code, taking up disk space and memory</li>
+<li><p>need a way to share code on disk and memory</p>
+<p>  <img src="https://farm8.staticflickr.com/7126/26580986714_dd94faff5a.jpg" width="500" height="150"></p>
+</li>
+</ul>
+<p>solutions:</p>
+<ul>
+<li>limited sharing: relocate separately for each process</li>
+<li>prerelocation: relocate libraries ahead of time</li>
+<li>position-independent code: each process maintains a private table, pointed to by register. table contains address of shared routines</li>
+</ul>
+<p>shared libraries:</p>
+<ul>
+<li>called Dynamic-Link Libraries in Windows, and shared objects in Unix</li>
+<li>don’t need to load when program start up, can load on demand</li>
+</ul>
+<p>disadvantages of shared libraries:</p>
+<ul>
+<li>have dependencies</li>
+<li>different versions of same library</li>
+</ul>
+<p>linking and loading on linux with ELF:</p>
+<ul>
+<li>x86 ELF</li>
+<li>creating and using a shared library</li>
+<li>substitution</li>
+<li>shared library details</li>
+<li>versioning</li>
+<li>dynamic linking</li>
+<li>interpositioining</li>
+</ul>
+<p>procedure of invoking program:</p>
+<ul>
+<li>given control to ld.so, the run-time linker</li>
+<li>ld does some initial set up of linkages</li>
+<li>call the actual program code</li>
+<li>may called on later to do some further loading and linking</li>
+</ul>
+<p>versioning about libmyputs.so.1.0:</p>
+<ul>
+<li>real name: libmyputs.so.1.0</li>
+<li>soname: libmyputs.so.1</li>
+<li>linker name: libmyputs.so</li>
+</ul>
+<h3 id="Booting"><a href="#Booting" class="headerlink" title="Booting"></a>Booting</h3><p>boot: load its OS into memory</p>
+<p>solution: load a tiny OS into memory(bootstrap loader): </p>
+<ul>
+<li>hard-wired to always run the code contained in its on-board read-only memory</li>
+<li>read bootstrap loader from floppy disk</li>
+<li>load OS from root directory of first file system on primary disk</li>
+</ul>
+<p>floppy disk would handle:</p>
+<ul>
+<li>disk device</li>
+<li>on-disk file system</li>
+<li>need the right device driver</li>
+<li>need to know how disk is partitioned</li>
+</ul>
+<p>new bootstrap loader, basic input-output system(BIOS):</p>
+<ul>
+<li>code stored in read-only memory(ROM)</li>
+<li>configuration data in non-volatile RAM(NVRAM), like CMOS</li>
+<li>provide three functions:<ul>
+<li>power-on self test(POST): know where to load boot program</li>
+<li>load/transfer control to boot program</li>
+<li>provide drivers for all device</li>
+</ul>
+</li>
+</ul>
+<p>on power-on, CPU execute BIOS(located in last 64KB of first 1GB of address space), start executing startup(the last 16 bytes of this region), jump to POST</p>
+<p>POST:</p>
+<ul>
+<li>initialize hardware</li>
+<li>counts memory locations</li>
+<li>find a boot device</li>
+<li>load the Master Boot Record(MBR) from first sector of boot device</li>
+</ul>
+<p>MBR contains magic number, partition table, boot program:</p>
+<ul>
+<li><p>one of partitions in partition table is active, that’s boot point:</p>
+<ul>
+<li>load first sector from it: contains volume boot program</li>
+<li><p>pass control to it</p>
+<p><img src="https://farm8.staticflickr.com/7746/26580986494_273a7baf45.jpg" width="315" height="472"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>linux booting:</p>
+<ul>
+<li>provided by either lilo or grub</li>
+<li>set up stack, clear BSS, uncompress kernel, transfer control to it</li>
+<li>process 0 is created, set up initial page table, turn on address translation</li>
+<li>initialize rest of kernel, create init process, invoke the scheduler</li>
+</ul>
+<p>BIOS device drivers:</p>
+<ul>
+<li>BIO provide drivers for all devices</li>
+<li>these drivers sat in low memory and provided minimal functionality</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.byteants.com/2016/05/22/studying notes.operating system.chapter 3/" data-id="cios7mn59001g52s5v1lbi3gb" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://www.byteants.com/2016/05/22/studying notes.operating system.chapter 3/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/05/21/studying notes.operating system.chapter 2/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Multithreaded Programming</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2016/05/24/Stock Search Android APP/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Stock Search Android APP</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Yifei Wang: USC graduate student majored in computer science(wangyife@usc.edu)<a href="https://www.linkedin.com/in/wangyife">LinkedIn</a></p> <p>Shizhou Liu: USC graduate student majored in computer science(shizhoul@usc.edu)<a href="https://www.linkedin.com/in/liushizhou">LinkedIn</a></p> <p>Tong Zhao: USC graduate student majored in computer science(zhaot@usc.edu)<a href="https://www.linkedin.com/in/tongzhao7">LinkedIn</a></p> <a href="/about%20us">Read more</a>
+
+</div>
+
+
+  <form class="search" action="" method="get" accept-charset="utf-8">
+		<input type="text" class="st-default-search-input" maxlength="20" style="height:40px" placeholder="Search" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','frvDju66MkEemPb8C_ph','2.0.0');
+</script>
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/LeetCode/">LeetCode</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/">Project</a><span class="sidebar-module-list-count">19</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Android-Develop/">Android Develop</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Berkeley-Cs61b/">Berkeley Cs61b</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Intro-to-Computer-Science/">Intro to Computer Science</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Web-Develop/">Web Develop</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/">Studying Notes</a><span class="sidebar-module-list-count">9</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-Systems/">Operating Systems</a><span class="sidebar-module-list-count">2</span></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AJAX/">AJAX</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Adapter/">Adapter</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Android/">Android</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Angular-js/">Angular.js</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AsyncTask/">AsyncTask</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/BackTracking/">BackTracking</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Balanced-Search-Tree/">Balanced Search Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Binary-Search-Tree/">Binary Search Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bootstrap/">Bootstrap</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Breadth-First-Search/">Breadth-First Search</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Compression/">Compression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Decompression/">Decompression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Depth-First-Search/">Depth-First Search</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Dictionary/">Dictionary</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Directed-Graph/">Directed Graph</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Ford-Fulkerson/">Ford-Fulkerson</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Game-Tree/">Game Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Graph/">Graph</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/HTML/">HTML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JSON/">JSON</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JavaScript/">JavaScript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/LinkedList/">LinkedList</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/List/">List</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/ListView/">ListView</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Maxflow/">Maxflow</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/OS/">OS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/PHP/">PHP</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Priority-Queue/">Priority Queue</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Queue/">Queue</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Recursion/">Recursion</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Sorting/">Sorting</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Tree/">Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/TrieTree/">TrieTree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Union-Find/">Union-Find</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Web-Crawler/">Web Crawler</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/XML/">XML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/file-systems/">file systems</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/jQuery/">jQuery</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/virtual-memory/">virtual memory</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="/tags/AsyncTask/" style="font-size: 10px;">AsyncTask</a> <a href="/tags/BackTracking/" style="font-size: 10px;">BackTracking</a> <a href="/tags/Balanced-Search-Tree/" style="font-size: 10px;">Balanced Search Tree</a> <a href="/tags/Binary-Search-Tree/" style="font-size: 12.5px;">Binary Search Tree</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Breadth-First-Search/" style="font-size: 10px;">Breadth-First Search</a> <a href="/tags/Compression/" style="font-size: 10px;">Compression</a> <a href="/tags/Decompression/" style="font-size: 10px;">Decompression</a> <a href="/tags/Depth-First-Search/" style="font-size: 12.5px;">Depth-First Search</a> <a href="/tags/Dictionary/" style="font-size: 10px;">Dictionary</a> <a href="/tags/Directed-Graph/" style="font-size: 10px;">Directed Graph</a> <a href="/tags/Ford-Fulkerson/" style="font-size: 10px;">Ford-Fulkerson</a> <a href="/tags/Game-Tree/" style="font-size: 10px;">Game Tree</a> <a href="/tags/Graph/" style="font-size: 12.5px;">Graph</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 12.5px;">LinkedList</a> <a href="/tags/List/" style="font-size: 17.5px;">List</a> <a href="/tags/ListView/" style="font-size: 10px;">ListView</a> <a href="/tags/Maxflow/" style="font-size: 10px;">Maxflow</a> <a href="/tags/OS/" style="font-size: 12.5px;">OS</a> <a href="/tags/PHP/" style="font-size: 12.5px;">PHP</a> <a href="/tags/Priority-Queue/" style="font-size: 10px;">Priority Queue</a> <a href="/tags/Queue/" style="font-size: 12.5px;">Queue</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Tree/" style="font-size: 12.5px;">Tree</a> <a href="/tags/TrieTree/" style="font-size: 10px;">TrieTree</a> <a href="/tags/Union-Find/" style="font-size: 10px;">Union-Find</a> <a href="/tags/Web-Crawler/" style="font-size: 10px;">Web Crawler</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/file-systems/" style="font-size: 10px;">file systems</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/virtual-memory/" style="font-size: 10px;">virtual memory</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">15</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/04/">April 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/02/">February 2016</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2016/05/31/studying notes.database.1/">(no title)</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/Stock Search Android APP – Adapter of ListView/">Stock Search Android APP – Adapter of ListView</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/studying notes.operating system.chapter 7/">Memory Management</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/studying notes.operating system.chapter 6/">File System</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/Stock Search Android APP -- AsyncTask/">Stock Search Android APP – AsyncTask</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+  <div class="widget tag">
+<h4 class="title">Useful Links</h4>
+<a href="http://www.tongzhao.me" title="Tong Zhao's blog">Tong Zhao</a>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Yifei Wang, Shizhou Liu, Tong Zhao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/about us/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/2016/05/22/studying notes.operating system.chapter 3/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+<a href="https://github.com/xiaofeixiawang"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
