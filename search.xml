@@ -41,36 +41,36 @@
 <table>
 <thead>
 <tr>
-<th><font size="1">  (none) </font></th>
-<th><font size="1">  Relational  </font></th>
-<th><font size="1">  XML  </font></th>
+<th><font size="2">  (none) </font></th>
+<th><font size="2">  Relational  </font></th>
+<th><font size="2">  XML  </font></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><font size="1">  structure </font></td>
-<td><font size="1">  tables  </font></td>
-<td><font size="1">  hierarchical tree, graph  </font></td>
+<td><font size="2">  structure </font></td>
+<td><font size="2">  tables  </font></td>
+<td><font size="2">  hierarchical tree, graph  </font></td>
 </tr>
 <tr>
-<td><font size="1">  schema </font></td>
-<td><font size="1">  fixed in advance  </font></td>
-<td><font size="1">  flexible, self-describing  </font></td>
+<td><font size="2">  schema </font></td>
+<td><font size="2">  fixed in advance  </font></td>
+<td><font size="2">  flexible, self-describing  </font></td>
 </tr>
 <tr>
-<td><font size="1">  queries </font></td>
-<td><font size="1">  simple, nice  </font></td>
-<td><font size="1">  less so  </font></td>
+<td><font size="2">  queries </font></td>
+<td><font size="2">  simple, nice  </font></td>
+<td><font size="2">  less so  </font></td>
 </tr>
 <tr>
-<td><font size="1">  ordering </font></td>
-<td><font size="1">  none  </font></td>
-<td><font size="1">  implied  </font></td>
+<td><font size="2">  ordering </font></td>
+<td><font size="2">  none  </font></td>
+<td><font size="2">  implied  </font></td>
 </tr>
 <tr>
-<td><font size="1">  implementation </font></td>
-<td><font size="1">  native  </font></td>
-<td><font size="1">  add-on  </font></td>
+<td><font size="2">  implementation </font></td>
+<td><font size="2">  native  </font></td>
+<td><font size="2">  add-on  </font></td>
 </tr>
 </tbody>
 </table>

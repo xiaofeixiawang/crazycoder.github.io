@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.byteants.com/"/>
-  <updated>2016-06-02T04:25:59.000Z</updated>
+  <updated>2016-06-02T04:28:03.000Z</updated>
   <id>http://www.byteants.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.byteants.com/2016/05/31/studying%20notes.database.1/"/>
     <id>http://www.byteants.com/2016/05/31/studying notes.database.1/</id>
     <published>2016-05-31T07:00:00.000Z</published>
-    <updated>2016-06-02T04:25:59.000Z</updated>
+    <updated>2016-06-02T04:28:03.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;Introduction-and-Relational-Databases&quot;&gt;&lt;a href=&quot;#Introduction-and-Relational-Databases&quot; class=&quot;headerlink&quot; title=&quot;Introduction and Relational Databases&quot;&gt;&lt;/a&gt;Introduction and Relational Databases&lt;/h2&gt;&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable&lt;/p&gt;
 &lt;p&gt;database applications may be programmed via “frameworks”; DBMS may run in conjunction with “midleware”; data-intensive applications may not use DBMS at all&lt;/p&gt;
@@ -57,36 +57,36 @@
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;&lt;font size=&quot;1&quot;&gt;  (none) &lt;/font&gt;&lt;/th&gt;
-&lt;th&gt;&lt;font size=&quot;1&quot;&gt;  Relational  &lt;/font&gt;&lt;/th&gt;
-&lt;th&gt;&lt;font size=&quot;1&quot;&gt;  XML  &lt;/font&gt;&lt;/th&gt;
+&lt;th&gt;&lt;font size=&quot;2&quot;&gt;  (none) &lt;/font&gt;&lt;/th&gt;
+&lt;th&gt;&lt;font size=&quot;2&quot;&gt;  Relational  &lt;/font&gt;&lt;/th&gt;
+&lt;th&gt;&lt;font size=&quot;2&quot;&gt;  XML  &lt;/font&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  structure &lt;/font&gt;&lt;/td&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  tables  &lt;/font&gt;&lt;/td&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  hierarchical tree, graph  &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  structure &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  tables  &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  hierarchical tree, graph  &lt;/font&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  schema &lt;/font&gt;&lt;/td&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  fixed in advance  &lt;/font&gt;&lt;/td&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  flexible, self-describing  &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  schema &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  fixed in advance  &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  flexible, self-describing  &lt;/font&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  queries &lt;/font&gt;&lt;/td&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  simple, nice  &lt;/font&gt;&lt;/td&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  less so  &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  queries &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  simple, nice  &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  less so  &lt;/font&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  ordering &lt;/font&gt;&lt;/td&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  none  &lt;/font&gt;&lt;/td&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  implied  &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  ordering &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  none  &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  implied  &lt;/font&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  implementation &lt;/font&gt;&lt;/td&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  native  &lt;/font&gt;&lt;/td&gt;
-&lt;td&gt;&lt;font size=&quot;1&quot;&gt;  add-on  &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  implementation &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  native  &lt;/font&gt;&lt;/td&gt;
+&lt;td&gt;&lt;font size=&quot;2&quot;&gt;  add-on  &lt;/font&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
