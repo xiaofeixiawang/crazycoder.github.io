@@ -3,23 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>KdTree | Byte Ants</title>
+  <title>Tag: DTD | Byte Ants</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Introduction
-The k-d tree is a binary tree in which every node is a k-dimensional point. Every non-leaf node can be thought of as implicitly generating a splitting hyperplane that divides the space i">
-<meta property="og:type" content="article">
-<meta property="og:title" content="KdTree">
-<meta property="og:url" content="http://www.byteants.com/2016/02/28/KdTree/index.html">
+  <meta name="description" content="A blog recoding computer science projects, data structures and algorithms">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Byte Ants">
+<meta property="og:url" content="http://www.byteants.com/tags/DTD/index.html">
 <meta property="og:site_name" content="Byte Ants">
-<meta property="og:description" content="Introduction
-The k-d tree is a binary tree in which every node is a k-dimensional point. Every non-leaf node can be thought of as implicitly generating a splitting hyperplane that divides the space i">
-<meta property="og:image" content="https://farm2.staticflickr.com/1638/25284856443_8862b317c4_m.jpg">
-<meta property="og:updated_time" content="2016-04-11T23:36:45.000Z">
+<meta property="og:description" content="A blog recoding computer science projects, data structures and algorithms">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KdTree">
-<meta name="twitter:description" content="Introduction
-The k-d tree is a binary tree in which every node is a k-dimensional point. Every non-leaf node can be thought of as implicitly generating a splitting hyperplane that divides the space i">
-<meta name="twitter:image" content="https://farm2.staticflickr.com/1638/25284856443_8862b317c4_m.jpg">
+<meta name="twitter:title" content="Byte Ants">
+<meta name="twitter:description" content="A blog recoding computer science projects, data structures and algorithms">
   
     <link rel="alternate" href="/atom.xml" title="Byte Ants" type="application/atom+xml">
   
@@ -90,153 +84,41 @@ The k-d tree is a binary tree in which every node is a k-dimensional point. Ever
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-KdTree" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
+          
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <header class="archive-article-header">
     
   
-    <h1 class="article-title" itemprop="name">
-      KdTree
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/05/31/studying notes.database.1/">Introduction, Relational Database and XML</a>
     </h1>
   
 
 
-  </header>
-
-  <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2016/02/28/KdTree/" class="article-date"><time datetime="2016-02-28T08:00:00.000Z" itemprop="datePublished">2016-02-28</time></a>
+  <a href="/2016/05/31/studying notes.database.1/" class="archive-article-date"><time datetime="2016-05-31T07:00:00.000Z" itemprop="datePublished">May 31st</time></a>
 </div>
 
-    
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Project/">Project</a> / <a class="article-category-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a>
-  </div>
-
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://farm2.staticflickr.com/1638/25284856443_8862b317c4_m.jpg" width="145" height="143"></p>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><blockquote>
-<font size="2">The k-d tree is a binary tree in which every node is a k-dimensional point. Every non-leaf node can be thought of as implicitly generating a splitting hyperplane that divides the space into two parts, known as half-spaces. Points to the left of this hyperplane are represented by the left subtree of that node and points right of the hyperplane are represented by the right subtree. - <a href="https://en.wikipedia.org/wiki/K-d_tree" target="_blank" rel="external">wikipedia</a></font>
-
-</blockquote>
-<p>k-d trees are useful data structure for several applications, such as searches involving a multidimensional search key (e.g. range searches and nearest neighbor searches). k-d trees are a special case of binary space partitioning trees.</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="Balanced-search-tree"><a href="#Balanced-search-tree" class="headerlink" title="Balanced search tree"></a>Balanced search tree</h3><blockquote>
-<font size="2">Balanced search tree is a kind of node-based binary search tree where costs are guaranteed to be logarithmic. Such trees hvae near-perfect balance, where the height is guaranteed to be no larger than 2lgN. This structures provide efficient implementations for mutable ordered lists, and can be used for other abstract data structures such as associative arrays, priority queues and sets. - <a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree" target="_blank" rel="external">wikipedia</a></font>
-
-
-</blockquote>
-<table>
-<thead>
-<tr>
-<th><font size="1">  data structure </font></th>
-<th><font size="1">  search hit  </font></th>
-<th><font size="1">  insert  </font></th>
-<th><font size="1">  delete  </font></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><font size="1">  binary search tree </font></td>
-<td><font size="1">  1.39lgN  </font></td>
-<td><font size="1">  1.39lgN  </font></td>
-<td><font size="1">  ?  </font></td>
-</tr>
-<tr>
-<td><font size="1">  2-3 tree(BST) </font></td>
-<td><font size="1">  clgN  </font></td>
-<td><font size="1">  clgN  </font></td>
-<td><font size="1">  clgN  </font></td>
-</tr>
-<tr>
-<td><font size="1">  red-black BST </font></td>
-<td><font size="1">  lgN  </font></td>
-<td><font size="1">  lgN  </font></td>
-<td><font size="1">  lgN  </font></td>
-</tr>
-</tbody>
-</table>
-<font size="1"><strong>time complexity of different data structures in average case</strong></font>
-
-<hr>
-<h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p>For this project, we usc both red-black BST and 2d-tree to represent a set of points in the unit square to support efficient range search and nearest neighbor search.</p>
-<p>The goal of this project is to implement class for red-black BST and 2d-tree. Both of them have the below interfaces.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PointSET</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span>         <span class="title">PointSET</span><span class="params">()</span>                               <span class="comment">// construct an empty set of points </span></span><br><span class="line">   <span class="keyword">public</span>           <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span>                      <span class="comment">// is the set empty? </span></span><br><span class="line">   <span class="keyword">public</span>               <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span>                         <span class="comment">// number of points in the set </span></span><br><span class="line">   <span class="keyword">public</span>              <span class="keyword">void</span> <span class="title">insert</span><span class="params">(Point2D p)</span>              <span class="comment">// add the point to the set (if it is not already in the set)</span></span><br><span class="line">   <span class="keyword">public</span>           <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Point2D p)</span>            <span class="comment">// does the set contain point p? </span></span><br><span class="line">   <span class="keyword">public</span>              <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span>                         <span class="comment">// draw all points to standard draw </span></span><br><span class="line">   <span class="keyword">public</span> Iterable&lt;Point2D&gt; <span class="title">range</span><span class="params">(RectHV rect)</span>             <span class="comment">// all points that are inside the rectangle </span></span><br><span class="line">   <span class="keyword">public</span>           Point2D <span class="title">nearest</span><span class="params">(Point2D p)</span>             <span class="comment">// a nearest neighbor in the set to point p; null if the set is empty </span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>                  <span class="comment">// unit testing of the methods (optional) </span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p>This class will use two predefined classes named Point2D and RectHV. Below are their interfaces.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Point2D</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Point2D</span>&gt; </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Point2D</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y)</span>              <span class="comment">// construct the point (x, y)</span></span><br><span class="line">   <span class="keyword">public</span>  <span class="keyword">double</span> <span class="title">x</span><span class="params">()</span>                              <span class="comment">// x-coordinate </span></span><br><span class="line">   <span class="keyword">public</span>  <span class="keyword">double</span> <span class="title">y</span><span class="params">()</span>                              <span class="comment">// y-coordinate </span></span><br><span class="line">   <span class="keyword">public</span>  <span class="keyword">double</span> <span class="title">distanceTo</span><span class="params">(Point2D that)</span>         <span class="comment">// Euclidean distance between two points </span></span><br><span class="line">   <span class="keyword">public</span>  <span class="keyword">double</span> <span class="title">distanceSquaredTo</span><span class="params">(Point2D that)</span>  <span class="comment">// square of Euclidean distance between two points </span></span><br><span class="line">   <span class="keyword">public</span>     <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Point2D that)</span>          <span class="comment">// for use in an ordered symbol table </span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object that)</span>              <span class="comment">// does this point equal that object? </span></span><br><span class="line">   <span class="keyword">public</span>    <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span>                           <span class="comment">// draw to standard draw </span></span><br><span class="line">   <span class="keyword">public</span>  String <span class="title">toString</span><span class="params">()</span>                       <span class="comment">// string representation </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class RectHV </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span>    <span class="title">RectHV</span><span class="params">(<span class="keyword">double</span> xmin, <span class="keyword">double</span> ymin,      // construct the rectangle [xmin, xmax] x [ymin, ymax] </span><br><span class="line">                    <span class="keyword">double</span> xmax, <span class="keyword">double</span> ymax)</span>      <span class="comment">// throw a java.lang.IllegalArgumentException if (xmin &gt; xmax) or (ymin &gt; ymax)</span></span><br><span class="line">   <span class="keyword">public</span>  <span class="keyword">double</span> <span class="title">xmin</span><span class="params">()</span>                           <span class="comment">// minimum x-coordinate of rectangle </span></span><br><span class="line">   <span class="keyword">public</span>  <span class="keyword">double</span> <span class="title">ymin</span><span class="params">()</span>                           <span class="comment">// minimum y-coordinate of rectangle </span></span><br><span class="line">   <span class="keyword">public</span>  <span class="keyword">double</span> <span class="title">xmax</span><span class="params">()</span>                           <span class="comment">// maximum x-coordinate of rectangle </span></span><br><span class="line">   <span class="keyword">public</span>  <span class="keyword">double</span> <span class="title">ymax</span><span class="params">()</span>                           <span class="comment">// maximum y-coordinate of rectangle </span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Point2D p)</span>              <span class="comment">// does this rectangle contain the point p (either inside or on boundary)? </span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">intersects</span><span class="params">(RectHV that)</span>          <span class="comment">// does this rectangle intersect that rectangle (at one or more points)? </span></span><br><span class="line">   <span class="keyword">public</span>  <span class="keyword">double</span> <span class="title">distanceTo</span><span class="params">(Point2D p)</span>            <span class="comment">// Euclidean distance from point p to closest point in rectangle </span></span><br><span class="line">   <span class="keyword">public</span>  <span class="keyword">double</span> <span class="title">distanceSquaredTo</span><span class="params">(Point2D p)</span>     <span class="comment">// square of Euclidean distance from point p to closest point in rectangle </span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object that)</span>              <span class="comment">// does this rectangle equal that object? </span></span><br><span class="line">   <span class="keyword">public</span>    <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span>                           <span class="comment">// draw to standard draw </span></span><br><span class="line">   <span class="keyword">public</span>  String <span class="title">toString</span><span class="params">()</span>                       <span class="comment">// string representation </span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p><strong>Note:</strong></p>
-<ol>
-<li>in 2d-tree, we create a class Node to store each point, which contains two chindren and a boolean to judge whether this node is compared by x or y value. Search and insert operations are similar to BST, but at the root we use the x-coordinate, then at the next level, we use the y-coordiate, then at the next level the x-coordiate, and so forth.</li>
-<li>For the range search operation, if the query rectangle does not intersect the rectangle corresponding to a node, we don’t need to explore this subtrees.</li>
-<li>For the nearest neighbor search operation, if distance with current closest point is smaller than the distance between the query point and the rectangle corresponding to a node, we don’t need to explore this subtrees.</li>
-</ol>
-</blockquote>
-<ul>
-<li><p><a href="http://coursera.cs.princeton.edu/algs4/assignments/kdtree.html" target="_blank" rel="external">project detail discription</a></p>
-</li>
-<li><p><a href="https://github.com/xiaofeixiawang/algorithms/tree/master/princeton_hw5/src" target="_blank" rel="external">github code link</a></p>
-</li>
-</ul>
-<hr>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://www.byteants.com/2016/02/28/KdTree/" data-id="cios7mn3p000e52s5a7mg4tos" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-        <a href="http://www.byteants.com/2016/02/28/KdTree/#disqus_thread" class="article-comment-link">
-          <i class="fa fa-comment"></i> Comments
-        </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Balanced-Search-Tree/">Balanced Search Tree</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Binary-Search-Tree/">Binary Search Tree</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-    
-<ul id="article-nav" class="nav nav-pills nav-justified">
-  
-  <li role="presentation">
-    <a href="/2016/02/26/8.Puzzle/" id="article-nav-older" class="article-nav-link-wrap">
-      <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">8 Puzzle</span>
-    </a>
-  </li>
-  
-  
-  <li role="presentation">
-    <a href="/2016/03/01/webcrawler/" id="article-nav-newer" class="article-nav-link-wrap">
-      <span class="article-nav-link-title">Web Crawler</span>
-      <i class="fa fa-chevron-right pull-right"></i>
-    </a>
-  </li>
-  
-</ul>
-
-
-  
+  </header>
 </article>
 
+  
+  
+    </div></section>
+  
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 
 
 
@@ -361,13 +243,11 @@ The k-d tree is a binary tree in which every node is a k-dimensional point. Ever
 <script>
   var disqus_shortname = 'byteants';
   
-  var disqus_url = 'http://www.byteants.com/2016/02/28/KdTree/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
