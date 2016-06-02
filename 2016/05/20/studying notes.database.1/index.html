@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Introduction, Relational Database and XML | Byte Ants</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Introduction, Relational Database and XML">
+<meta property="og:url" content="http://www.byteants.com/2016/05/20/studying notes.database.1/index.html">
+<meta property="og:site_name" content="Byte Ants">
+<meta property="og:description">
+<meta property="og:updated_time" content="2016-06-02T04:21:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Introduction, Relational Database and XML">
+<meta name="twitter:description">
+  
+    <link rel="alternate" href="/atom.xml" title="Byte Ants" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+          <li><a class=""
+                 href="/about us/">About Us</a></li>
+        
+          <li><a class=""
+                 href="/atom.xml">Rss</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Byte Ants</h1>
+  
+    <p class="lead blog-description">Keep on going, never give up!</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-studying notes.database.1" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Introduction, Relational Database and XML
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/05/20/studying notes.database.1/" class="article-date"><time datetime="2016-05-20T07:00:00.000Z" itemprop="datePublished">2016-05-20</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Studying-Notes/">Studying Notes</a> / <a class="article-category-link" href="/categories/Studying-Notes/Database/">Database</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="Introduction-and-Relational-Databases"><a href="#Introduction-and-Relational-Databases" class="headerlink" title="Introduction and Relational Databases"></a>Introduction and Relational Databases</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable</p>
+<p>database applications may be programmed via “frameworks”; DBMS may run in conjunction with “midleware”; data-intensive applications may not use DBMS at all</p>
+<p>data model: a description of how data is structured. eg: relational data model(a set of records), XML(hierarchical structure, labeled values), graph data model(nodes and edges)</p>
+<p>schema versus data: like types and variables in programming language. schema sets up structure of database</p>
+<p>data definition language(DDL): used to set up a schema</p>
+<p>data manipulation or query language(DML): used to querying and modifying the data</p>
+<p>people about database: DBMS implementer(build system), database designer(establish schema), database application developer(program operate on database), database administrator(loads data, keeps running smoothly)</p>
+<h3 id="The-Relational-Model"><a href="#The-Relational-Model" class="headerlink" title="The Relational Model"></a>The Relational Model</h3><p>database is set of named relations or tables; each table has a set of named attributes or columns; each tuple or row has a value for each attribute; each attribute has a type or domain(integer, domain)</p>
+<p>schema is structural description of relations in database; instance is actual contents at given point in time</p>
+<p>NULL: special value for “unknown” or “undefined”</p>
+<p>key: attribute whose value is unique in each tuple or set of attributes whose combined values are unique</p>
+<p>creating tables in SQL:<br>create table student(ID, name, GPA, photo)<br>create table college(name string, state char(2), enrollment integer)</p>
+<h3 id="Querying-Relational-Databases"><a href="#Querying-Relational-Databases" class="headerlink" title="Querying Relational Databases"></a>Querying Relational Databases</h3><p>steps in creating and using a relational database:</p>
+<ul>
+<li>design schema; create using DDL</li>
+<li>“bulk load” initial data</li>
+<li>repeat: execute queries and modifications</li>
+</ul>
+<p>queries return tables(compositional, closed)</p>
+<p>query language:</p>
+<ul>
+<li>relational algebra(formal)</li>
+<li>SQL(actual/implemented)</li>
+</ul>
+<h2 id="XML-Data"><a href="#XML-Data" class="headerlink" title="XML Data"></a>XML Data</h2><h3 id="Well-formed-XML"><a href="#Well-formed-XML" class="headerlink" title="Well-formed XML"></a>Well-formed XML</h3><p>Extensible Markup Language(XML): standard for data representation and exchange; document format similar to HTML(tags describe content instead of formatting); also have streaming format</p>
+<p>basic constructs: </p>
+<ul>
+<li>tagged elements(nested): opening tag, text or other sub-elements, closing tag</li>
+<li>attributes: within element’s opening tag; attribute name, the equal sign and attribute value</li>
+<li>text: like leaf element in tree(XML)</li>
+</ul>
+<p>relational model versus XML:<br>|<font size="1">  (none) </font> |<font size="1">  Relational  </font>|<font size="1">  XML  </font>|<br>| :| |<br>|<font size="1">  structure </font> |<font size="1">  tables  </font>|<font size="1">  hierarchical tree, graph  </font>|<br>|<font size="1">  schema </font> |<font size="1">  fixed in advance  </font>|<font size="1">  flexible, self-describing  </font>|<br>|<font size="1">  queries </font> |<font size="1">  simple, nice  </font>|<font size="1">  less so  </font>|<br>|<font size="1">  ordering </font> |<font size="1">  none  </font>|<font size="1">  implied  </font>|<br>|<font size="1">  implementation </font> |<font size="1">  native  </font>|<font size="1">  add-on  </font>|</p>
+<h3 id="DTDs-IDs-amp-IDREFs"><a href="#DTDs-IDs-amp-IDREFs" class="headerlink" title="DTDs, IDs &amp; IDREFs"></a>DTDs, IDs &amp; IDREFs</h3><p>XML adhere to basic structural requirement: single root element; matched tags, proper nesting; unique attributes within elements</p>
+<p>XML also adhere to content-specific specification:</p>
+<ul>
+<li>Document Type Descriptor(DTD)</li>
+<li>XML Schema(XSD)</li>
+</ul>
+<p>DTD: grammar-like language for specifying elements, attributes, nesting, ordering, #occurrences; also special attribute types ID and IDREFS(specify pointers in document)</p>
+<p>DTD/XSD versus none (well-formed):</p>
+<ul>
+<li>+: programs can assume structure; CSS/XSL can assume structure; as a specification language(data exchange); specification for documentation</li>
+<li>-: flexibility, easy to change; DTDs/XSDs can be messy and irregular</li>
+</ul>
+<p>Demo 1 of XML:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;Bookstore&gt;</span><br><span class="line">	&lt;Book ISBN=&quot;ISBN-0-13-713526-2&quot; Price=&quot;85&quot; Edition=&quot;3rd&quot;&gt;</span><br><span class="line">		&lt;Title&gt;A First Course in Database Systems&lt;/Title&gt;</span><br><span class="line">		&lt;Authors&gt;</span><br><span class="line">			&lt;Author&gt;</span><br><span class="line">				&lt;First_Name&gt;Jeffrey&lt;/First_Name&gt;</span><br><span class="line">				&lt;Last_Name&gt;Ullman&lt;/Last_Name&gt;</span><br><span class="line">			&lt;/Author&gt;</span><br><span class="line">			&lt;Author&gt;</span><br><span class="line">				&lt;First_Name&gt;Jennifer&lt;/First_Name&gt;</span><br><span class="line">				&lt;Last_Name&gt;Widom&lt;/Last_Name&gt;</span><br><span class="line">			&lt;/Author&gt;</span><br><span class="line">		&lt;/Authors&gt;</span><br><span class="line">	&lt;/Book&gt;</span><br><span class="line">	&lt;Book ISBN=&quot;ISBN-0-13-815504-6&quot; Price=&quot;100&quot;&gt;</span><br><span class="line">		&lt;Title&gt;Database Systems: The Complete Book&lt;/Title&gt;</span><br><span class="line">		&lt;Authors&gt;</span><br><span class="line">			&lt;Author&gt;</span><br><span class="line">				&lt;First_Name&gt;Hector&lt;/First_Name&gt;</span><br><span class="line">				&lt;Last_Name&gt;Garcia-Molina&lt;/Last_Name&gt;</span><br><span class="line">			&lt;/Author&gt;</span><br><span class="line">			&lt;Author&gt;</span><br><span class="line">				&lt;First_Name&gt;Jeffrey&lt;/First_Name&gt;</span><br><span class="line">				&lt;Last_Name&gt;Ullman&lt;/Last_Name&gt;</span><br><span class="line">			&lt;/Author&gt;</span><br><span class="line">			&lt;Author&gt;</span><br><span class="line">				&lt;First_Name&gt;Jennifer&lt;/First_Name&gt;</span><br><span class="line">				&lt;Last_Name&gt;Widom&lt;/Last_Name&gt;</span><br><span class="line">			&lt;/Author&gt;</span><br><span class="line">		&lt;/Authors&gt;</span><br><span class="line">		&lt;Remark&gt;</span><br><span class="line">			Buy this book bundled with &quot;A First Course&quot; - a great deal!</span><br><span class="line">		&lt;/Remark&gt;</span><br><span class="line">	&lt;/Book&gt;</span><br><span class="line">&lt;/Bookstore&gt;</span><br></pre></td></tr></table></figure></p>
+<p>root element is Bookstore, has two Book sub-elements.<br>the first book has an ISBN number, price and editions as attributes.</p>
+<p>Demo 1 of DTD:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE Bookstore [</span><br><span class="line">	&lt;!ELEMENT Bookstore (Book | Magazine)*&gt;</span><br><span class="line">	&lt;!ELEMENT Book (Title, Authors, Remark?)&gt;</span><br><span class="line">	&lt;!ATTLIST Book 	ISBN CDATA #REQUIRED</span><br><span class="line">					Price CDATA #REQUIRED</span><br><span class="line">					Edition CDATA #IMPLIED&gt;</span><br><span class="line">	&lt;!ELEMENT Magazine (Title)&gt;</span><br><span class="line">	&lt;!ATTLIST Magazine 	Month CDATA #REQUIRED</span><br><span class="line">						Year CDATA #REQUIRED&gt;</span><br><span class="line">	&lt;!ELEMENT Title (#PCDATA)&gt;</span><br><span class="line">	&lt;!ELEMENT Authors (Author+)&gt;</span><br><span class="line">	&lt;!ELEMENT Remark (#PCDATA)&gt;</span><br><span class="line">	&lt;!ELEMENT Author (First_Name, Last_Name)&gt;</span><br><span class="line">	&lt;!ELEMENT First_Name (#PCDATA)&gt;</span><br><span class="line">	&lt;!ELEMENT Last_Name (#PCDATA)&gt;</span><br><span class="line">]&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Like regular expression. This DTD named Bookstore and root element called bookstore, having any number of elements that called book or magazine.<br>Book element has a title followed by authors, followed by an optional remark in this order.<br>Book has 3 attributes: ISBN, price, edition. CDATA is type of attribute, same as string. Required means attributes must be present, implied means it doesn’t have to.<br>Title is a leaf consist of string data, so add hash PC data in parentheses in DTD.</p>
+<p>Demo 2 of XML:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;Bookstore&gt;</span><br><span class="line">	&lt;Book ISBN=&quot;ISBN-0-13-713526-2&quot; Price=&quot;100&quot; Authors=&quot;JU JW&quot;&gt;</span><br><span class="line">		&lt;Title&gt;A First Course in Database Systems&lt;/Title&gt;</span><br><span class="line">	&lt;/Book&gt;</span><br><span class="line">	&lt;Book ISBN=&quot;ISBN-0-13-815504-6&quot; Price=&quot;85&quot; Authors=&quot;HG JU JW&quot;&gt;</span><br><span class="line">		&lt;Title&gt;Database Systems: The Complete Book&lt;/Title&gt;</span><br><span class="line">		&lt;Remark&gt;</span><br><span class="line">			Amazon.com says: Buy this book bundled with</span><br><span class="line">			&lt;BookRef book=&quot;ISBN-0-13-713526-2&quot;/&gt;</span><br><span class="line">			- a great deal!</span><br><span class="line">		&lt;/Remark&gt;</span><br><span class="line">	&lt;/Book&gt;</span><br><span class="line">	&lt;Author Ident=&quot;HG&quot;&gt;</span><br><span class="line">		&lt;First_Name&gt;Hector&lt;/First_Name&gt;</span><br><span class="line">		&lt;Last_Name&gt;Garcia-Molina&lt;/Last_Name&gt;</span><br><span class="line">	&lt;/Author&gt;</span><br><span class="line">	&lt;Author Ident=&quot;JU&quot;&gt;</span><br><span class="line">		&lt;First_Name&gt;Jeffrey&lt;/First_Name&gt;</span><br><span class="line">		&lt;Last_Name&gt;Ullman&lt;/Last_Name&gt;</span><br><span class="line">	&lt;/Author&gt;</span><br><span class="line">	&lt;Author Ident=&quot;JW&quot;&gt;</span><br><span class="line">		&lt;First_Name&gt;Jennifer&lt;/First_Name&gt;</span><br><span class="line">		&lt;Last_Name&gt;Widom&lt;/Last_Name&gt;</span><br><span class="line">	&lt;/Author&gt;</span><br><span class="line">&lt;/Bookstore&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Book has ID refs attribute authors and its value can refer to one or more strings that are ID attributes.<br>Author element has ident attribute as ID type.<br>ISBN is an ID attribute for book element and BookRef element has ID refs attribute book.</p>
+<p>Demo 2 of DTD:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE Bookstore [</span><br><span class="line">	&lt;!ELEMENT Bookstore (Book*, Author*)&gt;</span><br><span class="line">	&lt;!ELEMENT Book (Title, Remark?)&gt;</span><br><span class="line">	&lt;!ATTLIST Book 	ISBN ID #REQUIRED</span><br><span class="line">					Price CDATA #REQUIRED</span><br><span class="line">					Authors IDREFS #REQUIRED&gt;</span><br><span class="line">	&lt;!ELEMENT Title (#PCDATA)&gt;</span><br><span class="line">	&lt;!ELEMENT Remark (#PCDATA | BookRef)*&gt;</span><br><span class="line">	&lt;!ELEMENT BookRef EMPTY&gt;</span><br><span class="line">	&lt;!ATTLIST BookRef book IDREF #REQUIRED&gt;</span><br><span class="line">	&lt;!ELEMENT Author (First_Name, Last_Name)&gt;</span><br><span class="line">	&lt;!ATTLIST Author Ident ID #REQUIRED&gt;</span><br><span class="line">	&lt;!ELEMENT First_Name (#PCDATA)&gt;</span><br><span class="line">	&lt;!ELEMENT Last_Name (#PCDATA)&gt;</span><br><span class="line">]&gt;</span><br></pre></td></tr></table></figure></p>
+<p>Book has a ID attribute ISBN and a IDREFS attribute Authors.<br>Remark consist of the PC data(string) or a book reference and zero more instances of those.<br>BookRef is an empty element and has a IDREF attribute book.</p>
+<h3 id="XML-Schema"><a href="#XML-Schema" class="headerlink" title="XML Schema"></a>XML Schema</h3><p>XSD: </p>
+<ul>
+<li>extensive language</li>
+<li>like DTDs, can specify elements, attributes, nesting, ordering, #occurrences</li>
+<li>also data types, keys, (typed)pointers, and more</li>
+<li>written in XML</li>
+</ul>
+<p>demo of XSD:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; ?&gt;</span><br><span class="line">&lt;!-- XSD for Bookstore-XSD.xml --&gt;</span><br><span class="line"></span><br><span class="line">&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;</span><br><span class="line">   &lt;xsd:element name=&quot;Bookstore&quot;&gt;</span><br><span class="line">      &lt;xsd:complexType&gt;</span><br><span class="line">         &lt;xsd:sequence&gt;</span><br><span class="line">            &lt;xsd:element name=&quot;Book&quot; type=&quot;BookType&quot;</span><br><span class="line">                         minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /&gt;</span><br><span class="line">            &lt;xsd:element name=&quot;Author&quot; type=&quot;AuthorType&quot;</span><br><span class="line">                         minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot; /&gt;</span><br><span class="line">         &lt;/xsd:sequence&gt;</span><br><span class="line">      &lt;/xsd:complexType&gt;</span><br><span class="line">      &lt;xsd:key name=&quot;BookKey&quot;&gt;</span><br><span class="line">         &lt;xsd:selector xpath=&quot;Book&quot; /&gt;</span><br><span class="line">         &lt;xsd:field xpath=&quot;@ISBN&quot; /&gt;</span><br><span class="line">      &lt;/xsd:key&gt;</span><br><span class="line">      &lt;xsd:key name=&quot;AuthorKey&quot;&gt;</span><br><span class="line">         &lt;xsd:selector xpath=&quot;Author&quot; /&gt;</span><br><span class="line">         &lt;xsd:field xpath=&quot;@Ident&quot; /&gt;</span><br><span class="line">      &lt;/xsd:key&gt;</span><br><span class="line">      &lt;xsd:keyref name=&quot;AuthorKeyRef&quot; refer=&quot;AuthorKey&quot;&gt;</span><br><span class="line">         &lt;xsd:selector xpath=&quot;Book/Authors/Auth&quot; /&gt;</span><br><span class="line">         &lt;xsd:field xpath=&quot;@authIdent&quot; /&gt;</span><br><span class="line">      &lt;/xsd:keyref&gt;</span><br><span class="line">      &lt;xsd:keyref name=&quot;BookKeyRef&quot; refer=&quot;BookKey&quot;&gt;</span><br><span class="line">         &lt;xsd:selector xpath=&quot;Book/Remark/BookRef&quot; /&gt;</span><br><span class="line">         &lt;xsd:field xpath=&quot;@book&quot; /&gt;</span><br><span class="line">      &lt;/xsd:keyref&gt;</span><br><span class="line">   &lt;/xsd:element&gt;</span><br><span class="line">   &lt;xsd:complexType name=&quot;BookType&quot;&gt;</span><br><span class="line">      &lt;xsd:sequence&gt;</span><br><span class="line">         &lt;xsd:element name=&quot;Title&quot; type=&quot;xsd:string&quot; /&gt;</span><br><span class="line">         &lt;xsd:element name=&quot;Authors&quot;&gt;</span><br><span class="line">            &lt;xsd:complexType&gt;</span><br><span class="line">               &lt;xsd:sequence&gt;</span><br><span class="line">                  &lt;xsd:element name=&quot;Auth&quot; maxOccurs=&quot;unbounded&quot;&gt;</span><br><span class="line">                     &lt;xsd:complexType&gt;</span><br><span class="line">                        &lt;xsd:attribute name=&quot;authIdent&quot; type=&quot;xsd:string&quot;</span><br><span class="line">                                       use=&quot;required&quot; /&gt;</span><br><span class="line">                     &lt;/xsd:complexType&gt;</span><br><span class="line">                  &lt;/xsd:element&gt;</span><br><span class="line">               &lt;/xsd:sequence&gt;</span><br><span class="line">            &lt;/xsd:complexType&gt;</span><br><span class="line">         &lt;/xsd:element&gt;</span><br><span class="line">         &lt;xsd:element name=&quot;Remark&quot; minOccurs=&quot;0&quot;&gt;</span><br><span class="line">            &lt;xsd:complexType mixed=&quot;true&quot;&gt;</span><br><span class="line">               &lt;xsd:sequence&gt;</span><br><span class="line">                  &lt;xsd:element name=&quot;BookRef&quot; minOccurs=&quot;0&quot;</span><br><span class="line">                               maxOccurs=&quot;unbounded&quot;&gt;</span><br><span class="line">                     &lt;xsd:complexType&gt;</span><br><span class="line">                        &lt;xsd:attribute name=&quot;book&quot; type=&quot;xsd:string&quot;</span><br><span class="line">                                       use=&quot;required&quot; /&gt;</span><br><span class="line">                     &lt;/xsd:complexType&gt;</span><br><span class="line">                  &lt;/xsd:element&gt;</span><br><span class="line">               &lt;/xsd:sequence&gt;</span><br><span class="line">            &lt;/xsd:complexType&gt;</span><br><span class="line">         &lt;/xsd:element&gt;</span><br><span class="line">      &lt;/xsd:sequence&gt;</span><br><span class="line">      &lt;xsd:attribute name=&quot;ISBN&quot; type=&quot;xsd:string&quot; use=&quot;required&quot; /&gt;</span><br><span class="line">      &lt;xsd:attribute name=&quot;Price&quot; type=&quot;xsd:integer&quot; use=&quot;required&quot; /&gt;</span><br><span class="line">   &lt;/xsd:complexType&gt;</span><br><span class="line">   &lt;xsd:complexType name=&quot;AuthorType&quot;&gt;</span><br><span class="line">      &lt;xsd:sequence&gt;</span><br><span class="line">         &lt;xsd:element name=&quot;First_Name&quot; type=&quot;xsd:string&quot; /&gt;</span><br><span class="line">         &lt;xsd:element name=&quot;Last_Name&quot; type=&quot;xsd:string&quot; /&gt;</span><br><span class="line">      &lt;/xsd:sequence&gt;</span><br><span class="line">      &lt;xsd:attribute name=&quot;Ident&quot; type=&quot;xsd:string&quot; use=&quot;required&quot; /&gt;</span><br><span class="line">   &lt;/xsd:complexType&gt;</span><br><span class="line">&lt;/xsd:schema&gt;</span><br></pre></td></tr></table></figure></p>
+<p>difference from DTD:</p>
+<ul>
+<li>typed values: attribute/element have types other than string</li>
+<li>key declarations: similar to ID, have selector and field, not to be globally unique</li>
+<li>references: specific key have specific reference, also have selector and field</li>
+<li>currents constraints: can specify how many times an element type is allowed to occur</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.byteants.com/2016/05/20/studying notes.database.1/" data-id="ciowfq2re00005bs5eh2gk29b" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://www.byteants.com/2016/05/20/studying notes.database.1/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/05/20/studying notes.operating system.chapter 1/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Introduction to Operating System</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2016/05/21/filesystemsreview/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">File Systems</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Yifei Wang: USC graduate student majored in computer science(wangyife@usc.edu)<a href="https://www.linkedin.com/in/wangyife">LinkedIn</a></p> <p>Shizhou Liu: USC graduate student majored in computer science(shizhoul@usc.edu)<a href="https://www.linkedin.com/in/liushizhou">LinkedIn</a></p> <p>Tong Zhao: USC graduate student majored in computer science(zhaot@usc.edu)<a href="https://www.linkedin.com/in/tongzhao7">LinkedIn</a></p> <a href="/about%20us">Read more</a>
+
+</div>
+
+
+  <form class="search" action="" method="get" accept-charset="utf-8">
+		<input type="text" class="st-default-search-input" maxlength="20" style="height:40px" placeholder="Search" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','frvDju66MkEemPb8C_ph','2.0.0');
+</script>
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/LeetCode/">LeetCode</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/">Project</a><span class="sidebar-module-list-count">19</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Android-Develop/">Android Develop</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Berkeley-Cs61b/">Berkeley Cs61b</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Intro-to-Computer-Science/">Intro to Computer Science</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Web-Develop/">Web Develop</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/">Studying Notes</a><span class="sidebar-module-list-count">10</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Database/">Database</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-Systems/">Operating Systems</a><span class="sidebar-module-list-count">2</span></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AJAX/">AJAX</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Adapter/">Adapter</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Android/">Android</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Angular-js/">Angular.js</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AsyncTask/">AsyncTask</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/BackTracking/">BackTracking</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Balanced-Search-Tree/">Balanced Search Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Binary-Search-Tree/">Binary Search Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bootstrap/">Bootstrap</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Breadth-First-Search/">Breadth-First Search</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Compression/">Compression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Decompression/">Decompression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Depth-First-Search/">Depth-First Search</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Dictionary/">Dictionary</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Directed-Graph/">Directed Graph</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Ford-Fulkerson/">Ford-Fulkerson</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Game-Tree/">Game Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Graph/">Graph</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/HTML/">HTML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JSON/">JSON</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JavaScript/">JavaScript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/LinkedList/">LinkedList</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/List/">List</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/ListView/">ListView</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Maxflow/">Maxflow</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/OS/">OS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/PHP/">PHP</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Priority-Queue/">Priority Queue</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Queue/">Queue</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Recursion/">Recursion</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Sorting/">Sorting</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Tree/">Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/TrieTree/">TrieTree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Union-Find/">Union-Find</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Web-Crawler/">Web Crawler</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/XML/">XML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/file-systems/">file systems</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/jQuery/">jQuery</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/virtual-memory/">virtual memory</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="/tags/AsyncTask/" style="font-size: 10px;">AsyncTask</a> <a href="/tags/BackTracking/" style="font-size: 10px;">BackTracking</a> <a href="/tags/Balanced-Search-Tree/" style="font-size: 10px;">Balanced Search Tree</a> <a href="/tags/Binary-Search-Tree/" style="font-size: 12.5px;">Binary Search Tree</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Breadth-First-Search/" style="font-size: 10px;">Breadth-First Search</a> <a href="/tags/Compression/" style="font-size: 10px;">Compression</a> <a href="/tags/Decompression/" style="font-size: 10px;">Decompression</a> <a href="/tags/Depth-First-Search/" style="font-size: 12.5px;">Depth-First Search</a> <a href="/tags/Dictionary/" style="font-size: 10px;">Dictionary</a> <a href="/tags/Directed-Graph/" style="font-size: 10px;">Directed Graph</a> <a href="/tags/Ford-Fulkerson/" style="font-size: 10px;">Ford-Fulkerson</a> <a href="/tags/Game-Tree/" style="font-size: 10px;">Game Tree</a> <a href="/tags/Graph/" style="font-size: 12.5px;">Graph</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 12.5px;">LinkedList</a> <a href="/tags/List/" style="font-size: 17.5px;">List</a> <a href="/tags/ListView/" style="font-size: 10px;">ListView</a> <a href="/tags/Maxflow/" style="font-size: 10px;">Maxflow</a> <a href="/tags/OS/" style="font-size: 12.5px;">OS</a> <a href="/tags/PHP/" style="font-size: 12.5px;">PHP</a> <a href="/tags/Priority-Queue/" style="font-size: 10px;">Priority Queue</a> <a href="/tags/Queue/" style="font-size: 12.5px;">Queue</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Tree/" style="font-size: 12.5px;">Tree</a> <a href="/tags/TrieTree/" style="font-size: 10px;">TrieTree</a> <a href="/tags/Union-Find/" style="font-size: 10px;">Union-Find</a> <a href="/tags/Web-Crawler/" style="font-size: 10px;">Web Crawler</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/file-systems/" style="font-size: 10px;">file systems</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/virtual-memory/" style="font-size: 10px;">virtual memory</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">15</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/04/">April 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/02/">February 2016</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2016/05/28/studying notes.operating system.chapter 7/">Memory Management</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/Stock Search Android APP – Adapter of ListView/">Stock Search Android APP – Adapter of ListView</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/Stock Search Android APP -- AsyncTask/">Stock Search Android APP – AsyncTask</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/27/studying notes.operating system.chapter 6/">File System</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/25/studying notes.operating system.chapter 5/">Processor Management</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+  <div class="widget tag">
+<h4 class="title">Useful Links</h4>
+<a href="http://www.tongzhao.me" title="Tong Zhao's blog">Tong Zhao</a>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Yifei Wang, Shizhou Liu, Tong Zhao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/about us/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/2016/05/20/studying notes.database.1/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+<a href="https://github.com/xiaofeixiawang"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>

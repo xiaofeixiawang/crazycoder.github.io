@@ -3,30 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Byte Ants</title>
+  <title>Category: Database | Byte Ants</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Introduction and Relational Databases
-
-Introduction
-database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable
-database applications may be programmed v">
-<meta property="og:type" content="article">
+  <meta name="description" content="A blog recoding computer science projects, data structures and algorithms">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Byte Ants">
-<meta property="og:url" content="http://www.byteants.com/2016/05/31/studying notes.database.1/index.html">
+<meta property="og:url" content="http://www.byteants.com/categories/Studying-Notes/Database/index.html">
 <meta property="og:site_name" content="Byte Ants">
-<meta property="og:description" content="Introduction and Relational Databases
-
-Introduction
-database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable
-database applications may be programmed v">
-<meta property="og:updated_time" content="2016-05-31T19:56:15.000Z">
+<meta property="og:description" content="A blog recoding computer science projects, data structures and algorithms">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Byte Ants">
-<meta name="twitter:description" content="Introduction and Relational Databases
-
-Introduction
-database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable
-database applications may be programmed v">
+<meta name="twitter:description" content="A blog recoding computer science projects, data structures and algorithms">
   
     <link rel="alternate" href="/atom.xml" title="Byte Ants" type="application/atom+xml">
   
@@ -97,110 +84,41 @@ database applications may be programmed v">
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          <article id="post-studying notes.database.1" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
+          
+  
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <header class="archive-article-header">
     
   
-    <h1 class="article-title" itemprop="name">
-      (no title)
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/05/20/studying notes.database.1/">Introduction, Relational Database and XML</a>
     </h1>
   
 
 
-  </header>
-
-  <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2016/05/31/studying notes.database.1/" class="article-date"><time datetime="2016-05-31T16:38:12.000Z" itemprop="datePublished">2016-05-31</time></a>
+  <a href="/2016/05/20/studying notes.database.1/" class="archive-article-date"><time datetime="2016-05-20T07:00:00.000Z" itemprop="datePublished">May 20th</time></a>
 </div>
 
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>Introduction and Relational Databases</li>
-</ol>
-<p>Introduction</p>
-<p>database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable</p>
-<p>database applications may be programmed via “frameworks”; DBMS may run in conjunction with “midleware”; data-intensive applications may not use DBMS at all</p>
-<p>data model: a description of how data is structured. eg: relational data model(a set of records), XML(hierarchical structure, labeled values), graph data model(nodes and edges)</p>
-<p>schema versus data: like types and variables in programming language. schema sets up structure of database</p>
-<p>data definition language(DDL): used to set up a schema</p>
-<p>data manipulation or query language(DML): used to querying and modifying the data</p>
-<p>people about database: DBMS implementer(build system), database designer(establish schema), database application developer(program operate on database), database administrator(loads data, keeps running smoothly)</p>
-<p>The Relational Model</p>
-<p>database is set of named relations or tables; each table has a set of named attributes or columns; each tuple or row has a value for each attribute; each attribute has a type or domain(integer, domain)</p>
-<p>schema is structural description of relations in database; instance is actual contents at given point in time</p>
-<p>NULL: special value for “unknown” or “undefined”</p>
-<p>key: attribute whose value is unique in each tuple or set of attributes whose combined values are unique</p>
-<p>creating tables in SQL:<br>create table student(ID, name, GPA, photo)<br>create table college(name string, state char(2), enrollment integer)</p>
-<p>Querying Relational Databases</p>
-<p>steps in creating and using a relational database:<br>    design schema; create using DDL<br>    “bulk load” initial data<br>    repeat: execute queries and modifications</p>
-<p>queries return tables(compositional, closed)</p>
-<p>query language:<br>    relational algebra(formal)<br>    SQL(actual/implemented)</p>
-<ol>
-<li>XML Data</li>
-</ol>
-<p>Well-formed XML</p>
-<p>Extensible Markup Language(XML): standard for data representation and exchange; document format similar to HTML(tags describe content instead of formatting); also have streaming format</p>
-<p>basic constructs:<br>    tagged elements(nested): opening tag, text or other sub-elements, closing tag<br>    attributes: within element’s opening tag; attribute name, the equal sign and attribute value<br>    text: like leaf element in tree(XML)</p>
-<p>relational model versus XML:<br>                Relational             XML<br>structure         tables                hierarchical tree, graph<br>schema            fixed in advance    flexible, self-describing<br>queries            simple, nice        less so<br>ordering        none                implied<br>implementation    native                add-on</p>
-<p>DTDs, IDs &amp; IDREFs</p>
-<p>XML adhere to basic structural requirement: single root element; matched tags, proper nesting; unique attributes within elements<br>XML also adhere to content-specific specification:<br>    Document Type Descriptor(DTD)<br>    XML Schema(XSD)</p>
-<p>DTD: grammar-like language for specifying elements, attributes, nesting, ordering, #occurrences; also special attribute types ID and IDREFS(specify pointers in document)</p>
-<p>DTD/XSD versus none (well-formed):<br>    +: programs can assume structure; CSS/XSL can assume structure; as a specification language(data exchange); specification for documentation<br>    -: flexibility, easy to change; DTDs/XSDs can be messy and irregular</p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://www.byteants.com/2016/05/31/studying notes.database.1/" data-id="ciowfq2re00005bs5eh2gk29b" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-        <a href="http://www.byteants.com/2016/05/31/studying notes.database.1/#disqus_thread" class="article-comment-link">
-          <i class="fa fa-comment"></i> Comments
-        </a>
-      
-      
-
-    </footer>
-  </div>
-  
-    
-<ul id="article-nav" class="nav nav-pills nav-justified">
-  
-  <li role="presentation">
-    <a href="/2016/05/28/Stock Search Android APP – Adapter of ListView/" id="article-nav-older" class="article-nav-link-wrap">
-      <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">Stock Search Android APP – Adapter of ListView</span>
-    </a>
-  </li>
-  
-  
-</ul>
-
-
-  
+  </header>
 </article>
 
+  
+  
+    </div></section>
+  
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 
 
 
@@ -229,7 +147,7 @@ database applications may be programmed v">
   
   <div class="sidebar-module">
     <h4>Categories</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/LeetCode/">LeetCode</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/">Project</a><span class="sidebar-module-list-count">19</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Android-Develop/">Android Develop</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Berkeley-Cs61b/">Berkeley Cs61b</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Intro-to-Computer-Science/">Intro to Computer Science</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Web-Develop/">Web Develop</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/">Studying Notes</a><span class="sidebar-module-list-count">9</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-Systems/">Operating Systems</a><span class="sidebar-module-list-count">2</span></li></ul></li></ul>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/LeetCode/">LeetCode</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/">Project</a><span class="sidebar-module-list-count">19</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Android-Develop/">Android Develop</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Berkeley-Cs61b/">Berkeley Cs61b</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Intro-to-Computer-Science/">Intro to Computer Science</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Web-Develop/">Web Develop</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/">Studying Notes</a><span class="sidebar-module-list-count">10</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Database/">Database</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-Systems/">Operating Systems</a><span class="sidebar-module-list-count">2</span></li></ul></li></ul>
   </div>
 
 
@@ -265,7 +183,7 @@ database applications may be programmed v">
     <ul class="sidebar-module-list">
       
         <li>
-          <a href="/2016/05/31/studying notes.database.1/">(no title)</a>
+          <a href="/2016/05/28/studying notes.operating system.chapter 7/">Memory Management</a>
         </li>
       
         <li>
@@ -273,7 +191,7 @@ database applications may be programmed v">
         </li>
       
         <li>
-          <a href="/2016/05/28/studying notes.operating system.chapter 7/">Memory Management</a>
+          <a href="/2016/05/27/Stock Search Android APP -- AsyncTask/">Stock Search Android APP – AsyncTask</a>
         </li>
       
         <li>
@@ -281,7 +199,7 @@ database applications may be programmed v">
         </li>
       
         <li>
-          <a href="/2016/05/27/Stock Search Android APP -- AsyncTask/">Stock Search Android APP – AsyncTask</a>
+          <a href="/2016/05/25/studying notes.operating system.chapter 5/">Processor Management</a>
         </li>
       
     </ul>
@@ -325,13 +243,11 @@ database applications may be programmed v">
 <script>
   var disqus_shortname = 'byteants';
   
-  var disqus_url = 'http://www.byteants.com/2016/05/31/studying notes.database.1/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
