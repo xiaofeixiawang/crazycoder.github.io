@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.byteants.com/"/>
-  <updated>2016-06-02T04:43:02.000Z</updated>
+  <updated>2016-06-02T04:54:09.000Z</updated>
   <id>http://www.byteants.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://www.byteants.com/2016/05/31/studying%20notes.database.1/"/>
     <id>http://www.byteants.com/2016/05/31/studying notes.database.1/</id>
     <published>2016-05-31T07:00:00.000Z</published>
-    <updated>2016-06-02T04:43:02.000Z</updated>
+    <updated>2016-06-02T04:54:09.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;Introduction-and-Relational-Databases&quot;&gt;&lt;a href=&quot;#Introduction-and-Relational-Databases&quot; class=&quot;headerlink&quot; title=&quot;Introduction and Relational Databases&quot;&gt;&lt;/a&gt;Introduction and Relational Databases&lt;/h2&gt;&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://c5.staticflickr.com/8/7549/27134031940_34d06d4bd0.jpg&quot; width=&quot;500&quot; height=&quot;224&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;Introduction-and-Relational-Databases&quot;&gt;&lt;a href=&quot;#Introduction-and-Relational-Databases&quot; class=&quot;headerlink&quot; title=&quot;Introduction and Relational Databases&quot;&gt;&lt;/a&gt;Introduction and Relational Databases&lt;/h2&gt;&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable&lt;/p&gt;
 &lt;p&gt;database applications may be programmed via “frameworks”; DBMS may run in conjunction with “midleware”; data-intensive applications may not use DBMS at all&lt;/p&gt;
 &lt;p&gt;data model: a description of how data is structured. eg: relational data model(a set of records), XML(hierarchical structure, labeled values), graph data model(nodes and edges)&lt;/p&gt;
 &lt;p&gt;schema versus data: like types and variables in programming language. schema sets up structure of database&lt;/p&gt;
@@ -33,6 +34,7 @@
 &lt;p&gt;schema is structural description of relations in database; instance is actual contents at given point in time&lt;/p&gt;
 &lt;p&gt;NULL: special value for “unknown” or “undefined”&lt;/p&gt;
 &lt;p&gt;key: attribute whose value is unique in each tuple or set of attributes whose combined values are unique&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://c5.staticflickr.com/8/7291/27134032260_774b971927.jpg&quot; width=&quot;500&quot; height=&quot;167&quot;&gt;&lt;/p&gt;
 &lt;p&gt;creating tables in SQL:&lt;br&gt;create table student(ID, name, GPA, photo)&lt;br&gt;create table college(name string, state char(2), enrollment integer)&lt;/p&gt;
 &lt;h3 id=&quot;Querying-Relational-Databases&quot;&gt;&lt;a href=&quot;#Querying-Relational-Databases&quot; class=&quot;headerlink&quot; title=&quot;Querying Relational Databases&quot;&gt;&lt;/a&gt;Querying Relational Databases&lt;/h3&gt;&lt;p&gt;steps in creating and using a relational database:&lt;/p&gt;
 &lt;ul&gt;
@@ -40,7 +42,9 @@
 &lt;li&gt;“bulk load” initial data&lt;/li&gt;
 &lt;li&gt;repeat: execute queries and modifications&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c7.staticflickr.com/8/7420/27134032150_de78c8a758.jpg&quot; width=&quot;500&quot; height=&quot;194&quot;&gt;&lt;/p&gt;
 &lt;p&gt;queries return tables(compositional, closed)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://c6.staticflickr.com/8/7533/27338321581_ccb8a3f4d5.jpg&quot; width=&quot;500&quot; height=&quot;215&quot;&gt;&lt;/p&gt;
 &lt;p&gt;query language:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;relational algebra(formal)&lt;/li&gt;
@@ -96,6 +100,7 @@
 &lt;li&gt;Document Type Descriptor(DTD)&lt;/li&gt;
 &lt;li&gt;XML Schema(XSD)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c6.staticflickr.com/8/7286/27338321461_1df61faefc.jpg&quot; width=&quot;500&quot; height=&quot;212&quot;&gt;&lt;/p&gt;
 &lt;p&gt;DTD: grammar-like language for specifying elements, attributes, nesting, ordering, #occurrences; also special attribute types ID and IDREFS(specify pointers in document)&lt;/p&gt;
 &lt;p&gt;DTD/XSD versus none (well-formed):&lt;/p&gt;
 &lt;ul&gt;
@@ -129,7 +134,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+      &lt;p&gt;&lt;img src=&quot;https://c5.staticflickr.com/8/7549/27134031940_34d06d4bd0.jpg&quot; width=&quot;500&quot; height=&quot;224&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
     
     </summary>
     

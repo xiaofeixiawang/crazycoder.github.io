@@ -6,7 +6,8 @@
     <entry>
       <title><![CDATA[Introduction, Relational Database and XML]]></title>
       <url>http://www.byteants.com/2016/05/31/studying%20notes.database.1/</url>
-      <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="Introduction-and-Relational-Databases"><a href="#Introduction-and-Relational-Databases" class="headerlink" title="Introduction and Relational Databases"></a>Introduction and Relational Databases</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable</p>
+      <content type="html"><![CDATA[<p><img src="https://c5.staticflickr.com/8/7549/27134031940_34d06d4bd0.jpg" width="500" height="224"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="Introduction-and-Relational-Databases"><a href="#Introduction-and-Relational-Databases" class="headerlink" title="Introduction and Relational Databases"></a>Introduction and Relational Databases</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable</p>
 <p>database applications may be programmed via “frameworks”; DBMS may run in conjunction with “midleware”; data-intensive applications may not use DBMS at all</p>
 <p>data model: a description of how data is structured. eg: relational data model(a set of records), XML(hierarchical structure, labeled values), graph data model(nodes and edges)</p>
 <p>schema versus data: like types and variables in programming language. schema sets up structure of database</p>
@@ -17,6 +18,7 @@
 <p>schema is structural description of relations in database; instance is actual contents at given point in time</p>
 <p>NULL: special value for “unknown” or “undefined”</p>
 <p>key: attribute whose value is unique in each tuple or set of attributes whose combined values are unique</p>
+<p><img src="https://c5.staticflickr.com/8/7291/27134032260_774b971927.jpg" width="500" height="167"></p>
 <p>creating tables in SQL:<br>create table student(ID, name, GPA, photo)<br>create table college(name string, state char(2), enrollment integer)</p>
 <h3 id="Querying-Relational-Databases"><a href="#Querying-Relational-Databases" class="headerlink" title="Querying Relational Databases"></a>Querying Relational Databases</h3><p>steps in creating and using a relational database:</p>
 <ul>
@@ -24,7 +26,9 @@
 <li>“bulk load” initial data</li>
 <li>repeat: execute queries and modifications</li>
 </ul>
+<p><img src="https://c7.staticflickr.com/8/7420/27134032150_de78c8a758.jpg" width="500" height="194"></p>
 <p>queries return tables(compositional, closed)</p>
+<p><img src="https://c6.staticflickr.com/8/7533/27338321581_ccb8a3f4d5.jpg" width="500" height="215"></p>
 <p>query language:</p>
 <ul>
 <li>relational algebra(formal)</li>
@@ -80,6 +84,7 @@
 <li>Document Type Descriptor(DTD)</li>
 <li>XML Schema(XSD)</li>
 </ul>
+<p><img src="https://c6.staticflickr.com/8/7286/27338321461_1df61faefc.jpg" width="500" height="212"></p>
 <p>DTD: grammar-like language for specifying elements, attributes, nesting, ordering, #occurrences; also special attribute types ID and IDREFS(specify pointers in document)</p>
 <p>DTD/XSD versus none (well-formed):</p>
 <ul>
