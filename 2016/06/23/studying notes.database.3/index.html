@@ -3,17 +3,37 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: Union-Find | Byte Ants</title>
+  <title>Relational Algebra | Byte Ants</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A blog recoding computer science projects, data structures and algorithms">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Byte Ants">
-<meta property="og:url" content="http://www.byteants.com/tags/Union-Find/index.html">
+  <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Relational Algebra">
+<meta property="og:url" content="http://www.byteants.com/2016/06/23/studying notes.database.3/index.html">
 <meta property="og:site_name" content="Byte Ants">
-<meta property="og:description" content="A blog recoding computer science projects, data structures and algorithms">
+<meta property="og:description">
+<meta property="og:image" content="https://c8.staticflickr.com/8/7371/27775233071_894e39fbed.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7319/27573344650_962654069e.jpg">
+<meta property="og:image" content="https://c1.staticflickr.com/8/7598/27573344720_82bcfc972a.jpg">
+<meta property="og:image" content="https://c7.staticflickr.com/8/7372/27573344790_c865852165.jpg">
+<meta property="og:image" content="https://c7.staticflickr.com/8/7432/27573344910_09f5ff0c54.jpg">
+<meta property="og:image" content="https://c1.staticflickr.com/8/7297/27573345000_5bc9c7f357.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7064/27573345050_42dc615313.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7564/27573345130_9746e076b2.jpg">
+<meta property="og:image" content="https://c1.staticflickr.com/8/7791/27573345240_2f9b4640a4.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7098/27573345330_befbf4619d.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7347/27573344490_40c78b9b7b.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7502/27573344410_26d586fbd4.jpg">
+<meta property="og:image" content="https://c5.staticflickr.com/8/7341/27573344340_7b61fe1064.jpg">
+<meta property="og:image" content="https://c3.staticflickr.com/8/7319/27573344130_08b46a039a.jpg">
+<meta property="og:image" content="https://c5.staticflickr.com/8/7632/27573344020_cffcf285b2.jpg">
+<meta property="og:image" content="https://c1.staticflickr.com/8/7441/27573343840_aa724cd602.jpg">
+<meta property="og:image" content="https://c5.staticflickr.com/8/7367/27573343740_495d3d7f39.jpg">
+<meta property="og:image" content="https://c1.staticflickr.com/8/7408/27573343680_48499dae78.jpg">
+<meta property="og:updated_time" content="2016-06-23T06:05:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Byte Ants">
-<meta name="twitter:description" content="A blog recoding computer science projects, data structures and algorithms">
+<meta name="twitter:title" content="Relational Algebra">
+<meta name="twitter:description">
+<meta name="twitter:image" content="https://c8.staticflickr.com/8/7371/27775233071_894e39fbed.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Byte Ants" type="application/atom+xml">
   
@@ -84,41 +104,162 @@
 
     <div class="row">
         <div class="col-sm-8 blog-main">
-          
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <header class="archive-article-header">
+          <article id="post-studying notes.database.3" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
     
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/20/Percolation/">Percolation Theory</a>
+    <h1 class="article-title" itemprop="name">
+      Relational Algebra
     </h1>
   
 
 
+  </header>
+
+  <div class="article-meta">
     <div class="article-datetime">
-  <a href="/2016/02/20/Percolation/" class="archive-article-date"><time datetime="2016-02-20T08:00:00.000Z" itemprop="datePublished">February 20th</time></a>
+  <a href="/2016/06/23/studying notes.database.3/" class="article-date"><time datetime="2016-06-23T07:00:00.000Z" itemprop="datePublished">2016-06-23</time></a>
 </div>
 
-  </header>
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Studying-Notes/">Studying Notes</a> / <a class="article-category-link" href="/categories/Studying-Notes/Database/">Database</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://c8.staticflickr.com/8/7371/27775233071_894e39fbed.jpg" width="500" height="301"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>Relational Algebra: a formal language, underpinnings of implemented languages like SQL</p>
+<p>Introducing Relational Algebra operator based on simple college admissions database:</p>
+<ul>
+<li>College(cName, state, enrollment)</li>
+<li>Student(sID, sName, GPA, sizeHS)</li>
+<li>Apply(sID, cName, major, decision)</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7319/27573344650_962654069e.jpg" width="500" height="99"></p>
+<p>select operator: pick certain rows</p>
+<ul>
+<li>students with GPA &gt; 3.7</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7598/27573344720_82bcfc972a.jpg" width="398" height="61"></p>
+<ul>
+<li>students with GPA &gt; 3.7 and HS &lt; 1000</li>
+</ul>
+<p><img src="https://c7.staticflickr.com/8/7372/27573344790_c865852165.jpg" width="500" height="53"></p>
+<ul>
+<li>applications to standord CS major</li>
+</ul>
+<p><img src="https://c7.staticflickr.com/8/7432/27573344910_09f5ff0c54.jpg" width="500" height="51"></p>
+<p>project operator: pick certain columns</p>
+<ul>
+<li>ID and decision of all applications</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7297/27573345000_5bc9c7f357.jpg" width="349" height="112"></p>
+<ul>
+<li>list of application majors and decisions</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7064/27573345050_42dc615313.jpg" width="394" height="100"></p>
+<p>cross-product: combine two relations</p>
+<ul>
+<li>names and GPAs of students with HS &gt; 1000 who applied to CS and were rejected</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7564/27573345130_9746e076b2.jpg" width="500" height="121"></p>
+<p>natural join: enforce equality on all attributes with same name; eliminate one copy of duplicate attributes</p>
+<ul>
+<li>names and GPAs of students with HS &gt; 1000 who applied to CS at college with enr &gt; 20000 and were rejected</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7791/27573345240_2f9b4640a4.jpg" width="500" height="92"></p>
+<p>theta join: natural join with condition</p>
+<p><img src="https://c3.staticflickr.com/8/7098/27573345330_befbf4619d.jpg" width="500" height="48"></p>
+<p>union operator:</p>
+<ul>
+<li>list of college and student names</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7347/27573344490_40c78b9b7b.jpg" width="378" height="164"></p>
+<p>difference operator:</p>
+<ul>
+<li>IDs and names of students who didn’t apply anywhere</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7502/27573344410_26d586fbd4.jpg" width="500" height="103"></p>
+<p>intersection operator:</p>
+<ul>
+<li>names that are both a college name and a student name</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7341/27573344340_7b61fe1064.jpg" width="500" height="89"></p>
+<p>rename operator: reassign the schema in the result of E; to unify schemas for set operators; for disambiguation in “self-joins”</p>
+<p><img src="https://c3.staticflickr.com/8/7319/27573344130_08b46a039a.jpg" width="322" height="105"></p>
+<ul>
+<li>list of college and student names</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7632/27573344020_cffcf285b2.jpg" width="500" height="144"></p>
+<ul>
+<li>pairs of colleges in same state</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7441/27573343840_aa724cd602.jpg" width="500" height="124"></p>
+<p>assignment statements: a way to break down relational algebra expressions into parts</p>
+<ul>
+<li>pairs of colleges in same state</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7367/27573343740_495d3d7f39.jpg" width="493" height="268"></p>
+<p>expression tree: allow to visualize structure of the expression</p>
+<ul>
+<li>GPAs of students applying to CS in CA</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7408/27573343680_48499dae78.jpg" width="500" height="199"></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.byteants.com/2016/06/23/studying notes.database.3/" data-id="ciprwnh0u0000afs5c1rihcdn" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://www.byteants.com/2016/06/23/studying notes.database.3/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Relational-Algebra/">Relational Algebra</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/06/23/studying notes.database.2/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">JSON Data</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
 </article>
 
-  
-  
-    </div></section>
-  
 
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 
 
 
@@ -243,11 +384,13 @@
 <script>
   var disqus_shortname = 'byteants';
   
+  var disqus_url = 'http://www.byteants.com/2016/06/23/studying notes.database.3/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

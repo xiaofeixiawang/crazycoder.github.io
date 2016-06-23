@@ -4,6 +4,90 @@
   
     
     <entry>
+      <title><![CDATA[Relational Algebra]]></title>
+      <url>http://www.byteants.com/2016/06/23/studying%20notes.database.3/</url>
+      <content type="html"><![CDATA[<p><img src="https://c8.staticflickr.com/8/7371/27775233071_894e39fbed.jpg" width="500" height="301"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>Relational Algebra: a formal language, underpinnings of implemented languages like SQL</p>
+<p>Introducing Relational Algebra operator based on simple college admissions database:</p>
+<ul>
+<li>College(cName, state, enrollment)</li>
+<li>Student(sID, sName, GPA, sizeHS)</li>
+<li>Apply(sID, cName, major, decision)</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7319/27573344650_962654069e.jpg" width="500" height="99"></p>
+<p>select operator: pick certain rows</p>
+<ul>
+<li>students with GPA &gt; 3.7</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7598/27573344720_82bcfc972a.jpg" width="398" height="61"></p>
+<ul>
+<li>students with GPA &gt; 3.7 and HS &lt; 1000</li>
+</ul>
+<p><img src="https://c7.staticflickr.com/8/7372/27573344790_c865852165.jpg" width="500" height="53"></p>
+<ul>
+<li>applications to standord CS major</li>
+</ul>
+<p><img src="https://c7.staticflickr.com/8/7432/27573344910_09f5ff0c54.jpg" width="500" height="51"></p>
+<p>project operator: pick certain columns</p>
+<ul>
+<li>ID and decision of all applications</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7297/27573345000_5bc9c7f357.jpg" width="349" height="112"></p>
+<ul>
+<li>list of application majors and decisions</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7064/27573345050_42dc615313.jpg" width="394" height="100"></p>
+<p>cross-product: combine two relations</p>
+<ul>
+<li>names and GPAs of students with HS &gt; 1000 who applied to CS and were rejected</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7564/27573345130_9746e076b2.jpg" width="500" height="121"></p>
+<p>natural join: enforce equality on all attributes with same name; eliminate one copy of duplicate attributes</p>
+<ul>
+<li>names and GPAs of students with HS &gt; 1000 who applied to CS at college with enr &gt; 20000 and were rejected</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7791/27573345240_2f9b4640a4.jpg" width="500" height="92"></p>
+<p>theta join: natural join with condition</p>
+<p><img src="https://c3.staticflickr.com/8/7098/27573345330_befbf4619d.jpg" width="500" height="48"></p>
+<p>union operator:</p>
+<ul>
+<li>list of college and student names</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7347/27573344490_40c78b9b7b.jpg" width="378" height="164"></p>
+<p>difference operator:</p>
+<ul>
+<li>IDs and names of students who didn’t apply anywhere</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7502/27573344410_26d586fbd4.jpg" width="500" height="103"></p>
+<p>intersection operator:</p>
+<ul>
+<li>names that are both a college name and a student name</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7341/27573344340_7b61fe1064.jpg" width="500" height="89"></p>
+<p>rename operator: reassign the schema in the result of E; to unify schemas for set operators; for disambiguation in “self-joins”</p>
+<p><img src="https://c3.staticflickr.com/8/7319/27573344130_08b46a039a.jpg" width="322" height="105"></p>
+<ul>
+<li>list of college and student names</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7632/27573344020_cffcf285b2.jpg" width="500" height="144"></p>
+<ul>
+<li>pairs of colleges in same state</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7441/27573343840_aa724cd602.jpg" width="500" height="124"></p>
+<p>assignment statements: a way to break down relational algebra expressions into parts</p>
+<ul>
+<li>pairs of colleges in same state</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7367/27573343740_495d3d7f39.jpg" width="493" height="268"></p>
+<p>expression tree: allow to visualize structure of the expression</p>
+<ul>
+<li>GPAs of students applying to CS in CA</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7408/27573343680_48499dae78.jpg" width="500" height="199"></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[JSON Data]]></title>
       <url>http://www.byteants.com/2016/06/23/studying%20notes.database.2/</url>
       <content type="html"><![CDATA[<p><img src="https://c7.staticflickr.com/8/7392/27571792310_2e06922f54.jpg" width="500" height="232"></p>
@@ -103,6 +187,41 @@
 <p>Demo of JSON:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;Books&quot;:</span><br><span class="line">  [</span><br><span class="line">    &#123; &quot;ISBN&quot;:&quot;ISBN-0-13-713526-2&quot;,</span><br><span class="line">      &quot;Price&quot;:85,</span><br><span class="line">      &quot;Edition&quot;:3,</span><br><span class="line">      &quot;Title&quot;:&quot;A First Course in Database Systems&quot;,</span><br><span class="line">      &quot;Authors&quot;:[ &#123;&quot;First_Name&quot;:&quot;Jeffrey&quot;, &quot;Last_Name&quot;:&quot;Ullman&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jennifer&quot;, &quot;Last_Name&quot;:&quot;Widom&quot;&#125; ] &#125;</span><br><span class="line">    ,</span><br><span class="line">    &#123; &quot;ISBN&quot;:&quot;ISBN-0-13-815504-6&quot;,</span><br><span class="line">      &quot;Price&quot;:100,</span><br><span class="line">      &quot;Remark&quot;:&quot;Buy this book bundled with &apos;A First Course&apos; - a great deal!&quot;,</span><br><span class="line">      &quot;Title&quot;:&quot;Database Systems:The Complete Book&quot;,</span><br><span class="line">      &quot;Authors&quot;:[ &#123;&quot;First_Name&quot;:&quot;Hector&quot;, &quot;Last_Name&quot;:&quot;Garcia-Molina&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jeffrey&quot;, &quot;Last_Name&quot;:&quot;Ullman&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jennifer&quot;, &quot;Last_Name&quot;:&quot;Widom&quot;&#125; ] &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;Magazines&quot;:</span><br><span class="line">  [</span><br><span class="line">    &#123; &quot;Title&quot;:&quot;National Geographic&quot;,</span><br><span class="line">      &quot;Month&quot;:&quot;January&quot;,</span><br><span class="line">      &quot;Year&quot;:2009 &#125;</span><br><span class="line">    ,</span><br><span class="line">    &#123; &quot;Title&quot;:&quot;Newsweek&quot;,</span><br><span class="line">      &quot;Month&quot;:&quot;February&quot;,</span><br><span class="line">      &quot;Year&quot;:2009 &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Demo of JSON schema:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">  &quot;properties&quot;: &#123;</span><br><span class="line">     &quot;Books&quot;: &#123;</span><br><span class="line">        &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">        &quot;items&quot;: &#123;</span><br><span class="line">           &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">           &quot;properties&quot;: &#123;</span><br><span class="line">              &quot;ISBN&quot;: &#123; &quot;type&quot;:&quot;string&quot;, &quot;pattern&quot;:&quot;ISBN*&quot; &#125;,</span><br><span class="line">              &quot;Price&quot;: &#123; &quot;type&quot;:&quot;integer&quot;,</span><br><span class="line">                         &quot;minimum&quot;:0, &quot;maximum&quot;:200 &#125;,</span><br><span class="line">              &quot;Edition&quot;: &#123; &quot;type&quot;:&quot;integer&quot;, &quot;optional&quot;: true &#125;,</span><br><span class="line">              &quot;Remark&quot;: &#123; &quot;type&quot;:&quot;string&quot;, &quot;optional&quot;: true &#125;,</span><br><span class="line">              &quot;Title&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">              &quot;Authors&quot;: &#123; </span><br><span class="line">                 &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">                 &quot;minItems&quot;:1,</span><br><span class="line">                 &quot;maxItems&quot;:10,</span><br><span class="line">                 &quot;items&quot;: &#123;</span><br><span class="line">                    &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">                    &quot;properties&quot;: &#123;</span><br><span class="line">                       &quot;First_Name&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">                       &quot;Last_Name&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;&#125;&#125;&#125;&#125;&#125;&#125;,</span><br><span class="line">     &quot;Magazines&quot;: &#123;</span><br><span class="line">        &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">        &quot;items&quot;: &#123;</span><br><span class="line">           &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">           &quot;properties&quot;: &#123;</span><br><span class="line">              &quot;Title&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">              &quot;Month&quot;: &#123; &quot;type&quot;:&quot;string&quot;,</span><br><span class="line">                         &quot;enum&quot;:[&quot;January&quot;,&quot;February&quot;] &#125;,</span><br><span class="line">              &quot;Year&quot;: &#123; &quot;type&quot;:&quot;integer&quot; &#125;&#125;&#125;&#125;</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>If type is object, it has properties which contains many key-value pairs; if type is array, it has items describing every kind of type inside array.</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Bayesian Network on Making Decision]]></title>
+      <url>http://www.byteants.com/2016/05/31/Bayesian%20Network%20on%20Making%20Decision/</url>
+      <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Artificial intelligence makes great steps in recent years. We know that if all the events could be seen as true or false, we can get results of queries using first order algorithm based on existing knowledge base. However, in the real worlds, events, such as whether and accidents, always can’t be represent as true or false. For this case, we can see the happening of the events as probability. With the help of <a href="https://en.wikipedia.org/wiki/Bayes%27_rule" target="_blank" rel="external">Bayes’ rule</a> we can calculate the event’s probability based on what we have known. Luckily, the characteristics of Bayes’ rule is suitable to make the knowledge base shown as a graph. The graph descried the collection of events and the known event’s probability. The structure helps us calculate the probability in reasonable order. This article’s target is showing you how to calculate event’s probability based on enumeration and then making decision based on maximum utility policy. In order to explain clearly, we discuss this topics basing on the following Bayesian Network example.</p>
+<a id="more"></a>
+<h3 id="Bayesian-Network"><a href="#Bayesian-Network" class="headerlink" title="Bayesian Network"></a>Bayesian Network</h3><p>Based on Bayes’ rule we can make use of graphic representation of a probability distribution. In this case, the graph contains the connection between variables in graph. The graph representation helps us enumerate variables in reasonable order. Besides, all graphic properties and theories can be used to calculate the event’s probability.</p>
+<h3 id="Calculate-Probability-by-Enumeration"><a href="#Calculate-Probability-by-Enumeration" class="headerlink" title="Calculate Probability by Enumeration"></a>Calculate Probability by Enumeration</h3><p>Based on the structure of Bayesian Network, we can enumerate variables in order. Based on the graphic <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph" target="_blank" rel="external">DAG</a> properties, we can enumerate the variables in the DAG order. The enumeration formation is:</p>
+<p><img src="https://c3.staticflickr.com/8/7191/27129768010_a63c06da9e.jpg" alt=""></p>
+<p>Based on the DAG order, in our example, we can calculate p (b | j, m) using following formulation:</p>
+<p><img src="https://c8.staticflickr.com/8/7595/27334320831_8b50c8c344.jpg" alt=""></p>
+<p>The calculation process is:<br>$$<br>P(B | J, M) \<br>= P(B, J, M) / … \<br>=\sum_A \sum_E P(B, J, M, E, A) / … \<br>= \sum_A \sum_E P(B) P(E) P(A | B, E) P(J | A) P(M | A) / … \<br>= P(B) \sum_E P(E) \sum_A P(A | B, E) P(J | A) P(M | A) / … \<br>= 0.000592 / … \<br> P(¬B | J, M) \<br>= P(¬B) \sum_E P(E) \sum_A P(A | ¬B, E) P(J | A) P(M | A) / … \<br>= 0.00149 / … \<br>P(B | J, M) = 0.284<br>$$<br>The AIMA gives us a pseudo code to calculate the above formulation.</p>
+<p><img src="https://c5.staticflickr.com/8/7513/27307341452_ebf90047de.jpg" alt=""></p>
+<p>Based on the above pseudo code, we realize here in Python. The normalize() function is to normalize the given probability.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">enumeration_ask</span><span class="params">(X, e, bn, vars)</span>:</span></span><br><span class="line">  QX = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> xi <span class="keyword">in</span> [<span class="keyword">False</span>, <span class="keyword">True</span>]:</span><br><span class="line">      e[X] = xi</span><br><span class="line">      QX[xi] = enumeration_all(vars, e, bn)</span><br><span class="line">      <span class="keyword">del</span> e[X]</span><br><span class="line">  <span class="keyword">return</span> normalize(QX)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">enumeration_all</span><span class="params">(vars, e, bn)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> len(vars) == <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1.0</span></span><br><span class="line">  Y = vars.pop()</span><br><span class="line">  <span class="keyword">if</span> Y <span class="keyword">in</span> e:</span><br><span class="line">      val = Pr(Y, e[Y], e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      vars.append(Y)</span><br><span class="line">      <span class="keyword">return</span> val</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">      total = <span class="number">0</span></span><br><span class="line">      e[Y] = <span class="keyword">True</span></span><br><span class="line">      total += Pr(Y, <span class="keyword">True</span>, e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      e[Y] = <span class="keyword">False</span></span><br><span class="line">      total += Pr(Y, <span class="keyword">False</span>, e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      <span class="keyword">del</span> e[Y]</span><br><span class="line">      vars.append(Y)</span><br><span class="line">      <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
+<h3 id="Making-decision"><a href="#Making-decision" class="headerlink" title="Making decision"></a>Making decision</h3><p>In this example we use the maximum utility to make decision. Actions are selected by evaluating the decision network for each possible setting of the decision<br>node. Once the decision node is set, it behaves exactly like a chance node that has been<br>set as an evidence variable. The algorithm for evaluating decision networks is the following:</p>
+<ul>
+<li>Set the evidence variables for the current state.</li>
+<li>For each possible value of the decision node:<ul>
+<li>Set the decision node to that value.</li>
+<li>Calculate the posterior probabilities for the parent nodes of the utility node, using a standard probabilistic inference algorithm.</li>
+<li>Calculate the resulting utility for the action.</li>
+</ul>
+</li>
+<li>Return the action with the highest utility.</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7126/27129767960_c832879682.jpg" alt=""></p>
+<p>In this example, we make decision whether should we call the police when J calls and M does not call. Base on previous calculation of probability, we assume that $P(B | J, ¬M) = 0.005$ and $P(¬B | J, ¬M) = 0.995$. Then can get the utility of calling and not calling:</p>
+<p>$$<br>  EU(CP|J,¬M)<br>= P(B|J,¬M)U(B,CP)+P(¬B|J,¬M)U(¬B,CP)<br>= 0.005<em>0 + 0.995</em>(-5) = -4.975<br>$$<br>$$<br>EU(¬CP|J,¬M)<br>= P(B|J,¬M)U(B,¬CP)+P(¬B|J,¬M)U(¬B,¬CP)<br>= 0.005<em>(-100) + 0.995</em>0 = -0.500<br>$$</p>
+<p>Based on the maximum utility policy, our decision is not calling the police.</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>This script deals with the input file. The input file includes the queries we need to calculate and the knowledge which we need to build as a Bayesian Network. They are divided by line with ‘*’. In the query part, P means probability, EU means expected utility and MEU means the maximum expected Utility. In the knowledge base, ‘+’ means true and ‘-’ means false. Have a try of the script will make you get more comprehension on the usage of script. The code link is in the end of article.</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>With the help of probability representation, we can describe more complex real world. And making use of Bayesian Network helps us calculate the wanted probabilities effectively. All graph theory can help us during the calculation.</p>
+<p>-<a href="https://github.com/spacime/Projects/tree/master/Artificial%20Intelligence/Bayesian%20Network" target="_blank" rel="external">github code</a></p>
 ]]></content>
     </entry>
     
@@ -217,41 +336,6 @@
 <li>references: specific key have specific reference, also have selector and field</li>
 <li>currents constraints: can specify how many times an element type is allowed to occur</li>
 </ul>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Bayesian Network on Making Decision]]></title>
-      <url>http://www.byteants.com/2016/05/31/Bayesian%20Network%20on%20Making%20Decision/</url>
-      <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Artificial intelligence makes great steps in recent years. We know that if all the events could be seen as true or false, we can get results of queries using first order algorithm based on existing knowledge base. However, in the real worlds, events, such as whether and accidents, always can’t be represent as true or false. For this case, we can see the happening of the events as probability. With the help of <a href="https://en.wikipedia.org/wiki/Bayes%27_rule" target="_blank" rel="external">Bayes’ rule</a> we can calculate the event’s probability based on what we have known. Luckily, the characteristics of Bayes’ rule is suitable to make the knowledge base shown as a graph. The graph descried the collection of events and the known event’s probability. The structure helps us calculate the probability in reasonable order. This article’s target is showing you how to calculate event’s probability based on enumeration and then making decision based on maximum utility policy. In order to explain clearly, we discuss this topics basing on the following Bayesian Network example.</p>
-<a id="more"></a>
-<h3 id="Bayesian-Network"><a href="#Bayesian-Network" class="headerlink" title="Bayesian Network"></a>Bayesian Network</h3><p>Based on Bayes’ rule we can make use of graphic representation of a probability distribution. In this case, the graph contains the connection between variables in graph. The graph representation helps us enumerate variables in reasonable order. Besides, all graphic properties and theories can be used to calculate the event’s probability.</p>
-<h3 id="Calculate-Probability-by-Enumeration"><a href="#Calculate-Probability-by-Enumeration" class="headerlink" title="Calculate Probability by Enumeration"></a>Calculate Probability by Enumeration</h3><p>Based on the structure of Bayesian Network, we can enumerate variables in order. Based on the graphic <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph" target="_blank" rel="external">DAG</a> properties, we can enumerate the variables in the DAG order. The enumeration formation is:</p>
-<p><img src="https://c3.staticflickr.com/8/7191/27129768010_a63c06da9e.jpg" alt=""></p>
-<p>Based on the DAG order, in our example, we can calculate p (b | j, m) using following formulation:</p>
-<p><img src="https://c8.staticflickr.com/8/7595/27334320831_8b50c8c344.jpg" alt=""></p>
-<p>The calculation process is:<br>$$<br>P(B | J, M) \<br>= P(B, J, M) / … \<br>=\sum_A \sum_E P(B, J, M, E, A) / … \<br>= \sum_A \sum_E P(B) P(E) P(A | B, E) P(J | A) P(M | A) / … \<br>= P(B) \sum_E P(E) \sum_A P(A | B, E) P(J | A) P(M | A) / … \<br>= 0.000592 / … \<br> P(¬B | J, M) \<br>= P(¬B) \sum_E P(E) \sum_A P(A | ¬B, E) P(J | A) P(M | A) / … \<br>= 0.00149 / … \<br>P(B | J, M) = 0.284<br>$$<br>The AIMA gives us a pseudo code to calculate the above formulation.</p>
-<p><img src="https://c5.staticflickr.com/8/7513/27307341452_ebf90047de.jpg" alt=""></p>
-<p>Based on the above pseudo code, we realize here in Python. The normalize() function is to normalize the given probability.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">enumeration_ask</span><span class="params">(X, e, bn, vars)</span>:</span></span><br><span class="line">  QX = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> xi <span class="keyword">in</span> [<span class="keyword">False</span>, <span class="keyword">True</span>]:</span><br><span class="line">      e[X] = xi</span><br><span class="line">      QX[xi] = enumeration_all(vars, e, bn)</span><br><span class="line">      <span class="keyword">del</span> e[X]</span><br><span class="line">  <span class="keyword">return</span> normalize(QX)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">enumeration_all</span><span class="params">(vars, e, bn)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> len(vars) == <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1.0</span></span><br><span class="line">  Y = vars.pop()</span><br><span class="line">  <span class="keyword">if</span> Y <span class="keyword">in</span> e:</span><br><span class="line">      val = Pr(Y, e[Y], e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      vars.append(Y)</span><br><span class="line">      <span class="keyword">return</span> val</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">      total = <span class="number">0</span></span><br><span class="line">      e[Y] = <span class="keyword">True</span></span><br><span class="line">      total += Pr(Y, <span class="keyword">True</span>, e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      e[Y] = <span class="keyword">False</span></span><br><span class="line">      total += Pr(Y, <span class="keyword">False</span>, e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      <span class="keyword">del</span> e[Y]</span><br><span class="line">      vars.append(Y)</span><br><span class="line">      <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
-<h3 id="Making-decision"><a href="#Making-decision" class="headerlink" title="Making decision"></a>Making decision</h3><p>In this example we use the maximum utility to make decision. Actions are selected by evaluating the decision network for each possible setting of the decision<br>node. Once the decision node is set, it behaves exactly like a chance node that has been<br>set as an evidence variable. The algorithm for evaluating decision networks is the following:</p>
-<ul>
-<li>Set the evidence variables for the current state.</li>
-<li>For each possible value of the decision node:<ul>
-<li>Set the decision node to that value.</li>
-<li>Calculate the posterior probabilities for the parent nodes of the utility node, using a standard probabilistic inference algorithm.</li>
-<li>Calculate the resulting utility for the action.</li>
-</ul>
-</li>
-<li>Return the action with the highest utility.</li>
-</ul>
-<p><img src="https://c1.staticflickr.com/8/7126/27129767960_c832879682.jpg" alt=""></p>
-<p>In this example, we make decision whether should we call the police when J calls and M does not call. Base on previous calculation of probability, we assume that $P(B | J, ¬M) = 0.005$ and $P(¬B | J, ¬M) = 0.995$. Then can get the utility of calling and not calling:</p>
-<p>$$<br>  EU(CP|J,¬M)<br>= P(B|J,¬M)U(B,CP)+P(¬B|J,¬M)U(¬B,CP)<br>= 0.005<em>0 + 0.995</em>(-5) = -4.975<br>$$<br>$$<br>EU(¬CP|J,¬M)<br>= P(B|J,¬M)U(B,¬CP)+P(¬B|J,¬M)U(¬B,¬CP)<br>= 0.005<em>(-100) + 0.995</em>0 = -0.500<br>$$</p>
-<p>Based on the maximum utility policy, our decision is not calling the police.</p>
-<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>This script deals with the input file. The input file includes the queries we need to calculate and the knowledge which we need to build as a Bayesian Network. They are divided by line with ‘*’. In the query part, P means probability, EU means expected utility and MEU means the maximum expected Utility. In the knowledge base, ‘+’ means true and ‘-’ means false. Have a try of the script will make you get more comprehension on the usage of script. The code link is in the end of article.</p>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>With the help of probability representation, we can describe more complex real world. And making use of Bayesian Network helps us calculate the wanted probabilities effectively. All graph theory can help us during the calculation.</p>
-<p>-<a href="https://github.com/spacime/Projects/tree/master/Artificial%20Intelligence/Bayesian%20Network" target="_blank" rel="external">github code</a></p>
 ]]></content>
     </entry>
     
@@ -1746,6 +1830,155 @@
     </entry>
     
     <entry>
+      <title><![CDATA[File Systems]]></title>
+      <url>http://www.byteants.com/2016/05/21/filesystemsreview/</url>
+      <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
+<li>This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.</li>
+<li>The requirements of file systems:<ul>
+<li>Permanent storage</li>
+<li>Quick, easy and efficient</li>
+</ul>
+</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><p><img src="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg" width="400" height="280" alt="disk_architecture"></p>
+<ul>
+<li>Have multiple platters and each one have top and bottom heads.</li>
+<li>The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.</li>
+<li>disk address = (head/surface#, cylinder/track#, sector#)</li>
+</ul>
+<h4 id="S5FS"><a href="#S5FS" class="headerlink" title="S5FS"></a>S5FS</h4><p>Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression</p>
+<ol>
+<li><p>layout</p>
+<p> <img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="170" height="250" alt="S5FS"></p>
+<ul>
+<li>The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</li>
+</ul>
+</li>
+<li><p>Superblock</p>
+<ul>
+<li>Contains the head of the free list:<br>  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.</li>
+<li>Maintain a free inode list (inode cache):<br>  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.</li>
+</ul>
+</li>
+<li><p>I-list</p>
+<ul>
+<li>For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map</li>
+</ul>
+</li>
+<li><p>Disk map</p>
+<p> <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="320" alt="Disk map"></p>
+<p> 0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
+</li>
+</ol>
+<h4 id="Improvement-of-S5FS"><a href="#Improvement-of-S5FS" class="headerlink" title="Improvement of S5FS"></a>Improvement of S5FS</h4><p>Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)</p>
+<ul>
+<li>Increase block size</li>
+<li>Minimizing seek time<ul>
+<li>Use cylinder groups to put related data in the same cylinde group</li>
+</ul>
+</li>
+<li>Minimizing Latency<ul>
+<li>Block interleaving</li>
+</ul>
+</li>
+<li><p>Log-Structured File System (LFS)</p>
+<p>  <img src="https://farm8.staticflickr.com/7040/26388472283_d457c0580f_b.jpg" width="400" height="100" alt="LFS"></p>
+<ul>
+<li>Main principles: nerver delete, append only.</li>
+<li>Inode Map: keep the updated inode, and each inode map piece is appended to log.</li>
+<li>Use checkpoint file (can have previous and current version) which is not belong to log to keeps track of all inode map pieces.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Multiple-Disks"><a href="#Multiple-Disks" class="headerlink" title="Multiple Disks"></a>Multiple Disks</h3><h4 id="Benefits-of-Multiple-Disks"><a href="#Benefits-of-Multiple-Disks" class="headerlink" title="Benefits of Multiple Disks"></a>Benefits of Multiple Disks</h4><ul>
+<li>Hold more data</li>
+<li>Can be stored redundantly, increase reliability and availability</li>
+<li>Can spread data, allowing parallel access, increase effective access time</li>
+</ul>
+<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><p><img src="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png" width="350" height="150" alt="LVM"></p>
+<p>Manage multiple disks and try not change existing file systems much.</p>
+<ul>
+<li>Spanning: Multiple disks appear to file system as one large disk</li>
+<li>Mirroring: Write redundantly to multiple disks. Read from one.</li>
+</ul>
+<h4 id="Striping"><a href="#Striping" class="headerlink" title="Striping"></a>Striping</h4><p>One disk keep one striping unit data and then the next disk keep next one string unit data and keep doing this.</p>
+<ul>
+<li>Advantages: Increase parallelism.</li>
+<li>Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.</li>
+<li>In general, performance is better with larger striping unit, which can reduce seek time</li>
+<li>Probability of N-disk system failing is: 1-(1-fail)^N</li>
+</ul>
+<h4 id="Redundant-Array-of-Inexpensive-Disks-RAID"><a href="#Redundant-Array-of-Inexpensive-Disks-RAID" class="headerlink" title="Redundant Array of Inexpensive Disks (RAID)"></a>Redundant Array of Inexpensive Disks (RAID)</h4><ul>
+<li>level 1: Just mirroring.</li>
+<li>level 2: Similar to memory’s ECC, use serveal disks to check bits.</li>
+<li>level 3: Use one disk to maintain parity bits.</li>
+<li>level 4: Use one disk to maintain parity blocks.</li>
+<li>level 5: Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.</li>
+</ul>
+<h3 id="Flash-Memory"><a href="#Flash-Memory" class="headerlink" title="Flash Memory"></a>Flash Memory</h3><ol>
+<li>Technologies of Flash<ul>
+<li>NOR: Byte addressable.</li>
+<li>NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.</li>
+</ul>
+</li>
+<li>Wear leveling<ul>
+<li>Writing problem: To change zeroes to ones, must erase entire block.</li>
+<li>Spread writes/erasures across entire drive.</li>
+<li>Using flash traslation layer(FTL) and log-structured file system.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Crash-Resiliency"><a href="#Crash-Resiliency" class="headerlink" title="Crash Resiliency"></a>Crash Resiliency</h3><h4 id="Crash-problem"><a href="#Crash-problem" class="headerlink" title="Crash problem"></a>Crash problem</h4><ul>
+<li>Disk update, gather all dirty blocks, which is done one disk block at a time.</li>
+<li>In S5fs and FFS, the lower level file system can sequence disk writes in any order.</li>
+</ul>
+<h4 id="Dealing-with-Crashes"><a href="#Dealing-with-Crashes" class="headerlink" title="Dealing with Crashes"></a>Dealing with Crashes</h4><ol>
+<li><p>Soft Updates</p>
+<ul>
+<li>Consistency-preserving approach: order disk operations to preserve meta-data consistency.</li>
+<li>Have problems. In reality, in order to save the numver of disk writes, multiple objects can be packed into a diks block and will make a cycle in the topological order, and breaking circular dependency will slow the preformance.</li>
+</ul>
+</li>
+<li><p>Journaling</p>
+<p> <img src="https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg" width="400" height="60" alt="journaling"></p>
+<ul>
+<li>Use transaction idea, a journal is append-only, and it is a separate part of the disk(can add to any file system).</li>
+<li>Append a commit record, when it’s time to update the file system, write to journal first, and write data to file system only after the commit record is writeen to the journal.</li>
+<li>Undo journaling(record previous contents), redo journaling(record new contents).</li>
+<li>Recovery will take the file system into a consistent state at a transaction boundary, and copying a disk block to the file system is idempotent.</li>
+</ul>
+</li>
+<li><p>Shadow paging</p>
+<ul>
+<li><p>Based on copy-on-write ideas</p>
+<p>  <img src="https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg" width="400" height="240" alt="shadow_paging"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Naming-and-Directories"><a href="#Naming-and-Directories" class="headerlink" title="Naming and Directories"></a>Naming and Directories</h3><h4 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h4><ol>
+<li>S5FS Directories<ul>
+<li>Each entry is 32 bytes.</li>
+</ul>
+</li>
+<li>FFS Directories:<ul>
+<li>No restrictions on names.</li>
+<li>Maintain the last entry to get the free space.</li>
+<li>Use Hash table or B+ tree to look for a file name.</li>
+<li>Use extensible Hashing, the low-order i bits of hi(x) are the same in hi+1(x)</li>
+<li>B+ tree, internal nodes contain no data, just keys, leaf node are linked to ease sorted sequential traversal</li>
+</ul>
+</li>
+</ol>
+<h4 id="Name-Space-Management"><a href="#Name-Space-Management" class="headerlink" title="Name-Space Management"></a>Name-Space Management</h4><ul>
+<li>For Windows, it use drives to make the name-space appear uniform. For Unix, it use file system mounting.</li>
+</ul>
+<h3 id="File-systems-Summary"><a href="#File-systems-Summary" class="headerlink" title="File systems Summary"></a>File systems Summary</h3><p>This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.</p>
+<p><img src="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg" width="450" height="280" alt="file_system_summary"></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Memory Management]]></title>
       <url>http://www.byteants.com/2016/05/21/memoryreview/</url>
       <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.</p>
@@ -2073,155 +2306,6 @@
 <li>pthread_testcancel() can create a cancellation point</li>
 <li>when act on cancel, walk through a stack of cleanup handlers: pthread_cleanup_push(), pthread_cleanup_pop(), the two procedure must match up</li>
 </ul>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[File Systems]]></title>
-      <url>http://www.byteants.com/2016/05/21/filesystemsreview/</url>
-      <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
-<li>This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.</li>
-<li>The requirements of file systems:<ul>
-<li>Permanent storage</li>
-<li>Quick, easy and efficient</li>
-</ul>
-</li>
-</ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><p><img src="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg" width="400" height="280" alt="disk_architecture"></p>
-<ul>
-<li>Have multiple platters and each one have top and bottom heads.</li>
-<li>The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.</li>
-<li>disk address = (head/surface#, cylinder/track#, sector#)</li>
-</ul>
-<h4 id="S5FS"><a href="#S5FS" class="headerlink" title="S5FS"></a>S5FS</h4><p>Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression</p>
-<ol>
-<li><p>layout</p>
-<p> <img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="170" height="250" alt="S5FS"></p>
-<ul>
-<li>The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</li>
-</ul>
-</li>
-<li><p>Superblock</p>
-<ul>
-<li>Contains the head of the free list:<br>  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.</li>
-<li>Maintain a free inode list (inode cache):<br>  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.</li>
-</ul>
-</li>
-<li><p>I-list</p>
-<ul>
-<li>For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map</li>
-</ul>
-</li>
-<li><p>Disk map</p>
-<p> <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="320" alt="Disk map"></p>
-<p> 0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
-</li>
-</ol>
-<h4 id="Improvement-of-S5FS"><a href="#Improvement-of-S5FS" class="headerlink" title="Improvement of S5FS"></a>Improvement of S5FS</h4><p>Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)</p>
-<ul>
-<li>Increase block size</li>
-<li>Minimizing seek time<ul>
-<li>Use cylinder groups to put related data in the same cylinde group</li>
-</ul>
-</li>
-<li>Minimizing Latency<ul>
-<li>Block interleaving</li>
-</ul>
-</li>
-<li><p>Log-Structured File System (LFS)</p>
-<p>  <img src="https://farm8.staticflickr.com/7040/26388472283_d457c0580f_b.jpg" width="400" height="100" alt="LFS"></p>
-<ul>
-<li>Main principles: nerver delete, append only.</li>
-<li>Inode Map: keep the updated inode, and each inode map piece is appended to log.</li>
-<li>Use checkpoint file (can have previous and current version) which is not belong to log to keeps track of all inode map pieces.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Multiple-Disks"><a href="#Multiple-Disks" class="headerlink" title="Multiple Disks"></a>Multiple Disks</h3><h4 id="Benefits-of-Multiple-Disks"><a href="#Benefits-of-Multiple-Disks" class="headerlink" title="Benefits of Multiple Disks"></a>Benefits of Multiple Disks</h4><ul>
-<li>Hold more data</li>
-<li>Can be stored redundantly, increase reliability and availability</li>
-<li>Can spread data, allowing parallel access, increase effective access time</li>
-</ul>
-<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><p><img src="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png" width="350" height="150" alt="LVM"></p>
-<p>Manage multiple disks and try not change existing file systems much.</p>
-<ul>
-<li>Spanning: Multiple disks appear to file system as one large disk</li>
-<li>Mirroring: Write redundantly to multiple disks. Read from one.</li>
-</ul>
-<h4 id="Striping"><a href="#Striping" class="headerlink" title="Striping"></a>Striping</h4><p>One disk keep one striping unit data and then the next disk keep next one string unit data and keep doing this.</p>
-<ul>
-<li>Advantages: Increase parallelism.</li>
-<li>Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.</li>
-<li>In general, performance is better with larger striping unit, which can reduce seek time</li>
-<li>Probability of N-disk system failing is: 1-(1-fail)^N</li>
-</ul>
-<h4 id="Redundant-Array-of-Inexpensive-Disks-RAID"><a href="#Redundant-Array-of-Inexpensive-Disks-RAID" class="headerlink" title="Redundant Array of Inexpensive Disks (RAID)"></a>Redundant Array of Inexpensive Disks (RAID)</h4><ul>
-<li>level 1: Just mirroring.</li>
-<li>level 2: Similar to memory’s ECC, use serveal disks to check bits.</li>
-<li>level 3: Use one disk to maintain parity bits.</li>
-<li>level 4: Use one disk to maintain parity blocks.</li>
-<li>level 5: Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.</li>
-</ul>
-<h3 id="Flash-Memory"><a href="#Flash-Memory" class="headerlink" title="Flash Memory"></a>Flash Memory</h3><ol>
-<li>Technologies of Flash<ul>
-<li>NOR: Byte addressable.</li>
-<li>NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.</li>
-</ul>
-</li>
-<li>Wear leveling<ul>
-<li>Writing problem: To change zeroes to ones, must erase entire block.</li>
-<li>Spread writes/erasures across entire drive.</li>
-<li>Using flash traslation layer(FTL) and log-structured file system.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Crash-Resiliency"><a href="#Crash-Resiliency" class="headerlink" title="Crash Resiliency"></a>Crash Resiliency</h3><h4 id="Crash-problem"><a href="#Crash-problem" class="headerlink" title="Crash problem"></a>Crash problem</h4><ul>
-<li>Disk update, gather all dirty blocks, which is done one disk block at a time.</li>
-<li>In S5fs and FFS, the lower level file system can sequence disk writes in any order.</li>
-</ul>
-<h4 id="Dealing-with-Crashes"><a href="#Dealing-with-Crashes" class="headerlink" title="Dealing with Crashes"></a>Dealing with Crashes</h4><ol>
-<li><p>Soft Updates</p>
-<ul>
-<li>Consistency-preserving approach: order disk operations to preserve meta-data consistency.</li>
-<li>Have problems. In reality, in order to save the numver of disk writes, multiple objects can be packed into a diks block and will make a cycle in the topological order, and breaking circular dependency will slow the preformance.</li>
-</ul>
-</li>
-<li><p>Journaling</p>
-<p> <img src="https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg" width="400" height="60" alt="journaling"></p>
-<ul>
-<li>Use transaction idea, a journal is append-only, and it is a separate part of the disk(can add to any file system).</li>
-<li>Append a commit record, when it’s time to update the file system, write to journal first, and write data to file system only after the commit record is writeen to the journal.</li>
-<li>Undo journaling(record previous contents), redo journaling(record new contents).</li>
-<li>Recovery will take the file system into a consistent state at a transaction boundary, and copying a disk block to the file system is idempotent.</li>
-</ul>
-</li>
-<li><p>Shadow paging</p>
-<ul>
-<li><p>Based on copy-on-write ideas</p>
-<p>  <img src="https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg" width="400" height="240" alt="shadow_paging"></p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="Naming-and-Directories"><a href="#Naming-and-Directories" class="headerlink" title="Naming and Directories"></a>Naming and Directories</h3><h4 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h4><ol>
-<li>S5FS Directories<ul>
-<li>Each entry is 32 bytes.</li>
-</ul>
-</li>
-<li>FFS Directories:<ul>
-<li>No restrictions on names.</li>
-<li>Maintain the last entry to get the free space.</li>
-<li>Use Hash table or B+ tree to look for a file name.</li>
-<li>Use extensible Hashing, the low-order i bits of hi(x) are the same in hi+1(x)</li>
-<li>B+ tree, internal nodes contain no data, just keys, leaf node are linked to ease sorted sequential traversal</li>
-</ul>
-</li>
-</ol>
-<h4 id="Name-Space-Management"><a href="#Name-Space-Management" class="headerlink" title="Name-Space Management"></a>Name-Space Management</h4><ul>
-<li>For Windows, it use drives to make the name-space appear uniform. For Unix, it use file system mounting.</li>
-</ul>
-<h3 id="File-systems-Summary"><a href="#File-systems-Summary" class="headerlink" title="File systems Summary"></a>File systems Summary</h3><p>This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.</p>
-<p><img src="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg" width="450" height="280" alt="file_system_summary"></p>
 ]]></content>
     </entry>
     
@@ -2678,6 +2762,21 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Stock Search App -- AutoComplete]]></title>
+      <url>http://www.byteants.com/2016/04/11/Stock%20Search%20APP%20--%20AutoComplete/</url>
+      <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1693/26393556095_c31c115dc0.jpg" alt=""></p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>During developing the Stock Search App on the cloud server (AWS), in order to make out application be used conveniently the input will autocomplete based on the users’ input. This function can be divided into two parts, the back-end and front-end. Firstly, with the help of Ajax, the input of user will send to the server and server will fetch the information for user synchronously. This process is hidden to users. Secondly, when the front end get the data from the server, jQuery UI will show these data as a prompting list so that user can choose what they want to search. During the process, the user haven’t to press any button and the prompting message will change as the change of users’ inputs. Users can’t feel the process of data transmission between local and server. It is just like they run an application locally which is a great benefit of Ajax.<br><a id="more"></a></p>
+<h3 id="jQuery-UI-realize-the-autocomplete-front-end"><a href="#jQuery-UI-realize-the-autocomplete-front-end" class="headerlink" title="jQuery UI realize the autocomplete front-end"></a>jQuery UI realize the autocomplete front-end</h3><p>Fortunately, jQuery provide a user interface to realize the autocomplete prompting list. In the <a href="http://jqueryui.com/" target="_blank" rel="external">official website</a>, it provides some <a href="https://jqueryui.com/autocomplete/#default" target="_blank" rel="external">examples</a>. At the same time, we need to add following libraries, including CSS and javascript, to our application.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/ui/1.11.4/jquery-ui.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Firstly, we build an array in our application. We can get the input element based on the input textbox’s ID. When we add the jQuery-UI library, the input textbox will have the autocomplete method. In the method there is a source variable, and then we can set the source as the array what we just create before. Then the input will autocomplete based on the users’ input and the array we create. For example, when the user type j in the textbox, the autocomplete function will search the string star with ‘j’ from the array. When it get a list, then it will show this list for us.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> availableTags = [</span><br><span class="line">      <span class="string">"ActionScript"</span>,</span><br><span class="line">      <span class="string">"AppleScript"</span>,</span><br><span class="line">      <span class="string">"Asp"</span>,</span><br><span class="line">      <span class="string">"BASIC"</span>,</span><br><span class="line">      <span class="string">"C"</span>,</span><br><span class="line">      <span class="string">"C++"</span>,</span><br><span class="line">      <span class="string">"Clojure"</span>,</span><br><span class="line">      <span class="string">"COBOL"</span>,</span><br><span class="line">      <span class="string">"ColdFusion"</span>,</span><br><span class="line">      <span class="string">"Erlang"</span>,</span><br><span class="line">      <span class="string">"Fortran"</span>,</span><br><span class="line">      <span class="string">"Groovy"</span>,</span><br><span class="line">      <span class="string">"Haskell"</span>,</span><br><span class="line">      <span class="string">"Java"</span>,</span><br><span class="line">      <span class="string">"JavaScript"</span>,</span><br><span class="line">      <span class="string">"Lisp"</span>,</span><br><span class="line">      <span class="string">"Perl"</span>,</span><br><span class="line">      <span class="string">"PHP"</span>,</span><br><span class="line">      <span class="string">"Python"</span>,</span><br><span class="line">      <span class="string">"Ruby"</span>,</span><br><span class="line">      <span class="string">"Scala"</span>,</span><br><span class="line">      <span class="string">"Scheme"</span></span><br><span class="line">    ];</span><br><span class="line">    $(<span class="string">"#tags"</span> ).autocomplete(&#123;</span><br><span class="line">      source: availableTags</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>The code above is sample and clean and it satisfy our need of front end. However, it just can autocomplete the user’s input based on the array which we create before. Actually, it is impossible for us to create an array to autocomplete user’s input during our application. The amount of company is so large, so we need to fetch the useful data from the stock server instead create a static array in our application. In the following section, I will talks about how we can get information from the server.</p>
+<h3 id="Autocomplete-Based-on-Users’-Input"><a href="#Autocomplete-Based-on-Users’-Input" class="headerlink" title="Autocomplete Based on Users’ Input"></a>Autocomplete Based on Users’ Input</h3><p>In our application, what we face is a huge amount of data so we cannot create a static array to realize automatically as before.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#search_query"</span>).autocomplete(&#123;</span><br><span class="line">            source: <span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">                $.ajax(&#123;</span><br><span class="line">                    url: <span class="string">"search.php"</span>,</span><br><span class="line">                    data: &#123;input: request.term&#125;,</span><br><span class="line">                    type: <span class="string">"GET"</span>,</span><br><span class="line">                    datatype: <span class="string">"json"</span>,</span><br><span class="line">                    success: <span class="function"><span class="keyword">function</span> (<span class="params">json</span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">var</span> jsonObject = jQuery.parseJSON(json);</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">if</span> (jsonObject.length == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">"Select a valid entry"</span>;</span><br><span class="line"></span><br><span class="line">                            response(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">var</span> data = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; jsonObject.length; i++) &#123;</span><br><span class="line">                                data[i] = &#123;</span><br><span class="line">                                    label: jsonObject[i].Symbol + <span class="string">" - "</span> + jsonObject[i].Name + <span class="string">" ( "</span> + jsonObject[i].Exchange + <span class="string">" ) "</span>,</span><br><span class="line">                                    value: jsonObject[i].Symbol</span><br><span class="line">                                &#125;;</span><br><span class="line">                            &#125;</span><br><span class="line">                            response(data);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>The search.php as followint<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">"input"</span>])) &#123;</span><br><span class="line">    $autocomplete_check_search = <span class="string">"http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input="</span>.$_GET[<span class="string">"input"</span>];</span><br><span class="line">    $json_content = file_get_contents($autocomplete_check_search);</span><br><span class="line">    <span class="keyword">echo</span> $json_content;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>In this task, we use the Ajax to fetch data from server based on users’ inputs without the observation of users’. Then with the help of the jQuery UI, we can show the list for the user conveniently. With the help of jQuery UI our code is more clean and easy to manipulate. And with the help of Ajax, we can divide the web user development with the server function development. And we can keep our servers code save because the user cannot see server’s code.</p>
+<p>-<a href="https://github.com/spacime/Projects/tree/master/Search%20Stock%20Data%20--%20Ajax" target="_blank" rel="external">github code</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Baseball Elimination]]></title>
       <url>http://www.byteants.com/2016/04/11/BaseballElimination/</url>
       <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1586/26379159155_9fbb11ef23_z.jpg" width="589" height="301"></p>
@@ -2748,21 +2847,6 @@
 </li>
 </ul>
 <hr>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Stock Search App -- AutoComplete]]></title>
-      <url>http://www.byteants.com/2016/04/11/Stock%20Search%20APP%20--%20AutoComplete/</url>
-      <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1693/26393556095_c31c115dc0.jpg" alt=""></p>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>During developing the Stock Search App on the cloud server (AWS), in order to make out application be used conveniently the input will autocomplete based on the users’ input. This function can be divided into two parts, the back-end and front-end. Firstly, with the help of Ajax, the input of user will send to the server and server will fetch the information for user synchronously. This process is hidden to users. Secondly, when the front end get the data from the server, jQuery UI will show these data as a prompting list so that user can choose what they want to search. During the process, the user haven’t to press any button and the prompting message will change as the change of users’ inputs. Users can’t feel the process of data transmission between local and server. It is just like they run an application locally which is a great benefit of Ajax.<br><a id="more"></a></p>
-<h3 id="jQuery-UI-realize-the-autocomplete-front-end"><a href="#jQuery-UI-realize-the-autocomplete-front-end" class="headerlink" title="jQuery UI realize the autocomplete front-end"></a>jQuery UI realize the autocomplete front-end</h3><p>Fortunately, jQuery provide a user interface to realize the autocomplete prompting list. In the <a href="http://jqueryui.com/" target="_blank" rel="external">official website</a>, it provides some <a href="https://jqueryui.com/autocomplete/#default" target="_blank" rel="external">examples</a>. At the same time, we need to add following libraries, including CSS and javascript, to our application.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/ui/1.11.4/jquery-ui.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>Firstly, we build an array in our application. We can get the input element based on the input textbox’s ID. When we add the jQuery-UI library, the input textbox will have the autocomplete method. In the method there is a source variable, and then we can set the source as the array what we just create before. Then the input will autocomplete based on the users’ input and the array we create. For example, when the user type j in the textbox, the autocomplete function will search the string star with ‘j’ from the array. When it get a list, then it will show this list for us.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> availableTags = [</span><br><span class="line">      <span class="string">"ActionScript"</span>,</span><br><span class="line">      <span class="string">"AppleScript"</span>,</span><br><span class="line">      <span class="string">"Asp"</span>,</span><br><span class="line">      <span class="string">"BASIC"</span>,</span><br><span class="line">      <span class="string">"C"</span>,</span><br><span class="line">      <span class="string">"C++"</span>,</span><br><span class="line">      <span class="string">"Clojure"</span>,</span><br><span class="line">      <span class="string">"COBOL"</span>,</span><br><span class="line">      <span class="string">"ColdFusion"</span>,</span><br><span class="line">      <span class="string">"Erlang"</span>,</span><br><span class="line">      <span class="string">"Fortran"</span>,</span><br><span class="line">      <span class="string">"Groovy"</span>,</span><br><span class="line">      <span class="string">"Haskell"</span>,</span><br><span class="line">      <span class="string">"Java"</span>,</span><br><span class="line">      <span class="string">"JavaScript"</span>,</span><br><span class="line">      <span class="string">"Lisp"</span>,</span><br><span class="line">      <span class="string">"Perl"</span>,</span><br><span class="line">      <span class="string">"PHP"</span>,</span><br><span class="line">      <span class="string">"Python"</span>,</span><br><span class="line">      <span class="string">"Ruby"</span>,</span><br><span class="line">      <span class="string">"Scala"</span>,</span><br><span class="line">      <span class="string">"Scheme"</span></span><br><span class="line">    ];</span><br><span class="line">    $(<span class="string">"#tags"</span> ).autocomplete(&#123;</span><br><span class="line">      source: availableTags</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>The code above is sample and clean and it satisfy our need of front end. However, it just can autocomplete the user’s input based on the array which we create before. Actually, it is impossible for us to create an array to autocomplete user’s input during our application. The amount of company is so large, so we need to fetch the useful data from the stock server instead create a static array in our application. In the following section, I will talks about how we can get information from the server.</p>
-<h3 id="Autocomplete-Based-on-Users’-Input"><a href="#Autocomplete-Based-on-Users’-Input" class="headerlink" title="Autocomplete Based on Users’ Input"></a>Autocomplete Based on Users’ Input</h3><p>In our application, what we face is a huge amount of data so we cannot create a static array to realize automatically as before.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#search_query"</span>).autocomplete(&#123;</span><br><span class="line">            source: <span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">                $.ajax(&#123;</span><br><span class="line">                    url: <span class="string">"search.php"</span>,</span><br><span class="line">                    data: &#123;input: request.term&#125;,</span><br><span class="line">                    type: <span class="string">"GET"</span>,</span><br><span class="line">                    datatype: <span class="string">"json"</span>,</span><br><span class="line">                    success: <span class="function"><span class="keyword">function</span> (<span class="params">json</span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">var</span> jsonObject = jQuery.parseJSON(json);</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">if</span> (jsonObject.length == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">"Select a valid entry"</span>;</span><br><span class="line"></span><br><span class="line">                            response(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">var</span> data = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; jsonObject.length; i++) &#123;</span><br><span class="line">                                data[i] = &#123;</span><br><span class="line">                                    label: jsonObject[i].Symbol + <span class="string">" - "</span> + jsonObject[i].Name + <span class="string">" ( "</span> + jsonObject[i].Exchange + <span class="string">" ) "</span>,</span><br><span class="line">                                    value: jsonObject[i].Symbol</span><br><span class="line">                                &#125;;</span><br><span class="line">                            &#125;</span><br><span class="line">                            response(data);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>The search.php as followint<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">"input"</span>])) &#123;</span><br><span class="line">    $autocomplete_check_search = <span class="string">"http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input="</span>.$_GET[<span class="string">"input"</span>];</span><br><span class="line">    $json_content = file_get_contents($autocomplete_check_search);</span><br><span class="line">    <span class="keyword">echo</span> $json_content;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>In this task, we use the Ajax to fetch data from server based on users’ inputs without the observation of users’. Then with the help of the jQuery UI, we can show the list for the user conveniently. With the help of jQuery UI our code is more clean and easy to manipulate. And with the help of Ajax, we can divide the web user development with the server function development. And we can keep our servers code save because the user cannot see server’s code.</p>
-<p>-<a href="https://github.com/spacime/Projects/tree/master/Search%20Stock%20Data%20--%20Ajax" target="_blank" rel="external">github code</a></p>
 ]]></content>
     </entry>
     
