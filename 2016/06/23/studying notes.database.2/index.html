@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JSON Data | Byte Ants</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSON Data">
+<meta property="og:url" content="http://www.byteants.com/2016/06/23/studying notes.database.2/index.html">
+<meta property="og:site_name" content="Byte Ants">
+<meta property="og:description">
+<meta property="og:image" content="https://c7.staticflickr.com/8/7392/27571792310_2e06922f54.jpg">
+<meta property="og:image" content="https://c5.staticflickr.com/8/7263/27237284084_9ebeee9575.jpg">
+<meta property="og:updated_time" content="2016-06-23T03:43:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSON Data">
+<meta name="twitter:description">
+<meta name="twitter:image" content="https://c7.staticflickr.com/8/7392/27571792310_2e06922f54.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Byte Ants" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+          <li><a class=""
+                 href="/about us/">About Us</a></li>
+        
+          <li><a class=""
+                 href="/atom.xml">Rss</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Byte Ants</h1>
+  
+    <p class="lead blog-description">Keep on going, never give up!</p>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-studying notes.database.2" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      JSON Data
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/06/23/studying notes.database.2/" class="article-date"><time datetime="2016-06-23T07:00:00.000Z" itemprop="datePublished">2016-06-23</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Studying-Notes/">Studying Notes</a> / <a class="article-category-link" href="/categories/Studying-Notes/Database/">Database</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://c7.staticflickr.com/8/7392/27571792310_2e06922f54.jpg" width="500" height="232"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>JSON(javascript object notation):<br>    standard for “serializing” data objects, usually in files<br>    human-readable, useful for data interchange<br>    also useful for representing &amp; storing semistructured data<br>    no longer tied to javascript, parsers for many languages</p>
+<p>basic constructs(recursive):<br>    base values: number, string, boolean…<br>    objects{}: sets of label-value pairs<br>    arrays[]: lists of values</p>
+<p>Relational Model versus JSON:</p>
+<table>
+<thead>
+<tr>
+<th><font size="2">  (none) </font></th>
+<th><font size="2">  Relational  </font></th>
+<th><font size="2">  JSON  </font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font size="2">  structure </font></td>
+<td><font size="2">  tables  </font></td>
+<td><font size="2">  nested sets/arrays  </font></td>
+</tr>
+<tr>
+<td><font size="2">  schema </font></td>
+<td><font size="2">  fixed in advance  </font></td>
+<td><font size="2">  “self-describing” flexible  </font></td>
+</tr>
+<tr>
+<td><font size="2">  queries </font></td>
+<td><font size="2">  simple expressive languages  </font></td>
+<td><font size="2">  widely used  </font></td>
+</tr>
+<tr>
+<td><font size="2">  ordering </font></td>
+<td><font size="2">  none  </font></td>
+<td><font size="2">  arrays  </font></td>
+</tr>
+<tr>
+<td><font size="2">  implementation </font></td>
+<td><font size="2">  native systems  </font></td>
+<td><font size="2">  coupled with programming languages, NoSQL systems  </font></td>
+</tr>
+</tbody>
+</table>
+<p>XML versus JSON:</p>
+<table>
+<thead>
+<tr>
+<th><font size="2">  (none) </font></th>
+<th><font size="2">  XML  </font></th>
+<th><font size="2">  JSON  </font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font size="2">  verbosity </font></td>
+<td><font size="2">  more  </font></td>
+<td><font size="2">  less  </font></td>
+</tr>
+<tr>
+<td><font size="2">  complexity </font></td>
+<td><font size="2">  more  </font></td>
+<td><font size="2">  less  </font></td>
+</tr>
+<tr>
+<td><font size="2">  validity </font></td>
+<td><font size="2">  DTDs/XSDs widely used  </font></td>
+<td><font size="2">  JSON schema not widely used  </font></td>
+</tr>
+<tr>
+<td><font size="2">  prog. Interface </font></td>
+<td><font size="2">  clunky “impedence mismatch”  </font></td>
+<td><font size="2">  more direct  </font></td>
+</tr>
+<tr>
+<td><font size="2">  querying </font></td>
+<td><font size="2">  xpath, xquery, XSLT  </font></td>
+<td><font size="2">  JSON path, JSON query, JAQL  </font></td>
+</tr>
+</tbody>
+</table>
+<p>semantically valid JSON:<br>    adheres to basic structural requirements<br>    conforms to specified schema</p>
+<p><img src="https://c5.staticflickr.com/8/7263/27237284084_9ebeee9575.jpg" width="500" height="173"></p>
+<p>Demo of JSON:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;Books&quot;:</span><br><span class="line">  [</span><br><span class="line">    &#123; &quot;ISBN&quot;:&quot;ISBN-0-13-713526-2&quot;,</span><br><span class="line">      &quot;Price&quot;:85,</span><br><span class="line">      &quot;Edition&quot;:3,</span><br><span class="line">      &quot;Title&quot;:&quot;A First Course in Database Systems&quot;,</span><br><span class="line">      &quot;Authors&quot;:[ &#123;&quot;First_Name&quot;:&quot;Jeffrey&quot;, &quot;Last_Name&quot;:&quot;Ullman&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jennifer&quot;, &quot;Last_Name&quot;:&quot;Widom&quot;&#125; ] &#125;</span><br><span class="line">    ,</span><br><span class="line">    &#123; &quot;ISBN&quot;:&quot;ISBN-0-13-815504-6&quot;,</span><br><span class="line">      &quot;Price&quot;:100,</span><br><span class="line">      &quot;Remark&quot;:&quot;Buy this book bundled with &apos;A First Course&apos; - a great deal!&quot;,</span><br><span class="line">      &quot;Title&quot;:&quot;Database Systems:The Complete Book&quot;,</span><br><span class="line">      &quot;Authors&quot;:[ &#123;&quot;First_Name&quot;:&quot;Hector&quot;, &quot;Last_Name&quot;:&quot;Garcia-Molina&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jeffrey&quot;, &quot;Last_Name&quot;:&quot;Ullman&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jennifer&quot;, &quot;Last_Name&quot;:&quot;Widom&quot;&#125; ] &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;Magazines&quot;:</span><br><span class="line">  [</span><br><span class="line">    &#123; &quot;Title&quot;:&quot;National Geographic&quot;,</span><br><span class="line">      &quot;Month&quot;:&quot;January&quot;,</span><br><span class="line">      &quot;Year&quot;:2009 &#125;</span><br><span class="line">    ,</span><br><span class="line">    &#123; &quot;Title&quot;:&quot;Newsweek&quot;,</span><br><span class="line">      &quot;Month&quot;:&quot;February&quot;,</span><br><span class="line">      &quot;Year&quot;:2009 &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Demo of JSON schema:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">  &quot;properties&quot;: &#123;</span><br><span class="line">     &quot;Books&quot;: &#123;</span><br><span class="line">        &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">        &quot;items&quot;: &#123;</span><br><span class="line">           &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">           &quot;properties&quot;: &#123;</span><br><span class="line">              &quot;ISBN&quot;: &#123; &quot;type&quot;:&quot;string&quot;, &quot;pattern&quot;:&quot;ISBN*&quot; &#125;,</span><br><span class="line">              &quot;Price&quot;: &#123; &quot;type&quot;:&quot;integer&quot;,</span><br><span class="line">                         &quot;minimum&quot;:0, &quot;maximum&quot;:200 &#125;,</span><br><span class="line">              &quot;Edition&quot;: &#123; &quot;type&quot;:&quot;integer&quot;, &quot;optional&quot;: true &#125;,</span><br><span class="line">              &quot;Remark&quot;: &#123; &quot;type&quot;:&quot;string&quot;, &quot;optional&quot;: true &#125;,</span><br><span class="line">              &quot;Title&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">              &quot;Authors&quot;: &#123; </span><br><span class="line">                 &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">                 &quot;minItems&quot;:1,</span><br><span class="line">                 &quot;maxItems&quot;:10,</span><br><span class="line">                 &quot;items&quot;: &#123;</span><br><span class="line">                    &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">                    &quot;properties&quot;: &#123;</span><br><span class="line">                       &quot;First_Name&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">                       &quot;Last_Name&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;&#125;&#125;&#125;&#125;&#125;&#125;,</span><br><span class="line">     &quot;Magazines&quot;: &#123;</span><br><span class="line">        &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">        &quot;items&quot;: &#123;</span><br><span class="line">           &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">           &quot;properties&quot;: &#123;</span><br><span class="line">              &quot;Title&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">              &quot;Month&quot;: &#123; &quot;type&quot;:&quot;string&quot;,</span><br><span class="line">                         &quot;enum&quot;:[&quot;January&quot;,&quot;February&quot;] &#125;,</span><br><span class="line">              &quot;Year&quot;: &#123; &quot;type&quot;:&quot;integer&quot; &#125;&#125;&#125;&#125;</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>If type is object, it has properties which contains many key-value pairs; if type is array, it has items describing every kind of type inside array.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.byteants.com/2016/06/23/studying notes.database.2/" data-id="ciprrlro100009hs5lwzhb2vk" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+        <a href="http://www.byteants.com/2016/06/23/studying notes.database.2/#disqus_thread" class="article-comment-link">
+          <i class="fa fa-comment"></i> Comments
+        </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/05/31/studying notes.database.1/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Introduction, Relational Database and XML</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Yifei Wang: USC graduate student majored in computer science(wangyife@usc.edu)<a href="https://www.linkedin.com/in/wangyife">LinkedIn</a></p> <p>Shizhou Liu: USC graduate student majored in computer science(shizhoul@usc.edu)<a href="https://www.linkedin.com/in/liushizhou">LinkedIn</a></p> <p>Tong Zhao: USC graduate student majored in computer science(zhaot@usc.edu)<a href="https://www.linkedin.com/in/tongzhao7">LinkedIn</a></p> <a href="/about%20us">Read more</a>
+
+</div>
+
+
+  <form class="search" action="" method="get" accept-charset="utf-8">
+		<input type="text" class="st-default-search-input" maxlength="20" style="height:40px" placeholder="Search" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','frvDju66MkEemPb8C_ph','2.0.0');
+</script>
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/LeetCode/">LeetCode</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/">Project</a><span class="sidebar-module-list-count">20</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Android-Develop/">Android Develop</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Artificial-Intelligence/">Artificial Intelligence</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Berkeley-Cs61b/">Berkeley Cs61b</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Intro-to-Computer-Science/">Intro to Computer Science</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Princeton-Algorithms/">Princeton Algorithms</a><span class="sidebar-module-list-count">10</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Project/Web-Develop/">Web Develop</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/">Studying Notes</a><span class="sidebar-module-list-count">11</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Database/">Database</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-System/">Operating System</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/Studying-Notes/Operating-Systems/">Operating Systems</a><span class="sidebar-module-list-count">2</span></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tags</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AJAX/">AJAX</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Adapter/">Adapter</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Android/">Android</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Angular-js/">Angular.js</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/AsyncTask/">AsyncTask</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/BackTracking/">BackTracking</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Balanced-Search-Tree/">Balanced Search Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bayesian-Network/">Bayesian Network</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Binary-Search-Tree/">Binary Search Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Bootstrap/">Bootstrap</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Breadth-First-Search/">Breadth-First Search</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Compression/">Compression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/DTD/">DTD</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Decompression/">Decompression</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Depth-First-Search/">Depth-First Search</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Dictionary/">Dictionary</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Directed-Graph/">Directed Graph</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Enumeration/">Enumeration</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Ford-Fulkerson/">Ford-Fulkerson</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Game-Tree/">Game Tree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Graph/">Graph</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/HTML/">HTML</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JSON/">JSON</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/JavaScript/">JavaScript</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/LinkedList/">LinkedList</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/List/">List</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/ListView/">ListView</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Maxflow/">Maxflow</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/OS/">OS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/PHP/">PHP</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Priority-Queue/">Priority Queue</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Queue/">Queue</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Recursion/">Recursion</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Relational-Database/">Relational Database</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Sorting/">Sorting</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Tree/">Tree</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/TrieTree/">TrieTree</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Union-Find/">Union-Find</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Utility/">Utility</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/Web-Crawler/">Web Crawler</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/XML/">XML</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/XSD/">XSD</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/file-systems/">file systems</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/jQuery/">jQuery</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/tags/virtual-memory/">virtual memory</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/Adapter/" style="font-size: 10px;">Adapter</a> <a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/Angular-js/" style="font-size: 10px;">Angular.js</a> <a href="/tags/AsyncTask/" style="font-size: 10px;">AsyncTask</a> <a href="/tags/BackTracking/" style="font-size: 10px;">BackTracking</a> <a href="/tags/Balanced-Search-Tree/" style="font-size: 10px;">Balanced Search Tree</a> <a href="/tags/Bayesian-Network/" style="font-size: 10px;">Bayesian Network</a> <a href="/tags/Binary-Search-Tree/" style="font-size: 12.5px;">Binary Search Tree</a> <a href="/tags/Bootstrap/" style="font-size: 10px;">Bootstrap</a> <a href="/tags/Breadth-First-Search/" style="font-size: 10px;">Breadth-First Search</a> <a href="/tags/Compression/" style="font-size: 10px;">Compression</a> <a href="/tags/DTD/" style="font-size: 10px;">DTD</a> <a href="/tags/Decompression/" style="font-size: 10px;">Decompression</a> <a href="/tags/Depth-First-Search/" style="font-size: 12.5px;">Depth-First Search</a> <a href="/tags/Dictionary/" style="font-size: 10px;">Dictionary</a> <a href="/tags/Directed-Graph/" style="font-size: 10px;">Directed Graph</a> <a href="/tags/Enumeration/" style="font-size: 10px;">Enumeration</a> <a href="/tags/Ford-Fulkerson/" style="font-size: 10px;">Ford-Fulkerson</a> <a href="/tags/Game-Tree/" style="font-size: 10px;">Game Tree</a> <a href="/tags/Graph/" style="font-size: 12.5px;">Graph</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JSON/" style="font-size: 20px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/LinkedList/" style="font-size: 12.5px;">LinkedList</a> <a href="/tags/List/" style="font-size: 17.5px;">List</a> <a href="/tags/ListView/" style="font-size: 10px;">ListView</a> <a href="/tags/Maxflow/" style="font-size: 10px;">Maxflow</a> <a href="/tags/OS/" style="font-size: 12.5px;">OS</a> <a href="/tags/PHP/" style="font-size: 12.5px;">PHP</a> <a href="/tags/Priority-Queue/" style="font-size: 10px;">Priority Queue</a> <a href="/tags/Queue/" style="font-size: 12.5px;">Queue</a> <a href="/tags/Recursion/" style="font-size: 10px;">Recursion</a> <a href="/tags/Relational-Database/" style="font-size: 10px;">Relational Database</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Tree/" style="font-size: 12.5px;">Tree</a> <a href="/tags/TrieTree/" style="font-size: 10px;">TrieTree</a> <a href="/tags/Union-Find/" style="font-size: 10px;">Union-Find</a> <a href="/tags/Utility/" style="font-size: 10px;">Utility</a> <a href="/tags/Web-Crawler/" style="font-size: 10px;">Web Crawler</a> <a href="/tags/XML/" style="font-size: 12.5px;">XML</a> <a href="/tags/XSD/" style="font-size: 10px;">XSD</a> <a href="/tags/file-systems/" style="font-size: 10px;">file systems</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/virtual-memory/" style="font-size: 10px;">virtual memory</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/06/">June 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">May 2016</a><span class="sidebar-module-list-count">16</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/04/">April 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/02/">February 2016</a><span class="sidebar-module-list-count">5</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2016/06/23/studying notes.database.2/">JSON Data</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/31/studying notes.database.1/">Introduction, Relational Database and XML</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/31/Bayesian Network on Making Decision/">Bayesian Network on Making Decision</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/Stock Search Android APP – Adapter of ListView/">Stock Search Android APP – Adapter of ListView</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/28/studying notes.operating system.chapter 7/">Memory Management</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+  <div class="widget tag">
+<h4 class="title">Useful Links</h4>
+<a href="http://www.tongzhao.me" title="Tong Zhao's blog">Tong Zhao</a>
+</div>
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Yifei Wang, Shizhou Liu, Tong Zhao<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/about us/index.html';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+<script>
+  var disqus_shortname = 'byteants';
+  
+  var disqus_url = 'http://www.byteants.com/2016/06/23/studying notes.database.2/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
+<a href="https://github.com/xiaofeixiawang"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>

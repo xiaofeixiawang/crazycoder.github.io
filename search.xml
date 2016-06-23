@@ -4,37 +4,90 @@
   
     
     <entry>
-      <title><![CDATA[Bayesian Network on Making Decision]]></title>
-      <url>http://www.byteants.com/2016/05/31/Bayesian%20Network%20on%20Making%20Decision/</url>
-      <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Artificial intelligence makes great steps in recent years. We know that if all the events could be seen as true or false, we can get results of queries using first order algorithm based on existing knowledge base. However, in the real worlds, events, such as whether and accidents, always can’t be represent as true or false. For this case, we can see the happening of the events as probability. With the help of <a href="https://en.wikipedia.org/wiki/Bayes%27_rule" target="_blank" rel="external">Bayes’ rule</a> we can calculate the event’s probability based on what we have known. Luckily, the characteristics of Bayes’ rule is suitable to make the knowledge base shown as a graph. The graph descried the collection of events and the known event’s probability. The structure helps us calculate the probability in reasonable order. This article’s target is showing you how to calculate event’s probability based on enumeration and then making decision based on maximum utility policy. In order to explain clearly, we discuss this topics basing on the following Bayesian Network example.</p>
-<a id="more"></a>
-<h3 id="Bayesian-Network"><a href="#Bayesian-Network" class="headerlink" title="Bayesian Network"></a>Bayesian Network</h3><p>Based on Bayes’ rule we can make use of graphic representation of a probability distribution. In this case, the graph contains the connection between variables in graph. The graph representation helps us enumerate variables in reasonable order. Besides, all graphic properties and theories can be used to calculate the event’s probability.</p>
-<h3 id="Calculate-Probability-by-Enumeration"><a href="#Calculate-Probability-by-Enumeration" class="headerlink" title="Calculate Probability by Enumeration"></a>Calculate Probability by Enumeration</h3><p>Based on the structure of Bayesian Network, we can enumerate variables in order. Based on the graphic <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph" target="_blank" rel="external">DAG</a> properties, we can enumerate the variables in the DAG order. The enumeration formation is:</p>
-<p><img src="https://c3.staticflickr.com/8/7191/27129768010_a63c06da9e.jpg" alt=""></p>
-<p>Based on the DAG order, in our example, we can calculate p (b | j, m) using following formulation:</p>
-<p><img src="https://c8.staticflickr.com/8/7595/27334320831_8b50c8c344.jpg" alt=""></p>
-<p>The calculation process is:<br>$$<br>P(B | J, M) \<br>= P(B, J, M) / … \<br>=\sum_A \sum_E P(B, J, M, E, A) / … \<br>= \sum_A \sum_E P(B) P(E) P(A | B, E) P(J | A) P(M | A) / … \<br>= P(B) \sum_E P(E) \sum_A P(A | B, E) P(J | A) P(M | A) / … \<br>= 0.000592 / … \<br> P(¬B | J, M) \<br>= P(¬B) \sum_E P(E) \sum_A P(A | ¬B, E) P(J | A) P(M | A) / … \<br>= 0.00149 / … \<br>P(B | J, M) = 0.284<br>$$<br>The AIMA gives us a pseudo code to calculate the above formulation.</p>
-<p><img src="https://c5.staticflickr.com/8/7513/27307341452_ebf90047de.jpg" alt=""></p>
-<p>Based on the above pseudo code, we realize here in Python. The normalize() function is to normalize the given probability.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">enumeration_ask</span><span class="params">(X, e, bn, vars)</span>:</span></span><br><span class="line">  QX = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> xi <span class="keyword">in</span> [<span class="keyword">False</span>, <span class="keyword">True</span>]:</span><br><span class="line">      e[X] = xi</span><br><span class="line">      QX[xi] = enumeration_all(vars, e, bn)</span><br><span class="line">      <span class="keyword">del</span> e[X]</span><br><span class="line">  <span class="keyword">return</span> normalize(QX)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">enumeration_all</span><span class="params">(vars, e, bn)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> len(vars) == <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1.0</span></span><br><span class="line">  Y = vars.pop()</span><br><span class="line">  <span class="keyword">if</span> Y <span class="keyword">in</span> e:</span><br><span class="line">      val = Pr(Y, e[Y], e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      vars.append(Y)</span><br><span class="line">      <span class="keyword">return</span> val</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">      total = <span class="number">0</span></span><br><span class="line">      e[Y] = <span class="keyword">True</span></span><br><span class="line">      total += Pr(Y, <span class="keyword">True</span>, e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      e[Y] = <span class="keyword">False</span></span><br><span class="line">      total += Pr(Y, <span class="keyword">False</span>, e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      <span class="keyword">del</span> e[Y]</span><br><span class="line">      vars.append(Y)</span><br><span class="line">      <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
-<h3 id="Making-decision"><a href="#Making-decision" class="headerlink" title="Making decision"></a>Making decision</h3><p>In this example we use the maximum utility to make decision. Actions are selected by evaluating the decision network for each possible setting of the decision<br>node. Once the decision node is set, it behaves exactly like a chance node that has been<br>set as an evidence variable. The algorithm for evaluating decision networks is the following:</p>
-<ul>
-<li>Set the evidence variables for the current state.</li>
-<li>For each possible value of the decision node:<ul>
-<li>Set the decision node to that value.</li>
-<li>Calculate the posterior probabilities for the parent nodes of the utility node, using a standard probabilistic inference algorithm.</li>
-<li>Calculate the resulting utility for the action.</li>
-</ul>
-</li>
-<li>Return the action with the highest utility.</li>
-</ul>
-<p><img src="https://c1.staticflickr.com/8/7126/27129767960_c832879682.jpg" alt=""></p>
-<p>In this example, we make decision whether should we call the police when J calls and M does not call. Base on previous calculation of probability, we assume that $P(B | J, ¬M) = 0.005$ and $P(¬B | J, ¬M) = 0.995$. Then can get the utility of calling and not calling:</p>
-<p>$$<br>  EU(CP|J,¬M)<br>= P(B|J,¬M)U(B,CP)+P(¬B|J,¬M)U(¬B,CP)<br>= 0.005<em>0 + 0.995</em>(-5) = -4.975<br>$$<br>$$<br>EU(¬CP|J,¬M)<br>= P(B|J,¬M)U(B,¬CP)+P(¬B|J,¬M)U(¬B,¬CP)<br>= 0.005<em>(-100) + 0.995</em>0 = -0.500<br>$$</p>
-<p>Based on the maximum utility policy, our decision is not calling the police.</p>
-<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>This script deals with the input file. The input file includes the queries we need to calculate and the knowledge which we need to build as a Bayesian Network. They are divided by line with ‘*’. In the query part, P means probability, EU means expected utility and MEU means the maximum expected Utility. In the knowledge base, ‘+’ means true and ‘-’ means false. Have a try of the script will make you get more comprehension on the usage of script. The code link is in the end of article.</p>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>With the help of probability representation, we can describe more complex real world. And making use of Bayesian Network helps us calculate the wanted probabilities effectively. All graph theory can help us during the calculation.</p>
-<p>-<a href="https://github.com/spacime/Projects/tree/master/Artificial%20Intelligence/Bayesian%20Network" target="_blank" rel="external">github code</a></p>
+      <title><![CDATA[JSON Data]]></title>
+      <url>http://www.byteants.com/2016/06/23/studying%20notes.database.2/</url>
+      <content type="html"><![CDATA[<p><img src="https://c7.staticflickr.com/8/7392/27571792310_2e06922f54.jpg" width="500" height="232"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>JSON(javascript object notation):<br>    standard for “serializing” data objects, usually in files<br>    human-readable, useful for data interchange<br>    also useful for representing &amp; storing semistructured data<br>    no longer tied to javascript, parsers for many languages</p>
+<p>basic constructs(recursive):<br>    base values: number, string, boolean…<br>    objects{}: sets of label-value pairs<br>    arrays[]: lists of values</p>
+<p>Relational Model versus JSON:</p>
+<table>
+<thead>
+<tr>
+<th><font size="2">  (none) </font></th>
+<th><font size="2">  Relational  </font></th>
+<th><font size="2">  JSON  </font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font size="2">  structure </font></td>
+<td><font size="2">  tables  </font></td>
+<td><font size="2">  nested sets/arrays  </font></td>
+</tr>
+<tr>
+<td><font size="2">  schema </font></td>
+<td><font size="2">  fixed in advance  </font></td>
+<td><font size="2">  “self-describing” flexible  </font></td>
+</tr>
+<tr>
+<td><font size="2">  queries </font></td>
+<td><font size="2">  simple expressive languages  </font></td>
+<td><font size="2">  widely used  </font></td>
+</tr>
+<tr>
+<td><font size="2">  ordering </font></td>
+<td><font size="2">  none  </font></td>
+<td><font size="2">  arrays  </font></td>
+</tr>
+<tr>
+<td><font size="2">  implementation </font></td>
+<td><font size="2">  native systems  </font></td>
+<td><font size="2">  coupled with programming languages, NoSQL systems  </font></td>
+</tr>
+</tbody>
+</table>
+<p>XML versus JSON:</p>
+<table>
+<thead>
+<tr>
+<th><font size="2">  (none) </font></th>
+<th><font size="2">  XML  </font></th>
+<th><font size="2">  JSON  </font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font size="2">  verbosity </font></td>
+<td><font size="2">  more  </font></td>
+<td><font size="2">  less  </font></td>
+</tr>
+<tr>
+<td><font size="2">  complexity </font></td>
+<td><font size="2">  more  </font></td>
+<td><font size="2">  less  </font></td>
+</tr>
+<tr>
+<td><font size="2">  validity </font></td>
+<td><font size="2">  DTDs/XSDs widely used  </font></td>
+<td><font size="2">  JSON schema not widely used  </font></td>
+</tr>
+<tr>
+<td><font size="2">  prog. Interface </font></td>
+<td><font size="2">  clunky “impedence mismatch”  </font></td>
+<td><font size="2">  more direct  </font></td>
+</tr>
+<tr>
+<td><font size="2">  querying </font></td>
+<td><font size="2">  xpath, xquery, XSLT  </font></td>
+<td><font size="2">  JSON path, JSON query, JAQL  </font></td>
+</tr>
+</tbody>
+</table>
+<p>semantically valid JSON:<br>    adheres to basic structural requirements<br>    conforms to specified schema</p>
+<p><img src="https://c5.staticflickr.com/8/7263/27237284084_9ebeee9575.jpg" width="500" height="173"></p>
+<p>Demo of JSON:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;Books&quot;:</span><br><span class="line">  [</span><br><span class="line">    &#123; &quot;ISBN&quot;:&quot;ISBN-0-13-713526-2&quot;,</span><br><span class="line">      &quot;Price&quot;:85,</span><br><span class="line">      &quot;Edition&quot;:3,</span><br><span class="line">      &quot;Title&quot;:&quot;A First Course in Database Systems&quot;,</span><br><span class="line">      &quot;Authors&quot;:[ &#123;&quot;First_Name&quot;:&quot;Jeffrey&quot;, &quot;Last_Name&quot;:&quot;Ullman&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jennifer&quot;, &quot;Last_Name&quot;:&quot;Widom&quot;&#125; ] &#125;</span><br><span class="line">    ,</span><br><span class="line">    &#123; &quot;ISBN&quot;:&quot;ISBN-0-13-815504-6&quot;,</span><br><span class="line">      &quot;Price&quot;:100,</span><br><span class="line">      &quot;Remark&quot;:&quot;Buy this book bundled with &apos;A First Course&apos; - a great deal!&quot;,</span><br><span class="line">      &quot;Title&quot;:&quot;Database Systems:The Complete Book&quot;,</span><br><span class="line">      &quot;Authors&quot;:[ &#123;&quot;First_Name&quot;:&quot;Hector&quot;, &quot;Last_Name&quot;:&quot;Garcia-Molina&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jeffrey&quot;, &quot;Last_Name&quot;:&quot;Ullman&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jennifer&quot;, &quot;Last_Name&quot;:&quot;Widom&quot;&#125; ] &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;Magazines&quot;:</span><br><span class="line">  [</span><br><span class="line">    &#123; &quot;Title&quot;:&quot;National Geographic&quot;,</span><br><span class="line">      &quot;Month&quot;:&quot;January&quot;,</span><br><span class="line">      &quot;Year&quot;:2009 &#125;</span><br><span class="line">    ,</span><br><span class="line">    &#123; &quot;Title&quot;:&quot;Newsweek&quot;,</span><br><span class="line">      &quot;Month&quot;:&quot;February&quot;,</span><br><span class="line">      &quot;Year&quot;:2009 &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Demo of JSON schema:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">  &quot;properties&quot;: &#123;</span><br><span class="line">     &quot;Books&quot;: &#123;</span><br><span class="line">        &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">        &quot;items&quot;: &#123;</span><br><span class="line">           &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">           &quot;properties&quot;: &#123;</span><br><span class="line">              &quot;ISBN&quot;: &#123; &quot;type&quot;:&quot;string&quot;, &quot;pattern&quot;:&quot;ISBN*&quot; &#125;,</span><br><span class="line">              &quot;Price&quot;: &#123; &quot;type&quot;:&quot;integer&quot;,</span><br><span class="line">                         &quot;minimum&quot;:0, &quot;maximum&quot;:200 &#125;,</span><br><span class="line">              &quot;Edition&quot;: &#123; &quot;type&quot;:&quot;integer&quot;, &quot;optional&quot;: true &#125;,</span><br><span class="line">              &quot;Remark&quot;: &#123; &quot;type&quot;:&quot;string&quot;, &quot;optional&quot;: true &#125;,</span><br><span class="line">              &quot;Title&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">              &quot;Authors&quot;: &#123; </span><br><span class="line">                 &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">                 &quot;minItems&quot;:1,</span><br><span class="line">                 &quot;maxItems&quot;:10,</span><br><span class="line">                 &quot;items&quot;: &#123;</span><br><span class="line">                    &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">                    &quot;properties&quot;: &#123;</span><br><span class="line">                       &quot;First_Name&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">                       &quot;Last_Name&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;&#125;&#125;&#125;&#125;&#125;&#125;,</span><br><span class="line">     &quot;Magazines&quot;: &#123;</span><br><span class="line">        &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">        &quot;items&quot;: &#123;</span><br><span class="line">           &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">           &quot;properties&quot;: &#123;</span><br><span class="line">              &quot;Title&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">              &quot;Month&quot;: &#123; &quot;type&quot;:&quot;string&quot;,</span><br><span class="line">                         &quot;enum&quot;:[&quot;January&quot;,&quot;February&quot;] &#125;,</span><br><span class="line">              &quot;Year&quot;: &#123; &quot;type&quot;:&quot;integer&quot; &#125;&#125;&#125;&#125;</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>If type is object, it has properties which contains many key-value pairs; if type is array, it has items describing every kind of type inside array.</p>
 ]]></content>
     </entry>
     
@@ -44,7 +97,7 @@
       <content type="html"><![CDATA[<p><img src="https://c5.staticflickr.com/8/7549/27134031940_34d06d4bd0.jpg" width="500" height="224"></p>
 <h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="Introduction-and-Relational-Databases"><a href="#Introduction-and-Relational-Databases" class="headerlink" title="Introduction and Relational Databases"></a>Introduction and Relational Databases</h2><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>database management system (DBMS): massive, persistent, safe, multi-user, convenient, efficient, reliable</p>
 <p>database applications may be programmed via “frameworks”; DBMS may run in conjunction with “midleware”; data-intensive applications may not use DBMS at all</p>
-<p>data model: a description of how data is structured. eg: relational data model(a set of records), XML(hierarchical structure, labeled values), graph data model(nodes and edges)</p>
+<p>data model: a description of how data is structured. eg: relational data model(a set of records), XML(hierarchical structure, labeled values), graph data model(nodes and edges)xml, JSON</p>
 <p>schema versus data: like types and variables in programming language. schema sets up structure of database</p>
 <p>data definition language(DDL): used to set up a schema</p>
 <p>data manipulation or query language(DML): used to querying and modifying the data</p>
@@ -149,6 +202,41 @@
 <li>references: specific key have specific reference, also have selector and field</li>
 <li>currents constraints: can specify how many times an element type is allowed to occur</li>
 </ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Bayesian Network on Making Decision]]></title>
+      <url>http://www.byteants.com/2016/05/31/Bayesian%20Network%20on%20Making%20Decision/</url>
+      <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>Artificial intelligence makes great steps in recent years. We know that if all the events could be seen as true or false, we can get results of queries using first order algorithm based on existing knowledge base. However, in the real worlds, events, such as whether and accidents, always can’t be represent as true or false. For this case, we can see the happening of the events as probability. With the help of <a href="https://en.wikipedia.org/wiki/Bayes%27_rule" target="_blank" rel="external">Bayes’ rule</a> we can calculate the event’s probability based on what we have known. Luckily, the characteristics of Bayes’ rule is suitable to make the knowledge base shown as a graph. The graph descried the collection of events and the known event’s probability. The structure helps us calculate the probability in reasonable order. This article’s target is showing you how to calculate event’s probability based on enumeration and then making decision based on maximum utility policy. In order to explain clearly, we discuss this topics basing on the following Bayesian Network example.</p>
+<a id="more"></a>
+<h3 id="Bayesian-Network"><a href="#Bayesian-Network" class="headerlink" title="Bayesian Network"></a>Bayesian Network</h3><p>Based on Bayes’ rule we can make use of graphic representation of a probability distribution. In this case, the graph contains the connection between variables in graph. The graph representation helps us enumerate variables in reasonable order. Besides, all graphic properties and theories can be used to calculate the event’s probability.</p>
+<h3 id="Calculate-Probability-by-Enumeration"><a href="#Calculate-Probability-by-Enumeration" class="headerlink" title="Calculate Probability by Enumeration"></a>Calculate Probability by Enumeration</h3><p>Based on the structure of Bayesian Network, we can enumerate variables in order. Based on the graphic <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph" target="_blank" rel="external">DAG</a> properties, we can enumerate the variables in the DAG order. The enumeration formation is:</p>
+<p><img src="https://c3.staticflickr.com/8/7191/27129768010_a63c06da9e.jpg" alt=""></p>
+<p>Based on the DAG order, in our example, we can calculate p (b | j, m) using following formulation:</p>
+<p><img src="https://c8.staticflickr.com/8/7595/27334320831_8b50c8c344.jpg" alt=""></p>
+<p>The calculation process is:<br>$$<br>P(B | J, M) \<br>= P(B, J, M) / … \<br>=\sum_A \sum_E P(B, J, M, E, A) / … \<br>= \sum_A \sum_E P(B) P(E) P(A | B, E) P(J | A) P(M | A) / … \<br>= P(B) \sum_E P(E) \sum_A P(A | B, E) P(J | A) P(M | A) / … \<br>= 0.000592 / … \<br> P(¬B | J, M) \<br>= P(¬B) \sum_E P(E) \sum_A P(A | ¬B, E) P(J | A) P(M | A) / … \<br>= 0.00149 / … \<br>P(B | J, M) = 0.284<br>$$<br>The AIMA gives us a pseudo code to calculate the above formulation.</p>
+<p><img src="https://c5.staticflickr.com/8/7513/27307341452_ebf90047de.jpg" alt=""></p>
+<p>Based on the above pseudo code, we realize here in Python. The normalize() function is to normalize the given probability.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">enumeration_ask</span><span class="params">(X, e, bn, vars)</span>:</span></span><br><span class="line">  QX = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> xi <span class="keyword">in</span> [<span class="keyword">False</span>, <span class="keyword">True</span>]:</span><br><span class="line">      e[X] = xi</span><br><span class="line">      QX[xi] = enumeration_all(vars, e, bn)</span><br><span class="line">      <span class="keyword">del</span> e[X]</span><br><span class="line">  <span class="keyword">return</span> normalize(QX)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">enumeration_all</span><span class="params">(vars, e, bn)</span>:</span></span><br><span class="line">  <span class="keyword">if</span> len(vars) == <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="number">1.0</span></span><br><span class="line">  Y = vars.pop()</span><br><span class="line">  <span class="keyword">if</span> Y <span class="keyword">in</span> e:</span><br><span class="line">      val = Pr(Y, e[Y], e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      vars.append(Y)</span><br><span class="line">      <span class="keyword">return</span> val</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">      total = <span class="number">0</span></span><br><span class="line">      e[Y] = <span class="keyword">True</span></span><br><span class="line">      total += Pr(Y, <span class="keyword">True</span>, e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      e[Y] = <span class="keyword">False</span></span><br><span class="line">      total += Pr(Y, <span class="keyword">False</span>, e, bn) * enumeration_all(vars, e, bn)</span><br><span class="line">      <span class="keyword">del</span> e[Y]</span><br><span class="line">      vars.append(Y)</span><br><span class="line">      <span class="keyword">return</span> total</span><br></pre></td></tr></table></figure>
+<h3 id="Making-decision"><a href="#Making-decision" class="headerlink" title="Making decision"></a>Making decision</h3><p>In this example we use the maximum utility to make decision. Actions are selected by evaluating the decision network for each possible setting of the decision<br>node. Once the decision node is set, it behaves exactly like a chance node that has been<br>set as an evidence variable. The algorithm for evaluating decision networks is the following:</p>
+<ul>
+<li>Set the evidence variables for the current state.</li>
+<li>For each possible value of the decision node:<ul>
+<li>Set the decision node to that value.</li>
+<li>Calculate the posterior probabilities for the parent nodes of the utility node, using a standard probabilistic inference algorithm.</li>
+<li>Calculate the resulting utility for the action.</li>
+</ul>
+</li>
+<li>Return the action with the highest utility.</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7126/27129767960_c832879682.jpg" alt=""></p>
+<p>In this example, we make decision whether should we call the police when J calls and M does not call. Base on previous calculation of probability, we assume that $P(B | J, ¬M) = 0.005$ and $P(¬B | J, ¬M) = 0.995$. Then can get the utility of calling and not calling:</p>
+<p>$$<br>  EU(CP|J,¬M)<br>= P(B|J,¬M)U(B,CP)+P(¬B|J,¬M)U(¬B,CP)<br>= 0.005<em>0 + 0.995</em>(-5) = -4.975<br>$$<br>$$<br>EU(¬CP|J,¬M)<br>= P(B|J,¬M)U(B,¬CP)+P(¬B|J,¬M)U(¬B,¬CP)<br>= 0.005<em>(-100) + 0.995</em>0 = -0.500<br>$$</p>
+<p>Based on the maximum utility policy, our decision is not calling the police.</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p>This script deals with the input file. The input file includes the queries we need to calculate and the knowledge which we need to build as a Bayesian Network. They are divided by line with ‘*’. In the query part, P means probability, EU means expected utility and MEU means the maximum expected Utility. In the knowledge base, ‘+’ means true and ‘-’ means false. Have a try of the script will make you get more comprehension on the usage of script. The code link is in the end of article.</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>With the help of probability representation, we can describe more complex real world. And making use of Bayesian Network helps us calculate the wanted probabilities effectively. All graph theory can help us during the calculation.</p>
+<p>-<a href="https://github.com/spacime/Projects/tree/master/Artificial%20Intelligence/Bayesian%20Network" target="_blank" rel="external">github code</a></p>
 ]]></content>
     </entry>
     
@@ -1000,28 +1088,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Stock Search Android APP]]></title>
-      <url>http://www.byteants.com/2016/05/24/Stock%20Search%20Android%20APP/</url>
-      <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p><img src="https://c1.staticflickr.com/8/7387/27187459336_584bde318b.jpg" alt=""></p>
-<p>This project allows user to search stock information, such as details, trends and news. When user type in some words, this application will autocomplete and provide related companies for being chosen. Moreover, favorite list stores the companies which user is interested in and user can delete the company form favorite list by slide the item in the list. This project contains lots of basic skills of Android development. It is absolutely a good practice if you are interested.<br><a id="more"></a></p>
-<h3 id="Automatically-Complete"><a href="#Automatically-Complete" class="headerlink" title="Automatically Complete"></a>Automatically Complete</h3><p>To realize the autocomplete function, the application need to connect with server <a href="http://dev.markitondemand.com/MODApis/Api/v2/Lookup/" target="_blank" rel="external">http://dev.markitondemand.com/MODApis/Api/v2/Lookup/</a> to search related companies based on user’s input. It will use Android’s AsyncTask class to realize the search function background. After the data is fetched from the server, they would be shown as a list. In this list, we need to create an adapter for the list. The adapter’s XML file and its class should create for this application. The AsyncTask class and List’s adapter will be talked in another two blogs.</p>
-<p><img src="https://c5.staticflickr.com/8/7662/26614698444_5848b0d960.jpg" alt=""></p>
-<h3 id="Stock-Details"><a href="#Stock-Details" class="headerlink" title="Stock Details"></a>Stock Details</h3><p><img src="https://c5.staticflickr.com/8/7302/27187459276_16256d841c.jpg" alt=""></p>
-<p>When user select one element from the autocomplete list and press the “GET QUOTE” button, it will create a new tabbed layout activity. The tabs contain stock’s current detail, history chart and news. It also fetch today’s trend picture on the detail tab. When user click on the picture, it will pop up a dialog which contains the today’s trend picture and user can zoom up and down the picture by multiple touch.</p>
-<p><img src="https://c4.staticflickr.com/8/7036/26617457123_36e8b40211.jpg" alt=""></p>
-<h3 id="Highlight-Chart"><a href="#Highlight-Chart" class="headerlink" title="Highlight Chart"></a>Highlight Chart</h3><p><img src="https://c1.staticflickr.com/8/7795/26614698304_b1b9073487.jpg" alt=""></p>
-<p>This tab shows the trend of the company’s stock. This has to implemented using a WebView using HighCharts API. We need put the HTML file into the assets directory so as to be shown in WebView.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loadHistoricalChartWebView</span><span class="params">(String stockSymbol)</span> </span>&#123;</span><br><span class="line">        WebView browser = (WebView) findViewById(R.id.webView);</span><br><span class="line">        <span class="comment">/* set loading of images */</span></span><br><span class="line">        browser.getSettings().setLoadsImagesAutomatically(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">/* enable JS */</span></span><br><span class="line">        browser.getSettings().setJavaScriptEnabled(<span class="keyword">true</span>);</span><br><span class="line">        String url = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            url = <span class="string">"file:///android_asset/historicalChart.html?symbol="</span> +</span><br><span class="line">                    URLEncoder.encode(stockSymbol, <span class="string">"utf-8"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        browser.loadUrl(url);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="News"><a href="#News" class="headerlink" title="News"></a>News</h3><p><img src="https://c7.staticflickr.com/8/7163/27124658422_6ce91b4e4b.jpg" alt=""></p>
-<p>In order to get the news about this company, this application also use AsyncTask class to fetch data from server and then show the data in a list when all data are fetched. Similarly, we also to create an adapter for the items in the list.</p>
-<p>Share on Facebook<br>If you like, this application can share company’s stock on Facebook. We will use the Facebook SDK in this application. The detail steps are here: <a href="https://developers.facebook.com/docs/sharing/android" target="_blank" rel="external">https://developers.facebook.com/docs/sharing/android</a>.</p>
-<h3 id="Favorite-List"><a href="#Favorite-List" class="headerlink" title="Favorite List"></a>Favorite List</h3><p><img src="https://c3.staticflickr.com/8/7497/26616152914_c49698b6a4.jpg" alt=""></p>
-<p><img src="https://c5.staticflickr.com/8/7155/26616152964_98c403d068.jpg" alt=""></p>
-<p>User can click the right corner’s star to add or remove from the favorite list. User also can delete the company from favorite at MainActivity by sliding the items. The slide deleting function is realize as following:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">DynamicListView mDynamicListView = (DynamicListView) findViewById(R.id.favoritesListView);</span><br><span class="line"></span><br><span class="line">        mDynamicListView.enableSwipeToDismiss(</span><br><span class="line">                <span class="keyword">new</span> OnDismissCallback() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDismiss</span><span class="params">(@NonNull <span class="keyword">final</span> ViewGroup listView, @NonNull <span class="keyword">final</span> <span class="keyword">int</span>[] reverseSortedPositions)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                        android.app.AlertDialog.Builder whetherDelete = <span class="keyword">new</span> android.app.AlertDialog.Builder(MainActivity.<span class="keyword">this</span>);</span><br><span class="line">                        whetherDelete.setTitle(<span class="string">"Want to delete"</span>);</span><br><span class="line">                        String name = <span class="string">""</span>;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">int</span> position : reverseSortedPositions) &#123;</span><br><span class="line">                            name = adapter.getItem(position).getFavoriteName();</span><br><span class="line">                        &#125;</span><br><span class="line">                        whetherDelete.setTitle(<span class="string">"Want to delete "</span> + name + <span class="string">" from favorites?"</span>);</span><br><span class="line">                        whetherDelete.setPositiveButton(<span class="string">"OK"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;</span><br><span class="line">                            <span class="meta">@Override</span></span><br><span class="line">                            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">                                <span class="keyword">for</span> (<span class="keyword">int</span> position : reverseSortedPositions) &#123;</span><br><span class="line">                                    adapter.remove(adapter.getItem(position));</span><br><span class="line">                                &#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;);</span><br><span class="line">                        whetherDelete.setNegativeButton(<span class="string">"CANCLE"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;</span><br><span class="line">                            <span class="meta">@Override</span></span><br><span class="line">                            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> which)</span> </span>&#123;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;);</span><br><span class="line">                        whetherDelete.show();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure></p>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>This project contains lots of characteristics of Android development. It contains creating new activity, Asyntask, ListView, REST and Facebook SDK. If you are the first time to touch Android development and want to become familiar with it, you can create a same application above.<br>-<a href="https://github.com/spacime/Projects/tree/master/Stock%20Search%20Android%20APP" target="_blank" rel="external">github code</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Operating-System Design]]></title>
       <url>http://www.byteants.com/2016/05/24/studying%20notes.operating%20system.chapter%204/</url>
       <content type="html"><![CDATA[<p><img src="https://c2.staticflickr.com/8/7785/27236221225_908bbf2490.jpg" width="500" height="253"></p>
@@ -1324,6 +1390,28 @@
 </ul>
 <p>messaging service: client create request port, response port and capability(key) to send data</p>
 <p><img src="https://c4.staticflickr.com/8/7305/27236221355_28cc1bb87a.jpg" width="500" height="331"></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Stock Search Android APP]]></title>
+      <url>http://www.byteants.com/2016/05/24/Stock%20Search%20Android%20APP/</url>
+      <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p><img src="https://c1.staticflickr.com/8/7387/27187459336_584bde318b.jpg" alt=""></p>
+<p>This project allows user to search stock information, such as details, trends and news. When user type in some words, this application will autocomplete and provide related companies for being chosen. Moreover, favorite list stores the companies which user is interested in and user can delete the company form favorite list by slide the item in the list. This project contains lots of basic skills of Android development. It is absolutely a good practice if you are interested.<br><a id="more"></a></p>
+<h3 id="Automatically-Complete"><a href="#Automatically-Complete" class="headerlink" title="Automatically Complete"></a>Automatically Complete</h3><p>To realize the autocomplete function, the application need to connect with server <a href="http://dev.markitondemand.com/MODApis/Api/v2/Lookup/" target="_blank" rel="external">http://dev.markitondemand.com/MODApis/Api/v2/Lookup/</a> to search related companies based on user’s input. It will use Android’s AsyncTask class to realize the search function background. After the data is fetched from the server, they would be shown as a list. In this list, we need to create an adapter for the list. The adapter’s XML file and its class should create for this application. The AsyncTask class and List’s adapter will be talked in another two blogs.</p>
+<p><img src="https://c5.staticflickr.com/8/7662/26614698444_5848b0d960.jpg" alt=""></p>
+<h3 id="Stock-Details"><a href="#Stock-Details" class="headerlink" title="Stock Details"></a>Stock Details</h3><p><img src="https://c5.staticflickr.com/8/7302/27187459276_16256d841c.jpg" alt=""></p>
+<p>When user select one element from the autocomplete list and press the “GET QUOTE” button, it will create a new tabbed layout activity. The tabs contain stock’s current detail, history chart and news. It also fetch today’s trend picture on the detail tab. When user click on the picture, it will pop up a dialog which contains the today’s trend picture and user can zoom up and down the picture by multiple touch.</p>
+<p><img src="https://c4.staticflickr.com/8/7036/26617457123_36e8b40211.jpg" alt=""></p>
+<h3 id="Highlight-Chart"><a href="#Highlight-Chart" class="headerlink" title="Highlight Chart"></a>Highlight Chart</h3><p><img src="https://c1.staticflickr.com/8/7795/26614698304_b1b9073487.jpg" alt=""></p>
+<p>This tab shows the trend of the company’s stock. This has to implemented using a WebView using HighCharts API. We need put the HTML file into the assets directory so as to be shown in WebView.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loadHistoricalChartWebView</span><span class="params">(String stockSymbol)</span> </span>&#123;</span><br><span class="line">        WebView browser = (WebView) findViewById(R.id.webView);</span><br><span class="line">        <span class="comment">/* set loading of images */</span></span><br><span class="line">        browser.getSettings().setLoadsImagesAutomatically(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">/* enable JS */</span></span><br><span class="line">        browser.getSettings().setJavaScriptEnabled(<span class="keyword">true</span>);</span><br><span class="line">        String url = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            url = <span class="string">"file:///android_asset/historicalChart.html?symbol="</span> +</span><br><span class="line">                    URLEncoder.encode(stockSymbol, <span class="string">"utf-8"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        browser.loadUrl(url);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="News"><a href="#News" class="headerlink" title="News"></a>News</h3><p><img src="https://c7.staticflickr.com/8/7163/27124658422_6ce91b4e4b.jpg" alt=""></p>
+<p>In order to get the news about this company, this application also use AsyncTask class to fetch data from server and then show the data in a list when all data are fetched. Similarly, we also to create an adapter for the items in the list.</p>
+<p>Share on Facebook<br>If you like, this application can share company’s stock on Facebook. We will use the Facebook SDK in this application. The detail steps are here: <a href="https://developers.facebook.com/docs/sharing/android" target="_blank" rel="external">https://developers.facebook.com/docs/sharing/android</a>.</p>
+<h3 id="Favorite-List"><a href="#Favorite-List" class="headerlink" title="Favorite List"></a>Favorite List</h3><p><img src="https://c3.staticflickr.com/8/7497/26616152914_c49698b6a4.jpg" alt=""></p>
+<p><img src="https://c5.staticflickr.com/8/7155/26616152964_98c403d068.jpg" alt=""></p>
+<p>User can click the right corner’s star to add or remove from the favorite list. User also can delete the company from favorite at MainActivity by sliding the items. The slide deleting function is realize as following:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">DynamicListView mDynamicListView = (DynamicListView) findViewById(R.id.favoritesListView);</span><br><span class="line"></span><br><span class="line">        mDynamicListView.enableSwipeToDismiss(</span><br><span class="line">                <span class="keyword">new</span> OnDismissCallback() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDismiss</span><span class="params">(@NonNull <span class="keyword">final</span> ViewGroup listView, @NonNull <span class="keyword">final</span> <span class="keyword">int</span>[] reverseSortedPositions)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">                        android.app.AlertDialog.Builder whetherDelete = <span class="keyword">new</span> android.app.AlertDialog.Builder(MainActivity.<span class="keyword">this</span>);</span><br><span class="line">                        whetherDelete.setTitle(<span class="string">"Want to delete"</span>);</span><br><span class="line">                        String name = <span class="string">""</span>;</span><br><span class="line">                        <span class="keyword">for</span> (<span class="keyword">int</span> position : reverseSortedPositions) &#123;</span><br><span class="line">                            name = adapter.getItem(position).getFavoriteName();</span><br><span class="line">                        &#125;</span><br><span class="line">                        whetherDelete.setTitle(<span class="string">"Want to delete "</span> + name + <span class="string">" from favorites?"</span>);</span><br><span class="line">                        whetherDelete.setPositiveButton(<span class="string">"OK"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;</span><br><span class="line">                            <span class="meta">@Override</span></span><br><span class="line">                            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">                                <span class="keyword">for</span> (<span class="keyword">int</span> position : reverseSortedPositions) &#123;</span><br><span class="line">                                    adapter.remove(adapter.getItem(position));</span><br><span class="line">                                &#125;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;);</span><br><span class="line">                        whetherDelete.setNegativeButton(<span class="string">"CANCLE"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;</span><br><span class="line">                            <span class="meta">@Override</span></span><br><span class="line">                            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> which)</span> </span>&#123;</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;);</span><br><span class="line">                        whetherDelete.show();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure></p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>This project contains lots of characteristics of Android development. It contains creating new activity, Asyntask, ListView, REST and Facebook SDK. If you are the first time to touch Android development and want to become familiar with it, you can create a same application above.<br>-<a href="https://github.com/spacime/Projects/tree/master/Stock%20Search%20Android%20APP" target="_blank" rel="external">github code</a></p>
 ]]></content>
     </entry>
     
@@ -1643,6 +1731,151 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Memory Management]]></title>
+      <url>http://www.byteants.com/2016/05/21/memoryreview/</url>
+      <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="Virtual-Memory-Basic"><a href="#Virtual-Memory-Basic" class="headerlink" title="Virtual Memory Basic"></a>Virtual Memory Basic</h2><h3 id="Virtual-Address-Concept"><a href="#Virtual-Address-Concept" class="headerlink" title="Virtual Address Concept"></a>Virtual Address Concept</h3><ul>
+<li>Protect processes from on another</li>
+<li>Protect the OS from user processes</li>
+<li>Provide efficient management of available storage</li>
+<li>Use a virtual address to address any memory location in the 32-bit address space</li>
+<li>Only headware use physical address(include processor) and OS manages the physical address space</li>
+<li>Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.<br>  <img src="https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg" width="400" height="200" alt="MMU"></li>
+</ul>
+<h3 id="Memory-Management-in-the-Early-Days"><a href="#Memory-Management-in-the-Early-Days" class="headerlink" title="Memory Management in the Early Days"></a>Memory Management in the Early Days</h3><ul>
+<li><p>Memory Fence</p>
+<ul>
+<li>If a user program tries to access OS area (address bigger than fence address) MMU will generate a trap    </li>
+<li>use overlays and resident to deal with user program won’t fit in memory</li>
+</ul>
+</li>
+<li><p>Base and Bounds Registers</p>
+<ul>
+<li>Bounds register: Address space size of the user process</li>
+<li>Base register: Start of physical memory for the user process</li>
+<li>Segmentation:<ul>
+<li>One pair of base and bounds registers per segment.</li>
+<li>code, data, heap, stack and may be more (Memory Mapped file).</li>
+<li>Use one bit to have access control (read-only, read/write).</li>
+<li>If two prcesses read same memory, they can share segments.</li>
+<li>Segmentation fault: virtual address not within range of any base-bounds registers or not valid.</li>
+<li>Copy-On-Write: a process gets private copy of the page after a thread in the process performs a write for the first time (private/share bit need not be inside MMU).</li>
+<li>Use a validity bit for each segment to find whether this segment is in memory or being swapped out before.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Hardware-Support-for-Virtual-Memory"><a href="#Hardware-Support-for-Virtual-Memory" class="headerlink" title="Hardware Support for Virtual Memory"></a>Hardware Support for Virtual Memory</h2><ul>
+<li>Segmentation divide the address space into variable-size segments and it has external fragmentation problem and “first-fit” is slow.</li>
+<li>Paging divede the address space into fixed-size pages and can have internal fragmentation problem.</li>
+<li>Paging:<ul>
+<li>Address space is divided into pages, indexed by virtual page number.</li>
+<li>Basic (Two-level) Page table indexed by virtual page number, start with a physical address (this is stored in the CR3 register for X86), has validity, modified, reference and protect bit, and physical page number.</li>
+<li>A page table is associated with each process (OS has its page table as well).</li>
+</ul>
+</li>
+</ul>
+<h3 id="Forward-Mapped-Multi-level-Page-Tables"><a href="#Forward-Mapped-Multi-level-Page-Tables" class="headerlink" title="Forward-Mapped (Multi-level) Page Tables"></a>Forward-Mapped (Multi-level) Page Tables</h3><p><img src="https://farm8.staticflickr.com/7400/27076290915_04e7cb14b9_b.jpg" width="400" height="220" alt="FM page table"></p>
+<ul>
+<li>Use 10 bits for page dir table and 10 bits for page table and the last 12 bits use for offset.</li>
+<li>Can save page table size, the minimum size is 12KB (one page dir two page tables)</li>
+<li>The drawback is it has two physical memory accesses to map a virtual address to a physical address</li>
+</ul>
+<h3 id="Linear-Page-Tables"><a href="#Linear-Page-Tables" class="headerlink" title="Linear Page Tables"></a>Linear Page Tables</h3><ul>
+<li>Use 2 bit as Space, 00 and 01 page table are start with virtual address space and conbine the 00 or 01 bits, in 10 space page table started with physical address we can find page table entry.</li>
+<li>Can reduce size requirements with partial page tables, and it can use length register to constranins size of each space. But it not work well for multiple processes.</li>
+</ul>
+<h3 id="Hashed-Page-Tables"><a href="#Hashed-Page-Tables" class="headerlink" title="Hashed Page Tables"></a>Hashed Page Tables</h3><ul>
+<li>Hashed page tables<ul>
+<li>Use 2 bits for hashing</li>
+<li>Works well for sparcely allocated address space</li>
+<li>Each page table entry have a tag and link</li>
+</ul>
+</li>
+<li>Clustered page tables<ul>
+<li>Many page table entries have one tag and link</li>
+</ul>
+</li>
+<li>Inverted page tables<ul>
+<li>Page table is indexed by physical page number</li>
+<li>Conbine virtual page number and PID to get hash</li>
+<li>Each entry contains PID, page number and physical page number</li>
+</ul>
+</li>
+</ul>
+<h3 id="Translation-Lookaside-Buffers-TLB"><a href="#Translation-Lookaside-Buffers-TLB" class="headerlink" title="Translation Lookaside Buffers (TLB)"></a>Translation Lookaside Buffers (TLB)</h3><ul>
+<li>Cashe page table entries, caches the mapping from virtual page nmber to physical page number.</li>
+<li>TLB miss will cost O(1) memory accesses.</li>
+<li>When a page table entry is modified, the OS must flush (invalidate) the corresponding TLB entry. When switching to a different process, must flush the entire TLB.</li>
+<li>In a multiprocessors environment, one processor can modify a mapping cached in the TLB of another processor by shoot-down (invalidate) the another processor.</li>
+<li>Two-way set-associative cache with 64 lines:    <ul>
+<li>Use 6 bits as key to have 64 lines.</li>
+<li>In same the line, tag in the virtual address is used to compared against all other tags in same line simutaneously.</li>
+<li>For other TLB, it can be fully associative cache or one-way set- associative cache.</li>
+</ul>
+</li>
+</ul>
+<h3 id="64-Bit-Issues"><a href="#64-Bit-Issues" class="headerlink" title="64-Bit Issues"></a>64-Bit Issues</h3><ul>
+<li>Have more tables which need more physical memory accesses to map a virtual address to a physical address</li>
+</ul>
+<h3 id="Virtualization-virtualizing-virtual-memory"><a href="#Virtualization-virtualizing-virtual-memory" class="headerlink" title="Virtualization (virtualizing virtual memory)"></a>Virtualization (virtualizing virtual memory)</h3><ul>
+<li><p>Can use shadow page table, when a VM changes its page table, VMM must update the corresponding shadow page table. But it has poor per formance.</p>
+<p>  <img src="https://farm8.staticflickr.com/7427/26982039952_1efe21c539_o.png" width="400" height="220" alt="shadow page table"></p>
+</li>
+<li><p>Use Extended Page Tables, two table in sequence and does the conversion all by itself.</p>
+<p>  <img src="https://farm8.staticflickr.com/7675/26472922783_48b1352333_b.jpg" width="400" height="250" alt="shadow page table"></p>
+</li>
+</ul>
+<h2 id="Operating-System-Issues"><a href="#Operating-System-Issues" class="headerlink" title="Operating System Issues"></a>Operating System Issues</h2><h3 id="General-Concerns"><a href="#General-Concerns" class="headerlink" title="General Concerns"></a>General Concerns</h3><ul>
+<li>Prefetching    <ul>
+<li>Fetching a page as well as the sequential pages.</li>
+<li>Access to pages is often sequential.</li>
+</ul>
+</li>
+<li>Pageout Daemon<ul>
+<li>Reference bit in page table entry is used for approximate LRU.</li>
+<li>Clock algorthm, need to give enough time for thousands of references before checking<br><img src="https://farm8.staticflickr.com/7366/26982432522_b89cb1fe31_b.jpg" width="420" height="280" alt="Clock algorthm"></li>
+</ul>
+</li>
+<li>Thrashing problem<ul>
+<li>Global allocation: All processes compete for page frames from a single pool.</li>
+<li>Local allocation: Each process has its own private pool of page frames. Using Local Allocation is a way to reduce the chance of thrashing.</li>
+<li>For thrashing problem, use Working-Set Principle, if the sum of the working-set of all processes is less than the total amount of available physical memory then thrashing cannot occur.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Representative-Systems"><a href="#Representative-Systems" class="headerlink" title="Representative Systems"></a>Representative Systems</h3><ul>
+<li><p>Address-Space Simplified Representation:    </p>
+<p>  <img src="https://farm8.staticflickr.com/7728/27008966701_abf3d06926_b.jpg" width="420" height="250" alt="AS simple pres"></p>
+</li>
+<li><p>Address-Space Real Representation:</p>
+<p>  <img src="https://farm8.staticflickr.com/7195/27008966741_f2cc810af9_b.jpg" width="420" height="270" alt="AS real pres"></p>
+</li>
+</ul>
+<h3 id="Copy-on-Write-and-Fork"><a href="#Copy-on-Write-and-Fork" class="headerlink" title="Copy on Write and Fork"></a>Copy on Write and Fork</h3><ul>
+<li><p>Shadow Objects:</p>
+<ul>
+<li>Keep track of pages that were originally copy-on-write but have benn modified.</li>
+<li>A page in a memory map, into which an object was mapped private, have an associated shadow object.</li>
+<li><p>Shadow object tells you where to copy from when you need to perform copy-on-write.</p>
+<p>  <img src="https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg" width="420" height="250" alt="Clock algorthm"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Backing-Store-Issues"><a href="#Backing-Store-Issues" class="headerlink" title="Backing Store Issues"></a>Backing Store Issues</h3><ul>
+<li>Shadow objects and anonymous memory must be backed up in swap space.</li>
+<li>Swap Space management approach:    <ul>
+<li>randical-conservative approach: eager evaluation, backing-store space is allocated when virtual memory is allocated.</li>
+<li>radical-liberal approach: lazy evaluation, backing-store space is allocated only when needed.</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Multithreaded Programming]]></title>
       <url>http://www.byteants.com/2016/05/21/studying%20notes.operating%20system.chapter%202/</url>
       <content type="html"><![CDATA[<p><img src="https://farm8.staticflickr.com/7236/27058898412_5ae7d856a7.jpg" width="500" height="306"></p>
@@ -1824,151 +2057,6 @@
 <li>if callee is enabled but deferred, it delayed until reaches a cancellation point where safe to act on cancel</li>
 <li>pthread_testcancel() can create a cancellation point</li>
 <li>when act on cancel, walk through a stack of cleanup handlers: pthread_cleanup_push(), pthread_cleanup_pop(), the two procedure must match up</li>
-</ul>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Memory Management]]></title>
-      <url>http://www.byteants.com/2016/05/21/memoryreview/</url>
-      <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="Virtual-Memory-Basic"><a href="#Virtual-Memory-Basic" class="headerlink" title="Virtual Memory Basic"></a>Virtual Memory Basic</h2><h3 id="Virtual-Address-Concept"><a href="#Virtual-Address-Concept" class="headerlink" title="Virtual Address Concept"></a>Virtual Address Concept</h3><ul>
-<li>Protect processes from on another</li>
-<li>Protect the OS from user processes</li>
-<li>Provide efficient management of available storage</li>
-<li>Use a virtual address to address any memory location in the 32-bit address space</li>
-<li>Only headware use physical address(include processor) and OS manages the physical address space</li>
-<li>Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.<br>  <img src="https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg" width="400" height="200" alt="MMU"></li>
-</ul>
-<h3 id="Memory-Management-in-the-Early-Days"><a href="#Memory-Management-in-the-Early-Days" class="headerlink" title="Memory Management in the Early Days"></a>Memory Management in the Early Days</h3><ul>
-<li><p>Memory Fence</p>
-<ul>
-<li>If a user program tries to access OS area (address bigger than fence address) MMU will generate a trap    </li>
-<li>use overlays and resident to deal with user program won’t fit in memory</li>
-</ul>
-</li>
-<li><p>Base and Bounds Registers</p>
-<ul>
-<li>Bounds register: Address space size of the user process</li>
-<li>Base register: Start of physical memory for the user process</li>
-<li>Segmentation:<ul>
-<li>One pair of base and bounds registers per segment.</li>
-<li>code, data, heap, stack and may be more (Memory Mapped file).</li>
-<li>Use one bit to have access control (read-only, read/write).</li>
-<li>If two prcesses read same memory, they can share segments.</li>
-<li>Segmentation fault: virtual address not within range of any base-bounds registers or not valid.</li>
-<li>Copy-On-Write: a process gets private copy of the page after a thread in the process performs a write for the first time (private/share bit need not be inside MMU).</li>
-<li>Use a validity bit for each segment to find whether this segment is in memory or being swapped out before.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Hardware-Support-for-Virtual-Memory"><a href="#Hardware-Support-for-Virtual-Memory" class="headerlink" title="Hardware Support for Virtual Memory"></a>Hardware Support for Virtual Memory</h2><ul>
-<li>Segmentation divide the address space into variable-size segments and it has external fragmentation problem and “first-fit” is slow.</li>
-<li>Paging divede the address space into fixed-size pages and can have internal fragmentation problem.</li>
-<li>Paging:<ul>
-<li>Address space is divided into pages, indexed by virtual page number.</li>
-<li>Basic (Two-level) Page table indexed by virtual page number, start with a physical address (this is stored in the CR3 register for X86), has validity, modified, reference and protect bit, and physical page number.</li>
-<li>A page table is associated with each process (OS has its page table as well).</li>
-</ul>
-</li>
-</ul>
-<h3 id="Forward-Mapped-Multi-level-Page-Tables"><a href="#Forward-Mapped-Multi-level-Page-Tables" class="headerlink" title="Forward-Mapped (Multi-level) Page Tables"></a>Forward-Mapped (Multi-level) Page Tables</h3><p><img src="https://farm8.staticflickr.com/7400/27076290915_04e7cb14b9_b.jpg" width="400" height="220" alt="FM page table"></p>
-<ul>
-<li>Use 10 bits for page dir table and 10 bits for page table and the last 12 bits use for offset.</li>
-<li>Can save page table size, the minimum size is 12KB (one page dir two page tables)</li>
-<li>The drawback is it has two physical memory accesses to map a virtual address to a physical address</li>
-</ul>
-<h3 id="Linear-Page-Tables"><a href="#Linear-Page-Tables" class="headerlink" title="Linear Page Tables"></a>Linear Page Tables</h3><ul>
-<li>Use 2 bit as Space, 00 and 01 page table are start with virtual address space and conbine the 00 or 01 bits, in 10 space page table started with physical address we can find page table entry.</li>
-<li>Can reduce size requirements with partial page tables, and it can use length register to constranins size of each space. But it not work well for multiple processes.</li>
-</ul>
-<h3 id="Hashed-Page-Tables"><a href="#Hashed-Page-Tables" class="headerlink" title="Hashed Page Tables"></a>Hashed Page Tables</h3><ul>
-<li>Hashed page tables<ul>
-<li>Use 2 bits for hashing</li>
-<li>Works well for sparcely allocated address space</li>
-<li>Each page table entry have a tag and link</li>
-</ul>
-</li>
-<li>Clustered page tables<ul>
-<li>Many page table entries have one tag and link</li>
-</ul>
-</li>
-<li>Inverted page tables<ul>
-<li>Page table is indexed by physical page number</li>
-<li>Conbine virtual page number and PID to get hash</li>
-<li>Each entry contains PID, page number and physical page number</li>
-</ul>
-</li>
-</ul>
-<h3 id="Translation-Lookaside-Buffers-TLB"><a href="#Translation-Lookaside-Buffers-TLB" class="headerlink" title="Translation Lookaside Buffers (TLB)"></a>Translation Lookaside Buffers (TLB)</h3><ul>
-<li>Cashe page table entries, caches the mapping from virtual page nmber to physical page number.</li>
-<li>TLB miss will cost O(1) memory accesses.</li>
-<li>When a page table entry is modified, the OS must flush (invalidate) the corresponding TLB entry. When switching to a different process, must flush the entire TLB.</li>
-<li>In a multiprocessors environment, one processor can modify a mapping cached in the TLB of another processor by shoot-down (invalidate) the another processor.</li>
-<li>Two-way set-associative cache with 64 lines:    <ul>
-<li>Use 6 bits as key to have 64 lines.</li>
-<li>In same the line, tag in the virtual address is used to compared against all other tags in same line simutaneously.</li>
-<li>For other TLB, it can be fully associative cache or one-way set- associative cache.</li>
-</ul>
-</li>
-</ul>
-<h3 id="64-Bit-Issues"><a href="#64-Bit-Issues" class="headerlink" title="64-Bit Issues"></a>64-Bit Issues</h3><ul>
-<li>Have more tables which need more physical memory accesses to map a virtual address to a physical address</li>
-</ul>
-<h3 id="Virtualization-virtualizing-virtual-memory"><a href="#Virtualization-virtualizing-virtual-memory" class="headerlink" title="Virtualization (virtualizing virtual memory)"></a>Virtualization (virtualizing virtual memory)</h3><ul>
-<li><p>Can use shadow page table, when a VM changes its page table, VMM must update the corresponding shadow page table. But it has poor per formance.</p>
-<p>  <img src="https://farm8.staticflickr.com/7427/26982039952_1efe21c539_o.png" width="400" height="220" alt="shadow page table"></p>
-</li>
-<li><p>Use Extended Page Tables, two table in sequence and does the conversion all by itself.</p>
-<p>  <img src="https://farm8.staticflickr.com/7675/26472922783_48b1352333_b.jpg" width="400" height="250" alt="shadow page table"></p>
-</li>
-</ul>
-<h2 id="Operating-System-Issues"><a href="#Operating-System-Issues" class="headerlink" title="Operating System Issues"></a>Operating System Issues</h2><h3 id="General-Concerns"><a href="#General-Concerns" class="headerlink" title="General Concerns"></a>General Concerns</h3><ul>
-<li>Prefetching    <ul>
-<li>Fetching a page as well as the sequential pages.</li>
-<li>Access to pages is often sequential.</li>
-</ul>
-</li>
-<li>Pageout Daemon<ul>
-<li>Reference bit in page table entry is used for approximate LRU.</li>
-<li>Clock algorthm, need to give enough time for thousands of references before checking<br><img src="https://farm8.staticflickr.com/7366/26982432522_b89cb1fe31_b.jpg" width="420" height="280" alt="Clock algorthm"></li>
-</ul>
-</li>
-<li>Thrashing problem<ul>
-<li>Global allocation: All processes compete for page frames from a single pool.</li>
-<li>Local allocation: Each process has its own private pool of page frames. Using Local Allocation is a way to reduce the chance of thrashing.</li>
-<li>For thrashing problem, use Working-Set Principle, if the sum of the working-set of all processes is less than the total amount of available physical memory then thrashing cannot occur.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Representative-Systems"><a href="#Representative-Systems" class="headerlink" title="Representative Systems"></a>Representative Systems</h3><ul>
-<li><p>Address-Space Simplified Representation:    </p>
-<p>  <img src="https://farm8.staticflickr.com/7728/27008966701_abf3d06926_b.jpg" width="420" height="250" alt="AS simple pres"></p>
-</li>
-<li><p>Address-Space Real Representation:</p>
-<p>  <img src="https://farm8.staticflickr.com/7195/27008966741_f2cc810af9_b.jpg" width="420" height="270" alt="AS real pres"></p>
-</li>
-</ul>
-<h3 id="Copy-on-Write-and-Fork"><a href="#Copy-on-Write-and-Fork" class="headerlink" title="Copy on Write and Fork"></a>Copy on Write and Fork</h3><ul>
-<li><p>Shadow Objects:</p>
-<ul>
-<li>Keep track of pages that were originally copy-on-write but have benn modified.</li>
-<li>A page in a memory map, into which an object was mapped private, have an associated shadow object.</li>
-<li><p>Shadow object tells you where to copy from when you need to perform copy-on-write.</p>
-<p>  <img src="https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg" width="420" height="250" alt="Clock algorthm"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Backing-Store-Issues"><a href="#Backing-Store-Issues" class="headerlink" title="Backing Store Issues"></a>Backing Store Issues</h3><ul>
-<li>Shadow objects and anonymous memory must be backed up in swap space.</li>
-<li>Swap Space management approach:    <ul>
-<li>randical-conservative approach: eager evaluation, backing-store space is allocated when virtual memory is allocated.</li>
-<li>radical-liberal approach: lazy evaluation, backing-store space is allocated only when needed.</li>
-</ul>
-</li>
 </ul>
 ]]></content>
     </entry>
@@ -2575,21 +2663,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Stock Search App -- AutoComplete]]></title>
-      <url>http://www.byteants.com/2016/04/11/Stock%20Search%20APP%20--%20AutoComplete/</url>
-      <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1693/26393556095_c31c115dc0.jpg" alt=""></p>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>During developing the Stock Search App on the cloud server (AWS), in order to make out application be used conveniently the input will autocomplete based on the users’ input. This function can be divided into two parts, the back-end and front-end. Firstly, with the help of Ajax, the input of user will send to the server and server will fetch the information for user synchronously. This process is hidden to users. Secondly, when the front end get the data from the server, jQuery UI will show these data as a prompting list so that user can choose what they want to search. During the process, the user haven’t to press any button and the prompting message will change as the change of users’ inputs. Users can’t feel the process of data transmission between local and server. It is just like they run an application locally which is a great benefit of Ajax.<br><a id="more"></a></p>
-<h3 id="jQuery-UI-realize-the-autocomplete-front-end"><a href="#jQuery-UI-realize-the-autocomplete-front-end" class="headerlink" title="jQuery UI realize the autocomplete front-end"></a>jQuery UI realize the autocomplete front-end</h3><p>Fortunately, jQuery provide a user interface to realize the autocomplete prompting list. In the <a href="http://jqueryui.com/" target="_blank" rel="external">official website</a>, it provides some <a href="https://jqueryui.com/autocomplete/#default" target="_blank" rel="external">examples</a>. At the same time, we need to add following libraries, including CSS and javascript, to our application.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/ui/1.11.4/jquery-ui.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>Firstly, we build an array in our application. We can get the input element based on the input textbox’s ID. When we add the jQuery-UI library, the input textbox will have the autocomplete method. In the method there is a source variable, and then we can set the source as the array what we just create before. Then the input will autocomplete based on the users’ input and the array we create. For example, when the user type j in the textbox, the autocomplete function will search the string star with ‘j’ from the array. When it get a list, then it will show this list for us.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> availableTags = [</span><br><span class="line">      <span class="string">"ActionScript"</span>,</span><br><span class="line">      <span class="string">"AppleScript"</span>,</span><br><span class="line">      <span class="string">"Asp"</span>,</span><br><span class="line">      <span class="string">"BASIC"</span>,</span><br><span class="line">      <span class="string">"C"</span>,</span><br><span class="line">      <span class="string">"C++"</span>,</span><br><span class="line">      <span class="string">"Clojure"</span>,</span><br><span class="line">      <span class="string">"COBOL"</span>,</span><br><span class="line">      <span class="string">"ColdFusion"</span>,</span><br><span class="line">      <span class="string">"Erlang"</span>,</span><br><span class="line">      <span class="string">"Fortran"</span>,</span><br><span class="line">      <span class="string">"Groovy"</span>,</span><br><span class="line">      <span class="string">"Haskell"</span>,</span><br><span class="line">      <span class="string">"Java"</span>,</span><br><span class="line">      <span class="string">"JavaScript"</span>,</span><br><span class="line">      <span class="string">"Lisp"</span>,</span><br><span class="line">      <span class="string">"Perl"</span>,</span><br><span class="line">      <span class="string">"PHP"</span>,</span><br><span class="line">      <span class="string">"Python"</span>,</span><br><span class="line">      <span class="string">"Ruby"</span>,</span><br><span class="line">      <span class="string">"Scala"</span>,</span><br><span class="line">      <span class="string">"Scheme"</span></span><br><span class="line">    ];</span><br><span class="line">    $(<span class="string">"#tags"</span> ).autocomplete(&#123;</span><br><span class="line">      source: availableTags</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>The code above is sample and clean and it satisfy our need of front end. However, it just can autocomplete the user’s input based on the array which we create before. Actually, it is impossible for us to create an array to autocomplete user’s input during our application. The amount of company is so large, so we need to fetch the useful data from the stock server instead create a static array in our application. In the following section, I will talks about how we can get information from the server.</p>
-<h3 id="Autocomplete-Based-on-Users’-Input"><a href="#Autocomplete-Based-on-Users’-Input" class="headerlink" title="Autocomplete Based on Users’ Input"></a>Autocomplete Based on Users’ Input</h3><p>In our application, what we face is a huge amount of data so we cannot create a static array to realize automatically as before.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#search_query"</span>).autocomplete(&#123;</span><br><span class="line">            source: <span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">                $.ajax(&#123;</span><br><span class="line">                    url: <span class="string">"search.php"</span>,</span><br><span class="line">                    data: &#123;input: request.term&#125;,</span><br><span class="line">                    type: <span class="string">"GET"</span>,</span><br><span class="line">                    datatype: <span class="string">"json"</span>,</span><br><span class="line">                    success: <span class="function"><span class="keyword">function</span> (<span class="params">json</span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">var</span> jsonObject = jQuery.parseJSON(json);</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">if</span> (jsonObject.length == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">"Select a valid entry"</span>;</span><br><span class="line"></span><br><span class="line">                            response(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">var</span> data = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; jsonObject.length; i++) &#123;</span><br><span class="line">                                data[i] = &#123;</span><br><span class="line">                                    label: jsonObject[i].Symbol + <span class="string">" - "</span> + jsonObject[i].Name + <span class="string">" ( "</span> + jsonObject[i].Exchange + <span class="string">" ) "</span>,</span><br><span class="line">                                    value: jsonObject[i].Symbol</span><br><span class="line">                                &#125;;</span><br><span class="line">                            &#125;</span><br><span class="line">                            response(data);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>The search.php as followint<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">"input"</span>])) &#123;</span><br><span class="line">    $autocomplete_check_search = <span class="string">"http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input="</span>.$_GET[<span class="string">"input"</span>];</span><br><span class="line">    $json_content = file_get_contents($autocomplete_check_search);</span><br><span class="line">    <span class="keyword">echo</span> $json_content;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>In this task, we use the Ajax to fetch data from server based on users’ inputs without the observation of users’. Then with the help of the jQuery UI, we can show the list for the user conveniently. With the help of jQuery UI our code is more clean and easy to manipulate. And with the help of Ajax, we can divide the web user development with the server function development. And we can keep our servers code save because the user cannot see server’s code.</p>
-<p>-<a href="https://github.com/spacime/Projects/tree/master/Search%20Stock%20Data%20--%20Ajax" target="_blank" rel="external">github code</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Baseball Elimination]]></title>
       <url>http://www.byteants.com/2016/04/11/BaseballElimination/</url>
       <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1586/26379159155_9fbb11ef23_z.jpg" width="589" height="301"></p>
@@ -2660,6 +2733,21 @@
 </li>
 </ul>
 <hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Stock Search App -- AutoComplete]]></title>
+      <url>http://www.byteants.com/2016/04/11/Stock%20Search%20APP%20--%20AutoComplete/</url>
+      <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1693/26393556095_c31c115dc0.jpg" alt=""></p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>During developing the Stock Search App on the cloud server (AWS), in order to make out application be used conveniently the input will autocomplete based on the users’ input. This function can be divided into two parts, the back-end and front-end. Firstly, with the help of Ajax, the input of user will send to the server and server will fetch the information for user synchronously. This process is hidden to users. Secondly, when the front end get the data from the server, jQuery UI will show these data as a prompting list so that user can choose what they want to search. During the process, the user haven’t to press any button and the prompting message will change as the change of users’ inputs. Users can’t feel the process of data transmission between local and server. It is just like they run an application locally which is a great benefit of Ajax.<br><a id="more"></a></p>
+<h3 id="jQuery-UI-realize-the-autocomplete-front-end"><a href="#jQuery-UI-realize-the-autocomplete-front-end" class="headerlink" title="jQuery UI realize the autocomplete front-end"></a>jQuery UI realize the autocomplete front-end</h3><p>Fortunately, jQuery provide a user interface to realize the autocomplete prompting list. In the <a href="http://jqueryui.com/" target="_blank" rel="external">official website</a>, it provides some <a href="https://jqueryui.com/autocomplete/#default" target="_blank" rel="external">examples</a>. At the same time, we need to add following libraries, including CSS and javascript, to our application.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/ui/1.11.4/jquery-ui.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Firstly, we build an array in our application. We can get the input element based on the input textbox’s ID. When we add the jQuery-UI library, the input textbox will have the autocomplete method. In the method there is a source variable, and then we can set the source as the array what we just create before. Then the input will autocomplete based on the users’ input and the array we create. For example, when the user type j in the textbox, the autocomplete function will search the string star with ‘j’ from the array. When it get a list, then it will show this list for us.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> availableTags = [</span><br><span class="line">      <span class="string">"ActionScript"</span>,</span><br><span class="line">      <span class="string">"AppleScript"</span>,</span><br><span class="line">      <span class="string">"Asp"</span>,</span><br><span class="line">      <span class="string">"BASIC"</span>,</span><br><span class="line">      <span class="string">"C"</span>,</span><br><span class="line">      <span class="string">"C++"</span>,</span><br><span class="line">      <span class="string">"Clojure"</span>,</span><br><span class="line">      <span class="string">"COBOL"</span>,</span><br><span class="line">      <span class="string">"ColdFusion"</span>,</span><br><span class="line">      <span class="string">"Erlang"</span>,</span><br><span class="line">      <span class="string">"Fortran"</span>,</span><br><span class="line">      <span class="string">"Groovy"</span>,</span><br><span class="line">      <span class="string">"Haskell"</span>,</span><br><span class="line">      <span class="string">"Java"</span>,</span><br><span class="line">      <span class="string">"JavaScript"</span>,</span><br><span class="line">      <span class="string">"Lisp"</span>,</span><br><span class="line">      <span class="string">"Perl"</span>,</span><br><span class="line">      <span class="string">"PHP"</span>,</span><br><span class="line">      <span class="string">"Python"</span>,</span><br><span class="line">      <span class="string">"Ruby"</span>,</span><br><span class="line">      <span class="string">"Scala"</span>,</span><br><span class="line">      <span class="string">"Scheme"</span></span><br><span class="line">    ];</span><br><span class="line">    $(<span class="string">"#tags"</span> ).autocomplete(&#123;</span><br><span class="line">      source: availableTags</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>The code above is sample and clean and it satisfy our need of front end. However, it just can autocomplete the user’s input based on the array which we create before. Actually, it is impossible for us to create an array to autocomplete user’s input during our application. The amount of company is so large, so we need to fetch the useful data from the stock server instead create a static array in our application. In the following section, I will talks about how we can get information from the server.</p>
+<h3 id="Autocomplete-Based-on-Users’-Input"><a href="#Autocomplete-Based-on-Users’-Input" class="headerlink" title="Autocomplete Based on Users’ Input"></a>Autocomplete Based on Users’ Input</h3><p>In our application, what we face is a huge amount of data so we cannot create a static array to realize automatically as before.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#search_query"</span>).autocomplete(&#123;</span><br><span class="line">            source: <span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">                $.ajax(&#123;</span><br><span class="line">                    url: <span class="string">"search.php"</span>,</span><br><span class="line">                    data: &#123;input: request.term&#125;,</span><br><span class="line">                    type: <span class="string">"GET"</span>,</span><br><span class="line">                    datatype: <span class="string">"json"</span>,</span><br><span class="line">                    success: <span class="function"><span class="keyword">function</span> (<span class="params">json</span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">var</span> jsonObject = jQuery.parseJSON(json);</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">if</span> (jsonObject.length == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">"Select a valid entry"</span>;</span><br><span class="line"></span><br><span class="line">                            response(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">var</span> data = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; jsonObject.length; i++) &#123;</span><br><span class="line">                                data[i] = &#123;</span><br><span class="line">                                    label: jsonObject[i].Symbol + <span class="string">" - "</span> + jsonObject[i].Name + <span class="string">" ( "</span> + jsonObject[i].Exchange + <span class="string">" ) "</span>,</span><br><span class="line">                                    value: jsonObject[i].Symbol</span><br><span class="line">                                &#125;;</span><br><span class="line">                            &#125;</span><br><span class="line">                            response(data);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>The search.php as followint<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">"input"</span>])) &#123;</span><br><span class="line">    $autocomplete_check_search = <span class="string">"http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input="</span>.$_GET[<span class="string">"input"</span>];</span><br><span class="line">    $json_content = file_get_contents($autocomplete_check_search);</span><br><span class="line">    <span class="keyword">echo</span> $json_content;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>In this task, we use the Ajax to fetch data from server based on users’ inputs without the observation of users’. Then with the help of the jQuery UI, we can show the list for the user conveniently. With the help of jQuery UI our code is more clean and easy to manipulate. And with the help of Ajax, we can divide the web user development with the server function development. And we can keep our servers code save because the user cannot see server’s code.</p>
+<p>-<a href="https://github.com/spacime/Projects/tree/master/Search%20Stock%20Data%20--%20Ajax" target="_blank" rel="external">github code</a></p>
 ]]></content>
     </entry>
     
