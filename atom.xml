@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.byteants.com/"/>
-  <updated>2016-06-23T06:05:19.000Z</updated>
+  <updated>2016-06-24T04:02:44.000Z</updated>
   <id>http://www.byteants.com/</id>
   
   <author>
@@ -16,96 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Relational Algebra</title>
-    <link href="http://www.byteants.com/2016/06/23/studying%20notes.database.3/"/>
-    <id>http://www.byteants.com/2016/06/23/studying notes.database.3/</id>
-    <published>2016-06-23T07:00:00.000Z</published>
-    <updated>2016-06-23T06:05:19.000Z</updated>
+    <title>SQL</title>
+    <link href="http://www.byteants.com/2016/06/24/studying%20notes.database.4/"/>
+    <id>http://www.byteants.com/2016/06/24/studying notes.database.4/</id>
+    <published>2016-06-24T07:00:00.000Z</published>
+    <updated>2016-06-24T04:02:44.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://c8.staticflickr.com/8/7371/27775233071_894e39fbed.jpg&quot; width=&quot;500&quot; height=&quot;301&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Relational Algebra: a formal language, underpinnings of implemented languages like SQL&lt;/p&gt;
-&lt;p&gt;Introducing Relational Algebra operator based on simple college admissions database:&lt;/p&gt;
+    <content type="html">&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;SQL:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;College(cName, state, enrollment)&lt;/li&gt;
-&lt;li&gt;Student(sID, sName, GPA, sizeHS)&lt;/li&gt;
-&lt;li&gt;Apply(sID, cName, major, decision)&lt;/li&gt;
+&lt;li&gt;supported by all major commercial database systems&lt;/li&gt;
+&lt;li&gt;standardized–many new features over time&lt;/li&gt;
+&lt;li&gt;interactive via GUI or prompt, or embedded in programs&lt;/li&gt;
+&lt;li&gt;declarative, based on relational algebra&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7319/27573344650_962654069e.jpg&quot; width=&quot;500&quot; height=&quot;99&quot;&gt;&lt;/p&gt;
-&lt;p&gt;select operator: pick certain rows&lt;/p&gt;
+&lt;p&gt;composition of SQL:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;students with GPA &amp;gt; 3.7&lt;/li&gt;
+&lt;li&gt;data definition language(DDL): create table, drop table&lt;/li&gt;
+&lt;li&gt;data manipulation language(DML): select, insert, delete, update&lt;/li&gt;
+&lt;li&gt;other commands: indexes, constraints, views, triggers, transactions, authorization&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/8/7598/27573344720_82bcfc972a.jpg&quot; width=&quot;398&quot; height=&quot;61&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;students with GPA &amp;gt; 3.7 and HS &amp;lt; 1000&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c7.staticflickr.com/8/7372/27573344790_c865852165.jpg&quot; width=&quot;500&quot; height=&quot;53&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;applications to standord CS major&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c7.staticflickr.com/8/7432/27573344910_09f5ff0c54.jpg&quot; width=&quot;500&quot; height=&quot;51&quot;&gt;&lt;/p&gt;
-&lt;p&gt;project operator: pick certain columns&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ID and decision of all applications&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/8/7297/27573345000_5bc9c7f357.jpg&quot; width=&quot;349&quot; height=&quot;112&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;list of application majors and decisions&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7064/27573345050_42dc615313.jpg&quot; width=&quot;394&quot; height=&quot;100&quot;&gt;&lt;/p&gt;
-&lt;p&gt;cross-product: combine two relations&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;names and GPAs of students with HS &amp;gt; 1000 who applied to CS and were rejected&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7564/27573345130_9746e076b2.jpg&quot; width=&quot;500&quot; height=&quot;121&quot;&gt;&lt;/p&gt;
-&lt;p&gt;natural join: enforce equality on all attributes with same name; eliminate one copy of duplicate attributes&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;names and GPAs of students with HS &amp;gt; 1000 who applied to CS at college with enr &amp;gt; 20000 and were rejected&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/8/7791/27573345240_2f9b4640a4.jpg&quot; width=&quot;500&quot; height=&quot;92&quot;&gt;&lt;/p&gt;
-&lt;p&gt;theta join: natural join with condition&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7098/27573345330_befbf4619d.jpg&quot; width=&quot;500&quot; height=&quot;48&quot;&gt;&lt;/p&gt;
-&lt;p&gt;union operator:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;list of college and student names&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7347/27573344490_40c78b9b7b.jpg&quot; width=&quot;378&quot; height=&quot;164&quot;&gt;&lt;/p&gt;
-&lt;p&gt;difference operator:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;IDs and names of students who didn’t apply anywhere&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7502/27573344410_26d586fbd4.jpg&quot; width=&quot;500&quot; height=&quot;103&quot;&gt;&lt;/p&gt;
-&lt;p&gt;intersection operator:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;names that are both a college name and a student name&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c5.staticflickr.com/8/7341/27573344340_7b61fe1064.jpg&quot; width=&quot;500&quot; height=&quot;89&quot;&gt;&lt;/p&gt;
-&lt;p&gt;rename operator: reassign the schema in the result of E; to unify schemas for set operators; for disambiguation in “self-joins”&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7319/27573344130_08b46a039a.jpg&quot; width=&quot;322&quot; height=&quot;105&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;list of college and student names&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c5.staticflickr.com/8/7632/27573344020_cffcf285b2.jpg&quot; width=&quot;500&quot; height=&quot;144&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;pairs of colleges in same state&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/8/7441/27573343840_aa724cd602.jpg&quot; width=&quot;500&quot; height=&quot;124&quot;&gt;&lt;/p&gt;
-&lt;p&gt;assignment statements: a way to break down relational algebra expressions into parts&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;pairs of colleges in same state&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c5.staticflickr.com/8/7367/27573343740_495d3d7f39.jpg&quot; width=&quot;493&quot; height=&quot;268&quot;&gt;&lt;/p&gt;
-&lt;p&gt;expression tree: allow to visualize structure of the expression&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;GPAs of students applying to CS in CA&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/8/7408/27573343680_48499dae78.jpg&quot; width=&quot;500&quot; height=&quot;199&quot;&gt;&lt;/p&gt;
+&lt;p&gt;select statement:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;select A1, A2,..., An&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from R1, R2,..., Rm&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where condition&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;some select statements:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;91&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;92&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;93&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;94&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;95&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;96&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;97&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;98&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;99&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;101&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;102&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;103&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;104&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;105&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;106&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;107&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;108&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;109&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;110&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;111&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;112&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;113&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;114&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;115&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;116&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;117&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;118&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;119&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;120&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;121&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  BASIC SELECT STATEMENTS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Works for SQLite, MySQL, Postgres&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  IDs, names, and GPAs of students with GPA &amp;gt; 3.6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName, GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where GPA &amp;gt; 3.6;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Same query without GPA ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where GPA &amp;gt; 3.6;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Student names and majors for which they&amp;apos;ve applied&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName, major&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Student.sID = Apply.sID;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Same query with Distinct, note difference from algebra ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct sName, major&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Student.sID = Apply.sID;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Names and GPAs of students with sizeHS &amp;lt; 1000 applying to&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  CS at Stanford, and the application decision&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sname, GPA, decision&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Student.sID = Apply.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and sizeHS &amp;lt; 1000 and major = &amp;apos;CS&amp;apos; and cname = &amp;apos;Stanford&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  All large campuses with CS applicants&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where College.cName = Apply.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and enrollment &amp;gt; 20000 and major = &amp;apos;CS&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Fix error ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select College.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where College.cName = Apply.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and enrollment &amp;gt; 20000 and major = &amp;apos;CS&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Add Distinct ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct College.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where College.cName = Apply.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and enrollment &amp;gt; 20000 and major = &amp;apos;CS&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Application information&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select Student.sID, sName, GPA, Apply.cName, enrollment&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, College, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Apply.sID = Student.sID and Apply.cName = College.cName;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Sort by decreasing GPA ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select Student.sID, sName, GPA, Apply.cName, enrollment&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, College, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Apply.sID = Student.sID and Apply.cName = College.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;order by GPA desc;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Then by increasing enrollment ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select Student.sID, sName, GPA, Apply.cName, enrollment&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, College, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Apply.sID = Student.sID and Apply.cName = College.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;order by GPA desc, enrollment;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Applicants to bio majors&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, major&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where major like &amp;apos;%bio%&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Same query with Select * ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where major like &amp;apos;%bio%&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Select * cross-product&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, College;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Add scaled GPA based on sizeHS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Also note missing Where clause&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName, GPA, sizeHS, GPA*(sizeHS/1000.0)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Rename result attribute ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName, GPA, sizeHS, GPA*(sizeHS/1000.0) as scaledGPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;table variables &amp;amp; set operators:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;91&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;92&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;93&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;94&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;95&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;96&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;97&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;98&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;99&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;101&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;102&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;103&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;104&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;105&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;106&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;107&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;108&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;109&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;110&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;111&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;112&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;113&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;114&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;115&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  TABLE VARIABLES AND SET OPERATORS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Works for SQLite, Postgres&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  MySQL doesn&amp;apos;t support Intersect or Except&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Application information&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select Student.sID, sName, GPA, Apply.cName, enrollment&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, College, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Apply.sID = Student.sID and Apply.cName = College.cName;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Introduce table variables ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select S.sID, S.sName, S.GPA, A.cName, C.enrollment&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student S, College C, Apply A&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where A.sID = S.sID and A.cName = C.cName;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Pairs of students with same GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select S1.sID, S1.sName, S1.GPA, S2.sID, S2.sName, S2.GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student S1, Student S2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where S1.GPA = S2.GPA;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Get rid of self-pairings ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select S1.sID, S1.sName, S1.GPA, S2.sID, S2.sName, S2.GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student S1, Student S2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where S1.GPA = S2.GPA and S1.sID &amp;lt;&amp;gt; S2.sID;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Get rid of reverse-pairings ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select S1.sID, S1.sName, S1.GPA, S2.sID, S2.sName, S2.GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student S1, Student S2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where S1.GPA = S2.GPA and S1.sID &amp;lt; S2.sID;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  List of college names and student names&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select cName from College&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;union&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName from Student;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Add &amp;apos;As name&amp;apos; to both sides ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select cName as name from College&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;union&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName as name from Student;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Change to Union All ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select cName as name from College&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;union all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName as name from Student;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Notice not sorted any more (SQLite), add order by cName ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select cName as name from College&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;union all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName as name from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;order by name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  IDs of students who applied to both CS and EE&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID from Apply where major = &amp;apos;CS&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;intersect&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID from Apply where major = &amp;apos;EE&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  IDs of students who applied to both CS and EE&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Some systems don&amp;apos;t support intersect&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select A1.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Apply A1, Apply A2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where A1.sID = A2.sID and A1.major = &amp;apos;CS&amp;apos; and A2.major = &amp;apos;EE&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Why so many duplicates? Look at Apply table ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Add Distinct ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct A1.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Apply A1, Apply A2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where A1.sID = A2.sID and A1.major = &amp;apos;CS&amp;apos; and A2.major = &amp;apos;EE&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  IDs of students who applied to CS but not EE&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID from Apply where major = &amp;apos;CS&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;except&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID from Apply where major = &amp;apos;EE&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  IDs of students who applied to CS but not EE&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Some systems don&amp;apos;t support except&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select A1.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Apply A1, Apply A2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where A1.sID = A2.sID and A1.major = &amp;apos;CS&amp;apos; and A2.major &amp;lt;&amp;gt; &amp;apos;EE&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Add Distinct ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct A1.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Apply A1, Apply A2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where A1.sID = A2.sID and A1.major = &amp;apos;CS&amp;apos; and A2.major &amp;lt;&amp;gt; &amp;apos;EE&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Can&amp;apos;t do it with constructs we have so far ***/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;subqueries in where clause:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;91&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;92&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;93&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;94&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;95&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;96&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;97&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;98&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;99&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;101&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;102&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;103&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;104&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;105&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;106&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;107&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;108&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;109&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;110&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;111&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;112&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;113&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;114&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;115&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;116&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;117&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;118&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;119&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;120&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;121&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;122&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;123&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;124&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;125&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;126&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;127&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;128&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;129&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;130&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;131&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;132&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;133&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;134&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;135&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;136&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;137&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;138&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;139&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;140&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;141&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;142&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;143&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;144&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;145&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;146&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;147&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;148&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;149&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;150&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;151&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;152&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;153&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;154&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;155&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;156&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;157&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;158&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;159&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;160&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;161&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;162&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;163&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;164&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;165&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;166&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;167&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;168&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;169&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;170&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;171&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;172&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;173&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;174&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;175&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;176&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;177&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;178&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;179&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;180&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;181&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;182&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;183&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;184&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;185&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;186&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;187&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;188&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;189&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;190&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;191&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;192&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;193&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;194&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;195&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;196&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;197&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;198&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;199&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;200&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;201&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;202&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;203&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;204&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;205&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;206&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;207&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;208&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;209&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;210&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  SUBQUERIES IN THE WHERE CLAUSE&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Works for MySQL, Postgres&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  SQLite doesn&amp;apos;t support All or Any&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  IDs and names of students applying to CS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where sID in (select sID from Apply where major = &amp;apos;CS&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Same query written without &amp;apos;In&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Student.sID = Apply.sID and major = &amp;apos;CS&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Fix error ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select Student.sID, sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Student.sID = Apply.sID and major = &amp;apos;CS&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Remove duplicates ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct Student.sID, sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Student.sID = Apply.sID and major = &amp;apos;CS&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Just names of students applying to CS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where sID in (select sID from Apply where major = &amp;apos;CS&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Same query written without &amp;apos;In&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Student.sID = Apply.sID and major = &amp;apos;CS&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Remove duplicates (still incorrect) ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Student.sID = Apply.sID and major = &amp;apos;CS&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Duplicates are important: average GPA of CS applicants&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where sID in (select sID from Apply where major = &amp;apos;CS&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Alternative (incorrect) queries without &amp;apos;In&amp;apos;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Student.sID = Apply.sID and major = &amp;apos;CS&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where Student.sID = Apply.sID and major = &amp;apos;CS&amp;apos;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Students who applied to CS but not EE&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (query we used &amp;apos;Except&amp;apos; for earlier)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where sID in (select sID from Apply where major = &amp;apos;CS&amp;apos;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and sID not in (select sID from Apply where major = &amp;apos;EE&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Change to &amp;apos;not sID in&amp;apos; ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where sID in (select sID from Apply where major = &amp;apos;CS&amp;apos;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and not sID in (select sID from Apply where major = &amp;apos;EE&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Colleges such that some other college is in the same state&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select cName, state&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College C1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where exists (select * from College C2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              where C2.state = C1.state);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Fix error ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select cName, state&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College C1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where exists (select * from College C2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              where C2.state = C1.state and C2.cName &amp;lt;&amp;gt; C1.cName);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Biggest college&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College C1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where not exists (select * from College C2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  where C2.enrollment &amp;gt; C1.enrollment);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Similar: student with highest GPA  ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student C1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where not exists (select * from Student C2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  where C2.GPA &amp;gt; C1.GPA);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Add GPA ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName, GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student C1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where not exists (select * from Student C2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                  where C2.GPA &amp;gt; C1.GPA);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Highest GPA with no subquery&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select S1.sName, S1.GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student S1, Student S2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where S1.GPA &amp;gt; S2.GPA;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Remove duplicates (still incorrect) ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct S1.sName, S1.GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student S1, Student S2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where S1.GPA &amp;gt; S2.GPA;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Highest GPA using &amp;quot;&amp;gt;= all&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName, GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where GPA &amp;gt;= all (select GPA from Student);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Higher GPA than all other students&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sName, GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student S1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where GPA &amp;gt; all (select GPA from Student S2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                 where S2.sID &amp;lt;&amp;gt; S1.sID);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Similar: higher enrollment than all other colleges  ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College S1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where enrollment &amp;gt; all (select enrollment from College S2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        where S2.cName &amp;lt;&amp;gt; S1.cName);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Same query using &amp;apos;Not &amp;lt;= Any&amp;apos; ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College S1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where not enrollment &amp;lt;= any (select enrollment from College S2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                             where S2.cName &amp;lt;&amp;gt; S1.cName);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Students not from the smallest HS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName, sizeHS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where sizeHS &amp;gt; any (select sizeHS from Student);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Students not from the smallest HS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Some systems don&amp;apos;t support Any/All&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName, sizeHS&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student S1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where exists (select * from Student S2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              where S2.sizeHS &amp;lt; S1.sizeHS);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Students who applied to CS but not EE&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where sID = any (select sID from Apply where major = &amp;apos;CS&amp;apos;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and sID &amp;lt;&amp;gt; any (select sID from Apply where major = &amp;apos;EE&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Subtle error, fix ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where sID = any (select sID from Apply where major = &amp;apos;CS&amp;apos;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and not sID = any (select sID from Apply where major = &amp;apos;EE&amp;apos;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;subqueries in from and select:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  SUBQUERIES IN THE FROM AND SELECT CLAUSES&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Works for MySQL and Postgres&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  SQLite doesn&amp;apos;t support All&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Students whose scaled GPA changes GPA by more than 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName, GPA, GPA*(sizeHS/1000.0) as scaledGPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where GPA*(sizeHS/1000.0) - GPA &amp;gt; 1.0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   or GPA - GPA*(sizeHS/1000.0) &amp;gt; 1.0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Can simplify using absolute value function ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select sID, sName, GPA, GPA*(sizeHS/1000.0) as scaledGPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where abs(GPA*(sizeHS/1000.0) - GPA) &amp;gt; 1.0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Can further simplify using subquery in From ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from (select sID, sName, GPA, GPA*(sizeHS/1000.0) as scaledGPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      from Student) G&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where abs(scaledGPA - GPA) &amp;gt; 1.0;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/**************************************************************&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Colleges paired with the highest GPA of their applicants&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;**************************************************************/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select College.cName, state, GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College, Apply, Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where College.cName = Apply.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and Apply.sID = Student.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and GPA &amp;gt;= all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          (select GPA from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           where Student.sID = Apply.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             and Apply.cName = College.cName);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Add Distinct to remove duplicates ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct College.cName, state, GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College, Apply, Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;where College.cName = Apply.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and Apply.sID = Student.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  and GPA &amp;gt;= all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          (select GPA from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           where Student.sID = Apply.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;             and Apply.cName = College.cName);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Use subquery in Select ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct cName, state,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (select distinct GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   from Apply, Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   where College.cName = Apply.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     and Apply.sID = Student.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     and GPA &amp;gt;= all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           (select GPA from Student, Apply&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            where Student.sID = Apply.sID&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              and Apply.cName = College.cName)) as GPA&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/*** Now pair colleges with names of their applicants&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    (doesn&amp;apos;t work due to multiple rows in subquery result) ***/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;select distinct cName, state,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  (select distinct sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   from Apply, Student&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   where College.cName = Apply.cName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     and Apply.sID = Student.sID) as sName&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;from College;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://c8.staticflickr.com/8/7371/27775233071_894e39fbed.jpg&quot; width=&quot;500&quot; height=&quot;301&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+      &lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
     
     </summary>
     
@@ -114,7 +53,7 @@
       <category term="Database" scheme="http://www.byteants.com/categories/Studying-Notes/Database/"/>
     
     
-      <category term="Relational Algebra" scheme="http://www.byteants.com/tags/Relational-Algebra/"/>
+      <category term="SQL" scheme="http://www.byteants.com/tags/SQL/"/>
     
   </entry>
   
@@ -237,6 +176,109 @@
     
     
       <category term="JSON" scheme="http://www.byteants.com/tags/JSON/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Relational Algebra</title>
+    <link href="http://www.byteants.com/2016/06/23/studying%20notes.database.3/"/>
+    <id>http://www.byteants.com/2016/06/23/studying notes.database.3/</id>
+    <published>2016-06-23T07:00:00.000Z</published>
+    <updated>2016-06-23T06:05:19.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://c8.staticflickr.com/8/7371/27775233071_894e39fbed.jpg&quot; width=&quot;500&quot; height=&quot;301&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Relational Algebra: a formal language, underpinnings of implemented languages like SQL&lt;/p&gt;
+&lt;p&gt;Introducing Relational Algebra operator based on simple college admissions database:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;College(cName, state, enrollment)&lt;/li&gt;
+&lt;li&gt;Student(sID, sName, GPA, sizeHS)&lt;/li&gt;
+&lt;li&gt;Apply(sID, cName, major, decision)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7319/27573344650_962654069e.jpg&quot; width=&quot;500&quot; height=&quot;99&quot;&gt;&lt;/p&gt;
+&lt;p&gt;select operator: pick certain rows&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;students with GPA &amp;gt; 3.7&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/8/7598/27573344720_82bcfc972a.jpg&quot; width=&quot;398&quot; height=&quot;61&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;students with GPA &amp;gt; 3.7 and HS &amp;lt; 1000&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c7.staticflickr.com/8/7372/27573344790_c865852165.jpg&quot; width=&quot;500&quot; height=&quot;53&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;applications to standord CS major&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c7.staticflickr.com/8/7432/27573344910_09f5ff0c54.jpg&quot; width=&quot;500&quot; height=&quot;51&quot;&gt;&lt;/p&gt;
+&lt;p&gt;project operator: pick certain columns&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ID and decision of all applications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/8/7297/27573345000_5bc9c7f357.jpg&quot; width=&quot;349&quot; height=&quot;112&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;list of application majors and decisions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7064/27573345050_42dc615313.jpg&quot; width=&quot;394&quot; height=&quot;100&quot;&gt;&lt;/p&gt;
+&lt;p&gt;cross-product: combine two relations&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;names and GPAs of students with HS &amp;gt; 1000 who applied to CS and were rejected&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7564/27573345130_9746e076b2.jpg&quot; width=&quot;500&quot; height=&quot;121&quot;&gt;&lt;/p&gt;
+&lt;p&gt;natural join: enforce equality on all attributes with same name; eliminate one copy of duplicate attributes&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;names and GPAs of students with HS &amp;gt; 1000 who applied to CS at college with enr &amp;gt; 20000 and were rejected&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/8/7791/27573345240_2f9b4640a4.jpg&quot; width=&quot;500&quot; height=&quot;92&quot;&gt;&lt;/p&gt;
+&lt;p&gt;theta join: natural join with condition&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7098/27573345330_befbf4619d.jpg&quot; width=&quot;500&quot; height=&quot;48&quot;&gt;&lt;/p&gt;
+&lt;p&gt;union operator:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;list of college and student names&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7347/27573344490_40c78b9b7b.jpg&quot; width=&quot;378&quot; height=&quot;164&quot;&gt;&lt;/p&gt;
+&lt;p&gt;difference operator:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IDs and names of students who didn’t apply anywhere&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7502/27573344410_26d586fbd4.jpg&quot; width=&quot;500&quot; height=&quot;103&quot;&gt;&lt;/p&gt;
+&lt;p&gt;intersection operator:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;names that are both a college name and a student name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c5.staticflickr.com/8/7341/27573344340_7b61fe1064.jpg&quot; width=&quot;500&quot; height=&quot;89&quot;&gt;&lt;/p&gt;
+&lt;p&gt;rename operator: reassign the schema in the result of E; to unify schemas for set operators; for disambiguation in “self-joins”&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://c3.staticflickr.com/8/7319/27573344130_08b46a039a.jpg&quot; width=&quot;322&quot; height=&quot;105&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;list of college and student names&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c5.staticflickr.com/8/7632/27573344020_cffcf285b2.jpg&quot; width=&quot;500&quot; height=&quot;144&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pairs of colleges in same state&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/8/7441/27573343840_aa724cd602.jpg&quot; width=&quot;500&quot; height=&quot;124&quot;&gt;&lt;/p&gt;
+&lt;p&gt;assignment statements: a way to break down relational algebra expressions into parts&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pairs of colleges in same state&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c5.staticflickr.com/8/7367/27573343740_495d3d7f39.jpg&quot; width=&quot;493&quot; height=&quot;268&quot;&gt;&lt;/p&gt;
+&lt;p&gt;expression tree: allow to visualize structure of the expression&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GPAs of students applying to CS in CA&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://c1.staticflickr.com/8/7408/27573343680_48499dae78.jpg&quot; width=&quot;500&quot; height=&quot;199&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://c8.staticflickr.com/8/7371/27775233071_894e39fbed.jpg&quot; width=&quot;500&quot; height=&quot;301&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="Studying Notes" scheme="http://www.byteants.com/categories/Studying-Notes/"/>
+    
+      <category term="Database" scheme="http://www.byteants.com/categories/Studying-Notes/Database/"/>
+    
+    
+      <category term="Relational Algebra" scheme="http://www.byteants.com/tags/Relational-Algebra/"/>
     
   </entry>
   
@@ -2081,349 +2123,6 @@
   </entry>
   
   <entry>
-    <title>File Systems</title>
-    <link href="http://www.byteants.com/2016/05/21/filesystemsreview/"/>
-    <id>http://www.byteants.com/2016/05/21/filesystemsreview/</id>
-    <published>2016-05-21T07:00:00.000Z</published>
-    <updated>2016-06-01T07:54:59.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.&lt;/li&gt;
-&lt;li&gt;The requirements of file systems:&lt;ul&gt;
-&lt;li&gt;Permanent storage&lt;/li&gt;
-&lt;li&gt;Quick, easy and efficient&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&quot;The-Basics-of-File-Systems&quot;&gt;&lt;a href=&quot;#The-Basics-of-File-Systems&quot; class=&quot;headerlink&quot; title=&quot;The Basics of File Systems&quot;&gt;&lt;/a&gt;The Basics of File Systems&lt;/h3&gt;&lt;h4 id=&quot;Disk-Architecture&quot;&gt;&lt;a href=&quot;#Disk-Architecture&quot; class=&quot;headerlink&quot; title=&quot;Disk Architecture&quot;&gt;&lt;/a&gt;Disk Architecture&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg&quot; width=&quot;400&quot; height=&quot;280&quot; alt=&quot;disk_architecture&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Have multiple platters and each one have top and bottom heads.&lt;/li&gt;
-&lt;li&gt;The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.&lt;/li&gt;
-&lt;li&gt;disk address = (head/surface#, cylinder/track#, sector#)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;S5FS&quot;&gt;&lt;a href=&quot;#S5FS&quot; class=&quot;headerlink&quot; title=&quot;S5FS&quot;&gt;&lt;/a&gt;S5FS&lt;/h4&gt;&lt;p&gt;Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;layout&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg&quot; width=&quot;170&quot; height=&quot;250&quot; alt=&quot;S5FS&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Superblock&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Contains the head of the free list:&lt;br&gt;  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.&lt;/li&gt;
-&lt;li&gt;Maintain a free inode list (inode cache):&lt;br&gt;  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;I-list&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Disk map&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg&quot; width=&quot;450&quot; height=&quot;320&quot; alt=&quot;Disk map&quot;&gt;&lt;/p&gt;
-&lt;p&gt; 0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;Improvement-of-S5FS&quot;&gt;&lt;a href=&quot;#Improvement-of-S5FS&quot; class=&quot;headerlink&quot; title=&quot;Improvement of S5FS&quot;&gt;&lt;/a&gt;Improvement of S5FS&lt;/h4&gt;&lt;p&gt;Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Increase block size&lt;/li&gt;
-&lt;li&gt;Minimizing seek time&lt;ul&gt;
-&lt;li&gt;Use cylinder groups to put related data in the same cylinde group&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Minimizing Latency&lt;ul&gt;
-&lt;li&gt;Block interleaving&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Log-Structured File System (LFS)&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7040/26388472283_d457c0580f_b.jpg&quot; width=&quot;400&quot; height=&quot;100&quot; alt=&quot;LFS&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Main principles: nerver delete, append only.&lt;/li&gt;
-&lt;li&gt;Inode Map: keep the updated inode, and each inode map piece is appended to log.&lt;/li&gt;
-&lt;li&gt;Use checkpoint file (can have previous and current version) which is not belong to log to keeps track of all inode map pieces.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Multiple-Disks&quot;&gt;&lt;a href=&quot;#Multiple-Disks&quot; class=&quot;headerlink&quot; title=&quot;Multiple Disks&quot;&gt;&lt;/a&gt;Multiple Disks&lt;/h3&gt;&lt;h4 id=&quot;Benefits-of-Multiple-Disks&quot;&gt;&lt;a href=&quot;#Benefits-of-Multiple-Disks&quot; class=&quot;headerlink&quot; title=&quot;Benefits of Multiple Disks&quot;&gt;&lt;/a&gt;Benefits of Multiple Disks&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Hold more data&lt;/li&gt;
-&lt;li&gt;Can be stored redundantly, increase reliability and availability&lt;/li&gt;
-&lt;li&gt;Can spread data, allowing parallel access, increase effective access time&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Logical-Volume-Manager-LVM&quot;&gt;&lt;a href=&quot;#Logical-Volume-Manager-LVM&quot; class=&quot;headerlink&quot; title=&quot;Logical Volume Manager (LVM)&quot;&gt;&lt;/a&gt;Logical Volume Manager (LVM)&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png&quot; width=&quot;350&quot; height=&quot;150&quot; alt=&quot;LVM&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Manage multiple disks and try not change existing file systems much.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Spanning: Multiple disks appear to file system as one large disk&lt;/li&gt;
-&lt;li&gt;Mirroring: Write redundantly to multiple disks. Read from one.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Striping&quot;&gt;&lt;a href=&quot;#Striping&quot; class=&quot;headerlink&quot; title=&quot;Striping&quot;&gt;&lt;/a&gt;Striping&lt;/h4&gt;&lt;p&gt;One disk keep one striping unit data and then the next disk keep next one string unit data and keep doing this.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Advantages: Increase parallelism.&lt;/li&gt;
-&lt;li&gt;Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.&lt;/li&gt;
-&lt;li&gt;In general, performance is better with larger striping unit, which can reduce seek time&lt;/li&gt;
-&lt;li&gt;Probability of N-disk system failing is: 1-(1-fail)^N&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Redundant-Array-of-Inexpensive-Disks-RAID&quot;&gt;&lt;a href=&quot;#Redundant-Array-of-Inexpensive-Disks-RAID&quot; class=&quot;headerlink&quot; title=&quot;Redundant Array of Inexpensive Disks (RAID)&quot;&gt;&lt;/a&gt;Redundant Array of Inexpensive Disks (RAID)&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;level 1: Just mirroring.&lt;/li&gt;
-&lt;li&gt;level 2: Similar to memory’s ECC, use serveal disks to check bits.&lt;/li&gt;
-&lt;li&gt;level 3: Use one disk to maintain parity bits.&lt;/li&gt;
-&lt;li&gt;level 4: Use one disk to maintain parity blocks.&lt;/li&gt;
-&lt;li&gt;level 5: Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Flash-Memory&quot;&gt;&lt;a href=&quot;#Flash-Memory&quot; class=&quot;headerlink&quot; title=&quot;Flash Memory&quot;&gt;&lt;/a&gt;Flash Memory&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;Technologies of Flash&lt;ul&gt;
-&lt;li&gt;NOR: Byte addressable.&lt;/li&gt;
-&lt;li&gt;NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Wear leveling&lt;ul&gt;
-&lt;li&gt;Writing problem: To change zeroes to ones, must erase entire block.&lt;/li&gt;
-&lt;li&gt;Spread writes/erasures across entire drive.&lt;/li&gt;
-&lt;li&gt;Using flash traslation layer(FTL) and log-structured file system.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;Crash-Resiliency&quot;&gt;&lt;a href=&quot;#Crash-Resiliency&quot; class=&quot;headerlink&quot; title=&quot;Crash Resiliency&quot;&gt;&lt;/a&gt;Crash Resiliency&lt;/h3&gt;&lt;h4 id=&quot;Crash-problem&quot;&gt;&lt;a href=&quot;#Crash-problem&quot; class=&quot;headerlink&quot; title=&quot;Crash problem&quot;&gt;&lt;/a&gt;Crash problem&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Disk update, gather all dirty blocks, which is done one disk block at a time.&lt;/li&gt;
-&lt;li&gt;In S5fs and FFS, the lower level file system can sequence disk writes in any order.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Dealing-with-Crashes&quot;&gt;&lt;a href=&quot;#Dealing-with-Crashes&quot; class=&quot;headerlink&quot; title=&quot;Dealing with Crashes&quot;&gt;&lt;/a&gt;Dealing with Crashes&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Soft Updates&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Consistency-preserving approach: order disk operations to preserve meta-data consistency.&lt;/li&gt;
-&lt;li&gt;Have problems. In reality, in order to save the numver of disk writes, multiple objects can be packed into a diks block and will make a cycle in the topological order, and breaking circular dependency will slow the preformance.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Journaling&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg&quot; width=&quot;400&quot; height=&quot;60&quot; alt=&quot;journaling&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Use transaction idea, a journal is append-only, and it is a separate part of the disk(can add to any file system).&lt;/li&gt;
-&lt;li&gt;Append a commit record, when it’s time to update the file system, write to journal first, and write data to file system only after the commit record is writeen to the journal.&lt;/li&gt;
-&lt;li&gt;Undo journaling(record previous contents), redo journaling(record new contents).&lt;/li&gt;
-&lt;li&gt;Recovery will take the file system into a consistent state at a transaction boundary, and copying a disk block to the file system is idempotent.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Shadow paging&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Based on copy-on-write ideas&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg&quot; width=&quot;400&quot; height=&quot;240&quot; alt=&quot;shadow_paging&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;Naming-and-Directories&quot;&gt;&lt;a href=&quot;#Naming-and-Directories&quot; class=&quot;headerlink&quot; title=&quot;Naming and Directories&quot;&gt;&lt;/a&gt;Naming and Directories&lt;/h3&gt;&lt;h4 id=&quot;Directories&quot;&gt;&lt;a href=&quot;#Directories&quot; class=&quot;headerlink&quot; title=&quot;Directories&quot;&gt;&lt;/a&gt;Directories&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;S5FS Directories&lt;ul&gt;
-&lt;li&gt;Each entry is 32 bytes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;FFS Directories:&lt;ul&gt;
-&lt;li&gt;No restrictions on names.&lt;/li&gt;
-&lt;li&gt;Maintain the last entry to get the free space.&lt;/li&gt;
-&lt;li&gt;Use Hash table or B+ tree to look for a file name.&lt;/li&gt;
-&lt;li&gt;Use extensible Hashing, the low-order i bits of hi(x) are the same in hi+1(x)&lt;/li&gt;
-&lt;li&gt;B+ tree, internal nodes contain no data, just keys, leaf node are linked to ease sorted sequential traversal&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;Name-Space-Management&quot;&gt;&lt;a href=&quot;#Name-Space-Management&quot; class=&quot;headerlink&quot; title=&quot;Name-Space Management&quot;&gt;&lt;/a&gt;Name-Space Management&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;For Windows, it use drives to make the name-space appear uniform. For Unix, it use file system mounting.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;File-systems-Summary&quot;&gt;&lt;a href=&quot;#File-systems-Summary&quot; class=&quot;headerlink&quot; title=&quot;File systems Summary&quot;&gt;&lt;/a&gt;File systems Summary&lt;/h3&gt;&lt;p&gt;This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg&quot; width=&quot;450&quot; height=&quot;280&quot; alt=&quot;file_system_summary&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.&lt;/li&gt;
-&lt;li&gt;The requirements of file systems:&lt;ul&gt;
-&lt;li&gt;Permanent storage&lt;/li&gt;
-&lt;li&gt;Quick, easy and efficient&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
-    
-    </summary>
-    
-      <category term="Studying Notes" scheme="http://www.byteants.com/categories/Studying-Notes/"/>
-    
-      <category term="Operating Systems" scheme="http://www.byteants.com/categories/Studying-Notes/Operating-Systems/"/>
-    
-    
-      <category term="OS" scheme="http://www.byteants.com/tags/OS/"/>
-    
-      <category term="file systems" scheme="http://www.byteants.com/tags/file-systems/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Memory Management</title>
-    <link href="http://www.byteants.com/2016/05/21/memoryreview/"/>
-    <id>http://www.byteants.com/2016/05/21/memoryreview/</id>
-    <published>2016-05-21T07:00:00.000Z</published>
-    <updated>2016-06-01T07:54:54.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.&lt;/p&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;Virtual-Memory-Basic&quot;&gt;&lt;a href=&quot;#Virtual-Memory-Basic&quot; class=&quot;headerlink&quot; title=&quot;Virtual Memory Basic&quot;&gt;&lt;/a&gt;Virtual Memory Basic&lt;/h2&gt;&lt;h3 id=&quot;Virtual-Address-Concept&quot;&gt;&lt;a href=&quot;#Virtual-Address-Concept&quot; class=&quot;headerlink&quot; title=&quot;Virtual Address Concept&quot;&gt;&lt;/a&gt;Virtual Address Concept&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Protect processes from on another&lt;/li&gt;
-&lt;li&gt;Protect the OS from user processes&lt;/li&gt;
-&lt;li&gt;Provide efficient management of available storage&lt;/li&gt;
-&lt;li&gt;Use a virtual address to address any memory location in the 32-bit address space&lt;/li&gt;
-&lt;li&gt;Only headware use physical address(include processor) and OS manages the physical address space&lt;/li&gt;
-&lt;li&gt;Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.&lt;br&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg&quot; width=&quot;400&quot; height=&quot;200&quot; alt=&quot;MMU&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Memory-Management-in-the-Early-Days&quot;&gt;&lt;a href=&quot;#Memory-Management-in-the-Early-Days&quot; class=&quot;headerlink&quot; title=&quot;Memory Management in the Early Days&quot;&gt;&lt;/a&gt;Memory Management in the Early Days&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Memory Fence&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If a user program tries to access OS area (address bigger than fence address) MMU will generate a trap    &lt;/li&gt;
-&lt;li&gt;use overlays and resident to deal with user program won’t fit in memory&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Base and Bounds Registers&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Bounds register: Address space size of the user process&lt;/li&gt;
-&lt;li&gt;Base register: Start of physical memory for the user process&lt;/li&gt;
-&lt;li&gt;Segmentation:&lt;ul&gt;
-&lt;li&gt;One pair of base and bounds registers per segment.&lt;/li&gt;
-&lt;li&gt;code, data, heap, stack and may be more (Memory Mapped file).&lt;/li&gt;
-&lt;li&gt;Use one bit to have access control (read-only, read/write).&lt;/li&gt;
-&lt;li&gt;If two prcesses read same memory, they can share segments.&lt;/li&gt;
-&lt;li&gt;Segmentation fault: virtual address not within range of any base-bounds registers or not valid.&lt;/li&gt;
-&lt;li&gt;Copy-On-Write: a process gets private copy of the page after a thread in the process performs a write for the first time (private/share bit need not be inside MMU).&lt;/li&gt;
-&lt;li&gt;Use a validity bit for each segment to find whether this segment is in memory or being swapped out before.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Hardware-Support-for-Virtual-Memory&quot;&gt;&lt;a href=&quot;#Hardware-Support-for-Virtual-Memory&quot; class=&quot;headerlink&quot; title=&quot;Hardware Support for Virtual Memory&quot;&gt;&lt;/a&gt;Hardware Support for Virtual Memory&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Segmentation divide the address space into variable-size segments and it has external fragmentation problem and “first-fit” is slow.&lt;/li&gt;
-&lt;li&gt;Paging divede the address space into fixed-size pages and can have internal fragmentation problem.&lt;/li&gt;
-&lt;li&gt;Paging:&lt;ul&gt;
-&lt;li&gt;Address space is divided into pages, indexed by virtual page number.&lt;/li&gt;
-&lt;li&gt;Basic (Two-level) Page table indexed by virtual page number, start with a physical address (this is stored in the CR3 register for X86), has validity, modified, reference and protect bit, and physical page number.&lt;/li&gt;
-&lt;li&gt;A page table is associated with each process (OS has its page table as well).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Forward-Mapped-Multi-level-Page-Tables&quot;&gt;&lt;a href=&quot;#Forward-Mapped-Multi-level-Page-Tables&quot; class=&quot;headerlink&quot; title=&quot;Forward-Mapped (Multi-level) Page Tables&quot;&gt;&lt;/a&gt;Forward-Mapped (Multi-level) Page Tables&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7400/27076290915_04e7cb14b9_b.jpg&quot; width=&quot;400&quot; height=&quot;220&quot; alt=&quot;FM page table&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Use 10 bits for page dir table and 10 bits for page table and the last 12 bits use for offset.&lt;/li&gt;
-&lt;li&gt;Can save page table size, the minimum size is 12KB (one page dir two page tables)&lt;/li&gt;
-&lt;li&gt;The drawback is it has two physical memory accesses to map a virtual address to a physical address&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Linear-Page-Tables&quot;&gt;&lt;a href=&quot;#Linear-Page-Tables&quot; class=&quot;headerlink&quot; title=&quot;Linear Page Tables&quot;&gt;&lt;/a&gt;Linear Page Tables&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Use 2 bit as Space, 00 and 01 page table are start with virtual address space and conbine the 00 or 01 bits, in 10 space page table started with physical address we can find page table entry.&lt;/li&gt;
-&lt;li&gt;Can reduce size requirements with partial page tables, and it can use length register to constranins size of each space. But it not work well for multiple processes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Hashed-Page-Tables&quot;&gt;&lt;a href=&quot;#Hashed-Page-Tables&quot; class=&quot;headerlink&quot; title=&quot;Hashed Page Tables&quot;&gt;&lt;/a&gt;Hashed Page Tables&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Hashed page tables&lt;ul&gt;
-&lt;li&gt;Use 2 bits for hashing&lt;/li&gt;
-&lt;li&gt;Works well for sparcely allocated address space&lt;/li&gt;
-&lt;li&gt;Each page table entry have a tag and link&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Clustered page tables&lt;ul&gt;
-&lt;li&gt;Many page table entries have one tag and link&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Inverted page tables&lt;ul&gt;
-&lt;li&gt;Page table is indexed by physical page number&lt;/li&gt;
-&lt;li&gt;Conbine virtual page number and PID to get hash&lt;/li&gt;
-&lt;li&gt;Each entry contains PID, page number and physical page number&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Translation-Lookaside-Buffers-TLB&quot;&gt;&lt;a href=&quot;#Translation-Lookaside-Buffers-TLB&quot; class=&quot;headerlink&quot; title=&quot;Translation Lookaside Buffers (TLB)&quot;&gt;&lt;/a&gt;Translation Lookaside Buffers (TLB)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Cashe page table entries, caches the mapping from virtual page nmber to physical page number.&lt;/li&gt;
-&lt;li&gt;TLB miss will cost O(1) memory accesses.&lt;/li&gt;
-&lt;li&gt;When a page table entry is modified, the OS must flush (invalidate) the corresponding TLB entry. When switching to a different process, must flush the entire TLB.&lt;/li&gt;
-&lt;li&gt;In a multiprocessors environment, one processor can modify a mapping cached in the TLB of another processor by shoot-down (invalidate) the another processor.&lt;/li&gt;
-&lt;li&gt;Two-way set-associative cache with 64 lines:    &lt;ul&gt;
-&lt;li&gt;Use 6 bits as key to have 64 lines.&lt;/li&gt;
-&lt;li&gt;In same the line, tag in the virtual address is used to compared against all other tags in same line simutaneously.&lt;/li&gt;
-&lt;li&gt;For other TLB, it can be fully associative cache or one-way set- associative cache.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;64-Bit-Issues&quot;&gt;&lt;a href=&quot;#64-Bit-Issues&quot; class=&quot;headerlink&quot; title=&quot;64-Bit Issues&quot;&gt;&lt;/a&gt;64-Bit Issues&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Have more tables which need more physical memory accesses to map a virtual address to a physical address&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Virtualization-virtualizing-virtual-memory&quot;&gt;&lt;a href=&quot;#Virtualization-virtualizing-virtual-memory&quot; class=&quot;headerlink&quot; title=&quot;Virtualization (virtualizing virtual memory)&quot;&gt;&lt;/a&gt;Virtualization (virtualizing virtual memory)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Can use shadow page table, when a VM changes its page table, VMM must update the corresponding shadow page table. But it has poor per formance.&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7427/26982039952_1efe21c539_o.png&quot; width=&quot;400&quot; height=&quot;220&quot; alt=&quot;shadow page table&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Use Extended Page Tables, two table in sequence and does the conversion all by itself.&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7675/26472922783_48b1352333_b.jpg&quot; width=&quot;400&quot; height=&quot;250&quot; alt=&quot;shadow page table&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Operating-System-Issues&quot;&gt;&lt;a href=&quot;#Operating-System-Issues&quot; class=&quot;headerlink&quot; title=&quot;Operating System Issues&quot;&gt;&lt;/a&gt;Operating System Issues&lt;/h2&gt;&lt;h3 id=&quot;General-Concerns&quot;&gt;&lt;a href=&quot;#General-Concerns&quot; class=&quot;headerlink&quot; title=&quot;General Concerns&quot;&gt;&lt;/a&gt;General Concerns&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Prefetching    &lt;ul&gt;
-&lt;li&gt;Fetching a page as well as the sequential pages.&lt;/li&gt;
-&lt;li&gt;Access to pages is often sequential.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Pageout Daemon&lt;ul&gt;
-&lt;li&gt;Reference bit in page table entry is used for approximate LRU.&lt;/li&gt;
-&lt;li&gt;Clock algorthm, need to give enough time for thousands of references before checking&lt;br&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7366/26982432522_b89cb1fe31_b.jpg&quot; width=&quot;420&quot; height=&quot;280&quot; alt=&quot;Clock algorthm&quot;&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Thrashing problem&lt;ul&gt;
-&lt;li&gt;Global allocation: All processes compete for page frames from a single pool.&lt;/li&gt;
-&lt;li&gt;Local allocation: Each process has its own private pool of page frames. Using Local Allocation is a way to reduce the chance of thrashing.&lt;/li&gt;
-&lt;li&gt;For thrashing problem, use Working-Set Principle, if the sum of the working-set of all processes is less than the total amount of available physical memory then thrashing cannot occur.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Representative-Systems&quot;&gt;&lt;a href=&quot;#Representative-Systems&quot; class=&quot;headerlink&quot; title=&quot;Representative Systems&quot;&gt;&lt;/a&gt;Representative Systems&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Address-Space Simplified Representation:    &lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7728/27008966701_abf3d06926_b.jpg&quot; width=&quot;420&quot; height=&quot;250&quot; alt=&quot;AS simple pres&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Address-Space Real Representation:&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7195/27008966741_f2cc810af9_b.jpg&quot; width=&quot;420&quot; height=&quot;270&quot; alt=&quot;AS real pres&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Copy-on-Write-and-Fork&quot;&gt;&lt;a href=&quot;#Copy-on-Write-and-Fork&quot; class=&quot;headerlink&quot; title=&quot;Copy on Write and Fork&quot;&gt;&lt;/a&gt;Copy on Write and Fork&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Shadow Objects:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Keep track of pages that were originally copy-on-write but have benn modified.&lt;/li&gt;
-&lt;li&gt;A page in a memory map, into which an object was mapped private, have an associated shadow object.&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Shadow object tells you where to copy from when you need to perform copy-on-write.&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg&quot; width=&quot;420&quot; height=&quot;250&quot; alt=&quot;Clock algorthm&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Backing-Store-Issues&quot;&gt;&lt;a href=&quot;#Backing-Store-Issues&quot; class=&quot;headerlink&quot; title=&quot;Backing Store Issues&quot;&gt;&lt;/a&gt;Backing Store Issues&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Shadow objects and anonymous memory must be backed up in swap space.&lt;/li&gt;
-&lt;li&gt;Swap Space management approach:    &lt;ul&gt;
-&lt;li&gt;randical-conservative approach: eager evaluation, backing-store space is allocated when virtual memory is allocated.&lt;/li&gt;
-&lt;li&gt;radical-liberal approach: lazy evaluation, backing-store space is allocated only when needed.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.&lt;/p&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
-    
-    </summary>
-    
-      <category term="Studying Notes" scheme="http://www.byteants.com/categories/Studying-Notes/"/>
-    
-      <category term="Operating Systems" scheme="http://www.byteants.com/categories/Studying-Notes/Operating-Systems/"/>
-    
-    
-      <category term="OS" scheme="http://www.byteants.com/tags/OS/"/>
-    
-      <category term="virtual memory" scheme="http://www.byteants.com/tags/virtual-memory/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Multithreaded Programming</title>
     <link href="http://www.byteants.com/2016/05/21/studying%20notes.operating%20system.chapter%202/"/>
     <id>http://www.byteants.com/2016/05/21/studying notes.operating system.chapter 2/</id>
@@ -2623,6 +2322,349 @@
     
       <category term="Operating System" scheme="http://www.byteants.com/categories/Studying-Notes/Operating-System/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Memory Management</title>
+    <link href="http://www.byteants.com/2016/05/21/memoryreview/"/>
+    <id>http://www.byteants.com/2016/05/21/memoryreview/</id>
+    <published>2016-05-21T07:00:00.000Z</published>
+    <updated>2016-06-01T07:54:54.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;Virtual-Memory-Basic&quot;&gt;&lt;a href=&quot;#Virtual-Memory-Basic&quot; class=&quot;headerlink&quot; title=&quot;Virtual Memory Basic&quot;&gt;&lt;/a&gt;Virtual Memory Basic&lt;/h2&gt;&lt;h3 id=&quot;Virtual-Address-Concept&quot;&gt;&lt;a href=&quot;#Virtual-Address-Concept&quot; class=&quot;headerlink&quot; title=&quot;Virtual Address Concept&quot;&gt;&lt;/a&gt;Virtual Address Concept&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Protect processes from on another&lt;/li&gt;
+&lt;li&gt;Protect the OS from user processes&lt;/li&gt;
+&lt;li&gt;Provide efficient management of available storage&lt;/li&gt;
+&lt;li&gt;Use a virtual address to address any memory location in the 32-bit address space&lt;/li&gt;
+&lt;li&gt;Only headware use physical address(include processor) and OS manages the physical address space&lt;/li&gt;
+&lt;li&gt;Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.&lt;br&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg&quot; width=&quot;400&quot; height=&quot;200&quot; alt=&quot;MMU&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Memory-Management-in-the-Early-Days&quot;&gt;&lt;a href=&quot;#Memory-Management-in-the-Early-Days&quot; class=&quot;headerlink&quot; title=&quot;Memory Management in the Early Days&quot;&gt;&lt;/a&gt;Memory Management in the Early Days&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Memory Fence&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If a user program tries to access OS area (address bigger than fence address) MMU will generate a trap    &lt;/li&gt;
+&lt;li&gt;use overlays and resident to deal with user program won’t fit in memory&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Base and Bounds Registers&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bounds register: Address space size of the user process&lt;/li&gt;
+&lt;li&gt;Base register: Start of physical memory for the user process&lt;/li&gt;
+&lt;li&gt;Segmentation:&lt;ul&gt;
+&lt;li&gt;One pair of base and bounds registers per segment.&lt;/li&gt;
+&lt;li&gt;code, data, heap, stack and may be more (Memory Mapped file).&lt;/li&gt;
+&lt;li&gt;Use one bit to have access control (read-only, read/write).&lt;/li&gt;
+&lt;li&gt;If two prcesses read same memory, they can share segments.&lt;/li&gt;
+&lt;li&gt;Segmentation fault: virtual address not within range of any base-bounds registers or not valid.&lt;/li&gt;
+&lt;li&gt;Copy-On-Write: a process gets private copy of the page after a thread in the process performs a write for the first time (private/share bit need not be inside MMU).&lt;/li&gt;
+&lt;li&gt;Use a validity bit for each segment to find whether this segment is in memory or being swapped out before.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Hardware-Support-for-Virtual-Memory&quot;&gt;&lt;a href=&quot;#Hardware-Support-for-Virtual-Memory&quot; class=&quot;headerlink&quot; title=&quot;Hardware Support for Virtual Memory&quot;&gt;&lt;/a&gt;Hardware Support for Virtual Memory&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Segmentation divide the address space into variable-size segments and it has external fragmentation problem and “first-fit” is slow.&lt;/li&gt;
+&lt;li&gt;Paging divede the address space into fixed-size pages and can have internal fragmentation problem.&lt;/li&gt;
+&lt;li&gt;Paging:&lt;ul&gt;
+&lt;li&gt;Address space is divided into pages, indexed by virtual page number.&lt;/li&gt;
+&lt;li&gt;Basic (Two-level) Page table indexed by virtual page number, start with a physical address (this is stored in the CR3 register for X86), has validity, modified, reference and protect bit, and physical page number.&lt;/li&gt;
+&lt;li&gt;A page table is associated with each process (OS has its page table as well).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Forward-Mapped-Multi-level-Page-Tables&quot;&gt;&lt;a href=&quot;#Forward-Mapped-Multi-level-Page-Tables&quot; class=&quot;headerlink&quot; title=&quot;Forward-Mapped (Multi-level) Page Tables&quot;&gt;&lt;/a&gt;Forward-Mapped (Multi-level) Page Tables&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7400/27076290915_04e7cb14b9_b.jpg&quot; width=&quot;400&quot; height=&quot;220&quot; alt=&quot;FM page table&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use 10 bits for page dir table and 10 bits for page table and the last 12 bits use for offset.&lt;/li&gt;
+&lt;li&gt;Can save page table size, the minimum size is 12KB (one page dir two page tables)&lt;/li&gt;
+&lt;li&gt;The drawback is it has two physical memory accesses to map a virtual address to a physical address&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Linear-Page-Tables&quot;&gt;&lt;a href=&quot;#Linear-Page-Tables&quot; class=&quot;headerlink&quot; title=&quot;Linear Page Tables&quot;&gt;&lt;/a&gt;Linear Page Tables&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Use 2 bit as Space, 00 and 01 page table are start with virtual address space and conbine the 00 or 01 bits, in 10 space page table started with physical address we can find page table entry.&lt;/li&gt;
+&lt;li&gt;Can reduce size requirements with partial page tables, and it can use length register to constranins size of each space. But it not work well for multiple processes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Hashed-Page-Tables&quot;&gt;&lt;a href=&quot;#Hashed-Page-Tables&quot; class=&quot;headerlink&quot; title=&quot;Hashed Page Tables&quot;&gt;&lt;/a&gt;Hashed Page Tables&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Hashed page tables&lt;ul&gt;
+&lt;li&gt;Use 2 bits for hashing&lt;/li&gt;
+&lt;li&gt;Works well for sparcely allocated address space&lt;/li&gt;
+&lt;li&gt;Each page table entry have a tag and link&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Clustered page tables&lt;ul&gt;
+&lt;li&gt;Many page table entries have one tag and link&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Inverted page tables&lt;ul&gt;
+&lt;li&gt;Page table is indexed by physical page number&lt;/li&gt;
+&lt;li&gt;Conbine virtual page number and PID to get hash&lt;/li&gt;
+&lt;li&gt;Each entry contains PID, page number and physical page number&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Translation-Lookaside-Buffers-TLB&quot;&gt;&lt;a href=&quot;#Translation-Lookaside-Buffers-TLB&quot; class=&quot;headerlink&quot; title=&quot;Translation Lookaside Buffers (TLB)&quot;&gt;&lt;/a&gt;Translation Lookaside Buffers (TLB)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Cashe page table entries, caches the mapping from virtual page nmber to physical page number.&lt;/li&gt;
+&lt;li&gt;TLB miss will cost O(1) memory accesses.&lt;/li&gt;
+&lt;li&gt;When a page table entry is modified, the OS must flush (invalidate) the corresponding TLB entry. When switching to a different process, must flush the entire TLB.&lt;/li&gt;
+&lt;li&gt;In a multiprocessors environment, one processor can modify a mapping cached in the TLB of another processor by shoot-down (invalidate) the another processor.&lt;/li&gt;
+&lt;li&gt;Two-way set-associative cache with 64 lines:    &lt;ul&gt;
+&lt;li&gt;Use 6 bits as key to have 64 lines.&lt;/li&gt;
+&lt;li&gt;In same the line, tag in the virtual address is used to compared against all other tags in same line simutaneously.&lt;/li&gt;
+&lt;li&gt;For other TLB, it can be fully associative cache or one-way set- associative cache.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;64-Bit-Issues&quot;&gt;&lt;a href=&quot;#64-Bit-Issues&quot; class=&quot;headerlink&quot; title=&quot;64-Bit Issues&quot;&gt;&lt;/a&gt;64-Bit Issues&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Have more tables which need more physical memory accesses to map a virtual address to a physical address&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Virtualization-virtualizing-virtual-memory&quot;&gt;&lt;a href=&quot;#Virtualization-virtualizing-virtual-memory&quot; class=&quot;headerlink&quot; title=&quot;Virtualization (virtualizing virtual memory)&quot;&gt;&lt;/a&gt;Virtualization (virtualizing virtual memory)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Can use shadow page table, when a VM changes its page table, VMM must update the corresponding shadow page table. But it has poor per formance.&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7427/26982039952_1efe21c539_o.png&quot; width=&quot;400&quot; height=&quot;220&quot; alt=&quot;shadow page table&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use Extended Page Tables, two table in sequence and does the conversion all by itself.&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7675/26472922783_48b1352333_b.jpg&quot; width=&quot;400&quot; height=&quot;250&quot; alt=&quot;shadow page table&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Operating-System-Issues&quot;&gt;&lt;a href=&quot;#Operating-System-Issues&quot; class=&quot;headerlink&quot; title=&quot;Operating System Issues&quot;&gt;&lt;/a&gt;Operating System Issues&lt;/h2&gt;&lt;h3 id=&quot;General-Concerns&quot;&gt;&lt;a href=&quot;#General-Concerns&quot; class=&quot;headerlink&quot; title=&quot;General Concerns&quot;&gt;&lt;/a&gt;General Concerns&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Prefetching    &lt;ul&gt;
+&lt;li&gt;Fetching a page as well as the sequential pages.&lt;/li&gt;
+&lt;li&gt;Access to pages is often sequential.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Pageout Daemon&lt;ul&gt;
+&lt;li&gt;Reference bit in page table entry is used for approximate LRU.&lt;/li&gt;
+&lt;li&gt;Clock algorthm, need to give enough time for thousands of references before checking&lt;br&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7366/26982432522_b89cb1fe31_b.jpg&quot; width=&quot;420&quot; height=&quot;280&quot; alt=&quot;Clock algorthm&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Thrashing problem&lt;ul&gt;
+&lt;li&gt;Global allocation: All processes compete for page frames from a single pool.&lt;/li&gt;
+&lt;li&gt;Local allocation: Each process has its own private pool of page frames. Using Local Allocation is a way to reduce the chance of thrashing.&lt;/li&gt;
+&lt;li&gt;For thrashing problem, use Working-Set Principle, if the sum of the working-set of all processes is less than the total amount of available physical memory then thrashing cannot occur.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Representative-Systems&quot;&gt;&lt;a href=&quot;#Representative-Systems&quot; class=&quot;headerlink&quot; title=&quot;Representative Systems&quot;&gt;&lt;/a&gt;Representative Systems&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Address-Space Simplified Representation:    &lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7728/27008966701_abf3d06926_b.jpg&quot; width=&quot;420&quot; height=&quot;250&quot; alt=&quot;AS simple pres&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Address-Space Real Representation:&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7195/27008966741_f2cc810af9_b.jpg&quot; width=&quot;420&quot; height=&quot;270&quot; alt=&quot;AS real pres&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Copy-on-Write-and-Fork&quot;&gt;&lt;a href=&quot;#Copy-on-Write-and-Fork&quot; class=&quot;headerlink&quot; title=&quot;Copy on Write and Fork&quot;&gt;&lt;/a&gt;Copy on Write and Fork&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Shadow Objects:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keep track of pages that were originally copy-on-write but have benn modified.&lt;/li&gt;
+&lt;li&gt;A page in a memory map, into which an object was mapped private, have an associated shadow object.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Shadow object tells you where to copy from when you need to perform copy-on-write.&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg&quot; width=&quot;420&quot; height=&quot;250&quot; alt=&quot;Clock algorthm&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Backing-Store-Issues&quot;&gt;&lt;a href=&quot;#Backing-Store-Issues&quot; class=&quot;headerlink&quot; title=&quot;Backing Store Issues&quot;&gt;&lt;/a&gt;Backing Store Issues&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Shadow objects and anonymous memory must be backed up in swap space.&lt;/li&gt;
+&lt;li&gt;Swap Space management approach:    &lt;ul&gt;
+&lt;li&gt;randical-conservative approach: eager evaluation, backing-store space is allocated when virtual memory is allocated.&lt;/li&gt;
+&lt;li&gt;radical-liberal approach: lazy evaluation, backing-store space is allocated only when needed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="Studying Notes" scheme="http://www.byteants.com/categories/Studying-Notes/"/>
+    
+      <category term="Operating Systems" scheme="http://www.byteants.com/categories/Studying-Notes/Operating-Systems/"/>
+    
+    
+      <category term="OS" scheme="http://www.byteants.com/tags/OS/"/>
+    
+      <category term="virtual memory" scheme="http://www.byteants.com/tags/virtual-memory/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>File Systems</title>
+    <link href="http://www.byteants.com/2016/05/21/filesystemsreview/"/>
+    <id>http://www.byteants.com/2016/05/21/filesystemsreview/</id>
+    <published>2016-05-21T07:00:00.000Z</published>
+    <updated>2016-06-01T07:54:59.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.&lt;/li&gt;
+&lt;li&gt;The requirements of file systems:&lt;ul&gt;
+&lt;li&gt;Permanent storage&lt;/li&gt;
+&lt;li&gt;Quick, easy and efficient&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3 id=&quot;The-Basics-of-File-Systems&quot;&gt;&lt;a href=&quot;#The-Basics-of-File-Systems&quot; class=&quot;headerlink&quot; title=&quot;The Basics of File Systems&quot;&gt;&lt;/a&gt;The Basics of File Systems&lt;/h3&gt;&lt;h4 id=&quot;Disk-Architecture&quot;&gt;&lt;a href=&quot;#Disk-Architecture&quot; class=&quot;headerlink&quot; title=&quot;Disk Architecture&quot;&gt;&lt;/a&gt;Disk Architecture&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg&quot; width=&quot;400&quot; height=&quot;280&quot; alt=&quot;disk_architecture&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Have multiple platters and each one have top and bottom heads.&lt;/li&gt;
+&lt;li&gt;The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.&lt;/li&gt;
+&lt;li&gt;disk address = (head/surface#, cylinder/track#, sector#)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;S5FS&quot;&gt;&lt;a href=&quot;#S5FS&quot; class=&quot;headerlink&quot; title=&quot;S5FS&quot;&gt;&lt;/a&gt;S5FS&lt;/h4&gt;&lt;p&gt;Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;layout&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg&quot; width=&quot;170&quot; height=&quot;250&quot; alt=&quot;S5FS&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Superblock&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Contains the head of the free list:&lt;br&gt;  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.&lt;/li&gt;
+&lt;li&gt;Maintain a free inode list (inode cache):&lt;br&gt;  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;I-list&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Disk map&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg&quot; width=&quot;450&quot; height=&quot;320&quot; alt=&quot;Disk map&quot;&gt;&lt;/p&gt;
+&lt;p&gt; 0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;Improvement-of-S5FS&quot;&gt;&lt;a href=&quot;#Improvement-of-S5FS&quot; class=&quot;headerlink&quot; title=&quot;Improvement of S5FS&quot;&gt;&lt;/a&gt;Improvement of S5FS&lt;/h4&gt;&lt;p&gt;Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Increase block size&lt;/li&gt;
+&lt;li&gt;Minimizing seek time&lt;ul&gt;
+&lt;li&gt;Use cylinder groups to put related data in the same cylinde group&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Minimizing Latency&lt;ul&gt;
+&lt;li&gt;Block interleaving&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Log-Structured File System (LFS)&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7040/26388472283_d457c0580f_b.jpg&quot; width=&quot;400&quot; height=&quot;100&quot; alt=&quot;LFS&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Main principles: nerver delete, append only.&lt;/li&gt;
+&lt;li&gt;Inode Map: keep the updated inode, and each inode map piece is appended to log.&lt;/li&gt;
+&lt;li&gt;Use checkpoint file (can have previous and current version) which is not belong to log to keeps track of all inode map pieces.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Multiple-Disks&quot;&gt;&lt;a href=&quot;#Multiple-Disks&quot; class=&quot;headerlink&quot; title=&quot;Multiple Disks&quot;&gt;&lt;/a&gt;Multiple Disks&lt;/h3&gt;&lt;h4 id=&quot;Benefits-of-Multiple-Disks&quot;&gt;&lt;a href=&quot;#Benefits-of-Multiple-Disks&quot; class=&quot;headerlink&quot; title=&quot;Benefits of Multiple Disks&quot;&gt;&lt;/a&gt;Benefits of Multiple Disks&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Hold more data&lt;/li&gt;
+&lt;li&gt;Can be stored redundantly, increase reliability and availability&lt;/li&gt;
+&lt;li&gt;Can spread data, allowing parallel access, increase effective access time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Logical-Volume-Manager-LVM&quot;&gt;&lt;a href=&quot;#Logical-Volume-Manager-LVM&quot; class=&quot;headerlink&quot; title=&quot;Logical Volume Manager (LVM)&quot;&gt;&lt;/a&gt;Logical Volume Manager (LVM)&lt;/h4&gt;&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png&quot; width=&quot;350&quot; height=&quot;150&quot; alt=&quot;LVM&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Manage multiple disks and try not change existing file systems much.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spanning: Multiple disks appear to file system as one large disk&lt;/li&gt;
+&lt;li&gt;Mirroring: Write redundantly to multiple disks. Read from one.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Striping&quot;&gt;&lt;a href=&quot;#Striping&quot; class=&quot;headerlink&quot; title=&quot;Striping&quot;&gt;&lt;/a&gt;Striping&lt;/h4&gt;&lt;p&gt;One disk keep one striping unit data and then the next disk keep next one string unit data and keep doing this.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Advantages: Increase parallelism.&lt;/li&gt;
+&lt;li&gt;Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.&lt;/li&gt;
+&lt;li&gt;In general, performance is better with larger striping unit, which can reduce seek time&lt;/li&gt;
+&lt;li&gt;Probability of N-disk system failing is: 1-(1-fail)^N&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Redundant-Array-of-Inexpensive-Disks-RAID&quot;&gt;&lt;a href=&quot;#Redundant-Array-of-Inexpensive-Disks-RAID&quot; class=&quot;headerlink&quot; title=&quot;Redundant Array of Inexpensive Disks (RAID)&quot;&gt;&lt;/a&gt;Redundant Array of Inexpensive Disks (RAID)&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;level 1: Just mirroring.&lt;/li&gt;
+&lt;li&gt;level 2: Similar to memory’s ECC, use serveal disks to check bits.&lt;/li&gt;
+&lt;li&gt;level 3: Use one disk to maintain parity bits.&lt;/li&gt;
+&lt;li&gt;level 4: Use one disk to maintain parity blocks.&lt;/li&gt;
+&lt;li&gt;level 5: Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Flash-Memory&quot;&gt;&lt;a href=&quot;#Flash-Memory&quot; class=&quot;headerlink&quot; title=&quot;Flash Memory&quot;&gt;&lt;/a&gt;Flash Memory&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;Technologies of Flash&lt;ul&gt;
+&lt;li&gt;NOR: Byte addressable.&lt;/li&gt;
+&lt;li&gt;NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Wear leveling&lt;ul&gt;
+&lt;li&gt;Writing problem: To change zeroes to ones, must erase entire block.&lt;/li&gt;
+&lt;li&gt;Spread writes/erasures across entire drive.&lt;/li&gt;
+&lt;li&gt;Using flash traslation layer(FTL) and log-structured file system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Crash-Resiliency&quot;&gt;&lt;a href=&quot;#Crash-Resiliency&quot; class=&quot;headerlink&quot; title=&quot;Crash Resiliency&quot;&gt;&lt;/a&gt;Crash Resiliency&lt;/h3&gt;&lt;h4 id=&quot;Crash-problem&quot;&gt;&lt;a href=&quot;#Crash-problem&quot; class=&quot;headerlink&quot; title=&quot;Crash problem&quot;&gt;&lt;/a&gt;Crash problem&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Disk update, gather all dirty blocks, which is done one disk block at a time.&lt;/li&gt;
+&lt;li&gt;In S5fs and FFS, the lower level file system can sequence disk writes in any order.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Dealing-with-Crashes&quot;&gt;&lt;a href=&quot;#Dealing-with-Crashes&quot; class=&quot;headerlink&quot; title=&quot;Dealing with Crashes&quot;&gt;&lt;/a&gt;Dealing with Crashes&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Soft Updates&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Consistency-preserving approach: order disk operations to preserve meta-data consistency.&lt;/li&gt;
+&lt;li&gt;Have problems. In reality, in order to save the numver of disk writes, multiple objects can be packed into a diks block and will make a cycle in the topological order, and breaking circular dependency will slow the preformance.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Journaling&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg&quot; width=&quot;400&quot; height=&quot;60&quot; alt=&quot;journaling&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use transaction idea, a journal is append-only, and it is a separate part of the disk(can add to any file system).&lt;/li&gt;
+&lt;li&gt;Append a commit record, when it’s time to update the file system, write to journal first, and write data to file system only after the commit record is writeen to the journal.&lt;/li&gt;
+&lt;li&gt;Undo journaling(record previous contents), redo journaling(record new contents).&lt;/li&gt;
+&lt;li&gt;Recovery will take the file system into a consistent state at a transaction boundary, and copying a disk block to the file system is idempotent.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Shadow paging&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Based on copy-on-write ideas&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg&quot; width=&quot;400&quot; height=&quot;240&quot; alt=&quot;shadow_paging&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;Naming-and-Directories&quot;&gt;&lt;a href=&quot;#Naming-and-Directories&quot; class=&quot;headerlink&quot; title=&quot;Naming and Directories&quot;&gt;&lt;/a&gt;Naming and Directories&lt;/h3&gt;&lt;h4 id=&quot;Directories&quot;&gt;&lt;a href=&quot;#Directories&quot; class=&quot;headerlink&quot; title=&quot;Directories&quot;&gt;&lt;/a&gt;Directories&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;S5FS Directories&lt;ul&gt;
+&lt;li&gt;Each entry is 32 bytes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;FFS Directories:&lt;ul&gt;
+&lt;li&gt;No restrictions on names.&lt;/li&gt;
+&lt;li&gt;Maintain the last entry to get the free space.&lt;/li&gt;
+&lt;li&gt;Use Hash table or B+ tree to look for a file name.&lt;/li&gt;
+&lt;li&gt;Use extensible Hashing, the low-order i bits of hi(x) are the same in hi+1(x)&lt;/li&gt;
+&lt;li&gt;B+ tree, internal nodes contain no data, just keys, leaf node are linked to ease sorted sequential traversal&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;Name-Space-Management&quot;&gt;&lt;a href=&quot;#Name-Space-Management&quot; class=&quot;headerlink&quot; title=&quot;Name-Space Management&quot;&gt;&lt;/a&gt;Name-Space Management&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;For Windows, it use drives to make the name-space appear uniform. For Unix, it use file system mounting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;File-systems-Summary&quot;&gt;&lt;a href=&quot;#File-systems-Summary&quot; class=&quot;headerlink&quot; title=&quot;File systems Summary&quot;&gt;&lt;/a&gt;File systems Summary&lt;/h3&gt;&lt;p&gt;This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg&quot; width=&quot;450&quot; height=&quot;280&quot; alt=&quot;file_system_summary&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.&lt;/li&gt;
+&lt;li&gt;The requirements of file systems:&lt;ul&gt;
+&lt;li&gt;Permanent storage&lt;/li&gt;
+&lt;li&gt;Quick, easy and efficient&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="Studying Notes" scheme="http://www.byteants.com/categories/Studying-Notes/"/>
+    
+      <category term="Operating Systems" scheme="http://www.byteants.com/categories/Studying-Notes/Operating-Systems/"/>
+    
+    
+      <category term="OS" scheme="http://www.byteants.com/tags/OS/"/>
+    
+      <category term="file systems" scheme="http://www.byteants.com/tags/file-systems/"/>
     
   </entry>
   
@@ -3144,46 +3186,6 @@
       <category term="TrieTree" scheme="http://www.byteants.com/tags/TrieTree/"/>
     
       <category term="Depth-First Search" scheme="http://www.byteants.com/tags/Depth-First-Search/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Stock Search App -- AutoComplete</title>
-    <link href="http://www.byteants.com/2016/04/11/Stock%20Search%20APP%20--%20AutoComplete/"/>
-    <id>http://www.byteants.com/2016/04/11/Stock Search APP -- AutoComplete/</id>
-    <published>2016-04-11T07:00:00.000Z</published>
-    <updated>2016-05-25T16:18:48.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1693/26393556095_c31c115dc0.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;During developing the Stock Search App on the cloud server (AWS), in order to make out application be used conveniently the input will autocomplete based on the users’ input. This function can be divided into two parts, the back-end and front-end. Firstly, with the help of Ajax, the input of user will send to the server and server will fetch the information for user synchronously. This process is hidden to users. Secondly, when the front end get the data from the server, jQuery UI will show these data as a prompting list so that user can choose what they want to search. During the process, the user haven’t to press any button and the prompting message will change as the change of users’ inputs. Users can’t feel the process of data transmission between local and server. It is just like they run an application locally which is a great benefit of Ajax.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;jQuery-UI-realize-the-autocomplete-front-end&quot;&gt;&lt;a href=&quot;#jQuery-UI-realize-the-autocomplete-front-end&quot; class=&quot;headerlink&quot; title=&quot;jQuery UI realize the autocomplete front-end&quot;&gt;&lt;/a&gt;jQuery UI realize the autocomplete front-end&lt;/h3&gt;&lt;p&gt;Fortunately, jQuery provide a user interface to realize the autocomplete prompting list. In the &lt;a href=&quot;http://jqueryui.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;official website&lt;/a&gt;, it provides some &lt;a href=&quot;https://jqueryui.com/autocomplete/#default&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;examples&lt;/a&gt;. At the same time, we need to add following libraries, including CSS and javascript, to our application.&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;link&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;rel&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;//code.jquery.com/jquery-1.10.2.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;//code.jquery.com/ui/1.11.4/jquery-ui.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;Firstly, we build an array in our application. We can get the input element based on the input textbox’s ID. When we add the jQuery-UI library, the input textbox will have the autocomplete method. In the method there is a source variable, and then we can set the source as the array what we just create before. Then the input will autocomplete based on the users’ input and the array we create. For example, when the user type j in the textbox, the autocomplete function will search the string star with ‘j’ from the array. When it get a list, then it will show this list for us.&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  $(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; availableTags = [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;ActionScript&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;AppleScript&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Asp&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;BASIC&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;C&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;C++&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Clojure&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;COBOL&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;ColdFusion&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Erlang&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Fortran&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Groovy&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Haskell&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Java&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;JavaScript&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Lisp&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Perl&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;PHP&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Python&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Ruby&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Scala&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;Scheme&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $(&lt;span class=&quot;string&quot;&gt;&quot;#tags&quot;&lt;/span&gt; ).autocomplete(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      source: availableTags&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;The code above is sample and clean and it satisfy our need of front end. However, it just can autocomplete the user’s input based on the array which we create before. Actually, it is impossible for us to create an array to autocomplete user’s input during our application. The amount of company is so large, so we need to fetch the useful data from the stock server instead create a static array in our application. In the following section, I will talks about how we can get information from the server.&lt;/p&gt;
-&lt;h3 id=&quot;Autocomplete-Based-on-Users’-Input&quot;&gt;&lt;a href=&quot;#Autocomplete-Based-on-Users’-Input&quot; class=&quot;headerlink&quot; title=&quot;Autocomplete Based on Users’ Input&quot;&gt;&lt;/a&gt;Autocomplete Based on Users’ Input&lt;/h3&gt;&lt;p&gt;In our application, what we face is a huge amount of data so we cannot create a static array to realize automatically as before.&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&quot;#search_query&quot;&lt;/span&gt;).autocomplete(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            source: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;request, response&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                $.ajax(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    url: &lt;span class=&quot;string&quot;&gt;&quot;search.php&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    data: &amp;#123;input: request.term&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    type: &lt;span class=&quot;string&quot;&gt;&quot;GET&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    datatype: &lt;span class=&quot;string&quot;&gt;&quot;json&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    success: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;json&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; jsonObject = jQuery.parseJSON(json);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (jsonObject.length == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&quot;checkValidate&quot;&lt;/span&gt;).innerHTML = &lt;span class=&quot;string&quot;&gt;&quot;Select a valid entry&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            response(&lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&quot;checkValidate&quot;&lt;/span&gt;).innerHTML = &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; data = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Array&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;; i &amp;lt; jsonObject.length; i++) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                                data[i] = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                                    label: jsonObject[i].Symbol + &lt;span class=&quot;string&quot;&gt;&quot; - &quot;&lt;/span&gt; + jsonObject[i].Name + &lt;span class=&quot;string&quot;&gt;&quot; ( &quot;&lt;/span&gt; + jsonObject[i].Exchange + &lt;span class=&quot;string&quot;&gt;&quot; ) &quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                                    value: jsonObject[i].Symbol&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                                &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                            response(data);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;The search.php as followint&lt;br&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;isset&lt;/span&gt;($_GET[&lt;span class=&quot;string&quot;&gt;&quot;input&quot;&lt;/span&gt;])) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $autocomplete_check_search = &lt;span class=&quot;string&quot;&gt;&quot;http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input=&quot;&lt;/span&gt;.$_GET[&lt;span class=&quot;string&quot;&gt;&quot;input&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $json_content = file_get_contents($autocomplete_check_search);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; $json_content;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Conclusion&quot;&gt;&lt;a href=&quot;#Conclusion&quot; class=&quot;headerlink&quot; title=&quot;Conclusion&quot;&gt;&lt;/a&gt;Conclusion&lt;/h3&gt;&lt;p&gt;In this task, we use the Ajax to fetch data from server based on users’ inputs without the observation of users’. Then with the help of the jQuery UI, we can show the list for the user conveniently. With the help of jQuery UI our code is more clean and easy to manipulate. And with the help of Ajax, we can divide the web user development with the server function development. And we can keep our servers code save because the user cannot see server’s code.&lt;/p&gt;
-&lt;p&gt;-&lt;a href=&quot;https://github.com/spacime/Projects/tree/master/Search%20Stock%20Data%20--%20Ajax&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github code&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://farm2.staticflickr.com/1693/26393556095_c31c115dc0.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h3&gt;&lt;p&gt;During developing the Stock Search App on the cloud server (AWS), in order to make out application be used conveniently the input will autocomplete based on the users’ input. This function can be divided into two parts, the back-end and front-end. Firstly, with the help of Ajax, the input of user will send to the server and server will fetch the information for user synchronously. This process is hidden to users. Secondly, when the front end get the data from the server, jQuery UI will show these data as a prompting list so that user can choose what they want to search. During the process, the user haven’t to press any button and the prompting message will change as the change of users’ inputs. Users can’t feel the process of data transmission between local and server. It is just like they run an application locally which is a great benefit of Ajax.&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Project" scheme="http://www.byteants.com/categories/Project/"/>
-    
-      <category term="Web Develop" scheme="http://www.byteants.com/categories/Project/Web-Develop/"/>
-    
-    
-      <category term="PHP" scheme="http://www.byteants.com/tags/PHP/"/>
-    
-      <category term="JSON" scheme="http://www.byteants.com/tags/JSON/"/>
-    
-      <category term="jQuery" scheme="http://www.byteants.com/tags/jQuery/"/>
-    
-      <category term="AJAX" scheme="http://www.byteants.com/tags/AJAX/"/>
     
   </entry>
   

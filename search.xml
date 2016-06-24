@@ -4,86 +4,26 @@
   
     
     <entry>
-      <title><![CDATA[Relational Algebra]]></title>
-      <url>http://www.byteants.com/2016/06/23/studying%20notes.database.3/</url>
-      <content type="html"><![CDATA[<p><img src="https://c8.staticflickr.com/8/7371/27775233071_894e39fbed.jpg" width="500" height="301"></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>Relational Algebra: a formal language, underpinnings of implemented languages like SQL</p>
-<p>Introducing Relational Algebra operator based on simple college admissions database:</p>
+      <title><![CDATA[SQL]]></title>
+      <url>http://www.byteants.com/2016/06/24/studying%20notes.database.4/</url>
+      <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>SQL:</p>
 <ul>
-<li>College(cName, state, enrollment)</li>
-<li>Student(sID, sName, GPA, sizeHS)</li>
-<li>Apply(sID, cName, major, decision)</li>
+<li>supported by all major commercial database systems</li>
+<li>standardized–many new features over time</li>
+<li>interactive via GUI or prompt, or embedded in programs</li>
+<li>declarative, based on relational algebra</li>
 </ul>
-<p><img src="https://c3.staticflickr.com/8/7319/27573344650_962654069e.jpg" width="500" height="99"></p>
-<p>select operator: pick certain rows</p>
+<p>composition of SQL:</p>
 <ul>
-<li>students with GPA &gt; 3.7</li>
+<li>data definition language(DDL): create table, drop table</li>
+<li>data manipulation language(DML): select, insert, delete, update</li>
+<li>other commands: indexes, constraints, views, triggers, transactions, authorization</li>
 </ul>
-<p><img src="https://c1.staticflickr.com/8/7598/27573344720_82bcfc972a.jpg" width="398" height="61"></p>
-<ul>
-<li>students with GPA &gt; 3.7 and HS &lt; 1000</li>
-</ul>
-<p><img src="https://c7.staticflickr.com/8/7372/27573344790_c865852165.jpg" width="500" height="53"></p>
-<ul>
-<li>applications to standord CS major</li>
-</ul>
-<p><img src="https://c7.staticflickr.com/8/7432/27573344910_09f5ff0c54.jpg" width="500" height="51"></p>
-<p>project operator: pick certain columns</p>
-<ul>
-<li>ID and decision of all applications</li>
-</ul>
-<p><img src="https://c1.staticflickr.com/8/7297/27573345000_5bc9c7f357.jpg" width="349" height="112"></p>
-<ul>
-<li>list of application majors and decisions</li>
-</ul>
-<p><img src="https://c3.staticflickr.com/8/7064/27573345050_42dc615313.jpg" width="394" height="100"></p>
-<p>cross-product: combine two relations</p>
-<ul>
-<li>names and GPAs of students with HS &gt; 1000 who applied to CS and were rejected</li>
-</ul>
-<p><img src="https://c3.staticflickr.com/8/7564/27573345130_9746e076b2.jpg" width="500" height="121"></p>
-<p>natural join: enforce equality on all attributes with same name; eliminate one copy of duplicate attributes</p>
-<ul>
-<li>names and GPAs of students with HS &gt; 1000 who applied to CS at college with enr &gt; 20000 and were rejected</li>
-</ul>
-<p><img src="https://c1.staticflickr.com/8/7791/27573345240_2f9b4640a4.jpg" width="500" height="92"></p>
-<p>theta join: natural join with condition</p>
-<p><img src="https://c3.staticflickr.com/8/7098/27573345330_befbf4619d.jpg" width="500" height="48"></p>
-<p>union operator:</p>
-<ul>
-<li>list of college and student names</li>
-</ul>
-<p><img src="https://c3.staticflickr.com/8/7347/27573344490_40c78b9b7b.jpg" width="378" height="164"></p>
-<p>difference operator:</p>
-<ul>
-<li>IDs and names of students who didn’t apply anywhere</li>
-</ul>
-<p><img src="https://c3.staticflickr.com/8/7502/27573344410_26d586fbd4.jpg" width="500" height="103"></p>
-<p>intersection operator:</p>
-<ul>
-<li>names that are both a college name and a student name</li>
-</ul>
-<p><img src="https://c5.staticflickr.com/8/7341/27573344340_7b61fe1064.jpg" width="500" height="89"></p>
-<p>rename operator: reassign the schema in the result of E; to unify schemas for set operators; for disambiguation in “self-joins”</p>
-<p><img src="https://c3.staticflickr.com/8/7319/27573344130_08b46a039a.jpg" width="322" height="105"></p>
-<ul>
-<li>list of college and student names</li>
-</ul>
-<p><img src="https://c5.staticflickr.com/8/7632/27573344020_cffcf285b2.jpg" width="500" height="144"></p>
-<ul>
-<li>pairs of colleges in same state</li>
-</ul>
-<p><img src="https://c1.staticflickr.com/8/7441/27573343840_aa724cd602.jpg" width="500" height="124"></p>
-<p>assignment statements: a way to break down relational algebra expressions into parts</p>
-<ul>
-<li>pairs of colleges in same state</li>
-</ul>
-<p><img src="https://c5.staticflickr.com/8/7367/27573343740_495d3d7f39.jpg" width="493" height="268"></p>
-<p>expression tree: allow to visualize structure of the expression</p>
-<ul>
-<li>GPAs of students applying to CS in CA</li>
-</ul>
-<p><img src="https://c1.staticflickr.com/8/7408/27573343680_48499dae78.jpg" width="500" height="199"></p>
+<p>select statement:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select A1, A2,..., An</span><br><span class="line">from R1, R2,..., Rm</span><br><span class="line">where condition</span><br></pre></td></tr></table></figure></p>
+<p>some select statements:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">/**************************************************************</span><br><span class="line">  BASIC SELECT STATEMENTS</span><br><span class="line">  Works for SQLite, MySQL, Postgres</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  IDs, names, and GPAs of students with GPA &gt; 3.6</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID, sName, GPA</span><br><span class="line">from Student</span><br><span class="line">where GPA &gt; 3.6;</span><br><span class="line"></span><br><span class="line">/*** Same query without GPA ***/</span><br><span class="line"></span><br><span class="line">select sID, sName</span><br><span class="line">from Student</span><br><span class="line">where GPA &gt; 3.6;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Student names and majors for which they&apos;ve applied</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sName, major</span><br><span class="line">from Student, Apply</span><br><span class="line">where Student.sID = Apply.sID;</span><br><span class="line"></span><br><span class="line">/*** Same query with Distinct, note difference from algebra ***/</span><br><span class="line"></span><br><span class="line">select distinct sName, major</span><br><span class="line">from Student, Apply</span><br><span class="line">where Student.sID = Apply.sID;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Names and GPAs of students with sizeHS &lt; 1000 applying to</span><br><span class="line">  CS at Stanford, and the application decision</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sname, GPA, decision</span><br><span class="line">from Student, Apply</span><br><span class="line">where Student.sID = Apply.sID</span><br><span class="line">  and sizeHS &lt; 1000 and major = &apos;CS&apos; and cname = &apos;Stanford&apos;;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  All large campuses with CS applicants</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select cName</span><br><span class="line">from College, Apply</span><br><span class="line">where College.cName = Apply.cName</span><br><span class="line">  and enrollment &gt; 20000 and major = &apos;CS&apos;;</span><br><span class="line"></span><br><span class="line">/*** Fix error ***/</span><br><span class="line"></span><br><span class="line">select College.cName</span><br><span class="line">from College, Apply</span><br><span class="line">where College.cName = Apply.cName</span><br><span class="line">  and enrollment &gt; 20000 and major = &apos;CS&apos;;</span><br><span class="line"></span><br><span class="line">/*** Add Distinct ***/</span><br><span class="line"></span><br><span class="line">select distinct College.cName</span><br><span class="line">from College, Apply</span><br><span class="line">where College.cName = Apply.cName</span><br><span class="line">  and enrollment &gt; 20000 and major = &apos;CS&apos;;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Application information</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select Student.sID, sName, GPA, Apply.cName, enrollment</span><br><span class="line">from Student, College, Apply</span><br><span class="line">where Apply.sID = Student.sID and Apply.cName = College.cName;</span><br><span class="line"></span><br><span class="line">/*** Sort by decreasing GPA ***/</span><br><span class="line"></span><br><span class="line">select Student.sID, sName, GPA, Apply.cName, enrollment</span><br><span class="line">from Student, College, Apply</span><br><span class="line">where Apply.sID = Student.sID and Apply.cName = College.cName</span><br><span class="line">order by GPA desc;</span><br><span class="line"></span><br><span class="line">/*** Then by increasing enrollment ***/</span><br><span class="line"></span><br><span class="line">select Student.sID, sName, GPA, Apply.cName, enrollment</span><br><span class="line">from Student, College, Apply</span><br><span class="line">where Apply.sID = Student.sID and Apply.cName = College.cName</span><br><span class="line">order by GPA desc, enrollment;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Applicants to bio majors</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID, major</span><br><span class="line">from Apply</span><br><span class="line">where major like &apos;%bio%&apos;;</span><br><span class="line"></span><br><span class="line">/*** Same query with Select * ***/</span><br><span class="line"></span><br><span class="line">select *</span><br><span class="line">from Apply</span><br><span class="line">where major like &apos;%bio%&apos;;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Select * cross-product</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select *</span><br><span class="line">from Student, College;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Add scaled GPA based on sizeHS</span><br><span class="line">  Also note missing Where clause</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID, sName, GPA, sizeHS, GPA*(sizeHS/1000.0)</span><br><span class="line">from Student;</span><br><span class="line"></span><br><span class="line">/*** Rename result attribute ***/</span><br><span class="line"></span><br><span class="line">select sID, sName, GPA, sizeHS, GPA*(sizeHS/1000.0) as scaledGPA</span><br><span class="line">from Student;</span><br></pre></td></tr></table></figure></p>
+<p>table variables &amp; set operators:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">/**************************************************************</span><br><span class="line">  TABLE VARIABLES AND SET OPERATORS</span><br><span class="line">  Works for SQLite, Postgres</span><br><span class="line">  MySQL doesn&apos;t support Intersect or Except</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Application information</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select Student.sID, sName, GPA, Apply.cName, enrollment</span><br><span class="line">from Student, College, Apply</span><br><span class="line">where Apply.sID = Student.sID and Apply.cName = College.cName;</span><br><span class="line"></span><br><span class="line">/*** Introduce table variables ***/</span><br><span class="line"></span><br><span class="line">select S.sID, S.sName, S.GPA, A.cName, C.enrollment</span><br><span class="line">from Student S, College C, Apply A</span><br><span class="line">where A.sID = S.sID and A.cName = C.cName;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Pairs of students with same GPA</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select S1.sID, S1.sName, S1.GPA, S2.sID, S2.sName, S2.GPA</span><br><span class="line">from Student S1, Student S2</span><br><span class="line">where S1.GPA = S2.GPA;</span><br><span class="line"></span><br><span class="line">/*** Get rid of self-pairings ***/</span><br><span class="line"></span><br><span class="line">select S1.sID, S1.sName, S1.GPA, S2.sID, S2.sName, S2.GPA</span><br><span class="line">from Student S1, Student S2</span><br><span class="line">where S1.GPA = S2.GPA and S1.sID &lt;&gt; S2.sID;</span><br><span class="line"></span><br><span class="line">/*** Get rid of reverse-pairings ***/</span><br><span class="line"></span><br><span class="line">select S1.sID, S1.sName, S1.GPA, S2.sID, S2.sName, S2.GPA</span><br><span class="line">from Student S1, Student S2</span><br><span class="line">where S1.GPA = S2.GPA and S1.sID &lt; S2.sID;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  List of college names and student names</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select cName from College</span><br><span class="line">union</span><br><span class="line">select sName from Student;</span><br><span class="line"></span><br><span class="line">/*** Add &apos;As name&apos; to both sides ***/</span><br><span class="line"></span><br><span class="line">select cName as name from College</span><br><span class="line">union</span><br><span class="line">select sName as name from Student;</span><br><span class="line"></span><br><span class="line">/*** Change to Union All ***/</span><br><span class="line"></span><br><span class="line">select cName as name from College</span><br><span class="line">union all</span><br><span class="line">select sName as name from Student;</span><br><span class="line"></span><br><span class="line">/*** Notice not sorted any more (SQLite), add order by cName ***/</span><br><span class="line"></span><br><span class="line">select cName as name from College</span><br><span class="line">union all</span><br><span class="line">select sName as name from Student</span><br><span class="line">order by name;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  IDs of students who applied to both CS and EE</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID from Apply where major = &apos;CS&apos;</span><br><span class="line">intersect</span><br><span class="line">select sID from Apply where major = &apos;EE&apos;;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  IDs of students who applied to both CS and EE</span><br><span class="line">  Some systems don&apos;t support intersect</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select A1.sID</span><br><span class="line">from Apply A1, Apply A2</span><br><span class="line">where A1.sID = A2.sID and A1.major = &apos;CS&apos; and A2.major = &apos;EE&apos;;</span><br><span class="line"></span><br><span class="line">/*** Why so many duplicates? Look at Apply table ***/</span><br><span class="line">/*** Add Distinct ***/</span><br><span class="line"></span><br><span class="line">select distinct A1.sID</span><br><span class="line">from Apply A1, Apply A2</span><br><span class="line">where A1.sID = A2.sID and A1.major = &apos;CS&apos; and A2.major = &apos;EE&apos;;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  IDs of students who applied to CS but not EE</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID from Apply where major = &apos;CS&apos;</span><br><span class="line">except</span><br><span class="line">select sID from Apply where major = &apos;EE&apos;;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  IDs of students who applied to CS but not EE</span><br><span class="line">  Some systems don&apos;t support except</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select A1.sID</span><br><span class="line">from Apply A1, Apply A2</span><br><span class="line">where A1.sID = A2.sID and A1.major = &apos;CS&apos; and A2.major &lt;&gt; &apos;EE&apos;;</span><br><span class="line"></span><br><span class="line">/*** Add Distinct ***/</span><br><span class="line"></span><br><span class="line">select distinct A1.sID</span><br><span class="line">from Apply A1, Apply A2</span><br><span class="line">where A1.sID = A2.sID and A1.major = &apos;CS&apos; and A2.major &lt;&gt; &apos;EE&apos;;</span><br><span class="line"></span><br><span class="line">/*** Can&apos;t do it with constructs we have so far ***/</span><br></pre></td></tr></table></figure></p>
+<p>subqueries in where clause:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br></pre></td><td class="code"><pre><span class="line">/**************************************************************</span><br><span class="line">  SUBQUERIES IN THE WHERE CLAUSE</span><br><span class="line">  Works for MySQL, Postgres</span><br><span class="line">  SQLite doesn&apos;t support All or Any</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  IDs and names of students applying to CS</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID, sName</span><br><span class="line">from Student</span><br><span class="line">where sID in (select sID from Apply where major = &apos;CS&apos;);</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Same query written without &apos;In&apos;</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID, sName</span><br><span class="line">from Student, Apply</span><br><span class="line">where Student.sID = Apply.sID and major = &apos;CS&apos;;</span><br><span class="line"></span><br><span class="line">/*** Fix error ***/</span><br><span class="line"></span><br><span class="line">select Student.sID, sName</span><br><span class="line">from Student, Apply</span><br><span class="line">where Student.sID = Apply.sID and major = &apos;CS&apos;;</span><br><span class="line"></span><br><span class="line">/*** Remove duplicates ***/</span><br><span class="line"></span><br><span class="line">select distinct Student.sID, sName</span><br><span class="line">from Student, Apply</span><br><span class="line">where Student.sID = Apply.sID and major = &apos;CS&apos;;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Just names of students applying to CS</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sName</span><br><span class="line">from Student</span><br><span class="line">where sID in (select sID from Apply where major = &apos;CS&apos;);</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Same query written without &apos;In&apos;</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sName</span><br><span class="line">from Student, Apply</span><br><span class="line">where Student.sID = Apply.sID and major = &apos;CS&apos;;</span><br><span class="line"></span><br><span class="line">/*** Remove duplicates (still incorrect) ***/</span><br><span class="line"></span><br><span class="line">select distinct sName</span><br><span class="line">from Student, Apply</span><br><span class="line">where Student.sID = Apply.sID and major = &apos;CS&apos;;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Duplicates are important: average GPA of CS applicants</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select GPA</span><br><span class="line">from Student</span><br><span class="line">where sID in (select sID from Apply where major = &apos;CS&apos;);</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Alternative (incorrect) queries without &apos;In&apos;</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select GPA</span><br><span class="line">from Student, Apply</span><br><span class="line">where Student.sID = Apply.sID and major = &apos;CS&apos;;</span><br><span class="line"></span><br><span class="line">select distinct GPA</span><br><span class="line">from Student, Apply</span><br><span class="line">where Student.sID = Apply.sID and major = &apos;CS&apos;;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Students who applied to CS but not EE</span><br><span class="line">  (query we used &apos;Except&apos; for earlier)</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID, sName</span><br><span class="line">from Student</span><br><span class="line">where sID in (select sID from Apply where major = &apos;CS&apos;)</span><br><span class="line">  and sID not in (select sID from Apply where major = &apos;EE&apos;);</span><br><span class="line"></span><br><span class="line">/*** Change to &apos;not sID in&apos; ***/</span><br><span class="line"></span><br><span class="line">select sID, sName</span><br><span class="line">from Student</span><br><span class="line">where sID in (select sID from Apply where major = &apos;CS&apos;)</span><br><span class="line">  and not sID in (select sID from Apply where major = &apos;EE&apos;);</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Colleges such that some other college is in the same state</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select cName, state</span><br><span class="line">from College C1</span><br><span class="line">where exists (select * from College C2</span><br><span class="line">              where C2.state = C1.state);</span><br><span class="line"></span><br><span class="line">/*** Fix error ***/</span><br><span class="line"></span><br><span class="line">select cName, state</span><br><span class="line">from College C1</span><br><span class="line">where exists (select * from College C2</span><br><span class="line">              where C2.state = C1.state and C2.cName &lt;&gt; C1.cName);</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Biggest college</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select cName</span><br><span class="line">from College C1</span><br><span class="line">where not exists (select * from College C2</span><br><span class="line">                  where C2.enrollment &gt; C1.enrollment);</span><br><span class="line"></span><br><span class="line">/*** Similar: student with highest GPA  ***/</span><br><span class="line"></span><br><span class="line">select sName</span><br><span class="line">from Student C1</span><br><span class="line">where not exists (select * from Student C2</span><br><span class="line">                  where C2.GPA &gt; C1.GPA);</span><br><span class="line"></span><br><span class="line">/*** Add GPA ***/</span><br><span class="line"></span><br><span class="line">select sName, GPA</span><br><span class="line">from Student C1</span><br><span class="line">where not exists (select * from Student C2</span><br><span class="line">                  where C2.GPA &gt; C1.GPA);</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Highest GPA with no subquery</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select S1.sName, S1.GPA</span><br><span class="line">from Student S1, Student S2</span><br><span class="line">where S1.GPA &gt; S2.GPA;</span><br><span class="line"></span><br><span class="line">/*** Remove duplicates (still incorrect) ***/</span><br><span class="line"></span><br><span class="line">select distinct S1.sName, S1.GPA</span><br><span class="line">from Student S1, Student S2</span><br><span class="line">where S1.GPA &gt; S2.GPA;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Highest GPA using &quot;&gt;= all&quot;</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sName, GPA</span><br><span class="line">from Student</span><br><span class="line">where GPA &gt;= all (select GPA from Student);</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Higher GPA than all other students</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sName, GPA</span><br><span class="line">from Student S1</span><br><span class="line">where GPA &gt; all (select GPA from Student S2</span><br><span class="line">                 where S2.sID &lt;&gt; S1.sID);</span><br><span class="line"></span><br><span class="line">/*** Similar: higher enrollment than all other colleges  ***/</span><br><span class="line"></span><br><span class="line">select cName</span><br><span class="line">from College S1</span><br><span class="line">where enrollment &gt; all (select enrollment from College S2</span><br><span class="line">                        where S2.cName &lt;&gt; S1.cName);</span><br><span class="line"></span><br><span class="line">/*** Same query using &apos;Not &lt;= Any&apos; ***/</span><br><span class="line"></span><br><span class="line">select cName</span><br><span class="line">from College S1</span><br><span class="line">where not enrollment &lt;= any (select enrollment from College S2</span><br><span class="line">                             where S2.cName &lt;&gt; S1.cName);</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Students not from the smallest HS</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID, sName, sizeHS</span><br><span class="line">from Student</span><br><span class="line">where sizeHS &gt; any (select sizeHS from Student);</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Students not from the smallest HS</span><br><span class="line">  Some systems don&apos;t support Any/All</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID, sName, sizeHS</span><br><span class="line">from Student S1</span><br><span class="line">where exists (select * from Student S2</span><br><span class="line">              where S2.sizeHS &lt; S1.sizeHS);</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Students who applied to CS but not EE</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID, sName</span><br><span class="line">from Student</span><br><span class="line">where sID = any (select sID from Apply where major = &apos;CS&apos;)</span><br><span class="line">  and sID &lt;&gt; any (select sID from Apply where major = &apos;EE&apos;);</span><br><span class="line"></span><br><span class="line">/*** Subtle error, fix ***/</span><br><span class="line"></span><br><span class="line">select sID, sName</span><br><span class="line">from Student</span><br><span class="line">where sID = any (select sID from Apply where major = &apos;CS&apos;)</span><br><span class="line">  and not sID = any (select sID from Apply where major = &apos;EE&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>subqueries in from and select:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">/**************************************************************</span><br><span class="line">  SUBQUERIES IN THE FROM AND SELECT CLAUSES</span><br><span class="line">  Works for MySQL and Postgres</span><br><span class="line">  SQLite doesn&apos;t support All</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Students whose scaled GPA changes GPA by more than 1</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select sID, sName, GPA, GPA*(sizeHS/1000.0) as scaledGPA</span><br><span class="line">from Student</span><br><span class="line">where GPA*(sizeHS/1000.0) - GPA &gt; 1.0</span><br><span class="line">   or GPA - GPA*(sizeHS/1000.0) &gt; 1.0;</span><br><span class="line"></span><br><span class="line">/*** Can simplify using absolute value function ***/</span><br><span class="line"></span><br><span class="line">select sID, sName, GPA, GPA*(sizeHS/1000.0) as scaledGPA</span><br><span class="line">from Student</span><br><span class="line">where abs(GPA*(sizeHS/1000.0) - GPA) &gt; 1.0;</span><br><span class="line"></span><br><span class="line">/*** Can further simplify using subquery in From ***/</span><br><span class="line"></span><br><span class="line">select *</span><br><span class="line">from (select sID, sName, GPA, GPA*(sizeHS/1000.0) as scaledGPA</span><br><span class="line">      from Student) G</span><br><span class="line">where abs(scaledGPA - GPA) &gt; 1.0;</span><br><span class="line"></span><br><span class="line">/**************************************************************</span><br><span class="line">  Colleges paired with the highest GPA of their applicants</span><br><span class="line">**************************************************************/</span><br><span class="line"></span><br><span class="line">select College.cName, state, GPA</span><br><span class="line">from College, Apply, Student</span><br><span class="line">where College.cName = Apply.cName</span><br><span class="line">  and Apply.sID = Student.sID</span><br><span class="line">  and GPA &gt;= all</span><br><span class="line">          (select GPA from Student, Apply</span><br><span class="line">           where Student.sID = Apply.sID</span><br><span class="line">             and Apply.cName = College.cName);</span><br><span class="line"></span><br><span class="line">/*** Add Distinct to remove duplicates ***/</span><br><span class="line"></span><br><span class="line">select distinct College.cName, state, GPA</span><br><span class="line">from College, Apply, Student</span><br><span class="line">where College.cName = Apply.cName</span><br><span class="line">  and Apply.sID = Student.sID</span><br><span class="line">  and GPA &gt;= all</span><br><span class="line">          (select GPA from Student, Apply</span><br><span class="line">           where Student.sID = Apply.sID</span><br><span class="line">             and Apply.cName = College.cName);</span><br><span class="line"></span><br><span class="line">/*** Use subquery in Select ***/</span><br><span class="line"></span><br><span class="line">select distinct cName, state,</span><br><span class="line">  (select distinct GPA</span><br><span class="line">   from Apply, Student</span><br><span class="line">   where College.cName = Apply.cName</span><br><span class="line">     and Apply.sID = Student.sID</span><br><span class="line">     and GPA &gt;= all</span><br><span class="line">           (select GPA from Student, Apply</span><br><span class="line">            where Student.sID = Apply.sID</span><br><span class="line">              and Apply.cName = College.cName)) as GPA</span><br><span class="line">from College;</span><br><span class="line"></span><br><span class="line">/*** Now pair colleges with names of their applicants</span><br><span class="line">    (doesn&apos;t work due to multiple rows in subquery result) ***/</span><br><span class="line"></span><br><span class="line">select distinct cName, state,</span><br><span class="line">  (select distinct sName</span><br><span class="line">   from Apply, Student</span><br><span class="line">   where College.cName = Apply.cName</span><br><span class="line">     and Apply.sID = Student.sID) as sName</span><br><span class="line">from College;</span><br></pre></td></tr></table></figure></p>
 ]]></content>
     </entry>
     
@@ -187,6 +127,90 @@
 <p>Demo of JSON:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;Books&quot;:</span><br><span class="line">  [</span><br><span class="line">    &#123; &quot;ISBN&quot;:&quot;ISBN-0-13-713526-2&quot;,</span><br><span class="line">      &quot;Price&quot;:85,</span><br><span class="line">      &quot;Edition&quot;:3,</span><br><span class="line">      &quot;Title&quot;:&quot;A First Course in Database Systems&quot;,</span><br><span class="line">      &quot;Authors&quot;:[ &#123;&quot;First_Name&quot;:&quot;Jeffrey&quot;, &quot;Last_Name&quot;:&quot;Ullman&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jennifer&quot;, &quot;Last_Name&quot;:&quot;Widom&quot;&#125; ] &#125;</span><br><span class="line">    ,</span><br><span class="line">    &#123; &quot;ISBN&quot;:&quot;ISBN-0-13-815504-6&quot;,</span><br><span class="line">      &quot;Price&quot;:100,</span><br><span class="line">      &quot;Remark&quot;:&quot;Buy this book bundled with &apos;A First Course&apos; - a great deal!&quot;,</span><br><span class="line">      &quot;Title&quot;:&quot;Database Systems:The Complete Book&quot;,</span><br><span class="line">      &quot;Authors&quot;:[ &#123;&quot;First_Name&quot;:&quot;Hector&quot;, &quot;Last_Name&quot;:&quot;Garcia-Molina&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jeffrey&quot;, &quot;Last_Name&quot;:&quot;Ullman&quot;&#125;,</span><br><span class="line">                  &#123;&quot;First_Name&quot;:&quot;Jennifer&quot;, &quot;Last_Name&quot;:&quot;Widom&quot;&#125; ] &#125;</span><br><span class="line">  ],</span><br><span class="line">  &quot;Magazines&quot;:</span><br><span class="line">  [</span><br><span class="line">    &#123; &quot;Title&quot;:&quot;National Geographic&quot;,</span><br><span class="line">      &quot;Month&quot;:&quot;January&quot;,</span><br><span class="line">      &quot;Year&quot;:2009 &#125;</span><br><span class="line">    ,</span><br><span class="line">    &#123; &quot;Title&quot;:&quot;Newsweek&quot;,</span><br><span class="line">      &quot;Month&quot;:&quot;February&quot;,</span><br><span class="line">      &quot;Year&quot;:2009 &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Demo of JSON schema:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">  &quot;properties&quot;: &#123;</span><br><span class="line">     &quot;Books&quot;: &#123;</span><br><span class="line">        &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">        &quot;items&quot;: &#123;</span><br><span class="line">           &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">           &quot;properties&quot;: &#123;</span><br><span class="line">              &quot;ISBN&quot;: &#123; &quot;type&quot;:&quot;string&quot;, &quot;pattern&quot;:&quot;ISBN*&quot; &#125;,</span><br><span class="line">              &quot;Price&quot;: &#123; &quot;type&quot;:&quot;integer&quot;,</span><br><span class="line">                         &quot;minimum&quot;:0, &quot;maximum&quot;:200 &#125;,</span><br><span class="line">              &quot;Edition&quot;: &#123; &quot;type&quot;:&quot;integer&quot;, &quot;optional&quot;: true &#125;,</span><br><span class="line">              &quot;Remark&quot;: &#123; &quot;type&quot;:&quot;string&quot;, &quot;optional&quot;: true &#125;,</span><br><span class="line">              &quot;Title&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">              &quot;Authors&quot;: &#123; </span><br><span class="line">                 &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">                 &quot;minItems&quot;:1,</span><br><span class="line">                 &quot;maxItems&quot;:10,</span><br><span class="line">                 &quot;items&quot;: &#123;</span><br><span class="line">                    &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">                    &quot;properties&quot;: &#123;</span><br><span class="line">                       &quot;First_Name&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">                       &quot;Last_Name&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;&#125;&#125;&#125;&#125;&#125;&#125;,</span><br><span class="line">     &quot;Magazines&quot;: &#123;</span><br><span class="line">        &quot;type&quot;:&quot;array&quot;,</span><br><span class="line">        &quot;items&quot;: &#123;</span><br><span class="line">           &quot;type&quot;:&quot;object&quot;,</span><br><span class="line">           &quot;properties&quot;: &#123;</span><br><span class="line">              &quot;Title&quot;: &#123; &quot;type&quot;:&quot;string&quot; &#125;,</span><br><span class="line">              &quot;Month&quot;: &#123; &quot;type&quot;:&quot;string&quot;,</span><br><span class="line">                         &quot;enum&quot;:[&quot;January&quot;,&quot;February&quot;] &#125;,</span><br><span class="line">              &quot;Year&quot;: &#123; &quot;type&quot;:&quot;integer&quot; &#125;&#125;&#125;&#125;</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>If type is object, it has properties which contains many key-value pairs; if type is array, it has items describing every kind of type inside array.</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Relational Algebra]]></title>
+      <url>http://www.byteants.com/2016/06/23/studying%20notes.database.3/</url>
+      <content type="html"><![CDATA[<p><img src="https://c8.staticflickr.com/8/7371/27775233071_894e39fbed.jpg" width="500" height="301"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>Relational Algebra: a formal language, underpinnings of implemented languages like SQL</p>
+<p>Introducing Relational Algebra operator based on simple college admissions database:</p>
+<ul>
+<li>College(cName, state, enrollment)</li>
+<li>Student(sID, sName, GPA, sizeHS)</li>
+<li>Apply(sID, cName, major, decision)</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7319/27573344650_962654069e.jpg" width="500" height="99"></p>
+<p>select operator: pick certain rows</p>
+<ul>
+<li>students with GPA &gt; 3.7</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7598/27573344720_82bcfc972a.jpg" width="398" height="61"></p>
+<ul>
+<li>students with GPA &gt; 3.7 and HS &lt; 1000</li>
+</ul>
+<p><img src="https://c7.staticflickr.com/8/7372/27573344790_c865852165.jpg" width="500" height="53"></p>
+<ul>
+<li>applications to standord CS major</li>
+</ul>
+<p><img src="https://c7.staticflickr.com/8/7432/27573344910_09f5ff0c54.jpg" width="500" height="51"></p>
+<p>project operator: pick certain columns</p>
+<ul>
+<li>ID and decision of all applications</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7297/27573345000_5bc9c7f357.jpg" width="349" height="112"></p>
+<ul>
+<li>list of application majors and decisions</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7064/27573345050_42dc615313.jpg" width="394" height="100"></p>
+<p>cross-product: combine two relations</p>
+<ul>
+<li>names and GPAs of students with HS &gt; 1000 who applied to CS and were rejected</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7564/27573345130_9746e076b2.jpg" width="500" height="121"></p>
+<p>natural join: enforce equality on all attributes with same name; eliminate one copy of duplicate attributes</p>
+<ul>
+<li>names and GPAs of students with HS &gt; 1000 who applied to CS at college with enr &gt; 20000 and were rejected</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7791/27573345240_2f9b4640a4.jpg" width="500" height="92"></p>
+<p>theta join: natural join with condition</p>
+<p><img src="https://c3.staticflickr.com/8/7098/27573345330_befbf4619d.jpg" width="500" height="48"></p>
+<p>union operator:</p>
+<ul>
+<li>list of college and student names</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7347/27573344490_40c78b9b7b.jpg" width="378" height="164"></p>
+<p>difference operator:</p>
+<ul>
+<li>IDs and names of students who didn’t apply anywhere</li>
+</ul>
+<p><img src="https://c3.staticflickr.com/8/7502/27573344410_26d586fbd4.jpg" width="500" height="103"></p>
+<p>intersection operator:</p>
+<ul>
+<li>names that are both a college name and a student name</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7341/27573344340_7b61fe1064.jpg" width="500" height="89"></p>
+<p>rename operator: reassign the schema in the result of E; to unify schemas for set operators; for disambiguation in “self-joins”</p>
+<p><img src="https://c3.staticflickr.com/8/7319/27573344130_08b46a039a.jpg" width="322" height="105"></p>
+<ul>
+<li>list of college and student names</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7632/27573344020_cffcf285b2.jpg" width="500" height="144"></p>
+<ul>
+<li>pairs of colleges in same state</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7441/27573343840_aa724cd602.jpg" width="500" height="124"></p>
+<p>assignment statements: a way to break down relational algebra expressions into parts</p>
+<ul>
+<li>pairs of colleges in same state</li>
+</ul>
+<p><img src="https://c5.staticflickr.com/8/7367/27573343740_495d3d7f39.jpg" width="493" height="268"></p>
+<p>expression tree: allow to visualize structure of the expression</p>
+<ul>
+<li>GPAs of students applying to CS in CA</li>
+</ul>
+<p><img src="https://c1.staticflickr.com/8/7408/27573343680_48499dae78.jpg" width="500" height="199"></p>
 ]]></content>
     </entry>
     
@@ -1830,300 +1854,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[File Systems]]></title>
-      <url>http://www.byteants.com/2016/05/21/filesystemsreview/</url>
-      <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
-<li>This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.</li>
-<li>The requirements of file systems:<ul>
-<li>Permanent storage</li>
-<li>Quick, easy and efficient</li>
-</ul>
-</li>
-</ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><p><img src="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg" width="400" height="280" alt="disk_architecture"></p>
-<ul>
-<li>Have multiple platters and each one have top and bottom heads.</li>
-<li>The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.</li>
-<li>disk address = (head/surface#, cylinder/track#, sector#)</li>
-</ul>
-<h4 id="S5FS"><a href="#S5FS" class="headerlink" title="S5FS"></a>S5FS</h4><p>Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression</p>
-<ol>
-<li><p>layout</p>
-<p> <img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="170" height="250" alt="S5FS"></p>
-<ul>
-<li>The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</li>
-</ul>
-</li>
-<li><p>Superblock</p>
-<ul>
-<li>Contains the head of the free list:<br>  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.</li>
-<li>Maintain a free inode list (inode cache):<br>  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.</li>
-</ul>
-</li>
-<li><p>I-list</p>
-<ul>
-<li>For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map</li>
-</ul>
-</li>
-<li><p>Disk map</p>
-<p> <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="320" alt="Disk map"></p>
-<p> 0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
-</li>
-</ol>
-<h4 id="Improvement-of-S5FS"><a href="#Improvement-of-S5FS" class="headerlink" title="Improvement of S5FS"></a>Improvement of S5FS</h4><p>Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)</p>
-<ul>
-<li>Increase block size</li>
-<li>Minimizing seek time<ul>
-<li>Use cylinder groups to put related data in the same cylinde group</li>
-</ul>
-</li>
-<li>Minimizing Latency<ul>
-<li>Block interleaving</li>
-</ul>
-</li>
-<li><p>Log-Structured File System (LFS)</p>
-<p>  <img src="https://farm8.staticflickr.com/7040/26388472283_d457c0580f_b.jpg" width="400" height="100" alt="LFS"></p>
-<ul>
-<li>Main principles: nerver delete, append only.</li>
-<li>Inode Map: keep the updated inode, and each inode map piece is appended to log.</li>
-<li>Use checkpoint file (can have previous and current version) which is not belong to log to keeps track of all inode map pieces.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Multiple-Disks"><a href="#Multiple-Disks" class="headerlink" title="Multiple Disks"></a>Multiple Disks</h3><h4 id="Benefits-of-Multiple-Disks"><a href="#Benefits-of-Multiple-Disks" class="headerlink" title="Benefits of Multiple Disks"></a>Benefits of Multiple Disks</h4><ul>
-<li>Hold more data</li>
-<li>Can be stored redundantly, increase reliability and availability</li>
-<li>Can spread data, allowing parallel access, increase effective access time</li>
-</ul>
-<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><p><img src="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png" width="350" height="150" alt="LVM"></p>
-<p>Manage multiple disks and try not change existing file systems much.</p>
-<ul>
-<li>Spanning: Multiple disks appear to file system as one large disk</li>
-<li>Mirroring: Write redundantly to multiple disks. Read from one.</li>
-</ul>
-<h4 id="Striping"><a href="#Striping" class="headerlink" title="Striping"></a>Striping</h4><p>One disk keep one striping unit data and then the next disk keep next one string unit data and keep doing this.</p>
-<ul>
-<li>Advantages: Increase parallelism.</li>
-<li>Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.</li>
-<li>In general, performance is better with larger striping unit, which can reduce seek time</li>
-<li>Probability of N-disk system failing is: 1-(1-fail)^N</li>
-</ul>
-<h4 id="Redundant-Array-of-Inexpensive-Disks-RAID"><a href="#Redundant-Array-of-Inexpensive-Disks-RAID" class="headerlink" title="Redundant Array of Inexpensive Disks (RAID)"></a>Redundant Array of Inexpensive Disks (RAID)</h4><ul>
-<li>level 1: Just mirroring.</li>
-<li>level 2: Similar to memory’s ECC, use serveal disks to check bits.</li>
-<li>level 3: Use one disk to maintain parity bits.</li>
-<li>level 4: Use one disk to maintain parity blocks.</li>
-<li>level 5: Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.</li>
-</ul>
-<h3 id="Flash-Memory"><a href="#Flash-Memory" class="headerlink" title="Flash Memory"></a>Flash Memory</h3><ol>
-<li>Technologies of Flash<ul>
-<li>NOR: Byte addressable.</li>
-<li>NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.</li>
-</ul>
-</li>
-<li>Wear leveling<ul>
-<li>Writing problem: To change zeroes to ones, must erase entire block.</li>
-<li>Spread writes/erasures across entire drive.</li>
-<li>Using flash traslation layer(FTL) and log-structured file system.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Crash-Resiliency"><a href="#Crash-Resiliency" class="headerlink" title="Crash Resiliency"></a>Crash Resiliency</h3><h4 id="Crash-problem"><a href="#Crash-problem" class="headerlink" title="Crash problem"></a>Crash problem</h4><ul>
-<li>Disk update, gather all dirty blocks, which is done one disk block at a time.</li>
-<li>In S5fs and FFS, the lower level file system can sequence disk writes in any order.</li>
-</ul>
-<h4 id="Dealing-with-Crashes"><a href="#Dealing-with-Crashes" class="headerlink" title="Dealing with Crashes"></a>Dealing with Crashes</h4><ol>
-<li><p>Soft Updates</p>
-<ul>
-<li>Consistency-preserving approach: order disk operations to preserve meta-data consistency.</li>
-<li>Have problems. In reality, in order to save the numver of disk writes, multiple objects can be packed into a diks block and will make a cycle in the topological order, and breaking circular dependency will slow the preformance.</li>
-</ul>
-</li>
-<li><p>Journaling</p>
-<p> <img src="https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg" width="400" height="60" alt="journaling"></p>
-<ul>
-<li>Use transaction idea, a journal is append-only, and it is a separate part of the disk(can add to any file system).</li>
-<li>Append a commit record, when it’s time to update the file system, write to journal first, and write data to file system only after the commit record is writeen to the journal.</li>
-<li>Undo journaling(record previous contents), redo journaling(record new contents).</li>
-<li>Recovery will take the file system into a consistent state at a transaction boundary, and copying a disk block to the file system is idempotent.</li>
-</ul>
-</li>
-<li><p>Shadow paging</p>
-<ul>
-<li><p>Based on copy-on-write ideas</p>
-<p>  <img src="https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg" width="400" height="240" alt="shadow_paging"></p>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="Naming-and-Directories"><a href="#Naming-and-Directories" class="headerlink" title="Naming and Directories"></a>Naming and Directories</h3><h4 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h4><ol>
-<li>S5FS Directories<ul>
-<li>Each entry is 32 bytes.</li>
-</ul>
-</li>
-<li>FFS Directories:<ul>
-<li>No restrictions on names.</li>
-<li>Maintain the last entry to get the free space.</li>
-<li>Use Hash table or B+ tree to look for a file name.</li>
-<li>Use extensible Hashing, the low-order i bits of hi(x) are the same in hi+1(x)</li>
-<li>B+ tree, internal nodes contain no data, just keys, leaf node are linked to ease sorted sequential traversal</li>
-</ul>
-</li>
-</ol>
-<h4 id="Name-Space-Management"><a href="#Name-Space-Management" class="headerlink" title="Name-Space Management"></a>Name-Space Management</h4><ul>
-<li>For Windows, it use drives to make the name-space appear uniform. For Unix, it use file system mounting.</li>
-</ul>
-<h3 id="File-systems-Summary"><a href="#File-systems-Summary" class="headerlink" title="File systems Summary"></a>File systems Summary</h3><p>This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.</p>
-<p><img src="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg" width="450" height="280" alt="file_system_summary"></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Memory Management]]></title>
-      <url>http://www.byteants.com/2016/05/21/memoryreview/</url>
-      <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="Virtual-Memory-Basic"><a href="#Virtual-Memory-Basic" class="headerlink" title="Virtual Memory Basic"></a>Virtual Memory Basic</h2><h3 id="Virtual-Address-Concept"><a href="#Virtual-Address-Concept" class="headerlink" title="Virtual Address Concept"></a>Virtual Address Concept</h3><ul>
-<li>Protect processes from on another</li>
-<li>Protect the OS from user processes</li>
-<li>Provide efficient management of available storage</li>
-<li>Use a virtual address to address any memory location in the 32-bit address space</li>
-<li>Only headware use physical address(include processor) and OS manages the physical address space</li>
-<li>Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.<br>  <img src="https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg" width="400" height="200" alt="MMU"></li>
-</ul>
-<h3 id="Memory-Management-in-the-Early-Days"><a href="#Memory-Management-in-the-Early-Days" class="headerlink" title="Memory Management in the Early Days"></a>Memory Management in the Early Days</h3><ul>
-<li><p>Memory Fence</p>
-<ul>
-<li>If a user program tries to access OS area (address bigger than fence address) MMU will generate a trap    </li>
-<li>use overlays and resident to deal with user program won’t fit in memory</li>
-</ul>
-</li>
-<li><p>Base and Bounds Registers</p>
-<ul>
-<li>Bounds register: Address space size of the user process</li>
-<li>Base register: Start of physical memory for the user process</li>
-<li>Segmentation:<ul>
-<li>One pair of base and bounds registers per segment.</li>
-<li>code, data, heap, stack and may be more (Memory Mapped file).</li>
-<li>Use one bit to have access control (read-only, read/write).</li>
-<li>If two prcesses read same memory, they can share segments.</li>
-<li>Segmentation fault: virtual address not within range of any base-bounds registers or not valid.</li>
-<li>Copy-On-Write: a process gets private copy of the page after a thread in the process performs a write for the first time (private/share bit need not be inside MMU).</li>
-<li>Use a validity bit for each segment to find whether this segment is in memory or being swapped out before.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Hardware-Support-for-Virtual-Memory"><a href="#Hardware-Support-for-Virtual-Memory" class="headerlink" title="Hardware Support for Virtual Memory"></a>Hardware Support for Virtual Memory</h2><ul>
-<li>Segmentation divide the address space into variable-size segments and it has external fragmentation problem and “first-fit” is slow.</li>
-<li>Paging divede the address space into fixed-size pages and can have internal fragmentation problem.</li>
-<li>Paging:<ul>
-<li>Address space is divided into pages, indexed by virtual page number.</li>
-<li>Basic (Two-level) Page table indexed by virtual page number, start with a physical address (this is stored in the CR3 register for X86), has validity, modified, reference and protect bit, and physical page number.</li>
-<li>A page table is associated with each process (OS has its page table as well).</li>
-</ul>
-</li>
-</ul>
-<h3 id="Forward-Mapped-Multi-level-Page-Tables"><a href="#Forward-Mapped-Multi-level-Page-Tables" class="headerlink" title="Forward-Mapped (Multi-level) Page Tables"></a>Forward-Mapped (Multi-level) Page Tables</h3><p><img src="https://farm8.staticflickr.com/7400/27076290915_04e7cb14b9_b.jpg" width="400" height="220" alt="FM page table"></p>
-<ul>
-<li>Use 10 bits for page dir table and 10 bits for page table and the last 12 bits use for offset.</li>
-<li>Can save page table size, the minimum size is 12KB (one page dir two page tables)</li>
-<li>The drawback is it has two physical memory accesses to map a virtual address to a physical address</li>
-</ul>
-<h3 id="Linear-Page-Tables"><a href="#Linear-Page-Tables" class="headerlink" title="Linear Page Tables"></a>Linear Page Tables</h3><ul>
-<li>Use 2 bit as Space, 00 and 01 page table are start with virtual address space and conbine the 00 or 01 bits, in 10 space page table started with physical address we can find page table entry.</li>
-<li>Can reduce size requirements with partial page tables, and it can use length register to constranins size of each space. But it not work well for multiple processes.</li>
-</ul>
-<h3 id="Hashed-Page-Tables"><a href="#Hashed-Page-Tables" class="headerlink" title="Hashed Page Tables"></a>Hashed Page Tables</h3><ul>
-<li>Hashed page tables<ul>
-<li>Use 2 bits for hashing</li>
-<li>Works well for sparcely allocated address space</li>
-<li>Each page table entry have a tag and link</li>
-</ul>
-</li>
-<li>Clustered page tables<ul>
-<li>Many page table entries have one tag and link</li>
-</ul>
-</li>
-<li>Inverted page tables<ul>
-<li>Page table is indexed by physical page number</li>
-<li>Conbine virtual page number and PID to get hash</li>
-<li>Each entry contains PID, page number and physical page number</li>
-</ul>
-</li>
-</ul>
-<h3 id="Translation-Lookaside-Buffers-TLB"><a href="#Translation-Lookaside-Buffers-TLB" class="headerlink" title="Translation Lookaside Buffers (TLB)"></a>Translation Lookaside Buffers (TLB)</h3><ul>
-<li>Cashe page table entries, caches the mapping from virtual page nmber to physical page number.</li>
-<li>TLB miss will cost O(1) memory accesses.</li>
-<li>When a page table entry is modified, the OS must flush (invalidate) the corresponding TLB entry. When switching to a different process, must flush the entire TLB.</li>
-<li>In a multiprocessors environment, one processor can modify a mapping cached in the TLB of another processor by shoot-down (invalidate) the another processor.</li>
-<li>Two-way set-associative cache with 64 lines:    <ul>
-<li>Use 6 bits as key to have 64 lines.</li>
-<li>In same the line, tag in the virtual address is used to compared against all other tags in same line simutaneously.</li>
-<li>For other TLB, it can be fully associative cache or one-way set- associative cache.</li>
-</ul>
-</li>
-</ul>
-<h3 id="64-Bit-Issues"><a href="#64-Bit-Issues" class="headerlink" title="64-Bit Issues"></a>64-Bit Issues</h3><ul>
-<li>Have more tables which need more physical memory accesses to map a virtual address to a physical address</li>
-</ul>
-<h3 id="Virtualization-virtualizing-virtual-memory"><a href="#Virtualization-virtualizing-virtual-memory" class="headerlink" title="Virtualization (virtualizing virtual memory)"></a>Virtualization (virtualizing virtual memory)</h3><ul>
-<li><p>Can use shadow page table, when a VM changes its page table, VMM must update the corresponding shadow page table. But it has poor per formance.</p>
-<p>  <img src="https://farm8.staticflickr.com/7427/26982039952_1efe21c539_o.png" width="400" height="220" alt="shadow page table"></p>
-</li>
-<li><p>Use Extended Page Tables, two table in sequence and does the conversion all by itself.</p>
-<p>  <img src="https://farm8.staticflickr.com/7675/26472922783_48b1352333_b.jpg" width="400" height="250" alt="shadow page table"></p>
-</li>
-</ul>
-<h2 id="Operating-System-Issues"><a href="#Operating-System-Issues" class="headerlink" title="Operating System Issues"></a>Operating System Issues</h2><h3 id="General-Concerns"><a href="#General-Concerns" class="headerlink" title="General Concerns"></a>General Concerns</h3><ul>
-<li>Prefetching    <ul>
-<li>Fetching a page as well as the sequential pages.</li>
-<li>Access to pages is often sequential.</li>
-</ul>
-</li>
-<li>Pageout Daemon<ul>
-<li>Reference bit in page table entry is used for approximate LRU.</li>
-<li>Clock algorthm, need to give enough time for thousands of references before checking<br><img src="https://farm8.staticflickr.com/7366/26982432522_b89cb1fe31_b.jpg" width="420" height="280" alt="Clock algorthm"></li>
-</ul>
-</li>
-<li>Thrashing problem<ul>
-<li>Global allocation: All processes compete for page frames from a single pool.</li>
-<li>Local allocation: Each process has its own private pool of page frames. Using Local Allocation is a way to reduce the chance of thrashing.</li>
-<li>For thrashing problem, use Working-Set Principle, if the sum of the working-set of all processes is less than the total amount of available physical memory then thrashing cannot occur.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Representative-Systems"><a href="#Representative-Systems" class="headerlink" title="Representative Systems"></a>Representative Systems</h3><ul>
-<li><p>Address-Space Simplified Representation:    </p>
-<p>  <img src="https://farm8.staticflickr.com/7728/27008966701_abf3d06926_b.jpg" width="420" height="250" alt="AS simple pres"></p>
-</li>
-<li><p>Address-Space Real Representation:</p>
-<p>  <img src="https://farm8.staticflickr.com/7195/27008966741_f2cc810af9_b.jpg" width="420" height="270" alt="AS real pres"></p>
-</li>
-</ul>
-<h3 id="Copy-on-Write-and-Fork"><a href="#Copy-on-Write-and-Fork" class="headerlink" title="Copy on Write and Fork"></a>Copy on Write and Fork</h3><ul>
-<li><p>Shadow Objects:</p>
-<ul>
-<li>Keep track of pages that were originally copy-on-write but have benn modified.</li>
-<li>A page in a memory map, into which an object was mapped private, have an associated shadow object.</li>
-<li><p>Shadow object tells you where to copy from when you need to perform copy-on-write.</p>
-<p>  <img src="https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg" width="420" height="250" alt="Clock algorthm"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Backing-Store-Issues"><a href="#Backing-Store-Issues" class="headerlink" title="Backing Store Issues"></a>Backing Store Issues</h3><ul>
-<li>Shadow objects and anonymous memory must be backed up in swap space.</li>
-<li>Swap Space management approach:    <ul>
-<li>randical-conservative approach: eager evaluation, backing-store space is allocated when virtual memory is allocated.</li>
-<li>radical-liberal approach: lazy evaluation, backing-store space is allocated only when needed.</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Multithreaded Programming]]></title>
       <url>http://www.byteants.com/2016/05/21/studying%20notes.operating%20system.chapter%202/</url>
       <content type="html"><![CDATA[<p><img src="https://farm8.staticflickr.com/7236/27058898412_5ae7d856a7.jpg" width="500" height="306"></p>
@@ -2306,6 +2036,300 @@
 <li>pthread_testcancel() can create a cancellation point</li>
 <li>when act on cancel, walk through a stack of cleanup handlers: pthread_cleanup_push(), pthread_cleanup_pop(), the two procedure must match up</li>
 </ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Memory Management]]></title>
+      <url>http://www.byteants.com/2016/05/21/memoryreview/</url>
+      <content type="html"><![CDATA[<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This is a review of memory management, and focus on virtual address concept, different ways of memory management, TLB, shadow object, backing store issues.</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="Virtual-Memory-Basic"><a href="#Virtual-Memory-Basic" class="headerlink" title="Virtual Memory Basic"></a>Virtual Memory Basic</h2><h3 id="Virtual-Address-Concept"><a href="#Virtual-Address-Concept" class="headerlink" title="Virtual Address Concept"></a>Virtual Address Concept</h3><ul>
+<li>Protect processes from on another</li>
+<li>Protect the OS from user processes</li>
+<li>Provide efficient management of available storage</li>
+<li>Use a virtual address to address any memory location in the 32-bit address space</li>
+<li>Only headware use physical address(include processor) and OS manages the physical address space</li>
+<li>Memory Management Unit (MMU), is used for indirect address translation. It translated virtual address into physical address.<br>  <img src="https://farm8.staticflickr.com/7534/26980709472_21687456f0_b.jpg" width="400" height="200" alt="MMU"></li>
+</ul>
+<h3 id="Memory-Management-in-the-Early-Days"><a href="#Memory-Management-in-the-Early-Days" class="headerlink" title="Memory Management in the Early Days"></a>Memory Management in the Early Days</h3><ul>
+<li><p>Memory Fence</p>
+<ul>
+<li>If a user program tries to access OS area (address bigger than fence address) MMU will generate a trap    </li>
+<li>use overlays and resident to deal with user program won’t fit in memory</li>
+</ul>
+</li>
+<li><p>Base and Bounds Registers</p>
+<ul>
+<li>Bounds register: Address space size of the user process</li>
+<li>Base register: Start of physical memory for the user process</li>
+<li>Segmentation:<ul>
+<li>One pair of base and bounds registers per segment.</li>
+<li>code, data, heap, stack and may be more (Memory Mapped file).</li>
+<li>Use one bit to have access control (read-only, read/write).</li>
+<li>If two prcesses read same memory, they can share segments.</li>
+<li>Segmentation fault: virtual address not within range of any base-bounds registers or not valid.</li>
+<li>Copy-On-Write: a process gets private copy of the page after a thread in the process performs a write for the first time (private/share bit need not be inside MMU).</li>
+<li>Use a validity bit for each segment to find whether this segment is in memory or being swapped out before.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Hardware-Support-for-Virtual-Memory"><a href="#Hardware-Support-for-Virtual-Memory" class="headerlink" title="Hardware Support for Virtual Memory"></a>Hardware Support for Virtual Memory</h2><ul>
+<li>Segmentation divide the address space into variable-size segments and it has external fragmentation problem and “first-fit” is slow.</li>
+<li>Paging divede the address space into fixed-size pages and can have internal fragmentation problem.</li>
+<li>Paging:<ul>
+<li>Address space is divided into pages, indexed by virtual page number.</li>
+<li>Basic (Two-level) Page table indexed by virtual page number, start with a physical address (this is stored in the CR3 register for X86), has validity, modified, reference and protect bit, and physical page number.</li>
+<li>A page table is associated with each process (OS has its page table as well).</li>
+</ul>
+</li>
+</ul>
+<h3 id="Forward-Mapped-Multi-level-Page-Tables"><a href="#Forward-Mapped-Multi-level-Page-Tables" class="headerlink" title="Forward-Mapped (Multi-level) Page Tables"></a>Forward-Mapped (Multi-level) Page Tables</h3><p><img src="https://farm8.staticflickr.com/7400/27076290915_04e7cb14b9_b.jpg" width="400" height="220" alt="FM page table"></p>
+<ul>
+<li>Use 10 bits for page dir table and 10 bits for page table and the last 12 bits use for offset.</li>
+<li>Can save page table size, the minimum size is 12KB (one page dir two page tables)</li>
+<li>The drawback is it has two physical memory accesses to map a virtual address to a physical address</li>
+</ul>
+<h3 id="Linear-Page-Tables"><a href="#Linear-Page-Tables" class="headerlink" title="Linear Page Tables"></a>Linear Page Tables</h3><ul>
+<li>Use 2 bit as Space, 00 and 01 page table are start with virtual address space and conbine the 00 or 01 bits, in 10 space page table started with physical address we can find page table entry.</li>
+<li>Can reduce size requirements with partial page tables, and it can use length register to constranins size of each space. But it not work well for multiple processes.</li>
+</ul>
+<h3 id="Hashed-Page-Tables"><a href="#Hashed-Page-Tables" class="headerlink" title="Hashed Page Tables"></a>Hashed Page Tables</h3><ul>
+<li>Hashed page tables<ul>
+<li>Use 2 bits for hashing</li>
+<li>Works well for sparcely allocated address space</li>
+<li>Each page table entry have a tag and link</li>
+</ul>
+</li>
+<li>Clustered page tables<ul>
+<li>Many page table entries have one tag and link</li>
+</ul>
+</li>
+<li>Inverted page tables<ul>
+<li>Page table is indexed by physical page number</li>
+<li>Conbine virtual page number and PID to get hash</li>
+<li>Each entry contains PID, page number and physical page number</li>
+</ul>
+</li>
+</ul>
+<h3 id="Translation-Lookaside-Buffers-TLB"><a href="#Translation-Lookaside-Buffers-TLB" class="headerlink" title="Translation Lookaside Buffers (TLB)"></a>Translation Lookaside Buffers (TLB)</h3><ul>
+<li>Cashe page table entries, caches the mapping from virtual page nmber to physical page number.</li>
+<li>TLB miss will cost O(1) memory accesses.</li>
+<li>When a page table entry is modified, the OS must flush (invalidate) the corresponding TLB entry. When switching to a different process, must flush the entire TLB.</li>
+<li>In a multiprocessors environment, one processor can modify a mapping cached in the TLB of another processor by shoot-down (invalidate) the another processor.</li>
+<li>Two-way set-associative cache with 64 lines:    <ul>
+<li>Use 6 bits as key to have 64 lines.</li>
+<li>In same the line, tag in the virtual address is used to compared against all other tags in same line simutaneously.</li>
+<li>For other TLB, it can be fully associative cache or one-way set- associative cache.</li>
+</ul>
+</li>
+</ul>
+<h3 id="64-Bit-Issues"><a href="#64-Bit-Issues" class="headerlink" title="64-Bit Issues"></a>64-Bit Issues</h3><ul>
+<li>Have more tables which need more physical memory accesses to map a virtual address to a physical address</li>
+</ul>
+<h3 id="Virtualization-virtualizing-virtual-memory"><a href="#Virtualization-virtualizing-virtual-memory" class="headerlink" title="Virtualization (virtualizing virtual memory)"></a>Virtualization (virtualizing virtual memory)</h3><ul>
+<li><p>Can use shadow page table, when a VM changes its page table, VMM must update the corresponding shadow page table. But it has poor per formance.</p>
+<p>  <img src="https://farm8.staticflickr.com/7427/26982039952_1efe21c539_o.png" width="400" height="220" alt="shadow page table"></p>
+</li>
+<li><p>Use Extended Page Tables, two table in sequence and does the conversion all by itself.</p>
+<p>  <img src="https://farm8.staticflickr.com/7675/26472922783_48b1352333_b.jpg" width="400" height="250" alt="shadow page table"></p>
+</li>
+</ul>
+<h2 id="Operating-System-Issues"><a href="#Operating-System-Issues" class="headerlink" title="Operating System Issues"></a>Operating System Issues</h2><h3 id="General-Concerns"><a href="#General-Concerns" class="headerlink" title="General Concerns"></a>General Concerns</h3><ul>
+<li>Prefetching    <ul>
+<li>Fetching a page as well as the sequential pages.</li>
+<li>Access to pages is often sequential.</li>
+</ul>
+</li>
+<li>Pageout Daemon<ul>
+<li>Reference bit in page table entry is used for approximate LRU.</li>
+<li>Clock algorthm, need to give enough time for thousands of references before checking<br><img src="https://farm8.staticflickr.com/7366/26982432522_b89cb1fe31_b.jpg" width="420" height="280" alt="Clock algorthm"></li>
+</ul>
+</li>
+<li>Thrashing problem<ul>
+<li>Global allocation: All processes compete for page frames from a single pool.</li>
+<li>Local allocation: Each process has its own private pool of page frames. Using Local Allocation is a way to reduce the chance of thrashing.</li>
+<li>For thrashing problem, use Working-Set Principle, if the sum of the working-set of all processes is less than the total amount of available physical memory then thrashing cannot occur.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Representative-Systems"><a href="#Representative-Systems" class="headerlink" title="Representative Systems"></a>Representative Systems</h3><ul>
+<li><p>Address-Space Simplified Representation:    </p>
+<p>  <img src="https://farm8.staticflickr.com/7728/27008966701_abf3d06926_b.jpg" width="420" height="250" alt="AS simple pres"></p>
+</li>
+<li><p>Address-Space Real Representation:</p>
+<p>  <img src="https://farm8.staticflickr.com/7195/27008966741_f2cc810af9_b.jpg" width="420" height="270" alt="AS real pres"></p>
+</li>
+</ul>
+<h3 id="Copy-on-Write-and-Fork"><a href="#Copy-on-Write-and-Fork" class="headerlink" title="Copy on Write and Fork"></a>Copy on Write and Fork</h3><ul>
+<li><p>Shadow Objects:</p>
+<ul>
+<li>Keep track of pages that were originally copy-on-write but have benn modified.</li>
+<li>A page in a memory map, into which an object was mapped private, have an associated shadow object.</li>
+<li><p>Shadow object tells you where to copy from when you need to perform copy-on-write.</p>
+<p>  <img src="https://farm8.staticflickr.com/7431/26473555803_b050ed08d4_b.jpg" width="420" height="250" alt="Clock algorthm"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Backing-Store-Issues"><a href="#Backing-Store-Issues" class="headerlink" title="Backing Store Issues"></a>Backing Store Issues</h3><ul>
+<li>Shadow objects and anonymous memory must be backed up in swap space.</li>
+<li>Swap Space management approach:    <ul>
+<li>randical-conservative approach: eager evaluation, backing-store space is allocated when virtual memory is allocated.</li>
+<li>radical-liberal approach: lazy evaluation, backing-store space is allocated only when needed.</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[File Systems]]></title>
+      <url>http://www.byteants.com/2016/05/21/filesystemsreview/</url>
+      <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><ul>
+<li>This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.</li>
+<li>The requirements of file systems:<ul>
+<li>Permanent storage</li>
+<li>Quick, easy and efficient</li>
+</ul>
+</li>
+</ul>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="The-Basics-of-File-Systems"><a href="#The-Basics-of-File-Systems" class="headerlink" title="The Basics of File Systems"></a>The Basics of File Systems</h3><h4 id="Disk-Architecture"><a href="#Disk-Architecture" class="headerlink" title="Disk Architecture"></a>Disk Architecture</h4><p><img src="https://farm8.staticflickr.com/7587/26889680562_7ae35ccfab_h.jpg" width="400" height="280" alt="disk_architecture"></p>
+<ul>
+<li>Have multiple platters and each one have top and bottom heads.</li>
+<li>The smallest addressable unit is a sector. Each platter contains many tracks and each track contains many sectors. The same vertical’s tracks is one cylinder.</li>
+<li>disk address = (head/surface#, cylinder/track#, sector#)</li>
+</ul>
+<h4 id="S5FS"><a href="#S5FS" class="headerlink" title="S5FS"></a>S5FS</h4><p>Simple, slow, don’t terribly tolerant to crashes, reasonably efficient in space although no compression</p>
+<ol>
+<li><p>layout</p>
+<p> <img src="https://farm8.staticflickr.com/7671/26983710105_ec8f5d2828_b.jpg" width="170" height="250" alt="S5FS"></p>
+<ul>
+<li>The layout of the disk simply an array of blocks of 1KB each and it starts with Boot block, Superblock and then it contains i-list, which has many blocks and keep all the inode information. The final part is Data Region, which keep all the real data.</li>
+</ul>
+</li>
+<li><p>Superblock</p>
+<ul>
+<li>Contains the head of the free list:<br>  Can address up to 100 free disk blocks, and the last pointer point to additional free disk blocks, etc.</li>
+<li>Maintain a free inode list (inode cache):<br>  Caches free inode. When allocate an inode, just remove it from cache and mark in the i-list not free.</li>
+</ul>
+</li>
+<li><p>I-list</p>
+<ul>
+<li>For each inode, it contains: Device, Inode Number, Mode, Link Count, Owner and Group, Size, Disk Map</li>
+</ul>
+</li>
+<li><p>Disk map</p>
+<p> <img src="https://farm8.staticflickr.com/7031/26950370586_6eea21b2b0_h.jpg" width="450" height="320" alt="Disk map"></p>
+<p> 0~9 each point to a data block, 10 point to a block which contains 256 max entries and each entry point to a data block, and 11 have one more layer and 12 have two more layer.</p>
+</li>
+</ol>
+<h4 id="Improvement-of-S5FS"><a href="#Improvement-of-S5FS" class="headerlink" title="Improvement of S5FS"></a>Improvement of S5FS</h4><p>Rhinopias’s S5SF have very low effective transfer speed. We need to improve access time (seek time + rotatinal latency + data transfer time)</p>
+<ul>
+<li>Increase block size</li>
+<li>Minimizing seek time<ul>
+<li>Use cylinder groups to put related data in the same cylinde group</li>
+</ul>
+</li>
+<li>Minimizing Latency<ul>
+<li>Block interleaving</li>
+</ul>
+</li>
+<li><p>Log-Structured File System (LFS)</p>
+<p>  <img src="https://farm8.staticflickr.com/7040/26388472283_d457c0580f_b.jpg" width="400" height="100" alt="LFS"></p>
+<ul>
+<li>Main principles: nerver delete, append only.</li>
+<li>Inode Map: keep the updated inode, and each inode map piece is appended to log.</li>
+<li>Use checkpoint file (can have previous and current version) which is not belong to log to keeps track of all inode map pieces.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Multiple-Disks"><a href="#Multiple-Disks" class="headerlink" title="Multiple Disks"></a>Multiple Disks</h3><h4 id="Benefits-of-Multiple-Disks"><a href="#Benefits-of-Multiple-Disks" class="headerlink" title="Benefits of Multiple Disks"></a>Benefits of Multiple Disks</h4><ul>
+<li>Hold more data</li>
+<li>Can be stored redundantly, increase reliability and availability</li>
+<li>Can spread data, allowing parallel access, increase effective access time</li>
+</ul>
+<h4 id="Logical-Volume-Manager-LVM"><a href="#Logical-Volume-Manager-LVM" class="headerlink" title="Logical Volume Manager (LVM)"></a>Logical Volume Manager (LVM)</h4><p><img src="https://farm8.staticflickr.com/7711/26950370436_e841701895_o.png" width="350" height="150" alt="LVM"></p>
+<p>Manage multiple disks and try not change existing file systems much.</p>
+<ul>
+<li>Spanning: Multiple disks appear to file system as one large disk</li>
+<li>Mirroring: Write redundantly to multiple disks. Read from one.</li>
+</ul>
+<h4 id="Striping"><a href="#Striping" class="headerlink" title="Striping"></a>Striping</h4><p>One disk keep one striping unit data and then the next disk keep next one string unit data and keep doing this.</p>
+<ul>
+<li>Advantages: Increase parallelism.</li>
+<li>Disadvantages: Worse reliability, higher variance and heterogenious disks will reduce the saving access time.</li>
+<li>In general, performance is better with larger striping unit, which can reduce seek time</li>
+<li>Probability of N-disk system failing is: 1-(1-fail)^N</li>
+</ul>
+<h4 id="Redundant-Array-of-Inexpensive-Disks-RAID"><a href="#Redundant-Array-of-Inexpensive-Disks-RAID" class="headerlink" title="Redundant Array of Inexpensive Disks (RAID)"></a>Redundant Array of Inexpensive Disks (RAID)</h4><ul>
+<li>level 1: Just mirroring.</li>
+<li>level 2: Similar to memory’s ECC, use serveal disks to check bits.</li>
+<li>level 3: Use one disk to maintain parity bits.</li>
+<li>level 4: Use one disk to maintain parity blocks.</li>
+<li>level 5: Solve level 4’s problem about write performance bottleneck that has no special disk to maintain parity blocks and spread parity blocks to all disks.</li>
+</ul>
+<h3 id="Flash-Memory"><a href="#Flash-Memory" class="headerlink" title="Flash Memory"></a>Flash Memory</h3><ol>
+<li>Technologies of Flash<ul>
+<li>NOR: Byte addressable.</li>
+<li>NAND: Page addressable, cheaper but has limit on P/E cycle, about 10000.</li>
+</ul>
+</li>
+<li>Wear leveling<ul>
+<li>Writing problem: To change zeroes to ones, must erase entire block.</li>
+<li>Spread writes/erasures across entire drive.</li>
+<li>Using flash traslation layer(FTL) and log-structured file system.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Crash-Resiliency"><a href="#Crash-Resiliency" class="headerlink" title="Crash Resiliency"></a>Crash Resiliency</h3><h4 id="Crash-problem"><a href="#Crash-problem" class="headerlink" title="Crash problem"></a>Crash problem</h4><ul>
+<li>Disk update, gather all dirty blocks, which is done one disk block at a time.</li>
+<li>In S5fs and FFS, the lower level file system can sequence disk writes in any order.</li>
+</ul>
+<h4 id="Dealing-with-Crashes"><a href="#Dealing-with-Crashes" class="headerlink" title="Dealing with Crashes"></a>Dealing with Crashes</h4><ol>
+<li><p>Soft Updates</p>
+<ul>
+<li>Consistency-preserving approach: order disk operations to preserve meta-data consistency.</li>
+<li>Have problems. In reality, in order to save the numver of disk writes, multiple objects can be packed into a diks block and will make a cycle in the topological order, and breaking circular dependency will slow the preformance.</li>
+</ul>
+</li>
+<li><p>Journaling</p>
+<p> <img src="https://farm8.staticflickr.com/7251/26387400194_a85f1f718a_b.jpg" width="400" height="60" alt="journaling"></p>
+<ul>
+<li>Use transaction idea, a journal is append-only, and it is a separate part of the disk(can add to any file system).</li>
+<li>Append a commit record, when it’s time to update the file system, write to journal first, and write data to file system only after the commit record is writeen to the journal.</li>
+<li>Undo journaling(record previous contents), redo journaling(record new contents).</li>
+<li>Recovery will take the file system into a consistent state at a transaction boundary, and copying a disk block to the file system is idempotent.</li>
+</ul>
+</li>
+<li><p>Shadow paging</p>
+<ul>
+<li><p>Based on copy-on-write ideas</p>
+<p>  <img src="https://farm8.staticflickr.com/7589/26387505004_aabd34527c_b.jpg" width="400" height="240" alt="shadow_paging"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="Naming-and-Directories"><a href="#Naming-and-Directories" class="headerlink" title="Naming and Directories"></a>Naming and Directories</h3><h4 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h4><ol>
+<li>S5FS Directories<ul>
+<li>Each entry is 32 bytes.</li>
+</ul>
+</li>
+<li>FFS Directories:<ul>
+<li>No restrictions on names.</li>
+<li>Maintain the last entry to get the free space.</li>
+<li>Use Hash table or B+ tree to look for a file name.</li>
+<li>Use extensible Hashing, the low-order i bits of hi(x) are the same in hi+1(x)</li>
+<li>B+ tree, internal nodes contain no data, just keys, leaf node are linked to ease sorted sequential traversal</li>
+</ul>
+</li>
+</ol>
+<h4 id="Name-Space-Management"><a href="#Name-Space-Management" class="headerlink" title="Name-Space Management"></a>Name-Space Management</h4><ul>
+<li>For Windows, it use drives to make the name-space appear uniform. For Unix, it use file system mounting.</li>
+</ul>
+<h3 id="File-systems-Summary"><a href="#File-systems-Summary" class="headerlink" title="File systems Summary"></a>File systems Summary</h3><p>This is a review of file systems, and focus on S5FS, multiple disks, flash memory, crash Resiliency, naming and dirctories.</p>
+<p><img src="https://farm8.staticflickr.com/7240/26387779154_5758d2a7f6_b.jpg" width="450" height="280" alt="file_system_summary"></p>
 ]]></content>
     </entry>
     
@@ -2762,21 +2786,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Stock Search App -- AutoComplete]]></title>
-      <url>http://www.byteants.com/2016/04/11/Stock%20Search%20APP%20--%20AutoComplete/</url>
-      <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1693/26393556095_c31c115dc0.jpg" alt=""></p>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>During developing the Stock Search App on the cloud server (AWS), in order to make out application be used conveniently the input will autocomplete based on the users’ input. This function can be divided into two parts, the back-end and front-end. Firstly, with the help of Ajax, the input of user will send to the server and server will fetch the information for user synchronously. This process is hidden to users. Secondly, when the front end get the data from the server, jQuery UI will show these data as a prompting list so that user can choose what they want to search. During the process, the user haven’t to press any button and the prompting message will change as the change of users’ inputs. Users can’t feel the process of data transmission between local and server. It is just like they run an application locally which is a great benefit of Ajax.<br><a id="more"></a></p>
-<h3 id="jQuery-UI-realize-the-autocomplete-front-end"><a href="#jQuery-UI-realize-the-autocomplete-front-end" class="headerlink" title="jQuery UI realize the autocomplete front-end"></a>jQuery UI realize the autocomplete front-end</h3><p>Fortunately, jQuery provide a user interface to realize the autocomplete prompting list. In the <a href="http://jqueryui.com/" target="_blank" rel="external">official website</a>, it provides some <a href="https://jqueryui.com/autocomplete/#default" target="_blank" rel="external">examples</a>. At the same time, we need to add following libraries, including CSS and javascript, to our application.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/ui/1.11.4/jquery-ui.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>Firstly, we build an array in our application. We can get the input element based on the input textbox’s ID. When we add the jQuery-UI library, the input textbox will have the autocomplete method. In the method there is a source variable, and then we can set the source as the array what we just create before. Then the input will autocomplete based on the users’ input and the array we create. For example, when the user type j in the textbox, the autocomplete function will search the string star with ‘j’ from the array. When it get a list, then it will show this list for us.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> availableTags = [</span><br><span class="line">      <span class="string">"ActionScript"</span>,</span><br><span class="line">      <span class="string">"AppleScript"</span>,</span><br><span class="line">      <span class="string">"Asp"</span>,</span><br><span class="line">      <span class="string">"BASIC"</span>,</span><br><span class="line">      <span class="string">"C"</span>,</span><br><span class="line">      <span class="string">"C++"</span>,</span><br><span class="line">      <span class="string">"Clojure"</span>,</span><br><span class="line">      <span class="string">"COBOL"</span>,</span><br><span class="line">      <span class="string">"ColdFusion"</span>,</span><br><span class="line">      <span class="string">"Erlang"</span>,</span><br><span class="line">      <span class="string">"Fortran"</span>,</span><br><span class="line">      <span class="string">"Groovy"</span>,</span><br><span class="line">      <span class="string">"Haskell"</span>,</span><br><span class="line">      <span class="string">"Java"</span>,</span><br><span class="line">      <span class="string">"JavaScript"</span>,</span><br><span class="line">      <span class="string">"Lisp"</span>,</span><br><span class="line">      <span class="string">"Perl"</span>,</span><br><span class="line">      <span class="string">"PHP"</span>,</span><br><span class="line">      <span class="string">"Python"</span>,</span><br><span class="line">      <span class="string">"Ruby"</span>,</span><br><span class="line">      <span class="string">"Scala"</span>,</span><br><span class="line">      <span class="string">"Scheme"</span></span><br><span class="line">    ];</span><br><span class="line">    $(<span class="string">"#tags"</span> ).autocomplete(&#123;</span><br><span class="line">      source: availableTags</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>The code above is sample and clean and it satisfy our need of front end. However, it just can autocomplete the user’s input based on the array which we create before. Actually, it is impossible for us to create an array to autocomplete user’s input during our application. The amount of company is so large, so we need to fetch the useful data from the stock server instead create a static array in our application. In the following section, I will talks about how we can get information from the server.</p>
-<h3 id="Autocomplete-Based-on-Users’-Input"><a href="#Autocomplete-Based-on-Users’-Input" class="headerlink" title="Autocomplete Based on Users’ Input"></a>Autocomplete Based on Users’ Input</h3><p>In our application, what we face is a huge amount of data so we cannot create a static array to realize automatically as before.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#search_query"</span>).autocomplete(&#123;</span><br><span class="line">            source: <span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">                $.ajax(&#123;</span><br><span class="line">                    url: <span class="string">"search.php"</span>,</span><br><span class="line">                    data: &#123;input: request.term&#125;,</span><br><span class="line">                    type: <span class="string">"GET"</span>,</span><br><span class="line">                    datatype: <span class="string">"json"</span>,</span><br><span class="line">                    success: <span class="function"><span class="keyword">function</span> (<span class="params">json</span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">var</span> jsonObject = jQuery.parseJSON(json);</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">if</span> (jsonObject.length == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">"Select a valid entry"</span>;</span><br><span class="line"></span><br><span class="line">                            response(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">var</span> data = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; jsonObject.length; i++) &#123;</span><br><span class="line">                                data[i] = &#123;</span><br><span class="line">                                    label: jsonObject[i].Symbol + <span class="string">" - "</span> + jsonObject[i].Name + <span class="string">" ( "</span> + jsonObject[i].Exchange + <span class="string">" ) "</span>,</span><br><span class="line">                                    value: jsonObject[i].Symbol</span><br><span class="line">                                &#125;;</span><br><span class="line">                            &#125;</span><br><span class="line">                            response(data);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>The search.php as followint<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">"input"</span>])) &#123;</span><br><span class="line">    $autocomplete_check_search = <span class="string">"http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input="</span>.$_GET[<span class="string">"input"</span>];</span><br><span class="line">    $json_content = file_get_contents($autocomplete_check_search);</span><br><span class="line">    <span class="keyword">echo</span> $json_content;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>In this task, we use the Ajax to fetch data from server based on users’ inputs without the observation of users’. Then with the help of the jQuery UI, we can show the list for the user conveniently. With the help of jQuery UI our code is more clean and easy to manipulate. And with the help of Ajax, we can divide the web user development with the server function development. And we can keep our servers code save because the user cannot see server’s code.</p>
-<p>-<a href="https://github.com/spacime/Projects/tree/master/Search%20Stock%20Data%20--%20Ajax" target="_blank" rel="external">github code</a></p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Baseball Elimination]]></title>
       <url>http://www.byteants.com/2016/04/11/BaseballElimination/</url>
       <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1586/26379159155_9fbb11ef23_z.jpg" width="589" height="301"></p>
@@ -2847,6 +2856,21 @@
 </li>
 </ul>
 <hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Stock Search App -- AutoComplete]]></title>
+      <url>http://www.byteants.com/2016/04/11/Stock%20Search%20APP%20--%20AutoComplete/</url>
+      <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1693/26393556095_c31c115dc0.jpg" alt=""></p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>During developing the Stock Search App on the cloud server (AWS), in order to make out application be used conveniently the input will autocomplete based on the users’ input. This function can be divided into two parts, the back-end and front-end. Firstly, with the help of Ajax, the input of user will send to the server and server will fetch the information for user synchronously. This process is hidden to users. Secondly, when the front end get the data from the server, jQuery UI will show these data as a prompting list so that user can choose what they want to search. During the process, the user haven’t to press any button and the prompting message will change as the change of users’ inputs. Users can’t feel the process of data transmission between local and server. It is just like they run an application locally which is a great benefit of Ajax.<br><a id="more"></a></p>
+<h3 id="jQuery-UI-realize-the-autocomplete-front-end"><a href="#jQuery-UI-realize-the-autocomplete-front-end" class="headerlink" title="jQuery UI realize the autocomplete front-end"></a>jQuery UI realize the autocomplete front-end</h3><p>Fortunately, jQuery provide a user interface to realize the autocomplete prompting list. In the <a href="http://jqueryui.com/" target="_blank" rel="external">official website</a>, it provides some <a href="https://jqueryui.com/autocomplete/#default" target="_blank" rel="external">examples</a>. At the same time, we need to add following libraries, including CSS and javascript, to our application.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"//code.jquery.com/ui/1.11.4/jquery-ui.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>Firstly, we build an array in our application. We can get the input element based on the input textbox’s ID. When we add the jQuery-UI library, the input textbox will have the autocomplete method. In the method there is a source variable, and then we can set the source as the array what we just create before. Then the input will autocomplete based on the users’ input and the array we create. For example, when the user type j in the textbox, the autocomplete function will search the string star with ‘j’ from the array. When it get a list, then it will show this list for us.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> availableTags = [</span><br><span class="line">      <span class="string">"ActionScript"</span>,</span><br><span class="line">      <span class="string">"AppleScript"</span>,</span><br><span class="line">      <span class="string">"Asp"</span>,</span><br><span class="line">      <span class="string">"BASIC"</span>,</span><br><span class="line">      <span class="string">"C"</span>,</span><br><span class="line">      <span class="string">"C++"</span>,</span><br><span class="line">      <span class="string">"Clojure"</span>,</span><br><span class="line">      <span class="string">"COBOL"</span>,</span><br><span class="line">      <span class="string">"ColdFusion"</span>,</span><br><span class="line">      <span class="string">"Erlang"</span>,</span><br><span class="line">      <span class="string">"Fortran"</span>,</span><br><span class="line">      <span class="string">"Groovy"</span>,</span><br><span class="line">      <span class="string">"Haskell"</span>,</span><br><span class="line">      <span class="string">"Java"</span>,</span><br><span class="line">      <span class="string">"JavaScript"</span>,</span><br><span class="line">      <span class="string">"Lisp"</span>,</span><br><span class="line">      <span class="string">"Perl"</span>,</span><br><span class="line">      <span class="string">"PHP"</span>,</span><br><span class="line">      <span class="string">"Python"</span>,</span><br><span class="line">      <span class="string">"Ruby"</span>,</span><br><span class="line">      <span class="string">"Scala"</span>,</span><br><span class="line">      <span class="string">"Scheme"</span></span><br><span class="line">    ];</span><br><span class="line">    $(<span class="string">"#tags"</span> ).autocomplete(&#123;</span><br><span class="line">      source: availableTags</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>The code above is sample and clean and it satisfy our need of front end. However, it just can autocomplete the user’s input based on the array which we create before. Actually, it is impossible for us to create an array to autocomplete user’s input during our application. The amount of company is so large, so we need to fetch the useful data from the stock server instead create a static array in our application. In the following section, I will talks about how we can get information from the server.</p>
+<h3 id="Autocomplete-Based-on-Users’-Input"><a href="#Autocomplete-Based-on-Users’-Input" class="headerlink" title="Autocomplete Based on Users’ Input"></a>Autocomplete Based on Users’ Input</h3><p>In our application, what we face is a huge amount of data so we cannot create a static array to realize automatically as before.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#search_query"</span>).autocomplete(&#123;</span><br><span class="line">            source: <span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">                $.ajax(&#123;</span><br><span class="line">                    url: <span class="string">"search.php"</span>,</span><br><span class="line">                    data: &#123;input: request.term&#125;,</span><br><span class="line">                    type: <span class="string">"GET"</span>,</span><br><span class="line">                    datatype: <span class="string">"json"</span>,</span><br><span class="line">                    success: <span class="function"><span class="keyword">function</span> (<span class="params">json</span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">var</span> jsonObject = jQuery.parseJSON(json);</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">if</span> (jsonObject.length == <span class="number">0</span>) &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">"Select a valid entry"</span>;</span><br><span class="line"></span><br><span class="line">                            response(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="built_in">document</span>.getElementById(<span class="string">"checkValidate"</span>).innerHTML = <span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">var</span> data = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"></span><br><span class="line">                            <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; jsonObject.length; i++) &#123;</span><br><span class="line">                                data[i] = &#123;</span><br><span class="line">                                    label: jsonObject[i].Symbol + <span class="string">" - "</span> + jsonObject[i].Name + <span class="string">" ( "</span> + jsonObject[i].Exchange + <span class="string">" ) "</span>,</span><br><span class="line">                                    value: jsonObject[i].Symbol</span><br><span class="line">                                &#125;;</span><br><span class="line">                            &#125;</span><br><span class="line">                            response(data);</span><br><span class="line"></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>The search.php as followint<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">"input"</span>])) &#123;</span><br><span class="line">    $autocomplete_check_search = <span class="string">"http://dev.markitondemand.com/MODApis/Api/v2/Lookup/json?input="</span>.$_GET[<span class="string">"input"</span>];</span><br><span class="line">    $json_content = file_get_contents($autocomplete_check_search);</span><br><span class="line">    <span class="keyword">echo</span> $json_content;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>In this task, we use the Ajax to fetch data from server based on users’ inputs without the observation of users’. Then with the help of the jQuery UI, we can show the list for the user conveniently. With the help of jQuery UI our code is more clean and easy to manipulate. And with the help of Ajax, we can divide the web user development with the server function development. And we can keep our servers code save because the user cannot see server’s code.</p>
+<p>-<a href="https://github.com/spacime/Projects/tree/master/Search%20Stock%20Data%20--%20Ajax" target="_blank" rel="external">github code</a></p>
 ]]></content>
     </entry>
     
@@ -3042,20 +3066,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Slow and Fast Pointers]]></title>
-      <url>http://www.byteants.com/2016/03/19/Slow%20and%20Fast%20Pointers%20in%20List/</url>
-      <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1694/25922739775_553ece5c1f_z.jpg" alt=""></p>
-<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>When dealing with list data structure, we can’t get the middle item as the array using index of the item. Normally, we can traverse the list to get the length of the list, N. Then we traverse the list again stopping at N/2. It makes us to traverse the list two time. Actually, with the help of the two pointers, we can find the middle item traversing once.<br><a id="more"></a></p>
-<h3 id="Find-the-Middle-Item"><a href="#Find-the-Middle-Item" class="headerlink" title="Find the Middle Item"></a>Find the Middle Item</h3><p>Finding the middle item of a list, we create a slow pointer and fast pointer. In each loop when we traverse the list, the slow pointer step one distance and the fast pointer step two distance. Showing in the above figure, we can find that when the fast pointer reach the end of the list, the slow pointer’s position is at the middle of the item. A lot of problems used this method, such as Merge sort and Delete the Last nth node of a list.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ListNode slow = head;</span><br><span class="line">ListNode fast = head.next;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">        fast = fast.next.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Find-the-Existence-of-Cycle-in-a-List"><a href="#Find-the-Existence-of-Cycle-in-a-List" class="headerlink" title="Find the Existence of Cycle in a List"></a>Find the Existence of Cycle in a List</h3><p>Slow and fast pointers also can be used in finding the existence of cycle in a List. Firstly, the slow and faster pointers are at the beginning of the list. Based on the character of two pointers, the fast pointer must move into the cycle before the slow pointer. Then the slow pointer enter into the cycle. The faster pointer will meet the slow point due to the difference of their speeds. The detail is shown by following pictures.<br><img src="https://farm2.staticflickr.com/1550/25922739785_d7bdfd99ef_z.jpg" alt=""><br><img src="https://farm2.staticflickr.com/1556/25922739795_448152ea9d_z.jpg" alt=""></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        ListNode fast = head.next;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(slow == fast) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(fast == <span class="keyword">null</span> || slow == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Find-the-Existence-of-Cycle-in-a-List-II"><a href="#Find-the-Existence-of-Cycle-in-a-List-II" class="headerlink" title="Find the Existence of Cycle in a List II"></a>Find the Existence of Cycle in a List II</h3><p>Besides finding the existence of cycle, we also can find the beginning position of the cycle. After we make sure that there is a cycle in the list. Then we move the fast pointer to the beginning of the list and the fast pointer should have the same speed as slow pointer. The position the slow pointer and fast pointer meet again is the beginning of the cycle.</p>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>Slow and fast pointers can be used in many situation in dealing with the list. You will meet them again and again when dealing with list data structure. Practice makes perfect.</p>
-]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[To Do List]]></title>
       <url>http://www.byteants.com/2016/03/19/todolist/</url>
       <content type="html"><![CDATA[<figure><br>    <img src="https://farm2.staticflickr.com/1604/25284321663_f4c97b9a5e_o.jpg" width="863" height="430"><br></figure>
@@ -3094,6 +3104,20 @@
 <li><a href="https://github.com/xiaofeixiawang/bittiger_MicroProject/tree/master/todolist" target="_blank" rel="external">github code link(2)</a></li>
 </ul>
 <hr>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Slow and Fast Pointers]]></title>
+      <url>http://www.byteants.com/2016/03/19/Slow%20and%20Fast%20Pointers%20in%20List/</url>
+      <content type="html"><![CDATA[<p><img src="https://farm2.staticflickr.com/1694/25922739775_553ece5c1f_z.jpg" alt=""></p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>When dealing with list data structure, we can’t get the middle item as the array using index of the item. Normally, we can traverse the list to get the length of the list, N. Then we traverse the list again stopping at N/2. It makes us to traverse the list two time. Actually, with the help of the two pointers, we can find the middle item traversing once.<br><a id="more"></a></p>
+<h3 id="Find-the-Middle-Item"><a href="#Find-the-Middle-Item" class="headerlink" title="Find the Middle Item"></a>Find the Middle Item</h3><p>Finding the middle item of a list, we create a slow pointer and fast pointer. In each loop when we traverse the list, the slow pointer step one distance and the fast pointer step two distance. Showing in the above figure, we can find that when the fast pointer reach the end of the list, the slow pointer’s position is at the middle of the item. A lot of problems used this method, such as Merge sort and Delete the Last nth node of a list.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ListNode slow = head;</span><br><span class="line">ListNode fast = head.next;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">        slow = slow.next;</span><br><span class="line">        fast = fast.next.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Find-the-Existence-of-Cycle-in-a-List"><a href="#Find-the-Existence-of-Cycle-in-a-List" class="headerlink" title="Find the Existence of Cycle in a List"></a>Find the Existence of Cycle in a List</h3><p>Slow and fast pointers also can be used in finding the existence of cycle in a List. Firstly, the slow and faster pointers are at the beginning of the list. Based on the character of two pointers, the fast pointer must move into the cycle before the slow pointer. Then the slow pointer enter into the cycle. The faster pointer will meet the slow point due to the difference of their speeds. The detail is shown by following pictures.<br><img src="https://farm2.staticflickr.com/1550/25922739785_d7bdfd99ef_z.jpg" alt=""><br><img src="https://farm2.staticflickr.com/1556/25922739795_448152ea9d_z.jpg" alt=""></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        ListNode fast = head.next;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(fast != <span class="keyword">null</span> &amp;&amp; fast.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(slow == fast) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(fast == <span class="keyword">null</span> || slow == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Find-the-Existence-of-Cycle-in-a-List-II"><a href="#Find-the-Existence-of-Cycle-in-a-List-II" class="headerlink" title="Find the Existence of Cycle in a List II"></a>Find the Existence of Cycle in a List II</h3><p>Besides finding the existence of cycle, we also can find the beginning position of the cycle. After we make sure that there is a cycle in the list. Then we move the fast pointer to the beginning of the list and the fast pointer should have the same speed as slow pointer. The position the slow pointer and fast pointer meet again is the beginning of the cycle.</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>Slow and fast pointers can be used in many situation in dealing with the list. You will meet them again and again when dealing with list data structure. Practice makes perfect.</p>
 ]]></content>
     </entry>
     
